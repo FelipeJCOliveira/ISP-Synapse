@@ -11,16 +11,19 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Consumo"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{EC54C738-FE76-43F3-AB51-4AD9106A80C9}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{4DAC943C-382E-4694-A1B7-51484295CBA3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection - Consumo]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{93A53F13-DB4A-4B62-807A-74FAF539A66F}"
+      DTS:Description="v2 - 13/03/19"
+      DTS:DTSID="{90AC6288-0145-4CFD-8201-C3C57ED5E8FC}"
       DTS:ObjectName="Flat File Connection - Consumo">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::FullFileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,7 +33,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\BISTERCO\Synapse Files\Arquivos de Dados Synapse-20190104T162220Z-001\Arquivos de Dados Synapse\Consumo.csv">
+          DTS:ConnectionString="E:\All CSV Files\Consumo.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +42,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoCFOPDist"
-              DTS:DTSID="{F41A89E4-FAF3-4CD3-AF1D-FBF41FC498D5}"
+              DTS:DTSID="{B35A5653-876D-430B-BD8D-3C7AC394B15B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +51,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoProduto"
-              DTS:DTSID="{25B13DFD-E4AE-4547-860A-BEB13C75AEBF}"
+              DTS:DTSID="{01C87180-9A81-4DB7-8AD1-E3AE96226730}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +60,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoSafra"
-              DTS:DTSID="{03C474B6-B8A3-4276-B486-A30FB171AABC}"
+              DTS:DTSID="{83523435-C752-400A-8D4A-CB86E507E7E3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +69,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoCultura"
-              DTS:DTSID="{CCC3FD6B-8BAF-48CD-AA9B-1860C1AC9F27}"
+              DTS:DTSID="{6C4FA087-AEA7-4356-8053-87584076E296}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +78,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoGrupo"
-              DTS:DTSID="{2FF0645E-3F25-4A54-AFB3-A4B6D3207C8D}"
+              DTS:DTSID="{1A4C214B-EDCD-4285-BD01-72C64836F652}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +87,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoSubgrupo"
-              DTS:DTSID="{33480993-0DBC-4E2E-A919-88CFE15102F1}"
+              DTS:DTSID="{27EAE1FE-D235-47A4-8AC7-282B4C0DFCAC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +96,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoCategoriaCliente"
-              DTS:DTSID="{55C26193-580C-4F32-969D-F64454AD130A}"
+              DTS:DTSID="{E9922B6F-BEAD-4EFC-B9C2-0CFAA784865B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -102,7 +105,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoMunicipioIBGE"
-              DTS:DTSID="{2B66DF52-6BF0-44F4-9512-101D66BF5B13}"
+              DTS:DTSID="{61F90585-7DFA-4DBD-A8F1-311012BAFE72}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -111,7 +114,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoCliente"
-              DTS:DTSID="{539556CA-90A0-4FD5-9F9D-D96FDF0AA058}"
+              DTS:DTSID="{C40E7F62-2069-4CFD-A30E-F1F7106022E6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -120,7 +123,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoCFOP"
-              DTS:DTSID="{CF0928DA-CDB4-4627-9C55-4A46F8155D27}"
+              DTS:DTSID="{B50913C9-C9B9-4C16-8CE2-08938EF7C972}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +132,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoAno"
-              DTS:DTSID="{5BF7F9B8-F4AB-482A-9F4D-9F83E4BB8979}"
+              DTS:DTSID="{01BF51E3-E264-419C-A707-A4E2C493C412}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,7 +141,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoMes"
-              DTS:DTSID="{9BFA8AB6-9EF8-4501-AC9E-6E2F5DFBA67F}"
+              DTS:DTSID="{E7CB90E2-8525-4F17-BBB6-76E2B9AF5839}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -147,7 +150,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoData"
-              DTS:DTSID="{B02C8F36-69A9-404B-A6FA-C38997C85EC0}"
+              DTS:DTSID="{9B7ABAC1-5559-4E16-A17E-11182DD77633}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -156,7 +159,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoNumeroNF"
-              DTS:DTSID="{9F2235A0-B8C7-413E-9FA4-C349D7A70670}"
+              DTS:DTSID="{88577F43-DBA4-47A5-AA12-5BBCC19B224F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -165,7 +168,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoSerieNF"
-              DTS:DTSID="{147BCE17-3275-4842-9CD6-A58691645935}"
+              DTS:DTSID="{DECCD59B-86E1-4A7C-9005-B67FA04354CE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -174,7 +177,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoSituacao"
-              DTS:DTSID="{AD587697-CCAE-4808-9BA9-6AB54AB71A38}"
+              DTS:DTSID="{AAECB425-27E0-4C6C-92AC-8388264755C2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -183,7 +186,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoFabricanteAgrupado"
-              DTS:DTSID="{A1D0DE1B-D5A8-4C90-B5E1-D5D239F705AE}"
+              DTS:DTSID="{DFAEB79C-2401-4F96-9B8F-18BAFAA71D74}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -192,7 +195,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoCodigoCorporativo"
-              DTS:DTSID="{A7C71677-0138-4C4A-A621-01EA7FEC0530}"
+              DTS:DTSID="{651EEC3D-825A-4206-8C62-E77638CFCDF3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -201,7 +204,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoCodigoAgrupado"
-              DTS:DTSID="{9B5B6EE4-395D-48A5-A266-29F2DB30F244}"
+              DTS:DTSID="{3673E3E8-0551-488B-89B2-E5B9EF932E84}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -210,16 +213,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoRTVCodigoChave"
-              DTS:DTSID="{431E7C3C-ABDF-4236-A164-FADA13B5F100}"
+              DTS:DTSID="{EC7305E2-5DA6-4B5D-BD47-7D57EFC7A57B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="11"
+              DTS:MaximumWidth="10"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoFonte"
-              DTS:DTSID="{EF0E9DAD-45E8-4F8D-B3C5-97D273A55368}"
+              DTS:DTSID="{1FF750E8-809A-497F-9A9D-5EAE09A2DE69}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -228,7 +231,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoCFOPMultiplicador"
-              DTS:DTSID="{E7F57C4D-C6C4-4624-ADD4-850EFD1EC8AD}"
+              DTS:DTSID="{A79661FC-96AD-486E-9677-54C54CEBF0AD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -237,7 +240,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoClienteCPFCNPJ"
-              DTS:DTSID="{0F013C73-A4F7-4554-B5DF-5FC6651DD101}"
+              DTS:DTSID="{95ADBCCA-3F97-457C-823D-5820DF570BAB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -246,7 +249,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoRegraRateio"
-              DTS:DTSID="{3B633C9A-2B04-4F5F-8556-E8DAA78E71FF}"
+              DTS:DTSID="{DEBFE6A0-9860-4E0F-AF5B-05C54F22A43B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -255,7 +258,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoProdutoOrigem"
-              DTS:DTSID="{F9E7B6D3-9DD0-4192-B3DB-281883500B85}"
+              DTS:DTSID="{6C6E3FB5-4565-4C52-9700-CC41D49FC5CE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -264,7 +267,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoOperacao"
-              DTS:DTSID="{73B91426-54BC-43E6-AD81-708CFE152037}"
+              DTS:DTSID="{B7E3DA5B-9CE2-4EFB-A565-24F85112D7FF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -273,16 +276,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoStatusCaixa"
-              DTS:DTSID="{0D58AB22-BE6C-4782-9535-F70998F1133E}"
+              DTS:DTSID="{67E3784F-A16A-4732-9A5E-F7FAEE15BF9B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="15"
+              DTS:MaximumWidth="10"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoVolume"
-              DTS:DTSID="{9127AF29-F053-4224-A0A5-D79E2C1F19C1}"
+              DTS:DTSID="{4643293A-1D3F-4A58-B833-D614940560BA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -291,7 +294,79 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoValor"
-              DTS:DTSID="{70E11EF2-1AF5-4FDB-963D-704A81DBC4F3}"
+              DTS:DTSID="{B6600C8A-B7F5-46B8-803C-CFA7AECE3971}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoPrecoCOGS"
+              DTS:DTSID="{FCDC1558-32C0-474B-9D56-66D4F7E4A2FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoPrecoSIP"
+              DTS:DTSID="{B8FD4207-E361-4CC7-9CC6-381B8ECF32C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoPrecoAdesaoDist"
+              DTS:DTSID="{5D696984-F9C6-4522-848A-41A47C731B58}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoPrecoAdesaoSpoca"
+              DTS:DTSID="{2E277F4F-5717-429B-AA6D-6812B8AC0D77}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoPrecoAdesaoSpocaCompleto"
+              DTS:DTSID="{C30A3950-0202-45D0-8D99-2ED825EAB345}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoPrecoAdesaoRegional"
+              DTS:DTSID="{3E28BBA3-8EDA-46A9-A28D-9D9B45FBF7D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoPrecoAdesaoUnidade"
+              DTS:DTSID="{238C019D-9B97-417F-A128-838B33A92552}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoPrecoAdesaoFilial"
+              DTS:DTSID="{5B4369F6-927F-4037-9588-38B4429973C8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -300,7 +375,43 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoRtvSpoca"
-              DTS:DTSID="{E527E01D-2E5B-4439-BFBE-65836709388C}"
+              DTS:DTSID="{0DB227F3-9740-43E6-82F1-D64DCDC50348}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoPrecoCMT"
+              DTS:DTSID="{6545F735-74DB-46E9-A7FC-B49655577C06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoValorCMT"
+              DTS:DTSID="{F0BADA51-1944-408C-8435-CE27C632DCE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoValorCOGS"
+              DTS:DTSID="{B83BB871-A5DF-4C77-8DDD-0189A01CA32A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoValorSIP"
+              DTS:DTSID="{D053C9CB-5F36-42C4-BF7A-7CFC10BAC5DC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -309,7 +420,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoClienteTransferencia"
-              DTS:DTSID="{8E9BC549-1569-4305-AA26-26031ECE431C}"
+              DTS:DTSID="{46C01A9B-5DB9-4F1D-A221-D8ABC31C8948}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -318,7 +429,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoClienteCodigoDistribuidor"
-              DTS:DTSID="{133944CA-F7C1-4637-8745-0E5FEF79DB24}"
+              DTS:DTSID="{1695FBBE-9730-410E-9515-78A4BE6A12EB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -327,16 +438,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoClienteTipoAcesso"
-              DTS:DTSID="{3CD90097-C763-40E9-8CE1-055C0E2D2B32}"
+              DTS:DTSID="{44371384-C949-457E-B702-F8277C1D0552}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="27"
+              DTS:MaximumWidth="30"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoRegraRateioDescricao"
-              DTS:DTSID="{9878BC60-5706-4446-ACF5-83837C90272C}"
+              DTS:DTSID="{BD2B2ADE-1911-439C-8462-98113CE9C786}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -345,7 +456,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoAreaAtuacao"
-              DTS:DTSID="{62B3AA58-6C49-4576-9CA3-E7739774C0E2}"
+              DTS:DTSID="{12072DAC-3C42-40EC-9B9D-FB3E14F5D727}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -354,7 +465,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoUnidade"
-              DTS:DTSID="{78D95DBB-E22A-44DC-B443-B9B9270EA9AD}"
+              DTS:DTSID="{926ACE34-35C0-4448-AAEB-C672CA46F0B5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -363,7 +474,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoFilial"
-              DTS:DTSID="{2562942D-CFD2-4801-99FD-11043B87AF24}"
+              DTS:DTSID="{B4076372-930A-4B56-9917-452A3498D841}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -372,7 +483,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoRegional"
-              DTS:DTSID="{B1918C1B-6A34-4F74-88DD-C92828FFE4A1}"
+              DTS:DTSID="{B2005E7E-0186-41E6-9E1F-07A6C60C272A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -381,16 +492,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoFilialDistribuidor"
-              DTS:DTSID="{C17C8B11-FCFD-4A42-833A-4D00119EF4BC}"
+              DTS:DTSID="{CE52A973-FA5B-462B-9310-B7BBE57EB7F1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="12"
+              DTS:MaximumWidth="20"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoVendedor"
-              DTS:DTSID="{35609608-E3F6-47C9-851D-B0F10A009A20}"
+              DTS:DTSID="{CDE29663-D728-4F32-8791-5262C4C6EE01}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -399,7 +510,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoPrazoRecebimento"
-              DTS:DTSID="{D1030E0B-2F4A-44A2-BEA3-88F066832BD0}"
+              DTS:DTSID="{F40CCB00-1C4A-400B-BE40-92E247180435}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -408,7 +519,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoModalidadeVenda"
-              DTS:DTSID="{27878623-3605-4394-9F46-EA89705FA239}"
+              DTS:DTSID="{8973E604-8DAF-4CAF-B8A2-7FE00157FB8B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -417,25 +528,43 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoDistribuidorAgroview"
-              DTS:DTSID="{FC25DF20-4A78-45F5-A4C5-9056B098203C}"
+              DTS:DTSID="{298947F4-A46B-4CB0-8D3D-FBABB540FD3A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="15"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoTipoFato"
-              DTS:DTSID="{B48B0856-0652-481F-9994-9120358E1B30}"
+              DTS:DTSID="{CDD99EA9-F1A9-4D7A-A6FA-EC8E3EF34DEA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoDistribuidorIgnorarShelfShare"
+              DTS:DTSID="{B882149F-41A9-473E-B392-C02AE509B770}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="3"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ConsumoCFOPConsidera"
-              DTS:DTSID="{3FF6182E-BB86-40A7-BB28-EE3067FA55B2}"
+              DTS:DTSID="{878965C8-9081-44DC-BBD1-6A9A32C65359}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoData2"
+              DTS:DTSID="{1301390C-79FC-4DF9-8CC1-97C90B0BA9CF}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -460,7 +589,7 @@
       DTS:ObjectName="FullFileName">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\BISTERCO\Synapse Files\Arquivos de Dados Synapse-20190104T162220Z-001\Arquivos de Dados Synapse\Consumo.csv</DTS:Property>
+        DTS:Name="ParameterValue">E:\All CSV Files\Consumo.csv</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables />
@@ -492,7 +621,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">true</property>
+                  name="RetainNulls">false</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
@@ -957,7 +1086,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoFonte]"
-                      length="11"
+                      length="10"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoFonte]"
                       name="ConsumoFonte"
                       truncationRowDisposition="FailComponent">
@@ -1111,7 +1240,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoVolume]"
-                      length="15"
+                      length="10"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoVolume]"
                       name="ConsumoVolume"
                       truncationRowDisposition="FailComponent">
@@ -1243,7 +1372,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoRegraRateioDescricao]"
-                      length="27"
+                      length="30"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoRegraRateioDescricao]"
                       name="ConsumoRegraRateioDescricao"
                       truncationRowDisposition="FailComponent">
@@ -1375,7 +1504,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoVendedor]"
-                      length="12"
+                      length="20"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoVendedor]"
                       name="ConsumoVendedor"
                       truncationRowDisposition="FailComponent">
@@ -1463,7 +1592,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoTipoFato]"
-                      length="50"
+                      length="15"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoTipoFato]"
                       name="ConsumoTipoFato"
                       truncationRowDisposition="FailComponent">
@@ -1488,6 +1617,314 @@
                       length="3"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoCFOPConsidera]"
                       name="ConsumoCFOPConsidera"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoDistribuidorIgnorarShelfShare]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoDistribuidorIgnorarShelfShare]"
+                      length="1"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoDistribuidorIgnorarShelfShare]"
+                      name="ConsumoDistribuidorIgnorarShelfShare"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoData2]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoData2]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoData2]"
+                      name="ConsumoData2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoCOGS]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoCOGS]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoCOGS]"
+                      name="ConsumoPrecoCOGS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoSIP]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoSIP]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoSIP]"
+                      name="ConsumoPrecoSIP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoDist]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoDist]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoDist]"
+                      name="ConsumoPrecoAdesaoDist"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoSpoca]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoSpoca]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoSpoca]"
+                      name="ConsumoPrecoAdesaoSpoca"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoSpocaCompleto]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoSpocaCompleto]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoSpocaCompleto]"
+                      name="ConsumoPrecoAdesaoSpocaCompleto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoRegional]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoRegional]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoRegional]"
+                      name="ConsumoPrecoAdesaoRegional"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoUnidade]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoUnidade]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoUnidade]"
+                      name="ConsumoPrecoAdesaoUnidade"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoFilial]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoFilial]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoFilial]"
+                      name="ConsumoPrecoAdesaoFilial"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoCMT]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoCMT]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoCMT]"
+                      name="ConsumoPrecoCMT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoValorCMT]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoValorCMT]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoValorCMT]"
+                      name="ConsumoValorCMT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoValorCOGS]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoValorCOGS]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoValorCOGS]"
+                      name="ConsumoValorCOGS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoValorSIP]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoValorSIP]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoValorSIP]"
+                      name="ConsumoValorSIP"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1627,7 +2064,7 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoFonte]"
                       codePage="65001"
                       dataType="str"
-                      length="11"
+                      length="10"
                       name="ConsumoFonte" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoCFOPMultiplicador]"
@@ -1669,7 +2106,7 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoVolume]"
                       codePage="65001"
                       dataType="str"
-                      length="15"
+                      length="10"
                       name="ConsumoVolume" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoValor]"
@@ -1705,7 +2142,7 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoRegraRateioDescricao]"
                       codePage="65001"
                       dataType="str"
-                      length="27"
+                      length="30"
                       name="ConsumoRegraRateioDescricao" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoAreaAtuacao]"
@@ -1741,7 +2178,7 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoVendedor]"
                       codePage="65001"
                       dataType="str"
-                      length="12"
+                      length="20"
                       name="ConsumoVendedor" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrazoRecebimento]"
@@ -1765,7 +2202,7 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoTipoFato]"
                       codePage="65001"
                       dataType="str"
-                      length="50"
+                      length="15"
                       name="ConsumoTipoFato" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoCFOPConsidera]"
@@ -1773,6 +2210,90 @@
                       dataType="str"
                       length="3"
                       name="ConsumoCFOPConsidera" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoDistribuidorIgnorarShelfShare]"
+                      codePage="65001"
+                      dataType="str"
+                      length="1"
+                      name="ConsumoDistribuidorIgnorarShelfShare" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoData2]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="ConsumoData2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoCOGS]"
+                      codePage="65001"
+                      dataType="str"
+                      length="20"
+                      name="ConsumoPrecoCOGS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoSIP]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="ConsumoPrecoSIP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoDist]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="ConsumoPrecoAdesaoDist" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoSpoca]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="ConsumoPrecoAdesaoSpoca" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoSpocaCompleto]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="ConsumoPrecoAdesaoSpocaCompleto" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoRegional]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="ConsumoPrecoAdesaoRegional" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoUnidade]"
+                      codePage="65001"
+                      dataType="str"
+                      length="20"
+                      name="ConsumoPrecoAdesaoUnidade" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoAdesaoFilial]"
+                      codePage="65001"
+                      dataType="str"
+                      length="20"
+                      name="ConsumoPrecoAdesaoFilial" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoPrecoCMT]"
+                      codePage="65001"
+                      dataType="str"
+                      length="20"
+                      name="ConsumoPrecoCMT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoValorCMT]"
+                      codePage="65001"
+                      dataType="str"
+                      length="20"
+                      name="ConsumoValorCMT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoValorCOGS]"
+                      codePage="65001"
+                      dataType="str"
+                      length="20"
+                      name="ConsumoValorCOGS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoValorSIP]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="ConsumoValorSIP" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2040,7 +2561,7 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoFonte]"
                       cachedCodepage="65001"
                       cachedDataType="str"
-                      cachedLength="11"
+                      cachedLength="10"
                       cachedName="ConsumoFonte"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fonte]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoFonte]" />
@@ -2096,7 +2617,7 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoVolume]"
                       cachedCodepage="65001"
                       cachedDataType="str"
-                      cachedLength="15"
+                      cachedLength="10"
                       cachedName="ConsumoVolume"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Volume]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoVolume]" />
@@ -2152,7 +2673,7 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoRegraRateioDescricao]"
                       cachedCodepage="65001"
                       cachedDataType="str"
-                      cachedLength="27"
+                      cachedLength="30"
                       cachedName="ConsumoRegraRateioDescricao"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Regra_Rateio_Descricao]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoRegraRateioDescricao]" />
@@ -2192,7 +2713,7 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoVendedor]"
                       cachedCodepage="65001"
                       cachedDataType="str"
-                      cachedLength="12"
+                      cachedLength="20"
                       cachedName="ConsumoVendedor"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vendedor]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoVendedor]" />
@@ -2228,6 +2749,126 @@
                       cachedName="ConsumoCFOPConsidera"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOP_Considera]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoCFOPConsidera]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoTipoFato]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="ConsumoTipoFato"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoFato]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoTipoFato]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoDistribuidorIgnorarShelfShare]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ConsumoDistribuidorIgnorarShelfShare"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistribuidorIgnorarShelfShare]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoDistribuidorIgnorarShelfShare]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoData2]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ConsumoData2"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data2]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoData2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoPrecoCOGS]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ConsumoPrecoCOGS"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Cogs]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoCOGS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoPrecoSIP]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ConsumoPrecoSIP"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_SIP]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoSIP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoPrecoAdesaoDist]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ConsumoPrecoAdesaoDist"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Dist]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoDist]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoPrecoAdesaoSpoca]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ConsumoPrecoAdesaoSpoca"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_SPOCA]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoSpoca]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoPrecoAdesaoSpocaCompleto]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ConsumoPrecoAdesaoSpocaCompleto"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_SPOCA_Completo]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoSpocaCompleto]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoPrecoAdesaoRegional]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ConsumoPrecoAdesaoRegional"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Regional]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoRegional]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoPrecoAdesaoUnidade]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ConsumoPrecoAdesaoUnidade"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Unidade]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoUnidade]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoPrecoAdesaoFilial]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ConsumoPrecoAdesaoFilial"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Filial]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoAdesaoFilial]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoPrecoCMT]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ConsumoPrecoCMT"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_CMT]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoPrecoCMT]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoValorCMT]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ConsumoValorCMT"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_CMT]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoValorCMT]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoValorCOGS]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ConsumoValorCOGS"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_COGS]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoValorCOGS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConsumoValorSIP]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ConsumoValorSIP"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_SIP]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoValorSIP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2463,13 +3104,13 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_CMT]"
                       codePage="65001"
                       dataType="str"
-                      length="10"
+                      length="20"
                       name="Preco_CMT" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_CMT]"
                       codePage="65001"
                       dataType="str"
-                      length="10"
+                      length="20"
                       name="Valor_CMT" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_COGS]"
@@ -2505,7 +3146,7 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Regra_Rateio_Descricao]"
                       codePage="65001"
                       dataType="str"
-                      length="27"
+                      length="30"
                       name="Regra_Rateio_Descricao" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Area_Atuacao]"
@@ -2541,7 +3182,7 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vendedor]"
                       codePage="65001"
                       dataType="str"
-                      length="12"
+                      length="20"
                       name="Vendedor" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Prazo_Recebimento]"
@@ -2567,6 +3208,24 @@
                       dataType="str"
                       length="3"
                       name="CFOP_Considera" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoFato]"
+                      codePage="65001"
+                      dataType="str"
+                      length="15"
+                      name="TipoFato" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistribuidorIgnorarShelfShare]"
+                      codePage="65001"
+                      dataType="str"
+                      length="1"
+                      name="DistribuidorIgnorarShelfShare" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data2]"
+                      codePage="65001"
+                      dataType="str"
+                      length="10"
+                      name="Data2" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2638,33 +3297,33 @@
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="146,28" />
+          TopLeft="135,24" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="221.5,70">
+          TopLeft="210.5,66">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9,79"
+              EndConnector="20,83"
               Start="0,0"
-              End="9,71.5">
+              End="20,75.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
+                    End="0,37.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.5"
-                    Point2="0,39.5"
-                    Point3="4,39.5" />
+                    Point1="0,37.5"
+                    Point2="0,41.5"
+                    Point3="4,41.5" />
                   <mssgle:LineSegment
-                    End="5,39.5" />
+                    End="16,41.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="5,39.5"
-                    Point2="9,39.5"
-                    Point3="9,43.5" />
+                    Point1="16,41.5"
+                    Point2="20,41.5"
+                    Point3="20,45.5" />
                   <mssgle:LineSegment
-                    End="9,71.5" />
+                    End="20,75.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
