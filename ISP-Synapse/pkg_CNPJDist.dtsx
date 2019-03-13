@@ -1,0 +1,651 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/17/2019 11:32:54 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WINDEV1810EVAL"
+  DTS:CreatorName="WINDEV1810EVAL\user"
+  DTS:DTSID="{06E84A17-9B62-4434-AB09-CAFDD7E649D8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="pkg_CNPJDist"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{F1180C8E-07AA-4764-821C-A0C97E022ABA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - CNPJDist]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{43347506-3291-443F-A0E7-4545D950136E}"
+      DTS:ObjectName="Flat File Connection - CNPJDist">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::FullFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\BISTERCO\Synapse Files\Arquivos de Dados Synapse-20190104T162220Z-001\Arquivos de Dados Synapse\CNPJDist.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="14"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CNPJDistCpfCNPJ"
+              DTS:DTSID="{153B74B1-A7AE-4E31-B51D-2288C662BA57}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CNPJDistTipoAcesso"
+              DTS:DTSID="{857D675D-A9B0-41D1-BA4C-7E9C3F404565}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CNPJDistCodigoAgrupado"
+              DTS:DTSID="{10B6D366-BFFF-45CF-B12E-B35BBE35F7B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CNPJDistNome"
+              DTS:DTSID="{66E8F91F-8816-4A17-97A7-60E98F0ED875}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.DB_Synapse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F57C528A-B372-4FC8-BD26-19C464D88F63}"
+      DTS:ObjectName="localhost.DB_Synapse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB_Synapse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{5C759C12-E035-4856-804F-887FEB4DC473}"
+      DTS:ObjectName="FullFileName"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\BISTERCO\Synapse Files\Arquivos de Dados Synapse-20190104T162220Z-001\Arquivos de Dados Synapse\CNPJDist.csv</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task - Load CSV"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1BEB6DA3-46DC-455A-A405-4A8B4FA2CDD7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task - Load CSV"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task - Load CSV\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1046"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Load CSV\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection - CNPJDist]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - CNPJDist]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistCpfCNPJ]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNPJDistCpfCNPJ]"
+                      length="14"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistCpfCNPJ]"
+                      name="CNPJDistCpfCNPJ"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistTipoAcesso]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNPJDistTipoAcesso]"
+                      length="20"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistTipoAcesso]"
+                      name="CNPJDistTipoAcesso"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistCodigoAgrupado]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNPJDistCodigoAgrupado]"
+                      length="10"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistCodigoAgrupado]"
+                      name="CNPJDistCodigoAgrupado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistNome]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNPJDistNome]"
+                      length="255"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistNome]"
+                      name="CNPJDistNome"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNPJDistCpfCNPJ]"
+                      dataType="wstr"
+                      length="14"
+                      name="CNPJDistCpfCNPJ" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNPJDistTipoAcesso]"
+                      dataType="wstr"
+                      length="20"
+                      name="CNPJDistTipoAcesso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNPJDistCodigoAgrupado]"
+                      dataType="wstr"
+                      length="10"
+                      name="CNPJDistCodigoAgrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNPJDistNome]"
+                      dataType="wstr"
+                      length="255"
+                      name="CNPJDistNome" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Load CSV\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TB_Carga_CNPJ_Dist]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">65001</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CNPJDistCpfCNPJ]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="CNPJDistCpfCNPJ"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPF_CNPJ]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistCpfCNPJ]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CNPJDistTipoAcesso]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="CNPJDistTipoAcesso"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Acesso]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistTipoAcesso]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CNPJDistCodigoAgrupado]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CNPJDistCodigoAgrupado"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo_Agrupado]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistCodigoAgrupado]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CNPJDistNome]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CNPJDistNome"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nome]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CNPJDistNome]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPF_CNPJ]"
+                      dataType="wstr"
+                      length="14"
+                      name="CPF_CNPJ" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Acesso]"
+                      dataType="wstr"
+                      length="20"
+                      name="Tipo_Acesso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo_Agrupado]"
+                      dataType="wstr"
+                      length="10"
+                      name="Codigo_Agrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nome]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nome" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B510A9D5-1027-4880-8FEB-4D78867CBF57}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F57C528A-B372-4FC8-BD26-19C464D88F63}"
+          SQLTask:SqlStatementSource="insert into TB_Agroview_Parametros_Distribuidor(Codigo_Origem,CPF_CNPJ,&#xA;Tipo_Acesso,Codigo_Agrupado,Nome_Origem)&#xA;select&#xA;    next value for seq_codigo_origem as codigo_origem,   &#xA;    [CPF_CNPJ],&#xA;&#x9;[Tipo_Acesso],&#xA;&#x9;[Codigo_Agrupado],&#xA;&#x9;[Nome]&#xA;FROM TB_Carga_CNPJ_Dist&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task  - Delete Initial"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ED1287A0-7C78-4183-8346-5E9B8174CCC8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task  - Delete Initial"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F57C528A-B372-4FC8-BD26-19C464D88F63}"
+          SQLTask:SqlStatementSource="DELETE FROM TB_Carga_CNPJ_Dist;&#xA;&#xA;DELETE FROM TB_Agroview_Parametros_Distribuidor;&#xA;&#xA;IF EXISTS (select name, current_value from sys.sequences WHERE NAME = 'seq_codigo_origem')&#xA;BEGIN&#xA;  -- DROP SEQUENCE IF EXISTS seq_codigo_origem&#xA;  DROP SEQUENCE dbo.seq_codigo_origem;&#xA;&#xA;  create sequence seq_codigo_origem as int &#xA;   start with 1 &#xA;   increment by 1;&#xA;END&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{99468C0D-73BB-4D11-A8A8-92594A84A072}"
+      DTS:From="Package\Execute SQL Task  - Delete Initial"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task - Load CSV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{40792EAB-062F-4784-9712-6A74EF9B79B0}"
+      DTS:From="Package\Data Flow Task - Load CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Execute SQL Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Data Flow Task - Load CSV"
+          TopLeft="197,86" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="102,150" />
+        <NodeLayout
+          Size="237,42"
+          Id="Package\Execute SQL Task  - Delete Initial"
+          TopLeft="69,16" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="187.5,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.5,28"
+              Start="0,0"
+              End="112.5,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="108.5,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.5,14"
+                    Point2="112.5,14"
+                    Point3="112.5,18" />
+                  <mssgle:LineSegment
+                    End="112.5,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="197,107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.5,43"
+              Start="0,0"
+              End="-13.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-9.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.5,0"
+                    Point2="-13.5,0"
+                    Point3="-13.5,4" />
+                  <mssgle:LineSegment
+                    End="-13.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task - Load CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task - Load CSV\Flat File Source"
+          TopLeft="146,16" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task - Load CSV\OLE DB Destination"
+          TopLeft="150,120" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
+          TopLeft="221.5,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14,62"
+              Start="0,0"
+              End="14,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27"
+                    Point2="0,31"
+                    Point3="4,31" />
+                  <mssgle:LineSegment
+                    End="10,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10,31"
+                    Point2="14,31"
+                    Point3="14,35" />
+                  <mssgle:LineSegment
+                    End="14,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task - Load CSV\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,989 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/21/2019 2:21:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WINDEV1810EVAL"
+  DTS:CreatorName="WINDEV1810EVAL\user"
+  DTS:DTSID="{81CE1DD0-35F4-4218-A929-F6D3E3D7ACB9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="pkg_DistribuidorSyngenta"
+  DTS:PackageType="5"
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{44549FF6-B056-44FF-8F6C-5C2AB3E2C828}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - DistribuidorSyngenta]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{DCC3AAB9-D240-417A-818B-4EDC621A4A0C}"
+      DTS:ObjectName="Flat File Connection - DistribuidorSyngenta">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::FullFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\BISTERCO\Synapse Files\Arquivos de Dados Synapse-20190104T162220Z-001\Arquivos de Dados Synapse\DistribuidorSyngenta.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaCodigoOrigem"
+              DTS:DTSID="{1228B0FE-A27B-4D5D-BDC9-77C631282CF3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaNomeAgrupado"
+              DTS:DTSID="{732243DD-E3B9-4CA5-941A-7F6F2BAD34C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaSegmentoCodigo"
+              DTS:DTSID="{7AE32821-2FE3-4BE3-9D3C-1FDA4C1EEC2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaSegmento"
+              DTS:DTSID="{F23D2E7E-1755-4CAE-A8CE-B3E8C3C09D59}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaUnidade"
+              DTS:DTSID="{35334DFB-18DC-49CF-A47B-E6D4BE2985BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaUnidadeCodigo"
+              DTS:DTSID="{0F820620-94BE-4726-8572-6AD3ECA3E9D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaFilial"
+              DTS:DTSID="{5A86D671-BD98-4603-9D8E-A8A3741993F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="35"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaRegional"
+              DTS:DTSID="{897FA4D1-CE65-4A2C-A68F-3E87A1A9ADE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaRegionalCodigo"
+              DTS:DTSID="{CFB397D8-30BA-4360-9D76-AB0D223AE389}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaTipoAcesso"
+              DTS:DTSID="{35EF8853-43ED-4FDE-AC0E-4EEE77E0B42B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaCodigoAgrupado"
+              DTS:DTSID="{F079D170-8508-4411-86B1-35A814810F86}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaRtvSpoca"
+              DTS:DTSID="{395F8C4C-1A1F-433C-A2EE-C9FB24274B73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaRtvSpocaNome"
+              DTS:DTSID="{E26E6162-BAC2-4C73-BF1C-6B353333B789}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="14"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistribuidorSyngentaCpfCnpj"
+              DTS:DTSID="{4A5B38FB-1F6D-450C-9544-789AA2F099B7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.DB_Synapse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{90E155FA-4D28-4130-95B5-79CB798CD1AE}"
+      DTS:ObjectName="localhost.DB_Synapse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB_Synapse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{380ECF37-82D2-488B-AFC2-EAA339C9D978}"
+      DTS:ObjectName="FullFileName"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\BISTERCO\Synapse Files\Arquivos de Dados Synapse-20190104T162220Z-001\Arquivos de Dados Synapse\DistribuidorSyngenta.csv</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task - Load CSV"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{908EE8EB-3A5D-4825-B19A-1ACFB13E0C22}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task - Load CSV"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task - Load CSV\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1046"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Load CSV\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection - DistribuidorSyngenta]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - DistribuidorSyngenta]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaCodigoOrigem]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaCodigoOrigem]"
+                      length="10"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaCodigoOrigem]"
+                      name="DistribuidorSyngentaCodigoOrigem"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaNomeAgrupado]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaNomeAgrupado]"
+                      length="80"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaNomeAgrupado]"
+                      name="DistribuidorSyngentaNomeAgrupado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaSegmentoCodigo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaSegmentoCodigo]"
+                      length="10"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaSegmentoCodigo]"
+                      name="DistribuidorSyngentaSegmentoCodigo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaSegmento]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaSegmento]"
+                      length="25"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaSegmento]"
+                      name="DistribuidorSyngentaSegmento"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaUnidade]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaUnidade]"
+                      length="20"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaUnidade]"
+                      name="DistribuidorSyngentaUnidade"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaUnidadeCodigo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaUnidadeCodigo]"
+                      length="10"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaUnidadeCodigo]"
+                      name="DistribuidorSyngentaUnidadeCodigo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaFilial]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaFilial]"
+                      length="15"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaFilial]"
+                      name="DistribuidorSyngentaFilial"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRegional]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaRegional]"
+                      length="35"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRegional]"
+                      name="DistribuidorSyngentaRegional"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRegionalCodigo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaRegionalCodigo]"
+                      length="10"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRegionalCodigo]"
+                      name="DistribuidorSyngentaRegionalCodigo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaTipoAcesso]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaTipoAcesso]"
+                      length="20"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaTipoAcesso]"
+                      name="DistribuidorSyngentaTipoAcesso"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaCodigoAgrupado]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaCodigoAgrupado]"
+                      length="20"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaCodigoAgrupado]"
+                      name="DistribuidorSyngentaCodigoAgrupado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRtvSpoca]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaRtvSpoca]"
+                      length="10"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRtvSpoca]"
+                      name="DistribuidorSyngentaRtvSpoca"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRtvSpocaNome]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaRtvSpocaNome]"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRtvSpocaNome]"
+                      name="DistribuidorSyngentaRtvSpocaNome"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaCpfCnpj]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaCpfCnpj]"
+                      length="14"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaCpfCnpj]"
+                      name="DistribuidorSyngentaCpfCnpj"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaCodigoOrigem]"
+                      dataType="wstr"
+                      length="10"
+                      name="DistribuidorSyngentaCodigoOrigem" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaNomeAgrupado]"
+                      dataType="wstr"
+                      length="80"
+                      name="DistribuidorSyngentaNomeAgrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaSegmentoCodigo]"
+                      dataType="wstr"
+                      length="10"
+                      name="DistribuidorSyngentaSegmentoCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaSegmento]"
+                      dataType="wstr"
+                      length="25"
+                      name="DistribuidorSyngentaSegmento" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaUnidade]"
+                      dataType="wstr"
+                      length="20"
+                      name="DistribuidorSyngentaUnidade" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaUnidadeCodigo]"
+                      dataType="wstr"
+                      length="10"
+                      name="DistribuidorSyngentaUnidadeCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaFilial]"
+                      dataType="wstr"
+                      length="15"
+                      name="DistribuidorSyngentaFilial" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaRegional]"
+                      dataType="wstr"
+                      length="35"
+                      name="DistribuidorSyngentaRegional" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaRegionalCodigo]"
+                      dataType="wstr"
+                      length="10"
+                      name="DistribuidorSyngentaRegionalCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaTipoAcesso]"
+                      dataType="wstr"
+                      length="20"
+                      name="DistribuidorSyngentaTipoAcesso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaCodigoAgrupado]"
+                      dataType="wstr"
+                      length="20"
+                      name="DistribuidorSyngentaCodigoAgrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaRtvSpoca]"
+                      dataType="wstr"
+                      length="10"
+                      name="DistribuidorSyngentaRtvSpoca" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaRtvSpocaNome]"
+                      dataType="wstr"
+                      length="50"
+                      name="DistribuidorSyngentaRtvSpocaNome" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistribuidorSyngentaCpfCnpj]"
+                      dataType="wstr"
+                      length="14"
+                      name="DistribuidorSyngentaCpfCnpj" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Load CSV\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TB_Carga_DistribuidorSyngenta]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">65001</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaCodigoOrigem]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DistribuidorSyngentaCodigoOrigem"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoOrigem]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaCodigoOrigem]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaNomeAgrupado]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="DistribuidorSyngentaNomeAgrupado"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NomeAgrupado]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaNomeAgrupado]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaSegmentoCodigo]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DistribuidorSyngentaSegmentoCodigo"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SegmentoCodigo]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaSegmentoCodigo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaUnidade]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="DistribuidorSyngentaUnidade"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unidade]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaUnidade]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaUnidadeCodigo]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DistribuidorSyngentaUnidadeCodigo"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnidadeCodigo]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaUnidadeCodigo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaFilial]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="DistribuidorSyngentaFilial"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Filial]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaFilial]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaRegional]"
+                      cachedDataType="wstr"
+                      cachedLength="35"
+                      cachedName="DistribuidorSyngentaRegional"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Regional]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRegional]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaRegionalCodigo]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DistribuidorSyngentaRegionalCodigo"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RegionalCodigo]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRegionalCodigo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaTipoAcesso]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="DistribuidorSyngentaTipoAcesso"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoAcesso]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaTipoAcesso]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaCodigoAgrupado]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="DistribuidorSyngentaCodigoAgrupado"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoAgrupado]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaCodigoAgrupado]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaRtvSpoca]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DistribuidorSyngentaRtvSpoca"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RtvSpoca]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRtvSpoca]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaRtvSpocaNome]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistribuidorSyngentaRtvSpocaNome"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RtvSpocaNome]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaRtvSpocaNome]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaCpfCnpj]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="DistribuidorSyngentaCpfCnpj"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CpfCnpj]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaCpfCnpj]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistribuidorSyngentaSegmento]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="DistribuidorSyngentaSegmento"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Segmento]"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistribuidorSyngentaSegmento]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoOrigem]"
+                      dataType="wstr"
+                      length="10"
+                      name="CodigoOrigem" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NomeAgrupado]"
+                      dataType="wstr"
+                      length="80"
+                      name="NomeAgrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SegmentoCodigo]"
+                      dataType="wstr"
+                      length="10"
+                      name="SegmentoCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Segmento]"
+                      dataType="wstr"
+                      length="25"
+                      name="Segmento" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unidade]"
+                      dataType="wstr"
+                      length="20"
+                      name="Unidade" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnidadeCodigo]"
+                      dataType="wstr"
+                      length="10"
+                      name="UnidadeCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Filial]"
+                      dataType="wstr"
+                      length="15"
+                      name="Filial" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Regional]"
+                      dataType="wstr"
+                      length="35"
+                      name="Regional" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RegionalCodigo]"
+                      dataType="wstr"
+                      length="10"
+                      name="RegionalCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoAcesso]"
+                      dataType="wstr"
+                      length="20"
+                      name="TipoAcesso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoAgrupado]"
+                      dataType="wstr"
+                      length="20"
+                      name="CodigoAgrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RtvSpoca]"
+                      dataType="wstr"
+                      length="10"
+                      name="RtvSpoca" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RtvSpocaNome]"
+                      dataType="wstr"
+                      length="50"
+                      name="RtvSpocaNome" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CpfCnpj]"
+                      dataType="wstr"
+                      length="14"
+                      name="CpfCnpj" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Data Flow Task - Load CSV"
+          TopLeft="141,63" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task - Load CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task - Load CSV\Flat File Source"
+          TopLeft="188,41" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task - Load CSV\OLE DB Destination"
+          TopLeft="183,173" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
+          TopLeft="266,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90"
+              Start="0,0"
+              End="0,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task - Load CSV\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
