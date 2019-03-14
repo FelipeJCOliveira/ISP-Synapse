@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_VendaAgroview"
   DTS:PackageType="5"
-  DTS:VersionBuild="91"
-  DTS:VersionGUID="{0AFAFC77-E869-4CD8-B5ED-EDA74475636C}">
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{D8D7DCA1-5CA1-4E87-9579-9D548A102918}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3714,7 +3714,7 @@
     design-time-name="Package\Data Flow Task - Carga CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task - Carga CSV\OLE DB Destination"
@@ -3754,7 +3754,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3779,6 +3781,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task - Tabela Final\OLE DB Source"
+          TopLeft="124,40" />
+        <NodeLayout
           Size="172,42"
           Id="Package\Data Flow Task - Tabela Final\Flat File Destination"
           TopLeft="406,105" />
@@ -3787,27 +3793,23 @@
           Id="Package\Data Flow Task - Tabela Final\OLE DB Destination"
           TopLeft="287,222" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Task - Tabela Final\OLE DB Source"
-          TopLeft="124,40" />
-        <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Task - Tabela Final\Data Conversion"
-          TopLeft="122,143" />
+          TopLeft="122,141" />
         <EdgeLayout
           Id="Package\Data Flow Task - Tabela Final.Paths[OLE DB Source Output]"
           TopLeft="199.5,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61"
+              EndConnector="0,59"
               Start="0,0"
-              End="0,53.5">
+              End="0,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3818,30 +3820,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task - Tabela Final.Paths[Data Conversion Output]"
-          TopLeft="200,185">
+          TopLeft="200,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="172.5,37"
+              EndConnector="172.5,39"
               Start="0,0"
-              End="172.5,29.5">
+              End="172.5,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5" />
+                    End="0,15.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
                   <mssgle:LineSegment
-                    End="168.5,18.5" />
+                    End="168.5,19.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="168.5,18.5"
-                    Point2="172.5,18.5"
-                    Point3="172.5,22.5" />
+                    Point1="168.5,19.5"
+                    Point2="172.5,19.5"
+                    Point3="172.5,23.5" />
                   <mssgle:LineSegment
-                    End="172.5,29.5" />
+                    End="172.5,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3852,13 +3854,13 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task - Tabela Final.Paths[Data Conversion Error Output]"
-          TopLeft="278,164">
+          TopLeft="278,162">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="128,-38"
+              EndConnector="128,-36"
               Start="0,0"
-              End="120.5,-38">
+              End="120.5,-36">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3869,13 +3871,13 @@
                     Point2="64,0"
                     Point3="64,-4" />
                   <mssgle:LineSegment
-                    End="64,-34" />
+                    End="64,-32" />
                   <mssgle:CubicBezierSegment
-                    Point1="64,-34"
-                    Point2="64,-38"
-                    Point3="68,-38" />
+                    Point1="64,-32"
+                    Point2="64,-36"
+                    Point3="68,-36" />
                   <mssgle:LineSegment
-                    End="120.5,-38" />
+                    End="120.5,-36" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3890,7 +3892,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task - Tabela Final\OLE DB Destination">
+    design-time-name="Package\Data Flow Task - Tabela Final\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3903,7 +3905,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task - Tabela Final\OLE DB Source">
+    design-time-name="Package\Data Flow Task - Tabela Final\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
