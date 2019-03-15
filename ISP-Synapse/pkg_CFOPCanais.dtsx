@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CFOPCanais"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{A1922723-FDEA-47F9-8A61-85BAFA1653E2}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{8928CD81-087D-4D1A-99C2-073FED18A356}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Dist"
-              DTS:DTSID="{3254CCE0-174F-4516-BD07-469472F54B44}"
+              DTS:DTSID="{2234031E-5DFD-49E7-9C60-9F2F40C64503}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Código"
-              DTS:DTSID="{69A8663D-CD6C-44EA-9C0B-20126291D123}"
+              DTS:DTSID="{F3883D67-B848-4B84-AC31-378212DE9693}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Descrição"
-              DTS:DTSID="{A50DC591-7C77-453B-A0AD-FDA782155F23}"
+              DTS:DTSID="{E35A088C-D487-41CA-A289-86C4D92846BF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Identificador"
-              DTS:DTSID="{0ED4C4C9-5F1F-4FDC-898F-0EC08DE55F2B}"
+              DTS:DTSID="{DBADEF00-8C7D-47F2-9FE2-48C57B48DF81}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Multiplicador"
-              DTS:DTSID="{B516D75C-69A3-4270-A454-31DD44E68E1B}"
+              DTS:DTSID="{458EC579-2EB5-4773-AD11-0B6E2093D0FD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,16 +86,25 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Consumo"
-              DTS:DTSID="{CEE61BEF-5E45-4152-B0F1-7E6A78939CA5}"
+              DTS:DTSID="{5206B5C2-2785-4B36-BB1A-B267653C8931}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="30"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Operação"
-              DTS:DTSID="{D00D0392-DA6A-411D-A09C-D6700CEC4E62}"
+              DTS:DTSID="{F376BB8D-7798-4A9D-90AA-0B93446C6C66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="16"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CFOPChave"
+              DTS:DTSID="{D14AF8EB-2AE1-4CD1-BEF0-677A1A84C3EA}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -317,6 +326,27 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPChave]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPChave]"
+                      length="16"
+                      lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPChave]"
+                      name="CFOPChave"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -355,6 +385,11 @@
                       dataType="wstr"
                       length="30"
                       name="Operação" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPChave]"
+                      dataType="wstr"
+                      length="16"
+                      name="CFOPChave" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -507,6 +542,13 @@
                       cachedName="Operação"
                       externalMetadataColumnId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Operacao]"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Operação]" />
+                    <inputColumn
+                      refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CFOPChave]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="CFOPChave"
+                      externalMetadataColumnId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOPChave]"
+                      lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPChave]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -545,6 +587,11 @@
                       dataType="wstr"
                       length="30"
                       name="Operacao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOPChave]"
+                      dataType="wstr"
+                      length="16"
+                      name="CFOPChave" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -585,13 +632,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task 1"
+      DTS:refId="Package\Data Flow Staging to Final"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{D4269721-DEC8-4971-A520-2E72C1951611}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task 1"
+      DTS:ObjectName="Data Flow Staging to Final"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -599,7 +646,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task 1\Derived Column"
+              refId="Package\Data Flow Staging to Final\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -607,7 +654,7 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -615,31 +662,31 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -648,7 +695,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task 1\OLE DB Destination"
+              refId="Package\Data Flow Staging to Final\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -705,13 +752,13 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task 1\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Staging to Final\OLE DB Destination.Connections[OleDbConnection]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
@@ -722,22 +769,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Staging to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -746,7 +793,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task 1\OLE DB Source"
+              refId="Package\Data Flow Staging to Final\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -795,7 +842,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task 1\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Staging to Final\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
                   description="The OLE DB runtime connection used to access the database."
@@ -803,26 +850,26 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <externalMetadataColumns
                     isUsed="True" />
                 </output>
                 <output
-                  refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -852,9 +899,9 @@
           Id="Package\Data Flow Load CSV"
           TopLeft="234,81" />
         <NodeLayout
-          Size="160,42"
-          Id="Package\Data Flow Task 1"
-          TopLeft="205,170" />
+          Size="203,42"
+          Id="Package\Data Flow Staging to Final"
+          TopLeft="204,168" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -922,27 +969,27 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Data Flow Task 1">
+    design-time-name="Package\Data Flow Staging to Final">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="150,42"
-          Id="Package\Data Flow Task 1\OLE DB Source"
+          Id="Package\Data Flow Staging to Final\OLE DB Source"
           TopLeft="216,60" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task 1\OLE DB Destination"
-          TopLeft="249,200" />
-        <NodeLayout
           Size="154,42"
-          Id="Package\Data Flow Task 1\Derived Column"
+          Id="Package\Data Flow Staging to Final\Derived Column"
           TopLeft="84,123" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Staging to Final\OLE DB Destination"
+          TopLeft="249,200" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task 1\OLE DB Source">
+    design-time-name="Package\Data Flow Staging to Final\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

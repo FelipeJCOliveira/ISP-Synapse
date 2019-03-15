@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Teste"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{A4F288DB-0BC5-4A0E-A395-45A6720FF089}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{4BDE5655-964B-4DE4-AF93-3FDDA16A7520}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -479,6 +479,21 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow TESTE EXCEL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B71B9C47-8E6F-4E1C-87FC-70525677EDEC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow TESTE EXCEL"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -496,6 +511,10 @@
           Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="276,123" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Data Flow TESTE EXCEL"
+          TopLeft="139,212" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -505,13 +524,13 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="197,206" />
-        <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="202,66" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="197,206" />
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task\Derived Column"
