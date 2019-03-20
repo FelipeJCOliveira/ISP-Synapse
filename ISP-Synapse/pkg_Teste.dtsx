@@ -11,11 +11,58 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Teste"
   DTS:PackageType="5"
-  DTS:VersionBuild="73"
-  DTS:VersionGUID="{B14E2BAA-B1DA-43DB-ADDD-6B2F249DA3BC}">
+  DTS:VersionBuild="81"
+  DTS:VersionGUID="{237E349E-E92F-43D0-87A7-A715360D855A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV utf-8 bom - string]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BB322617-0D3F-4201-986C-8F15CBB697AF}"
+      DTS:ObjectName="CSV utf-8 bom - string">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\BISTERCO\Synapse Files\wrk\TEST_CSV.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="testeid"
+              DTS:DTSID="{18C793BA-AF09-43B8-B081-122E7988E8D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="testenome"
+              DTS:DTSID="{23166089-74A0-459A-856B-C9D69AEABEE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="testedescricao"
+              DTS:DTSID="{C0A44B9B-9293-4119-A098-8C72C2FEC78B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FF - String UTF8 BOM]"
       DTS:CreationName="FLATFILE"
@@ -348,6 +395,16 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{F3B5ABEB-6FC0-4864-BD96-B4C9F7D4014C}"
       DTS:ObjectName="localhost.DB_Synapse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB_Synapse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.DB_Synapse 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0DFDCC0B-8404-4CFC-B862-075FB0AB589A}"
+      DTS:ObjectName="localhost.DB_Synapse 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB_Synapse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
@@ -2236,6 +2293,443 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load CSV 1252"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AEAC5CD8-3CD2-4B56-8931-DA8592E3F45A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load CSV 1252"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load CSV 1252\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load CSV 1252\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load CSV 1252\Derived Column.Inputs[Derived Column Input].Columns[testenome]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="testenome"
+                      lineageId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testenome]" />
+                    <inputColumn
+                      refId="Package\Load CSV 1252\Derived Column.Inputs[Derived Column Input].Columns[testedescricao]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="testedescricao"
+                      lineageId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testedescricao]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load CSV 1252\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Output].Columns[drv_Nome]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Output].Columns[drv_Nome]"
+                      name="drv_Nome"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testenome]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)testenome</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Output].Columns[drv_Descricao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Output].Columns[drv_Descricao]"
+                      name="drv_Descricao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testedescricao]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)testedescricao</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load CSV 1252\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load CSV 1252\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load CSV 1252\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV utf-8 bom - string]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV utf-8 bom - string]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testeid]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[testeid]"
+                      length="50"
+                      lineageId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testeid]"
+                      name="testeid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testenome]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[testenome]"
+                      length="50"
+                      lineageId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testenome]"
+                      name="testenome"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testedescricao]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[testedescricao]"
+                      length="50"
+                      lineageId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testedescricao]"
+                      name="testedescricao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[testeid]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="testeid" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[testenome]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="testenome" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[testedescricao]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="testedescricao" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load CSV 1252\OLE DB Destination 1252"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1252"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TB_TESTE_02]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load CSV 1252\OLE DB Destination 1252.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input].Columns[testeid]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="testeid"
+                      externalMetadataColumnId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input].ExternalColumns[testeId]"
+                      lineageId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output].Columns[testeid]" />
+                    <inputColumn
+                      refId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input].Columns[drv_Nome]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="drv_Nome"
+                      externalMetadataColumnId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input].ExternalColumns[testeNome]"
+                      lineageId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Output].Columns[drv_Nome]" />
+                    <inputColumn
+                      refId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input].Columns[drv_Descricao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="drv_Descricao"
+                      externalMetadataColumnId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input].ExternalColumns[formula]"
+                      lineageId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Output].Columns[drv_Descricao]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input].ExternalColumns[testeId]"
+                      dataType="i4"
+                      name="testeId" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input].ExternalColumns[testeNome]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="testeNome" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input].ExternalColumns[formula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="formula" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load CSV 1252\OLE DB Destination 1252.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV 1252\OLE DB Destination 1252.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV 1252\OLE DB Destination 1252.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV 1252\OLE DB Destination 1252.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV 1252\OLE DB Destination 1252.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load CSV 1252.Paths[Derived Column Output]"
+              endId="Package\Load CSV 1252\OLE DB Destination 1252.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load CSV 1252\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load CSV 1252.Paths[Flat File Source Output]"
+              endId="Package\Load CSV 1252\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load CSV 1252\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2258,15 +2752,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="50,42" />
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Data Flow TESTE EXCEL"
-          TopLeft="138,307" />
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow TB 2"
@@ -2276,39 +2766,31 @@
           Id="Package\Data Flow TB 2 1"
           TopLeft="442,54" />
         <NodeLayout
+          Size="193,42"
+          Id="Package\Data Flow TESTE EXCEL"
+          TopLeft="138,307" />
+        <NodeLayout
           Size="224,42"
           Id="Package\FF Destination to varchar table"
-          TopLeft="226.5,15.5" />
+          TopLeft="239.5,58.5" />
         <NodeLayout
           Size="168,42"
           Id="Package\Data Flow FF to FF"
-          TopLeft="5,39" />
+          TopLeft="16,55" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="173,60">
+          TopLeft="184,77.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="53.5,-23.5"
+              StartConnector="{x:Null}"
+              EndConnector="55.5,0"
               Start="0,0"
-              End="46,-23.5">
+              End="48,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="22.75,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.75,0"
-                    Point2="26.75,0"
-                    Point3="26.75,-4" />
-                  <mssgle:LineSegment
-                    End="26.75,-19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26.75,-19.5"
-                    Point2="26.75,-23.5"
-                    Point3="30.75,-23.5" />
-                  <mssgle:LineSegment
-                    End="46,-23.5" />
+                    End="48,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2317,288 +2799,49 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="copiando dados para arquivo ansi ou iso e importando deste novo arquivo&#xD;&#xA;"
+          ParentId="d3f9280f-368e-4e9a-aedc-4ae425608162"
+          Size="388,60"
+          Id="f6dfac39-c6e5-488b-9059-f4017a6e6b93"
+          TopLeft="3,5.5">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
         <GroupLayout
           Text="Group "
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="515,129"
-          Size="515,172"
+          PanelSize="515,152"
+          Size="515,195"
           Id="d3f9280f-368e-4e9a-aedc-4ae425608162"
           TopLeft="37.5,105.5">
           <GroupLayout.ChildrenIds>
             <s:String>Package\FF Destination to varchar table</s:String>
             <s:String>Package\Data Flow FF to FF</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint]</s:String>
+            <s:String>f6dfac39-c6e5-488b-9059-f4017a6e6b93</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load CSV 1252"
+          TopLeft="60,372" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="202,66" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="197,206" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="52,143" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="277.5,108">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-148.5,35"
-              Start="0,0"
-              End="-148.5,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.5"
-                    Point2="0,17.5"
-                    Point3="-4,17.5" />
-                  <mssgle:LineSegment
-                    End="-144.5,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-144.5,17.5"
-                    Point2="-148.5,17.5"
-                    Point3="-148.5,21.5" />
-                  <mssgle:LineSegment
-                    End="-148.5,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="206,164">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="76.5,42"
-              Start="0,0"
-              End="76.5,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="72.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="72.5,0"
-                    Point2="76.5,0"
-                    Point3="76.5,4" />
-                  <mssgle:LineSegment
-                    End="76.5,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Data Flow TB 2">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow TB 2\Flat File Source"
-          TopLeft="143,41" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow TB 2\OLE DB Destination"
-          TopLeft="154,155" />
-        <EdgeLayout
-          Id="Package\Data Flow TB 2.Paths[Flat File Source Output]"
-          TopLeft="218.5,83">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="21,72"
-              Start="0,0"
-              End="21,64.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32"
-                    Point2="0,36"
-                    Point3="4,36" />
-                  <mssgle:LineSegment
-                    End="17,36" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17,36"
-                    Point2="21,36"
-                    Point3="21,40" />
-                  <mssgle:LineSegment
-                    End="21,64.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow TB 2\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Data Flow TB 2 1">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow TB 2 1\Flat File Source"
-          TopLeft="143,41" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow TB 2 1\OLE DB Destination"
-          TopLeft="154,155" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow TB 2 1\Derived Column"
-          TopLeft="394,97" />
-        <EdgeLayout
-          Id="Package\Data Flow TB 2 1.Paths[Flat File Source Output]"
-          TopLeft="294,62">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100,56"
-              Start="0,0"
-              End="92.5,56">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="46,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="46,0"
-                    Point2="50,0"
-                    Point3="50,4" />
-                  <mssgle:LineSegment
-                    End="50,52" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50,52"
-                    Point2="50,56"
-                    Point3="54,56" />
-                  <mssgle:LineSegment
-                    End="92.5,56" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow TB 2 1.Paths[Derived Column Output]"
-          TopLeft="394,123.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-69,52.3333333333333"
-              Start="0,0"
-              End="-61.5,52.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-25.1192660550459,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-25.1192660550459,0"
-                    Point2="-29.1192660550459,0"
-                    Point3="-29.1192660550459,4" />
-                  <mssgle:LineSegment
-                    End="-29.1192660550459,48.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.1192660550459,48.3333333333333"
-                    Point2="-29.1192660550459,52.3333333333333"
-                    Point3="-33.1192660550459,52.3333333333333" />
-                  <mssgle:LineSegment
-                    End="-61.5,52.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow TB 2 1\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Data Flow FF to FF">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow FF to FF\Flat File Source"
@@ -2616,7 +2859,7 @@
           TopLeft="293,53">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="105,44.3333333333333"
               Start="0,0"
               End="97.5,44.3333333333333">
@@ -2650,7 +2893,7 @@
           TopLeft="398,108.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-89,47.3333333333333"
               Start="0,0"
               End="-81.5,47.3333333333333">
@@ -2683,62 +2926,297 @@
     </LayoutInfo>
   </TaskHost>
   <TaskHost
-    design-time-name="Package\FF Destination to varchar table">
+    design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
-          Id="Package\FF Destination to varchar table\Flat File Source"
-          TopLeft="100,26" />
+          Id="Package\Data Flow Task\Flat File Source"
+          TopLeft="202,66" />
         <NodeLayout
           Size="171,42"
-          Id="Package\FF Destination to varchar table\OLE DB Destination"
-          TopLeft="103,149" />
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="197,206" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\FF Destination to varchar table\Data Conversion"
-          TopLeft="354,83" />
+          Size="154,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="52,143" />
         <EdgeLayout
-          Id="Package\FF Destination to varchar table.Paths[Flat File Source Output]"
-          TopLeft="251,47">
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="277.5,108">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="103,57"
+              StartConnector="{x:Null}"
+              EndConnector="-148.5,35"
               Start="0,0"
-              End="95.5,57">
+              End="-148.5,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="47.5,0" />
+                    End="0,13.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="47.5,0"
-                    Point2="51.5,0"
-                    Point3="51.5,4" />
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
                   <mssgle:LineSegment
-                    End="51.5,53" />
+                    End="-144.5,17.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="51.5,53"
-                    Point2="51.5,57"
-                    Point3="55.5,57" />
+                    Point1="-144.5,17.5"
+                    Point2="-148.5,17.5"
+                    Point3="-148.5,21.5" />
                   <mssgle:LineSegment
-                    End="95.5,57" />
+                    End="-148.5,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="206,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="76.5,42"
+              Start="0,0"
+              End="76.5,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="72.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72.5,0"
+                    Point2="76.5,0"
+                    Point3="76.5,4" />
+                  <mssgle:LineSegment
+                    End="76.5,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow TB 2">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow TB 2\OLE DB Destination"
+          TopLeft="154,155" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow TB 2\Flat File Source"
+          TopLeft="143,41" />
+        <EdgeLayout
+          Id="Package\Data Flow TB 2.Paths[Flat File Source Output]"
+          TopLeft="218.5,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="21,72"
+              Start="0,0"
+              End="21,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32"
+                    Point2="0,36"
+                    Point3="4,36" />
+                  <mssgle:LineSegment
+                    End="17,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17,36"
+                    Point2="21,36"
+                    Point3="21,40" />
+                  <mssgle:LineSegment
+                    End="21,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow TB 2\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow TB 2 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow TB 2 1\OLE DB Destination"
+          TopLeft="154,155" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow TB 2 1\Flat File Source"
+          TopLeft="143,41" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow TB 2 1\Derived Column"
+          TopLeft="394,97" />
+        <EdgeLayout
+          Id="Package\Data Flow TB 2 1.Paths[Derived Column Output]"
+          TopLeft="394,123.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-69,52.3333333333333"
+              Start="0,0"
+              End="-61.5,52.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-25.1192660550459,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.1192660550459,0"
+                    Point2="-29.1192660550459,0"
+                    Point3="-29.1192660550459,4" />
+                  <mssgle:LineSegment
+                    End="-29.1192660550459,48.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.1192660550459,48.3333333333333"
+                    Point2="-29.1192660550459,52.3333333333333"
+                    Point3="-33.1192660550459,52.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-61.5,52.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow TB 2 1.Paths[Flat File Source Output]"
+          TopLeft="294,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="100,56"
+              Start="0,0"
+              End="92.5,56">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46,0"
+                    Point2="50,0"
+                    Point3="50,4" />
+                  <mssgle:LineSegment
+                    End="50,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50,52"
+                    Point2="50,56"
+                    Point3="54,56" />
+                  <mssgle:LineSegment
+                    End="92.5,56" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow TB 2 1\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\FF Destination to varchar table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\FF Destination to varchar table\OLE DB Destination"
+          TopLeft="103,149" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\FF Destination to varchar table\Flat File Source"
+          TopLeft="100,26" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\FF Destination to varchar table\Data Conversion"
+          TopLeft="354,83" />
         <EdgeLayout
           Id="Package\FF Destination to varchar table.Paths[Data Conversion Output]"
           TopLeft="432,125">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-243.5,24"
               Start="0,0"
               End="-243.5,16.5">
@@ -2764,7 +3242,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FF Destination to varchar table.Paths[Flat File Source Output]"
+          TopLeft="251,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="103,57"
+              Start="0,0"
+              End="95.5,57">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="47.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.5,0"
+                    Point2="51.5,0"
+                    Point3="51.5,4" />
+                  <mssgle:LineSegment
+                    End="51.5,53" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.5,53"
+                    Point2="51.5,57"
+                    Point3="55.5,57" />
+                  <mssgle:LineSegment
+                    End="95.5,57" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2772,6 +3288,107 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\FF Destination to varchar table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load CSV 1252">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Load CSV 1252\Flat File Source"
+          TopLeft="175,42" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Load CSV 1252\OLE DB Destination 1252"
+          TopLeft="180,140" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load CSV 1252\Derived Column"
+          TopLeft="447,73" />
+        <EdgeLayout
+          Id="Package\Load CSV 1252.Paths[Flat File Source Output]"
+          TopLeft="326,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="121,31"
+              Start="0,0"
+              End="113.5,31">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.5,0"
+                    Point2="60.5,0"
+                    Point3="60.5,4" />
+                  <mssgle:LineSegment
+                    End="60.5,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="60.5,27"
+                    Point2="60.5,31"
+                    Point3="64.5,31" />
+                  <mssgle:LineSegment
+                    End="113.5,31" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CSV 1252.Paths[Derived Column Output]"
+          TopLeft="524,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-245,25"
+              Start="0,0"
+              End="-245,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.5"
+                    Point2="0,12.5"
+                    Point3="-4,12.5" />
+                  <mssgle:LineSegment
+                    End="-241,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-241,12.5"
+                    Point2="-245,12.5"
+                    Point3="-245,16.5" />
+                  <mssgle:LineSegment
+                    End="-245,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load CSV 1252\OLE DB Destination 1252">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
