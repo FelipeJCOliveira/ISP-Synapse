@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="pkg_Filial"
-  DTS:VersionBuild="81"
-  DTS:VersionGUID="{9867D7C6-F1DB-4FE7-8238-547F23359423}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{5EEE1C24-D84F-4593-8816-F532E14F230E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1927,7 +1927,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
@@ -1944,12 +1944,16 @@
           Size="190,42"
           Id="Package\Preparation SQL Task 1"
           TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Staging to Final"
+          TopLeft="231,92" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[{BA75107D-CFA6-4F86-AB05-29537D26DC9B\}]"
           TopLeft="100.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,60"
               Start="0,0"
               End="0,52.5">
@@ -1966,10 +1970,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Staging to Final"
-          TopLeft="231,92" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2082,7 +2082,7 @@
     design-time-name="Package\Data Flow Task 1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task 1\Derived Column"
@@ -2104,7 +2104,7 @@
           TopLeft="199.5,41.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-78.5,38.5"
               Start="0,0"
               End="-78.5,31">
@@ -2132,7 +2132,7 @@
           TopLeft="485,123">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-239,35.5"
               Start="0,0"
               End="-239,28">
@@ -2166,7 +2166,7 @@
           TopLeft="199,101.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="209,0"
               Start="0,0"
               End="201.5,0">
@@ -2203,15 +2203,15 @@
     design-time-name="Package\Load CSV - Filial">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Load CSV - Filial\Flat File Source"
-          TopLeft="144,42" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Load CSV - Filial\OLE DB Destination"
           TopLeft="144,154" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Load CSV - Filial\Flat File Source"
+          TopLeft="144,42" />
         <NodeLayout
           Size="154,42"
           Id="Package\Load CSV - Filial\Derived Column"
@@ -2221,7 +2221,7 @@
           TopLeft="295,63">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="70,43.3333333333333"
               Start="0,0"
               End="62.5,43.3333333333333">
@@ -2255,7 +2255,7 @@
           TopLeft="365,117.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-50,57.3333333333333"
               Start="0,0"
               End="-42.5,57.3333333333333">
