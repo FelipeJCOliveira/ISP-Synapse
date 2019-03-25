@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_DistribuidorAgroview"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{8936A1BB-94E2-47F0-8985-64D6BFEDA057}">
+  DTS:VersionBuild="97"
+  DTS:VersionGUID="{35059F37-7A2D-4402-8A9D-846580EA1677}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -240,104 +240,71 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Staging to Final\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
+              refId="Package\Data Flow Staging to Final\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
+                  refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistNome]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="DistNome"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistNome]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistNomeExibicao]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="DistNomeExibicao"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistNomeExibicao]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistTipo]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="DistTipo"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistTipo]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistContratoAssinado]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input].Columns[DistContratoAssinado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
                       cachedName="DistContratoAssinado"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistContratoAssinado]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistPossuiCFOPsTratadas]"
-                      cachedDataType="wstr"
-                      cachedLength="1"
-                      cachedName="DistPossuiCFOPsTratadas"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistPossuiCFOPsTratadas]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistUnidade]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="DistUnidade"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistUnidade]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistGerenteProjeto]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="DistGerenteProjeto"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistGerenteProjeto]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistFocalizado]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="DistFocalizado"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistFocalizado]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistDescricao]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="DistDescricao"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistDescricao]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistChave]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="DistChave"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistChave]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistReduzirDados]"
-                      cachedDataType="wstr"
-                      cachedLength="1"
-                      cachedName="DistReduzirDados"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistReduzirDados]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistIgnorar]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input].Columns[DistTipo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistIgnorar"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistIgnorar]" />
+                      cachedName="DistTipo"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistTipo]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistCodigoCampanha]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input].Columns[DistNome]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistCodigoCampanha"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCampanha]" />
+                      cachedName="DistNome"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistNome]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistLastUpdate]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input].Columns[DistNomeExibicao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DistNomeExibicao"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistNomeExibicao]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input].Columns[DistLastUpdate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="20"
                       cachedName="DistLastUpdate"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistLastUpdate]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[DistCodigoCorporativo]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input].Columns[DistIgnorar]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DistIgnorar"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistIgnorar]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input].Columns[DistCodigoCampanha]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DistCodigoCampanha"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCampanha]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input].Columns[DistCodigoCorporativo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
                       cachedName="DistCodigoCorporativo"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCorporativo]" />
@@ -347,353 +314,239 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output]"
+                  refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input]">
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistNome]"
-                      codePage="65001"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      name="drv_Dt_Import"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ContratoAssinado]"
+                      codePage="1252"
                       dataType="str"
-                      errorOrTruncationOperation="Conversion"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ContratoAssinado]"
+                      name="drv_ContratoAssinado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,3,1252)#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistContratoAssinado]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,3,1252)DistContratoAssinado</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Tipo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Tipo]"
+                      name="drv_Tipo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,15,1252)#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistTipo]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,15,1252)DistTipo</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Nome]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="25"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistNome]"
-                      name="cvt_DistNome"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Nome]"
+                      name="drv_Nome"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistNome]}</property>
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,25,1252)#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistNome]}</property>
                         <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,25,1252)DistNome</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistNomeExibicao]"
-                      codePage="65001"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_NomeExibicao]"
+                      codePage="1252"
                       dataType="str"
-                      errorOrTruncationOperation="Conversion"
+                      errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="20"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistNomeExibicao]"
-                      name="cvt_DistNomeExibicao"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_NomeExibicao]"
+                      name="drv_NomeExibicao"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistNomeExibicao]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistTipo]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="15"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistTipo]"
-                      name="cvt_DistTipo"
-                      truncationRowDisposition="IgnoreFailure">
-                      <properties>
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,20,1252)#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistNomeExibicao]}</property>
                         <property
                           containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistTipo]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,20,1252)DistNomeExibicao</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistContratoAssinado]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_LastUpdate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="3"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistContratoAssinado]"
-                      name="cvt_DistContratoAssinado"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_LastUpdate]"
+                      name="drv_LastUpdate"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistContratoAssinado]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistPossuiCFOPsTratadas]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="1"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistPossuiCFOPsTratadas]"
-                      name="cvt_DistPossuiCFOPsTratadas"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistLastUpdate]}) &lt; 1) ? NULL(DT_DBTIMESTAMP) : (DT_DBTIMESTAMP)([SUBSTRING](#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistLastUpdate]},7,4) + "-" + [SUBSTRING](#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistLastUpdate]},4,2) + "-" + [SUBSTRING](#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistLastUpdate]},1,2) + " " + [RIGHT](#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistLastUpdate]},5) + ":00.000")</property>
                         <property
                           containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistPossuiCFOPsTratadas]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(DistLastUpdate) &lt; 1) ? NULL(DT_DBTIMESTAMP) : (DT_DBTIMESTAMP)(SUBSTRING(DistLastUpdate,7,4) + "-" + SUBSTRING(DistLastUpdate,4,2) + "-" + SUBSTRING(DistLastUpdate,1,2) + " " + RIGHT(DistLastUpdate,5) + ":00.000")</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistUnidade]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="10"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistUnidade]"
-                      name="cvt_DistUnidade"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistUnidade]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistGerenteProjeto]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="15"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistGerenteProjeto]"
-                      name="cvt_DistGerenteProjeto"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistGerenteProjeto]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistFocalizado]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      length="3"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistFocalizado]"
-                      name="cvt_DistFocalizado"
-                      truncationRowDisposition="IgnoreFailure">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistFocalizado]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistDescricao]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="20"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistDescricao]"
-                      name="cvt_DistDescricao"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistDescricao]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistChave]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="15"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistChave]"
-                      name="cvt_DistChave"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistChave]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistReduzirDados]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="1"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistReduzirDados]"
-                      name="cvt_DistReduzirDados"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistReduzirDados]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistIgnorar]"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Ignorar]"
                       dataType="r4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistIgnorar]"
-                      name="cvt_DistIgnorar"
-                      truncationRowDisposition="IgnoreFailure">
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Ignorar]"
+                      name="drv_Ignorar"
+                      truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistIgnorar]}</property>
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistIgnorar]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistIgnorar]}</property>
                         <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(DistIgnorar) &lt; 1) ? NULL(DT_R4) : (DT_R4)DistIgnorar</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistCodigoCampanha]"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CodigoCampanha]"
                       dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistCodigoCampanha]"
-                      name="cvt_DistCodigoCampanha"
-                      truncationRowDisposition="IgnoreFailure">
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CodigoCampanha]"
+                      name="drv_CodigoCampanha"
+                      truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCampanha]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistLastUpdate]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistLastUpdate]"
-                      name="cvt_DistLastUpdate"
-                      truncationRowDisposition="IgnoreFailure">
-                      <properties>
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCampanha]}) &lt; 1) ? NULL(DT_I4) : (DT_I4)#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCampanha]}</property>
                         <property
                           containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistLastUpdate]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(DistCodigoCampanha) &lt; 1) ? NULL(DT_I4) : (DT_I4)DistCodigoCampanha</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistCodigoCorporativo]"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CodigoCorporativo]"
                       dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistCodigoCorporativo]"
-                      name="cvt_DistCodigoCorporativo"
-                      truncationRowDisposition="IgnoreFailure">
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CodigoCorporativo]"
+                      name="drv_CodigoCorporativo"
+                      truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCorporativo]}</property>
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCorporativo]}) &lt; 1) ? NULL(DT_I4) : (DT_I4)#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCorporativo]}</property>
                         <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(DistCodigoCorporativo) &lt; 1) ? NULL(DT_I4) : (DT_I4)DistCodigoCorporativo</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Error Output]"
+                  refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input]">
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -731,7 +584,7 @@
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">65001</property>
+                  name="DefaultCodePage">1252</property>
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
@@ -776,137 +629,146 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistCodigo]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="10"
                       cachedName="DistCodigo"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistCodigo]"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigo]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistPath]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
                       cachedName="DistPath"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistPath]"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistPath]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistSecurityCode]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
                       cachedName="DistSecurityCode"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistSecurityCode]"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistSecurityCode]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistNome]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="25"
-                      cachedName="cvt_DistNome"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistNome]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistNome]" />
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="drv_Dt_Import"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistNomeExibicao]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="cvt_DistNomeExibicao"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistNomeExibicao]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistNomeExibicao]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistTipo]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="cvt_DistTipo"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistTipo]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistTipo]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistContratoAssinado]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="3"
-                      cachedName="cvt_DistContratoAssinado"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistContratoAssinado]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistContratoAssinado]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistPossuiCFOPsTratadas]"
-                      cachedCodepage="65001"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistPossuiCFOPsTratadas]"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
-                      cachedName="cvt_DistPossuiCFOPsTratadas"
+                      cachedName="DistPossuiCFOPsTratadas"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistPossuiCFOPsTratadas]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistPossuiCFOPsTratadas]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistPossuiCFOPsTratadas]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistUnidade]"
-                      cachedCodepage="65001"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistUnidade]"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
-                      cachedName="cvt_DistUnidade"
+                      cachedName="DistUnidade"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistUnidade]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistUnidade]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistUnidade]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistGerenteProjeto]"
-                      cachedCodepage="65001"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistGerenteProjeto]"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="15"
-                      cachedName="cvt_DistGerenteProjeto"
+                      cachedName="DistGerenteProjeto"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistGerenteProjeto]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistGerenteProjeto]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistGerenteProjeto]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistFocalizado]"
-                      cachedCodepage="65001"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistFocalizado]"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="3"
-                      cachedName="cvt_DistFocalizado"
+                      cachedName="DistFocalizado"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistFocalizado]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistFocalizado]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistFocalizado]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistDescricao]"
-                      cachedCodepage="65001"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistDescricao]"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
-                      cachedName="cvt_DistDescricao"
+                      cachedName="DistDescricao"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistDescricao]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistDescricao]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistDescricao]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistChave]"
-                      cachedCodepage="65001"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistChave]"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="15"
-                      cachedName="cvt_DistChave"
+                      cachedName="DistChave"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistChave]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistChave]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistChave]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistReduzirDados]"
-                      cachedCodepage="65001"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistReduzirDados]"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
-                      cachedName="cvt_DistReduzirDados"
+                      cachedName="DistReduzirDados"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistReduzirDados]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistReduzirDados]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistReduzirDados]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistIgnorar]"
-                      cachedDataType="r4"
-                      cachedName="cvt_DistIgnorar"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistIgnorar]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistIgnorar]" />
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_ContratoAssinado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="drv_ContratoAssinado"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistContratoAssinado]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ContratoAssinado]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistCodigoCampanha]"
-                      cachedDataType="i4"
-                      cachedName="cvt_DistCodigoCampanha"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistCodigoCampanha]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistCodigoCampanha]" />
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Tipo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="drv_Tipo"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistTipo]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Tipo]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistLastUpdate]"
-                      cachedDataType="dbDate"
-                      cachedName="cvt_DistLastUpdate"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Nome]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="drv_Nome"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistNome]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Nome]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_NomeExibicao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="drv_NomeExibicao"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistNomeExibicao]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_NomeExibicao]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_LastUpdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="drv_LastUpdate"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistLastUpdate]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistLastUpdate]" />
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_LastUpdate]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_DistCodigoCorporativo]"
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Ignorar]"
+                      cachedDataType="r4"
+                      cachedName="drv_Ignorar"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistIgnorar]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Ignorar]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_CodigoCampanha]"
                       cachedDataType="i4"
-                      cachedName="cvt_DistCodigoCorporativo"
+                      cachedName="drv_CodigoCampanha"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistCodigoCampanha]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CodigoCampanha]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_CodigoCorporativo]"
+                      cachedDataType="i4"
+                      cachedName="drv_CodigoCorporativo"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistCodigoCorporativo]"
-                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_DistCodigoCorporativo]" />
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CodigoCorporativo]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -916,13 +778,13 @@
                       name="DistCodigo" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistNome]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="25"
                       name="DistNome" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistNomeExibicao]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="20"
                       name="DistNomeExibicao" />
@@ -936,13 +798,13 @@
                       name="DistSecurityCode" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistTipo]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="15"
                       name="DistTipo" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistContratoAssinado]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="3"
                       name="DistContratoAssinado" />
@@ -960,50 +822,58 @@
                       name="DistCodigoCorporativo" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistPossuiCFOPsTratadas]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="1"
                       name="DistPossuiCFOPsTratadas" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistUnidade]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       name="DistUnidade" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistGerenteProjeto]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="15"
                       name="DistGerenteProjeto" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistFocalizado]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="3"
                       name="DistFocalizado" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistDescricao]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="20"
                       name="DistDescricao" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistChave]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="15"
                       name="DistChave" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistReduzirDados]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="1"
                       name="DistReduzirDados" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistLastUpdate]"
-                      dataType="dbDate"
+                      dataType="dbTimeStamp"
                       name="DistLastUpdate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Inclusao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Alteracao" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1066,7 +936,7 @@
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">65001</property>
+                  name="DefaultCodePage">1252</property>
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
@@ -1096,7 +966,8 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistCodigo]"
@@ -1106,7 +977,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistNome]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistNome]"
@@ -1116,7 +988,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistNomeExibicao]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistNomeExibicao]"
@@ -1126,7 +999,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistPath]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistPath]"
@@ -1136,7 +1010,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistSecurityCode]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistSecurityCode]"
@@ -1146,7 +1021,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistTipo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistTipo]"
@@ -1156,7 +1032,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistContratoAssinado]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistContratoAssinado]"
@@ -1166,7 +1043,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistIgnorar]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistIgnorar]"
@@ -1176,7 +1054,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCampanha]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistCodigoCampanha]"
@@ -1186,7 +1065,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistCodigoCorporativo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistCodigoCorporativo]"
@@ -1196,7 +1076,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistPossuiCFOPsTratadas]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistPossuiCFOPsTratadas]"
@@ -1206,7 +1087,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistUnidade]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistUnidade]"
@@ -1216,7 +1098,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistGerenteProjeto]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistGerenteProjeto]"
@@ -1226,7 +1109,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistFocalizado]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistFocalizado]"
@@ -1236,7 +1120,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistDescricao]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistDescricao]"
@@ -1246,7 +1131,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistChave]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistChave]"
@@ -1256,7 +1142,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistReduzirDados]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistReduzirDados]"
@@ -1266,7 +1153,8 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistLastUpdate]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistLastUpdate]"
@@ -1274,99 +1162,130 @@
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistLastUpdate]"
                       name="DistLastUpdate"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data_Inclusao]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Inclusao]"
+                      name="Data_Inclusao"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistCodigo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       name="DistCodigo" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistNome]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistNome" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistNomeExibicao]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistNomeExibicao" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistPath]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistPath" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistSecurityCode]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistSecurityCode" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistTipo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistTipo" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistContratoAssinado]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistContratoAssinado" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistIgnorar]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistIgnorar" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistCodigoCampanha]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistCodigoCampanha" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistCodigoCorporativo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistCodigoCorporativo" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistPossuiCFOPsTratadas]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="1"
                       name="DistPossuiCFOPsTratadas" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistUnidade]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       name="DistUnidade" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistGerenteProjeto]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="15"
                       name="DistGerenteProjeto" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistFocalizado]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="3"
                       name="DistFocalizado" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistDescricao]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="20"
                       name="DistDescricao" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistChave]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="15"
                       name="DistChave" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistReduzirDados]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="1"
                       name="DistReduzirDados" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DistLastUpdate]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="20"
                       name="DistLastUpdate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Inclusao" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1376,112 +1295,135 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistCodigo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistCodigo]"
                       name="DistCodigo" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistNome]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistNome]"
                       name="DistNome" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistNomeExibicao]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistNomeExibicao]"
                       name="DistNomeExibicao" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistPath]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistPath]"
                       name="DistPath" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistSecurityCode]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistSecurityCode]"
                       name="DistSecurityCode" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistTipo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistTipo]"
                       name="DistTipo" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistContratoAssinado]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistContratoAssinado]"
                       name="DistContratoAssinado" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistIgnorar]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistIgnorar]"
                       name="DistIgnorar" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistCodigoCampanha]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistCodigoCampanha]"
                       name="DistCodigoCampanha" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistCodigoCorporativo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistCodigoCorporativo]"
                       name="DistCodigoCorporativo" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistPossuiCFOPsTratadas]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="1"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistPossuiCFOPsTratadas]"
                       name="DistPossuiCFOPsTratadas" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistUnidade]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistUnidade]"
                       name="DistUnidade" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistGerenteProjeto]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="15"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistGerenteProjeto]"
                       name="DistGerenteProjeto" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistFocalizado]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="3"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistFocalizado]"
                       name="DistFocalizado" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistDescricao]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="20"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistDescricao]"
                       name="DistDescricao" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistChave]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="15"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistChave]"
                       name="DistChave" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistReduzirDados]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="1"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistReduzirDados]"
                       name="DistReduzirDados" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistLastUpdate]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="20"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DistLastUpdate]"
                       name="DistLastUpdate" />
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Data_Inclusao]"
+                      name="Data_Inclusao" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1502,13 +1444,13 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Staging to Final.Paths[Data Conversion Output]"
+              refId="Package\Data Flow Staging to Final.Paths[Derived Column Output]"
               endId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output]" />
+              name="Derived Column Output"
+              startId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Staging to Final.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
@@ -1529,6 +1471,621 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Data Flow Task - Load CSV\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistCodigo]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DistCodigo"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistCodigo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistNome]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistNome"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistNome]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistNomeExibicao]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistNomeExibicao"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistNomeExibicao]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistPath]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistPath"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistPath]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistSecurityCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistSecurityCode"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistSecurityCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistTipo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistTipo"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistTipo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistContratoAssinado]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistContratoAssinado"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistContratoAssinado]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistIgnorar]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistIgnorar"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistIgnorar]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistCodigoCampanha]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistCodigoCampanha"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistCodigoCampanha]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistCodigoCorporativo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistCodigoCorporativo"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistCodigoCorporativo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistPossuiCFOPsTratadas]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DistPossuiCFOPsTratadas"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistPossuiCFOPsTratadas]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistUnidade]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DistUnidade"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistUnidade]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistGerenteProjeto]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="DistGerenteProjeto"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistGerenteProjeto]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistFocalizado]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="DistFocalizado"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistFocalizado]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistDescricao]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="DistDescricao"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistDescricao]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[%DistChave]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="%DistChave"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[%DistChave]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistReduzirDados]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DistReduzirDados"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistReduzirDados]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[DistLastUpdate]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="DistLastUpdate"
+                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistLastUpdate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      name="drv_Dt_Import"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistCodigo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistCodigo]"
+                      name="drv_DistCodigo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,10,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistCodigo]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,10,1252)DistCodigo</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistNome]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistNome]"
+                      name="drv_DistNome"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistNome]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)DistNome</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistNomeExibicao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistNomeExibicao]"
+                      name="drv_DistNomeExibicao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistNomeExibicao]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)DistNomeExibicao</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistPath]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistPath]"
+                      name="drv_DistPath"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistPath]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)DistPath</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistSecurityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistSecurityCode]"
+                      name="drv_DistSecurityCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistSecurityCode]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)DistSecurityCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistTipo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistTipo]"
+                      name="drv_DistTipo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistTipo]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)DistTipo</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistContratoAssinado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistContratoAssinado]"
+                      name="drv_DistContratoAssinado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistContratoAssinado]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)DistContratoAssinado</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistIgnorar]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistIgnorar]"
+                      name="drv_DistIgnorar"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistIgnorar]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)DistIgnorar</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistCodigoCampanha]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistCodigoCampanha]"
+                      name="drv_DistCodigoCampanha"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistCodigoCampanha]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)DistCodigoCampanha</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistCodigoCorporativo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistCodigoCorporativo]"
+                      name="drv_DistCodigoCorporativo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistCodigoCorporativo]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)DistCodigoCorporativo</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistPossuiCFOPsTrat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistPossuiCFOPsTrat]"
+                      name="drv_DistPossuiCFOPsTrat"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,1,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistPossuiCFOPsTratadas]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,1,1252)DistPossuiCFOPsTratadas</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistUnidade]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistUnidade]"
+                      name="drv_DistUnidade"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,10,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistUnidade]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,10,1252)DistUnidade</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistGerenteProjeto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistGerenteProjeto]"
+                      name="drv_DistGerenteProjeto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,15,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistGerenteProjeto]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,15,1252)DistGerenteProjeto</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistFocalizando]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistFocalizando]"
+                      name="drv_DistFocalizando"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,3,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistFocalizado]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,3,1252)DistFocalizado</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistDescricao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistDescricao]"
+                      name="drv_DistDescricao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,20,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistDescricao]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,20,1252)DistDescricao</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistChave]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistChave]"
+                      name="drv_DistChave"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,15,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[%DistChave]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,15,1252)[%DistChave]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistReduzirDados]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistReduzirDados]"
+                      name="drv_DistReduzirDados"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,1,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistReduzirDados]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,1,1252)DistReduzirDados</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistLastUpdate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistLastUpdate]"
+                      name="drv_DistLastUpdate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,20,1252)#{Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistLastUpdate]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,20,1252)DistLastUpdate</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Data Flow Task - Load CSV\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -2091,7 +2648,7 @@
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">65001</property>
+                  name="DefaultCodePage">1252</property>
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
@@ -2135,224 +2692,270 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistCodigo]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistCodigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="10"
-                      cachedName="DistCodigo"
+                      cachedName="drv_DistCodigo"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistCodigo]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistCodigo]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistCodigo]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistNome]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="drv_Dt_Import"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistNome]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistNome"
+                      cachedName="drv_DistNome"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistNome]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistNome]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistNome]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistNomeExibicao]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistNomeExibicao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistNomeExibicao"
+                      cachedName="drv_DistNomeExibicao"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistNomeExibicao]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistNomeExibicao]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistNomeExibicao]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistPath]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistPath]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistPath"
+                      cachedName="drv_DistPath"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistPath]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistPath]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistPath]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistSecurityCode]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistSecurityCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistSecurityCode"
+                      cachedName="drv_DistSecurityCode"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistSecurityCode]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistSecurityCode]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistSecurityCode]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistTipo]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistTipo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistTipo"
+                      cachedName="drv_DistTipo"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistTipo]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistTipo]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistTipo]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistContratoAssinado]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistContratoAssinado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistContratoAssinado"
+                      cachedName="drv_DistContratoAssinado"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistContratoAssinado]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistContratoAssinado]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistContratoAssinado]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistIgnorar]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistIgnorar]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistIgnorar"
+                      cachedName="drv_DistIgnorar"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistIgnorar]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistIgnorar]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistIgnorar]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistCodigoCampanha]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistCodigoCampanha]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistCodigoCampanha"
+                      cachedName="drv_DistCodigoCampanha"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistCodigoCampanha]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistCodigoCampanha]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistCodigoCampanha]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistCodigoCorporativo]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistCodigoCorporativo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="DistCodigoCorporativo"
+                      cachedName="drv_DistCodigoCorporativo"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistCodigoCorporativo]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistCodigoCorporativo]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistCodigoCorporativo]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistPossuiCFOPsTratadas]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistPossuiCFOPsTrat]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="1"
-                      cachedName="DistPossuiCFOPsTratadas"
+                      cachedName="drv_DistPossuiCFOPsTrat"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistPossuiCFOPsTratadas]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistPossuiCFOPsTratadas]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistPossuiCFOPsTrat]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistUnidade]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistUnidade]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="10"
-                      cachedName="DistUnidade"
+                      cachedName="drv_DistUnidade"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistUnidade]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistUnidade]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistUnidade]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistGerenteProjeto]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistGerenteProjeto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="15"
-                      cachedName="DistGerenteProjeto"
+                      cachedName="drv_DistGerenteProjeto"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistGerenteProjeto]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistGerenteProjeto]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistGerenteProjeto]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistFocalizado]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistFocalizando]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="3"
-                      cachedName="DistFocalizado"
+                      cachedName="drv_DistFocalizando"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistFocalizado]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistFocalizado]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistFocalizando]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistDescricao]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistDescricao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="20"
-                      cachedName="DistDescricao"
+                      cachedName="drv_DistDescricao"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistDescricao]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistDescricao]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistDescricao]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistReduzirDados]"
-                      cachedDataType="wstr"
-                      cachedLength="1"
-                      cachedName="DistReduzirDados"
-                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistReduzirDados]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistReduzirDados]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistLastUpdate]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="DistLastUpdate"
-                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistLastUpdate]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[DistLastUpdate]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[%DistChave]"
-                      cachedDataType="wstr"
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistChave]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="15"
-                      cachedName="%DistChave"
+                      cachedName="drv_DistChave"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistChave]"
-                      lineageId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[%DistChave]" />
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistChave]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistReduzirDados]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="drv_DistReduzirDados"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistReduzirDados]"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistReduzirDados]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistLastUpdate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="drv_DistLastUpdate"
+                      externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistLastUpdate]"
+                      lineageId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_DistLastUpdate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistCodigo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       name="DistCodigo" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistNome]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistNome" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistNomeExibicao]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistNomeExibicao" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistPath]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistPath" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistSecurityCode]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistSecurityCode" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistTipo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistTipo" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistContratoAssinado]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistContratoAssinado" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistIgnorar]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistIgnorar" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistCodigoCampanha]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistCodigoCampanha" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistCodigoCorporativo]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="DistCodigoCorporativo" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistPossuiCFOPsTratadas]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="1"
                       name="DistPossuiCFOPsTratadas" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistUnidade]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       name="DistUnidade" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistGerenteProjeto]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="15"
                       name="DistGerenteProjeto" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistFocalizado]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="3"
                       name="DistFocalizado" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistDescricao]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="20"
                       name="DistDescricao" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistChave]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="15"
                       name="DistChave" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistReduzirDados]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="1"
                       name="DistReduzirDados" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistLastUpdate]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="20"
                       name="DistLastUpdate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Inclusao" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2384,8 +2987,13 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
+              refId="Package\Data Flow Task - Load CSV.Paths[Derived Column Output]"
               endId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task - Load CSV\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -2393,6 +3001,16 @@
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{004F9325-2DAE-4F9D-BADD-719E6EC077D3}"
+      DTS:From="Package\Data Flow Task - Load CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Staging to Final" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -2404,45 +3022,117 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="206,42"
-          Id="Package\Data Flow Task - Load CSV"
-          TopLeft="157,22" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="203,42"
           Id="Package\Data Flow Staging to Final"
           TopLeft="163,111" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Data Flow Task - Load CSV">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task - Load CSV\OLE DB Destination"
-          TopLeft="239,150" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task - Load CSV\Flat File Source"
-          TopLeft="243,35" />
+          Size="206,42"
+          Id="Package\Data Flow Task - Load CSV"
+          TopLeft="157,22" />
         <EdgeLayout
-          Id="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
-          TopLeft="321.5,77">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="262.25,64">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,73"
+              EndConnector="0,47"
               Start="0,0"
-              End="0,65.5">
+              End="0,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.5" />
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Staging to Final">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Staging to Final\OLE DB Destination"
+          TopLeft="236,209" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Staging to Final\OLE DB Source"
+          TopLeft="240,39" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Staging to Final\Derived Column"
+          TopLeft="403,123" />
+        <EdgeLayout
+          Id="Package\Data Flow Staging to Final.Paths[OLE DB Source Output]"
+          TopLeft="315,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="165,42"
+              Start="0,0"
+              End="165,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="4,21" />
+                  <mssgle:LineSegment
+                    End="161,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="161,21"
+                    Point2="165,21"
+                    Point3="165,25" />
+                  <mssgle:LineSegment
+                    End="165,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Staging to Final.Paths[Derived Column Output]"
+          TopLeft="480,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-158.5,44"
+              Start="0,0"
+              End="-158.5,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="-4,22" />
+                  <mssgle:LineSegment
+                    End="-154.5,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-154.5,22"
+                    Point2="-158.5,22"
+                    Point3="-158.5,26" />
+                  <mssgle:LineSegment
+                    End="-158.5,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2455,7 +3145,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task - Load CSV\OLE DB Destination">
+    design-time-name="Package\Data Flow Staging to Final\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2467,94 +3157,6 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Data Flow Staging to Final">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Staging to Final\OLE DB Source"
-          TopLeft="240,39" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Data Flow Staging to Final\Data Conversion"
-          TopLeft="150,127" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Staging to Final\OLE DB Destination"
-          TopLeft="236,209" />
-        <EdgeLayout
-          Id="Package\Data Flow Staging to Final.Paths[OLE DB Source Output]"
-          TopLeft="315,81">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-87,46"
-              Start="0,0"
-              End="-87,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19"
-                    Point2="0,23"
-                    Point3="-4,23" />
-                  <mssgle:LineSegment
-                    End="-83,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83,23"
-                    Point2="-87,23"
-                    Point3="-87,27" />
-                  <mssgle:LineSegment
-                    End="-87,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Staging to Final.Paths[Data Conversion Output]"
-          TopLeft="228,169">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="93.5,40"
-              Start="0,0"
-              End="93.5,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16"
-                    Point2="0,20"
-                    Point3="4,20" />
-                  <mssgle:LineSegment
-                    End="89.5,20" />
-                  <mssgle:CubicBezierSegment
-                    Point1="89.5,20"
-                    Point2="93.5,20"
-                    Point3="93.5,24" />
-                  <mssgle:LineSegment
-                    End="93.5,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Staging to Final\OLE DB Source">
     <Properties>
@@ -2568,8 +3170,96 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Task - Load CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task - Load CSV\OLE DB Destination"
+          TopLeft="239,150" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task - Load CSV\Flat File Source"
+          TopLeft="243,35" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task - Load CSV\Derived Column"
+          TopLeft="475,89" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
+          TopLeft="394,56">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81,54"
+              Start="0,0"
+              End="73.5,54">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="36.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.5,0"
+                    Point2="40.5,0"
+                    Point3="40.5,4" />
+                  <mssgle:LineSegment
+                    End="40.5,50" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.5,50"
+                    Point2="40.5,54"
+                    Point3="44.5,54" />
+                  <mssgle:LineSegment
+                    End="73.5,54" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Load CSV.Paths[Derived Column Output]"
+          TopLeft="475,115.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-65,55.3333333333333"
+              Start="0,0"
+              End="-57.5,55.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-23.4311926605505,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.4311926605505,0"
+                    Point2="-27.4311926605505,0"
+                    Point3="-27.4311926605505,4" />
+                  <mssgle:LineSegment
+                    End="-27.4311926605505,51.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-27.4311926605505,51.3333333333333"
+                    Point2="-27.4311926605505,55.3333333333333"
+                    Point3="-31.4311926605505,55.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-57.5,55.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Staging to Final\OLE DB Destination">
+    design-time-name="Package\Data Flow Task - Load CSV\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
