@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="pkg_Filial"
-  DTS:VersionBuild="85"
-  DTS:VersionGUID="{289CA4F2-1909-46BF-ACCF-C5B8DF392065}">
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{3774E2EC-E0C6-467E-B05B-00F8C6D8EA73}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1419,7 +1419,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{98B5BD48-103F-4C6A-B60C-ABDDD10D94E4}"
+          SQLTask:Connection="{D969DCC2-DAFA-4BF2-8C43-FF0865FD41D1}"
           SQLTask:SqlStatementSource="CREATE TABLE [dbo].[Filial] (&#xA;[FilialCodigo] varchar(50),&#xA;[FilialDescricao] varchar(50)&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1863,6 +1863,15 @@
                       lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
                       name="Descricao"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data_Inclusao]"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Inclusao]"
+                      name="Data_Inclusao"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1878,6 +1887,10 @@
                       dataType="str"
                       length="10"
                       name="Descricao" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Inclusao" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1899,6 +1912,11 @@
                       length="10"
                       lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
                       name="Descricao" />
+                    <outputColumn
+                      refId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Data_Inclusao]"
+                      name="Data_Inclusao" />
                     <outputColumn
                       refId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -2009,7 +2027,7 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task\Flat File Source"
@@ -2053,9 +2071,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2089,9 +2105,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2114,7 +2128,7 @@
     design-time-name="Package\Data Flow Task 1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task 1\Derived Column"
@@ -2156,9 +2170,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2192,9 +2204,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2216,9 +2226,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
