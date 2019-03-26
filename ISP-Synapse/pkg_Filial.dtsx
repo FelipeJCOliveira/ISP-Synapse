@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="pkg_Filial"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{5EEE1C24-D84F-4593-8816-F532E14F230E}">
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{289CA4F2-1909-46BF-ACCF-C5B8DF392065}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1076,6 +1076,28 @@
                           name="FriendlyExpression">(DT_STR,10,1252)FilialDescricao</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      name="drv_Dt_Import"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1314,6 +1336,12 @@
                       cachedName="drv_Codigo"
                       externalMetadataColumnId="Package\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
                       lineageId="Package\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo]" />
+                    <inputColumn
+                      refId="Package\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="drv_Dt_Import"
+                      externalMetadataColumnId="Package\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      lineageId="Package\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1329,6 +1357,10 @@
                       dataType="str"
                       length="10"
                       name="Descricao" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Inclusao" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1441,7 +1473,7 @@
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="6"
+                      length="10"
                       lineageId="Package\Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
                       name="cvt_Codigo"
                       truncationRowDisposition="FailComponent">
@@ -1508,12 +1540,12 @@
                   synchronousInputId="Package\Staging to Final\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[versao]"
+                      refId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_versao]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[versao]"
-                      name="versao"
+                      lineageId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_versao]"
+                      name="drv_versao"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1530,12 +1562,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[Data_Inclusao]"
+                      refId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Data_Inclusao]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[Data_Inclusao]"
-                      name="Data_Inclusao"
+                      lineageId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Data_Inclusao]"
+                      name="drv_Data_Inclusao"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1660,22 +1692,22 @@
                       externalMetadataColumnId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[desc_Filial]"
                       lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]" />
                     <inputColumn
-                      refId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[versao]"
+                      refId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_versao]"
                       cachedDataType="i4"
-                      cachedName="versao"
+                      cachedName="drv_versao"
                       externalMetadataColumnId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Versao]"
-                      lineageId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[versao]" />
+                      lineageId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_versao]" />
                     <inputColumn
-                      refId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data_Inclusao]"
+                      refId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Data_Inclusao]"
                       cachedDataType="dbTimeStamp"
-                      cachedName="Data_Inclusao"
+                      cachedName="drv_Data_Inclusao"
                       externalMetadataColumnId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
-                      lineageId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[Data_Inclusao]" />
+                      lineageId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Data_Inclusao]" />
                     <inputColumn
                       refId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Codigo]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="6"
+                      cachedLength="10"
                       cachedName="cvt_Codigo"
                       externalMetadataColumnId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_Filial]"
                       lineageId="Package\Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]" />
@@ -1706,7 +1738,7 @@
                       refId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_Filial]"
                       codePage="1252"
                       dataType="str"
-                      length="6"
+                      length="10"
                       name="cod_Filial" />
                     <externalMetadataColumn
                       refId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[desc_Filial]"
@@ -1977,7 +2009,7 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task\Flat File Source"
@@ -1995,7 +2027,7 @@
           TopLeft="289.5,88">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-118.5,29"
               Start="0,0"
               End="-118.5,21.5">
@@ -2031,7 +2063,7 @@
           TopLeft="171,159">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="152.5,26"
               Start="0,0"
               End="152.5,18.5">
@@ -2082,7 +2114,7 @@
     design-time-name="Package\Data Flow Task 1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task 1\Derived Column"
@@ -2124,7 +2156,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2158,7 +2192,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2180,7 +2216,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2304,7 +2342,11 @@
     design-time-name="Package\Staging to Final">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Staging to Final\Derived Column"
+          TopLeft="279,51" />
         <NodeLayout
           Size="150,42"
           Id="Package\Staging to Final\OLE DB Source"
@@ -2314,15 +2356,49 @@
           Id="Package\Staging to Final\OLE DB Destination"
           TopLeft="354,167" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Staging to Final\Derived Column"
-          TopLeft="279,51" />
+          Size="156,42"
+          Id="Package\Staging to Final\Data Conversion"
+          TopLeft="50,130" />
+        <EdgeLayout
+          Id="Package\Staging to Final.Paths[OLE DB Source Output]"
+          TopLeft="114,93">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.6666666666667,37"
+              Start="0,0"
+              End="-10.6666666666667,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9746192893401" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9746192893401"
+                    Point2="0,21.9746192893401"
+                    Point3="-4,21.9746192893401" />
+                  <mssgle:LineSegment
+                    End="-6.66666666666667,21.9746192893401" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.66666666666667,21.9746192893401"
+                    Point2="-10.6666666666667,21.9746192893401"
+                    Point3="-10.6666666666667,25.9746192893401" />
+                  <mssgle:LineSegment
+                    End="-10.6666666666667,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Staging to Final.Paths[Derived Column Output]"
           TopLeft="380.333333333333,93">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="59.1666666666667,74"
               Start="0,0"
               End="59.1666666666667,66.5">
@@ -2351,50 +2427,12 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Staging to Final\Data Conversion"
-          TopLeft="50,130" />
-        <EdgeLayout
-          Id="Package\Staging to Final.Paths[OLE DB Source Output]"
-          TopLeft="114,93">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="14,37"
-              Start="0,0"
-              End="14,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
-                  <mssgle:LineSegment
-                    End="10,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="10,18.5"
-                    Point2="14,18.5"
-                    Point3="14,22.5" />
-                  <mssgle:LineSegment
-                    End="14,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Staging to Final.Paths[Data Conversion Output]"
           TopLeft="152.666666666667,130">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="179,-37"
               Start="0,0"
               End="179,-29.5">
