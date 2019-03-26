@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Teste"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{7EB7A52D-A675-4D17-A272-505BA7FF0A91}">
+  DTS:VersionBuild="87"
+  DTS:VersionGUID="{3F735B08-7D8F-44E5-8BD0-895AC1C84254}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2730,6 +2730,435 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B856784F-3C3D-41B4-8B6F-13F03735730C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TESTE1 (nvarchar) to TESTE2 (varchar) - OK"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Inputs[Data Conversion Input].Columns[testeNome]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="testeNome"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[testeNome]" />
+                    <inputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Inputs[Data Conversion Input].Columns[formula]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="formula"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[formula]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_testeNome]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_testeNome]"
+                      name="cvt_testeNome"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[testeNome]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_formula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_formula]"
+                      name="cvt_formula"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[formula]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TB_TESTE_02]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[testeId]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="testeId"
+                      externalMetadataColumnId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[testeId]"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[testeId]" />
+                    <inputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_testeNome]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cvt_testeNome"
+                      externalMetadataColumnId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[testeNome]"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_testeNome]" />
+                    <inputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_formula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cvt_formula"
+                      externalMetadataColumnId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[formula]"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_formula]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[testeId]"
+                      dataType="i4"
+                      name="testeId" />
+                    <externalMetadataColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[testeNome]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="testeNome" />
+                    <externalMetadataColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[formula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="formula" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TB_TESTE_01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[testeId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[testeId]"
+                      length="50"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[testeId]"
+                      name="testeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[testeNome]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[testeNome]"
+                      length="50"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[testeNome]"
+                      name="testeNome"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[formula]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[formula]"
+                      length="100"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].Columns[formula]"
+                      name="formula"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[testeId]"
+                      dataType="wstr"
+                      length="50"
+                      name="testeId" />
+                    <externalMetadataColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[testeNome]"
+                      dataType="wstr"
+                      length="50"
+                      name="testeNome" />
+                    <externalMetadataColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[formula]"
+                      dataType="wstr"
+                      length="100"
+                      name="formula" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[testeId]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[testeId]"
+                      name="testeId" />
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[testeNome]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[testeNome]"
+                      name="testeNome" />
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[formula]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[formula]"
+                      name="formula" />
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK.Paths[Data Conversion Output]"
+              endId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK.Paths[OLE DB Source Output]"
+              endId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2756,23 +3185,23 @@
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
-          TopLeft="50,42" />
+          TopLeft="437,80" />
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow TB 2"
-          TopLeft="253,49" />
+          TopLeft="341,146" />
         <NodeLayout
           Size="160,42"
           Id="Package\Data Flow TB 2 1"
-          TopLeft="442,54" />
+          TopLeft="501,146" />
         <NodeLayout
           Size="193,42"
           Id="Package\Data Flow TESTE EXCEL"
-          TopLeft="138,307" />
+          TopLeft="45,413" />
         <NodeLayout
           Size="150,42"
           Id="Package\Load CSV 1252"
-          TopLeft="60,372" />
+          TopLeft="60,464" />
         <AnnotationLayout
           Text="copiando dados para arquivo ansi ou iso e importando deste novo arquivo&#xA;"
           ParentId="d3f9280f-368e-4e9a-aedc-4ae425608162"
@@ -2826,7 +3255,7 @@
           PanelSize="515,152"
           Size="515,195"
           Id="d3f9280f-368e-4e9a-aedc-4ae425608162"
-          TopLeft="37.5,105.5">
+          TopLeft="37.5,197.5">
           <GroupLayout.ChildrenIds>
             <s:String>f6dfac39-c6e5-488b-9059-f4017a6e6b93</s:String>
             <s:String>Package\FF Destination to varchar table</s:String>
@@ -2834,6 +3263,10 @@
             <s:String>Package.PrecedenceConstraints[Constraint]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
+        <NodeLayout
+          Size="291,42"
+          Id="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK"
+          TopLeft="46,82" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3303,7 +3736,7 @@
     design-time-name="Package\Load CSV 1252">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\Load CSV 1252\Flat File Source"
@@ -3347,7 +3780,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3381,7 +3816,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3389,6 +3826,108 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Load CSV 1252\OLE DB Destination 1252">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source"
+          TopLeft="103,44" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination"
+          TopLeft="111,126" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\Data Conversion"
+          TopLeft="358,44" />
+        <EdgeLayout
+          Id="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK.Paths[OLE DB Source Output]"
+          TopLeft="253,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="105,0"
+              Start="0,0"
+              End="97.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="97.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK.Paths[Data Conversion Output]"
+          TopLeft="436,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-239.5,40"
+              Start="0,0"
+              End="-239.5,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="-4,20" />
+                  <mssgle:LineSegment
+                    End="-235.5,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-235.5,20"
+                    Point2="-239.5,20"
+                    Point3="-239.5,24" />
+                  <mssgle:LineSegment
+                    End="-239.5,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TESTE1 (nvarchar) to TESTE2 (varchar) - OK\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
