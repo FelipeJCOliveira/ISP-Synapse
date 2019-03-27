@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Regional"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{5A5FF63E-2386-4EC0-8346-151C34B99FB4}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{E731FDF2-9F0E-4322-91B0-EB29FF2D1913}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1451,6 +1451,10 @@
                       dataType="str"
                       length="14"
                       name="userID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Final INITIAL\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Alteracao" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2614,10 +2618,6 @@ where cod_Regional = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="154,42"
-          Id="Package\Staging to Final INITIAL\Derived Column"
-          TopLeft="415,91" />
-        <NodeLayout
           Size="150,42"
           Id="Package\Staging to Final INITIAL\OLE DB Source"
           TopLeft="196,30" />
@@ -2625,6 +2625,10 @@ where cod_Regional = ?</property>
           Size="171,42"
           Id="Package\Staging to Final INITIAL\OLE DB Destination"
           TopLeft="186,127" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Staging to Final INITIAL\Derived Column"
+          TopLeft="415,91" />
         <EdgeLayout
           Id="Package\Staging to Final INITIAL.Paths[OLE DB Source Output]"
           TopLeft="346,51">
@@ -2732,113 +2736,21 @@ where cod_Regional = ?</property>
           Id="Package\Staging to Final UP-INSERT\OLE DB Destination"
           TopLeft="358,199" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Staging to Final UP-INSERT\Derived Column"
-          TopLeft="415,91" />
+          Size="166,42"
+          Id="Package\Staging to Final UP-INSERT\OLE DB Command"
+          TopLeft="284.222222222222,278.777777777778" />
         <NodeLayout
           Size="150,42"
           Id="Package\Staging to Final UP-INSERT\OLE DB Source"
           TopLeft="70,29" />
-        <EdgeLayout
-          Id="Package\Staging to Final UP-INSERT.Paths[OLE DB Source Output]"
-          TopLeft="220,50">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="195,56.3333333333333"
-              Start="0,0"
-              End="187.5,56.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="108.706422018349,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="108.706422018349,0"
-                    Point2="112.706422018349,0"
-                    Point3="112.706422018349,4" />
-                  <mssgle:LineSegment
-                    End="112.706422018349,52.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="112.706422018349,52.3333333333333"
-                    Point2="112.706422018349,56.3333333333333"
-                    Point3="116.706422018349,56.3333333333333" />
-                  <mssgle:LineSegment
-                    End="187.5,56.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="113,42"
           Id="Package\Staging to Final UP-INSERT\Lookup"
           TopLeft="100,96" />
-        <EdgeLayout
-          Id="Package\Staging to Final UP-INSERT.Paths[Derived Column Output]"
-          TopLeft="415,117.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-202,0"
-              Start="0,0"
-              End="-194.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-194.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="166,42"
-          Id="Package\Staging to Final UP-INSERT\OLE DB Command"
-          TopLeft="284.222222222222,278.777777777778" />
-        <EdgeLayout
-          Id="Package\Staging to Final UP-INSERT.Paths[Lookup No Match Output]"
-          TopLeft="174,138">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="269.5,61"
-              Start="0,0"
-              End="269.5,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.9109947643979" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.9109947643979"
-                    Point2="0,24.9109947643979"
-                    Point3="4,24.9109947643979" />
-                  <mssgle:LineSegment
-                    End="265.5,24.9109947643979" />
-                  <mssgle:CubicBezierSegment
-                    Point1="265.5,24.9109947643979"
-                    Point2="269.5,24.9109947643979"
-                    Point3="269.5,28.9109947643979" />
-                  <mssgle:LineSegment
-                    End="269.5,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="78.94361328125,29.9109947643979,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="154,42"
+          Id="Package\Staging to Final UP-INSERT\Derived Column"
+          TopLeft="415,91" />
         <EdgeLayout
           Id="Package\Staging to Final UP-INSERT.Paths[Lookup Match Output]"
           TopLeft="139,138">
@@ -2875,6 +2787,98 @@ where cod_Regional = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Final UP-INSERT.Paths[Derived Column Output]"
+          TopLeft="415,117.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202,0"
+              Start="0,0"
+              End="-194.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-194.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Final UP-INSERT.Paths[OLE DB Source Output]"
+          TopLeft="220,50">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="195,56.3333333333333"
+              Start="0,0"
+              End="187.5,56.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="108.706422018349,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.706422018349,0"
+                    Point2="112.706422018349,0"
+                    Point3="112.706422018349,4" />
+                  <mssgle:LineSegment
+                    End="112.706422018349,52.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.706422018349,52.3333333333333"
+                    Point2="112.706422018349,56.3333333333333"
+                    Point3="116.706422018349,56.3333333333333" />
+                  <mssgle:LineSegment
+                    End="187.5,56.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Final UP-INSERT.Paths[Lookup No Match Output]"
+          TopLeft="174,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="269.5,61"
+              Start="0,0"
+              End="269.5,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.9109947643979" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.9109947643979"
+                    Point2="0,24.9109947643979"
+                    Point3="4,24.9109947643979" />
+                  <mssgle:LineSegment
+                    End="265.5,24.9109947643979" />
+                  <mssgle:CubicBezierSegment
+                    Point1="265.5,24.9109947643979"
+                    Point2="269.5,24.9109947643979"
+                    Point3="269.5,28.9109947643979" />
+                  <mssgle:LineSegment
+                    End="269.5,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="78.94361328125,29.9109947643979,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2897,7 +2901,7 @@ where cod_Regional = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2907,7 +2911,7 @@ where cod_Regional = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
