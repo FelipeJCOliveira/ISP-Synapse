@@ -1,0 +1,2551 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/27/2019 3:20:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WINDEV1810EVAL"
+  DTS:CreatorName="WINDEV1810EVAL\user"
+  DTS:DTSID="{1D36D866-B169-4E05-A1B7-973777D509CF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="pkg_ConsumoConcorrencia"
+  DTS:PackageType="5"
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{24CB1353-CFC0-4BD4-B693-D5BBD84AC2F8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF ConsumoConcorrencia (65001 - unicode)]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C16E7785-F87A-4DAE-A0C0-448E438B4E3C}"
+      DTS:ObjectName="FF ConsumoConcorrencia (65001 - unicode)">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::FullFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="E:\All CSV Files\ConsumoConcorrencia.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcCodigoCorporativo"
+              DTS:DTSID="{91E96A8C-5ABC-4C83-A244-BAAC3901C58E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcCFOPDist"
+              DTS:DTSID="{B3952791-7D4B-41D4-92C7-AFA5012FFCD4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcMunicipioIBGE"
+              DTS:DTSID="{606526AB-9082-4D44-9E6B-904E22387520}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcAno"
+              DTS:DTSID="{5ABFDD8D-E7F3-4B0C-AABB-AB691E7ECD9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcMes"
+              DTS:DTSID="{FBBE2F12-CAB6-49ED-A9F9-242A0671D659}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcCFOP"
+              DTS:DTSID="{C0D65997-4C09-4AAB-8240-BEFFDB8EC465}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcFabricanteAgrupado"
+              DTS:DTSID="{802AB331-FBF3-4B7D-94E2-D481841FE09A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcCultura"
+              DTS:DTSID="{F18793A9-31CE-4826-86FE-15498D26CE17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="7"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcFilialDistribuidor"
+              DTS:DTSID="{7795596F-398D-4840-9EFD-E340602C2EE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcSafra"
+              DTS:DTSID="{A5D41D89-14BB-4A77-96C3-09221BE63325}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcGrupoDescricao"
+              DTS:DTSID="{1D680D87-9C14-4983-BD8A-EFC49776A295}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcSubgrupoDescricao"
+              DTS:DTSID="{EF49FD94-6C6D-4978-A1BF-7F651BFF2022}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcVendedor"
+              DTS:DTSID="{86ABD5E8-8611-4C94-9971-96608F13B638}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcProduto"
+              DTS:DTSID="{7DE93E7F-9F4D-4AB5-A9E7-9679E0E0CA9D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcSubgrupo"
+              DTS:DTSID="{F1D8489F-C789-497E-8C8E-5EE646362355}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcGrupo"
+              DTS:DTSID="{215E2FF2-5B73-4B29-A997-CE72753D6620}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcCliente"
+              DTS:DTSID="{C049096B-2E3A-428D-91EC-CC34DA544805}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcVolume"
+              DTS:DTSID="{11AFA214-76B5-4773-B27D-4D610FD91823}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcValor"
+              DTS:DTSID="{FD0E7B59-1010-4DA2-93B3-1DF13576A03B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="11"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcFonte"
+              DTS:DTSID="{69333D94-F9D9-4609-9303-3C6C1B68B1D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcCFOPMultiplicador"
+              DTS:DTSID="{E62C02B3-CDE3-48FD-A350-51CDF6250137}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcOperacao"
+              DTS:DTSID="{EEC711CF-3A54-4C0D-A39A-15980A48F53C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcCodigoAgrupado"
+              DTS:DTSID="{7516C05B-4E53-4C70-BE70-595685EBE092}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcUnidade"
+              DTS:DTSID="{3FC37B05-BB15-456A-BF71-A06519A701F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcFilial"
+              DTS:DTSID="{39B1DDCF-7C7F-4F52-92BD-8B73A6547BDF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ConsumoConcRegional"
+              DTS:DTSID="{C4434B50-04BA-4203-907A-12022D4D0D9D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.DB_Synapse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B00D95A9-81EF-4E6B-8E55-E2E6920B2371}"
+      DTS:ObjectName="localhost.DB_Synapse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB_Synapse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{0231087E-9A42-4E53-AA3D-A62E50BF6B41}"
+      DTS:ObjectName="FullFileName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">E:\All CSV Files\ConsumoConcorrencia.csv</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load CSV"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{73D79D15-1AD2-4B73-8643-07529C5FE08E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load CSV"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load CSV\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcCultura]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="ConsumoConcCultura"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCultura]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcCodigoCorporativo]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="ConsumoConcCodigoCorporativo"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCodigoCorporativo]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcCFOPDist]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ConsumoConcCFOPDist"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOPDist]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcMunicipioIBGE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="ConsumoConcMunicipioIBGE"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcMunicipioIBGE]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcAno]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="ConsumoConcAno"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcAno]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcMes]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="ConsumoConcMes"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcMes]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcCFOP]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="ConsumoConcCFOP"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOP]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcFabricanteAgrupado]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="ConsumoConcFabricanteAgrupado"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFabricanteAgrupado]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcFilialDistribuidor]"
+                      cachedDataType="wstr"
+                      cachedLength="7"
+                      cachedName="ConsumoConcFilialDistribuidor"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFilialDistribuidor]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcSafra]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="ConsumoConcSafra"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSafra]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcGrupoDescricao]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ConsumoConcGrupoDescricao"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcGrupoDescricao]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcSubgrupoDescricao]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ConsumoConcSubgrupoDescricao"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSubgrupoDescricao]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcVendedor]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ConsumoConcVendedor"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcVendedor]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcProduto]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ConsumoConcProduto"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcProduto]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcSubgrupo]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ConsumoConcSubgrupo"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSubgrupo]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcGrupo]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ConsumoConcGrupo"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcGrupo]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcCliente]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ConsumoConcCliente"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCliente]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcVolume]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ConsumoConcVolume"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcVolume]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcValor]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ConsumoConcValor"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcValor]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcFonte]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="ConsumoConcFonte"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFonte]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcCFOPMultiplicador]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="ConsumoConcCFOPMultiplicador"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOPMultiplicador]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcOperacao]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="ConsumoConcOperacao"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcOperacao]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcCodigoAgrupado]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="ConsumoConcCodigoAgrupado"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCodigoAgrupado]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcUnidade]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="ConsumoConcUnidade"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcUnidade]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcFilial]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="ConsumoConcFilial"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFilial]" />
+                    <inputColumn
+                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcRegional]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="ConsumoConcRegional"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcRegional]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cultura]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="2"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cultura]"
+                      name="cvt_Cultura"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCultura]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CodigoCorporativo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CodigoCorporativo]"
+                      name="cvt_CodigoCorporativo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCodigoCorporativo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CFOPDist]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CFOPDist]"
+                      name="cvt_CFOPDist"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOPDist]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_MunicipioIBGE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_MunicipioIBGE]"
+                      name="cvt_MunicipioIBGE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcMunicipioIBGE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Ano]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Ano]"
+                      name="cvt_Ano"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcAno]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Mes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Mes]"
+                      name="cvt_Mes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcMes]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CFOP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CFOP]"
+                      name="cvt_CFOP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOP]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_FabricanteAgrupado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_FabricanteAgrupado]"
+                      name="cvt_FabricanteAgrupado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFabricanteAgrupado]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_FilialDistribuidor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="7"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_FilialDistribuidor]"
+                      name="cvt_FilialDistribuidor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFilialDistribuidor]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Safra]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Safra]"
+                      name="cvt_Safra"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSafra]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_GrupoDescricao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_GrupoDescricao]"
+                      name="cvt_GrupoDescricao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcGrupoDescricao]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_SubgrupoDescricao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_SubgrupoDescricao]"
+                      name="cvt_SubgrupoDescricao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSubgrupoDescricao]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Vendedor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Vendedor]"
+                      name="cvt_Vendedor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcVendedor]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Produto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Produto]"
+                      name="cvt_Produto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcProduto]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Subgrupo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Subgrupo]"
+                      name="cvt_Subgrupo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSubgrupo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Grupo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Grupo]"
+                      name="cvt_Grupo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcGrupo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cliente]"
+                      name="cvt_Cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCliente]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Volume]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Volume]"
+                      name="cvt_Volume"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcVolume]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Valor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Valor]"
+                      name="cvt_Valor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcValor]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Fonte]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="11"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Fonte]"
+                      name="cvt_Fonte"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFonte]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CFOPMultiplicador]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="2"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CFOPMultiplicador]"
+                      name="cvt_CFOPMultiplicador"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOPMultiplicador]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="25"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]"
+                      name="cvt_Operacao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcOperacao]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CodigoAgrupado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CodigoAgrupado]"
+                      name="cvt_CodigoAgrupado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCodigoAgrupado]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Unidade]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="8"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Unidade]"
+                      name="cvt_Unidade"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcUnidade]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Filial]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Filial]"
+                      name="cvt_Filial"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFilial]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Regional]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Regional]"
+                      name="cvt_Regional"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcRegional]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load CSV\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load CSV\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load CSV\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load CSV\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      name="drv_Dt_Import"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load CSV\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load CSV\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load CSV\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load CSV\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FF ConsumoConcorrencia (65001 - unicode)]"
+                  connectionManagerRefId="Package.ConnectionManagers[FF ConsumoConcorrencia (65001 - unicode)]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCodigoCorporativo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCodigoCorporativo]"
+                      length="10"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCodigoCorporativo]"
+                      name="ConsumoConcCodigoCorporativo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOPDist]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCFOPDist]"
+                      length="20"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOPDist]"
+                      name="ConsumoConcCFOPDist"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcMunicipioIBGE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcMunicipioIBGE]"
+                      length="10"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcMunicipioIBGE]"
+                      name="ConsumoConcMunicipioIBGE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcAno]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcAno]"
+                      length="4"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcAno]"
+                      name="ConsumoConcAno"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcMes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcMes]"
+                      length="3"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcMes]"
+                      name="ConsumoConcMes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOP]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCFOP]"
+                      length="5"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOP]"
+                      name="ConsumoConcCFOP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFabricanteAgrupado]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcFabricanteAgrupado]"
+                      length="10"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFabricanteAgrupado]"
+                      name="ConsumoConcFabricanteAgrupado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCultura]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCultura]"
+                      length="2"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCultura]"
+                      name="ConsumoConcCultura"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFilialDistribuidor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcFilialDistribuidor]"
+                      length="7"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFilialDistribuidor]"
+                      name="ConsumoConcFilialDistribuidor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSafra]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcSafra]"
+                      length="3"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSafra]"
+                      name="ConsumoConcSafra"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcGrupoDescricao]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcGrupoDescricao]"
+                      length="20"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcGrupoDescricao]"
+                      name="ConsumoConcGrupoDescricao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSubgrupoDescricao]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcSubgrupoDescricao]"
+                      length="50"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSubgrupoDescricao]"
+                      name="ConsumoConcSubgrupoDescricao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcVendedor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcVendedor]"
+                      length="15"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcVendedor]"
+                      name="ConsumoConcVendedor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcProduto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcProduto]"
+                      length="50"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcProduto]"
+                      name="ConsumoConcProduto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSubgrupo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcSubgrupo]"
+                      length="20"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcSubgrupo]"
+                      name="ConsumoConcSubgrupo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcGrupo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcGrupo]"
+                      length="15"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcGrupo]"
+                      name="ConsumoConcGrupo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCliente]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCliente]"
+                      length="15"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCliente]"
+                      name="ConsumoConcCliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcVolume]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcVolume]"
+                      length="20"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcVolume]"
+                      name="ConsumoConcVolume"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcValor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcValor]"
+                      length="20"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcValor]"
+                      name="ConsumoConcValor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFonte]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcFonte]"
+                      length="11"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFonte]"
+                      name="ConsumoConcFonte"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOPMultiplicador]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCFOPMultiplicador]"
+                      length="2"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOPMultiplicador]"
+                      name="ConsumoConcCFOPMultiplicador"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcOperacao]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcOperacao]"
+                      length="25"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcOperacao]"
+                      name="ConsumoConcOperacao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCodigoAgrupado]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCodigoAgrupado]"
+                      length="10"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCodigoAgrupado]"
+                      name="ConsumoConcCodigoAgrupado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcUnidade]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcUnidade]"
+                      length="8"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcUnidade]"
+                      name="ConsumoConcUnidade"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFilial]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcFilial]"
+                      length="10"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcFilial]"
+                      name="ConsumoConcFilial"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcRegional]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcRegional]"
+                      length="6"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcRegional]"
+                      name="ConsumoConcRegional"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCodigoCorporativo]"
+                      dataType="wstr"
+                      length="10"
+                      name="ConsumoConcCodigoCorporativo" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCFOPDist]"
+                      dataType="wstr"
+                      length="20"
+                      name="ConsumoConcCFOPDist" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcMunicipioIBGE]"
+                      dataType="wstr"
+                      length="10"
+                      name="ConsumoConcMunicipioIBGE" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcAno]"
+                      dataType="wstr"
+                      length="4"
+                      name="ConsumoConcAno" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcMes]"
+                      dataType="wstr"
+                      length="3"
+                      name="ConsumoConcMes" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCFOP]"
+                      dataType="wstr"
+                      length="5"
+                      name="ConsumoConcCFOP" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcFabricanteAgrupado]"
+                      dataType="wstr"
+                      length="10"
+                      name="ConsumoConcFabricanteAgrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCultura]"
+                      dataType="wstr"
+                      length="2"
+                      name="ConsumoConcCultura" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcFilialDistribuidor]"
+                      dataType="wstr"
+                      length="7"
+                      name="ConsumoConcFilialDistribuidor" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcSafra]"
+                      dataType="wstr"
+                      length="3"
+                      name="ConsumoConcSafra" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcGrupoDescricao]"
+                      dataType="wstr"
+                      length="20"
+                      name="ConsumoConcGrupoDescricao" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcSubgrupoDescricao]"
+                      dataType="wstr"
+                      length="50"
+                      name="ConsumoConcSubgrupoDescricao" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcVendedor]"
+                      dataType="wstr"
+                      length="15"
+                      name="ConsumoConcVendedor" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcProduto]"
+                      dataType="wstr"
+                      length="50"
+                      name="ConsumoConcProduto" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcSubgrupo]"
+                      dataType="wstr"
+                      length="20"
+                      name="ConsumoConcSubgrupo" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcGrupo]"
+                      dataType="wstr"
+                      length="15"
+                      name="ConsumoConcGrupo" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCliente]"
+                      dataType="wstr"
+                      length="15"
+                      name="ConsumoConcCliente" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcVolume]"
+                      dataType="wstr"
+                      length="20"
+                      name="ConsumoConcVolume" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcValor]"
+                      dataType="wstr"
+                      length="20"
+                      name="ConsumoConcValor" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcFonte]"
+                      dataType="wstr"
+                      length="11"
+                      name="ConsumoConcFonte" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCFOPMultiplicador]"
+                      dataType="wstr"
+                      length="2"
+                      name="ConsumoConcCFOPMultiplicador" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcOperacao]"
+                      dataType="wstr"
+                      length="25"
+                      name="ConsumoConcOperacao" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcCodigoAgrupado]"
+                      dataType="wstr"
+                      length="10"
+                      name="ConsumoConcCodigoAgrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcUnidade]"
+                      dataType="wstr"
+                      length="8"
+                      name="ConsumoConcUnidade" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcFilial]"
+                      dataType="wstr"
+                      length="10"
+                      name="ConsumoConcFilial" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ConsumoConcRegional]"
+                      dataType="wstr"
+                      length="6"
+                      name="ConsumoConcRegional" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load CSV\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TB_Carga_Consumo_Concorrencia]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load CSV\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="drv_Dt_Import"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dt_Inclusao]"
+                      lineageId="Package\Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Cultura]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="cvt_Cultura"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cultura]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cultura]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_CodigoCorporativo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="cvt_CodigoCorporativo"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoCorporativo]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CodigoCorporativo]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_CFOPDist]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="cvt_CFOPDist"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOPDist]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CFOPDist]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_MunicipioIBGE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="cvt_MunicipioIBGE"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MunicipioIBGE]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_MunicipioIBGE]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Ano]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="cvt_Ano"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ano]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Ano]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Mes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="cvt_Mes"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mes]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Mes]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_CFOP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="cvt_CFOP"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOP]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CFOP]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_FabricanteAgrupado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="cvt_FabricanteAgrupado"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FabricanteAgrupado]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_FabricanteAgrupado]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_FilialDistribuidor]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="cvt_FilialDistribuidor"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FilialDistribuidor]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_FilialDistribuidor]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Safra]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="cvt_Safra"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Safra]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Safra]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_GrupoDescricao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="cvt_GrupoDescricao"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GrupoDescricao]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_GrupoDescricao]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_SubgrupoDescricao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cvt_SubgrupoDescricao"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubgrupoDescricao]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_SubgrupoDescricao]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Vendedor]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="cvt_Vendedor"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vendedor]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Vendedor]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Produto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cvt_Produto"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Produto]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Produto]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Subgrupo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="cvt_Subgrupo"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Subgrupo]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Subgrupo]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Grupo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="cvt_Grupo"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grupo]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Grupo]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="cvt_Cliente"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cliente]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cliente]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Volume]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="cvt_Volume"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Volume]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Volume]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Valor]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="cvt_Valor"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Valor]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Fonte]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="cvt_Fonte"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fonte]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Fonte]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_CFOPMultiplicador]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="cvt_CFOPMultiplicador"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOPMultiplicador]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CFOPMultiplicador]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Operacao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="cvt_Operacao"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Operacao]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_CodigoAgrupado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="cvt_CodigoAgrupado"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoAgrupado]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CodigoAgrupado]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Unidade]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="cvt_Unidade"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unidade]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Unidade]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Filial]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="cvt_Filial"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Filial]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Filial]" />
+                    <inputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Regional]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="cvt_Regional"
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Regional]"
+                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Regional]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoCorporativo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CodigoCorporativo" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOPDist]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CFOPDist" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MunicipioIBGE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="MunicipioIBGE" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ano]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Ano" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Mes" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="CFOP" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FabricanteAgrupado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="FabricanteAgrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cultura]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Cultura" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FilialDistribuidor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="FilialDistribuidor" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Safra]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Safra" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GrupoDescricao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="GrupoDescricao" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubgrupoDescricao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SubgrupoDescricao" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vendedor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Vendedor" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Produto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Produto" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Subgrupo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Subgrupo" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grupo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Grupo" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Volume]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Volume" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Valor" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fonte]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="Fonte" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOPMultiplicador]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="CFOPMultiplicador" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Operacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="Operacao" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoAgrupado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CodigoAgrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unidade]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Unidade" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Filial]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Filial" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Regional]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="Regional" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dt_Inclusao]"
+                      dataType="dbTimeStamp"
+                      name="Dt_Inclusao" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load CSV.Paths[Data Conversion Output]"
+              endId="Package\Load CSV\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load CSV.Paths[Derived Column Output]"
+              endId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load CSV\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load CSV.Paths[Flat File Source Output]"
+              endId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Load CSV"
+          TopLeft="84,46" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Load CSV\OLE DB Destination"
+          TopLeft="162,121" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Load CSV\Flat File Source"
+          TopLeft="70,34" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load CSV\Derived Column"
+          TopLeft="401,120" />
+        <EdgeLayout
+          Id="Package\Load CSV.Paths[Derived Column Output]"
+          TopLeft="401,141.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68,0"
+              Start="0,0"
+              End="-60.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-60.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load CSV\Data Conversion"
+          TopLeft="363,25" />
+        <EdgeLayout
+          Id="Package\Load CSV.Paths[Flat File Source Output]"
+          TopLeft="221,55">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142,-9"
+              Start="0,0"
+              End="134.5,-9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67,0"
+                    Point2="71,0"
+                    Point3="71,-4" />
+                  <mssgle:LineSegment
+                    End="71,-5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71,-5"
+                    Point2="71,-9"
+                    Point3="75,-9" />
+                  <mssgle:LineSegment
+                    End="134.5,-9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CSV.Paths[Data Conversion Output]"
+          TopLeft="441,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37,53"
+              Start="0,0"
+              End="37,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="33,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33,26.5"
+                    Point2="37,26.5"
+                    Point3="37,30.5" />
+                  <mssgle:LineSegment
+                    End="37,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load CSV\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
