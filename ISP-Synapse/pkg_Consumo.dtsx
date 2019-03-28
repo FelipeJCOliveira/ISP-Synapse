@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Consumo"
   DTS:PackageType="5"
-  DTS:VersionBuild="112"
-  DTS:VersionGUID="{229A57B2-23AB-4656-84DE-A2811DBCA6E7}">
+  DTS:VersionBuild="134"
+  DTS:VersionGUID="{91C8AB91-C7AE-4231-87BB-5FC0FD847CD7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1202,12 +1202,12 @@
                       cachedName="Unidade"
                       lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unidade]" />
                     <inputColumn
-                      refId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Cultura]"
+                      refId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Serie_NF]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="Cultura"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cultura]" />
+                      cachedLength="5"
+                      cachedName="Serie_NF"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Serie_NF]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1308,21 +1308,19 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cultura]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Serie_NF]"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="2"
-                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cultura]"
-                      name="cvt_Cultura"
-                      truncationRowDisposition="FailComponent">
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Serie_NF]"
+                      name="cvt_Serie_NF"
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cultura]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Serie_NF]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1376,6 +1374,90 @@
                       cachedLength="20"
                       cachedName="Vendedor"
                       lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vendedor]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Preco_Adesao_Dist]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Preco_Adesao_Dist"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Dist]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Preco_Adesao_SPOCA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Preco_Adesao_SPOCA"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_SPOCA]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Preco_Adesao_SPOCA_Completo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Preco_Adesao_SPOCA_Completo"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_SPOCA_Completo]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Preco_Adesao_Regional]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Preco_Adesao_Regional"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Regional]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Preco_Cogs]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Preco_Cogs"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Cogs]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Preco_SIP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Preco_SIP"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_SIP]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Preco_Adesao_Unidade]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Preco_Adesao_Unidade"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Unidade]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Preco_Adesao_Filial]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Preco_Adesao_Filial"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Filial]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Preco_CMT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Preco_CMT"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_CMT]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Valor_CMT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Valor_CMT"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_CMT]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Valor_COGS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Valor_COGS"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_COGS]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Valor_SIP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Valor_SIP"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_SIP]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1434,6 +1516,270 @@
                           name="FriendlyExpression">(DT_STR,15,1252)Vendedor</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesao_Dist]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesao_Dist]"
+                      name="drv_PrecoAdesao_Dist"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Dist]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Dist]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Preco_Adesao_Dist) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Preco_Adesao_Dist,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoSpoca]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoSpoca]"
+                      name="drv_PrecoAdesaoSpoca"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_SPOCA]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_SPOCA]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Preco_Adesao_SPOCA) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Preco_Adesao_SPOCA,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoSpocaCompleto]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoSpocaCompleto]"
+                      name="drv_PrecoAdesaoSpocaCompleto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_SPOCA_Completo]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_SPOCA_Completo]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Preco_Adesao_SPOCA_Completo) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Preco_Adesao_SPOCA_Completo,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoRegional]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoRegional]"
+                      name="drv_PrecoAdesaoRegional"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Regional]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Regional]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Preco_Adesao_Regional) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Preco_Adesao_Regional,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoCogs]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoCogs]"
+                      name="drv_PrecoCogs"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Cogs]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Cogs]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Preco_Cogs) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Preco_Cogs,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoSIP]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoSIP]"
+                      name="drv_PrecoSIP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_SIP]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_SIP]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Preco_SIP) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Preco_SIP,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoUnidade]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoUnidade]"
+                      name="drv_PrecoAdesaoUnidade"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Unidade]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Unidade]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Preco_Adesao_Unidade) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Preco_Adesao_Unidade,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoFilial]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoFilial]"
+                      name="drv_PrecoAdesaoFilial"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Filial]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Filial]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Preco_Adesao_Filial) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Preco_Adesao_Filial,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoCMT]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoCMT]"
+                      name="drv_PrecoCMT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_CMT]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_CMT]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Preco_CMT) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Preco_CMT,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ValorCMT]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ValorCMT]"
+                      name="drv_ValorCMT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_CMT]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_CMT]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Valor_CMT) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Valor_CMT,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ValorCOGS]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ValorCOGS]"
+                      name="drv_ValorCOGS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_COGS]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_COGS]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Valor_COGS) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Valor_COGS,",","."))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ValorSIP]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ValorSIP]"
+                      name="drv_ValorSIP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_SIP]}) &lt; 1) ? NULL(DT_R4) : (DT_R4)([REPLACE](#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_SIP]},",","."))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(Valor_SIP) &lt; 1) ? NULL(DT_R4) : (DT_R4)(REPLACE(Valor_SIP,",","."))</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1455,6 +1801,127 @@
                       refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga to Final\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Carga to Final\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Carga to Final\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output].Columns[Arquivo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output].Columns[Arquivo]"
+                      name="Arquivo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,20,1252)@[$Package::FullFileName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,20,1252)@[$Package::FullFileName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output].Columns[Dt_Erro]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output].Columns[Dt_Erro]"
+                      name="Dt_Erro"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output].Columns[drv_NomeCampo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output].Columns[drv_NomeCampo]"
+                      name="drv_NomeCampo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,10,1252)"TESTE"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,10,1252)"TESTE"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Carga to Final\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1530,7 +1997,7 @@
                 <input
                   refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="RedirectRow"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -1638,14 +2105,6 @@
                       cachedName="Numero_NF"
                       externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Numero_NF]"
                       lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Numero_NF]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Serie_NF]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="5"
-                      cachedName="Serie_NF"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Serie_NF]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Serie_NF]" />
                     <inputColumn
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Situacao]"
                       cachedCodepage="1252"
@@ -1759,70 +2218,6 @@
                       externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor]"
                       lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor]" />
                     <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Preco_Cogs]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="Preco_Cogs"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Cogs]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Cogs]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Preco_SIP]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="Preco_SIP"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_SIP]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_SIP]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Preco_Adesao_Dist]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="Preco_Adesao_Dist"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Dist]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Dist]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Preco_Adesao_SPOCA]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="Preco_Adesao_SPOCA"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_SPOCA]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_SPOCA]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Preco_Adesao_SPOCA_Completo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="Preco_Adesao_SPOCA_Completo"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_SPOCA_Completo]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_SPOCA_Completo]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Preco_Adesao_Regional]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="Preco_Adesao_Regional"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Regional]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Regional]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Preco_Adesao_Unidade]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="Preco_Adesao_Unidade"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Unidade]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Unidade]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Preco_Adesao_Filial]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="Preco_Adesao_Filial"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Filial]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_Adesao_Filial]" />
-                    <inputColumn
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RTV_SPOCA]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1830,38 +2225,6 @@
                       cachedName="RTV_SPOCA"
                       externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RTV_SPOCA]"
                       lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[RTV_SPOCA]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Preco_CMT]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="Preco_CMT"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_CMT]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Preco_CMT]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valor_CMT]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="Valor_CMT"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_CMT]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_CMT]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valor_COGS]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="Valor_COGS"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_COGS]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_COGS]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valor_SIP]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="Valor_SIP"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_SIP]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Valor_SIP]" />
                     <inputColumn
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cliente_Transferencia]"
                       cachedCodepage="1252"
@@ -1927,14 +2290,6 @@
                       externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Modalidade_Venda]"
                       lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Modalidade_Venda]" />
                     <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Distribuidor_Agricola]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="Distribuidor_Agricola"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Agricola]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Distribuidor_Agricola]" />
-                    <inputColumn
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CFOP_Considera]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1973,14 +2328,6 @@
                       externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unidade]"
                       lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Unidade]" />
                     <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Cultura]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="2"
-                      cachedName="cvt_Cultura"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cultura]"
-                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cultura]" />
-                    <inputColumn
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Vendedor]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1988,6 +2335,100 @@
                       cachedName="cvt_Vendedor"
                       externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vendedor]"
                       lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Vendedor]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Distribuidor_Agricola]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Distribuidor_Agricola"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Agricola]"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Distribuidor_Agricola]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_PrecoAdesao_Dist]"
+                      cachedDataType="r4"
+                      cachedName="drv_PrecoAdesao_Dist"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Dist]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesao_Dist]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_PrecoAdesaoSpoca]"
+                      cachedDataType="r4"
+                      cachedName="drv_PrecoAdesaoSpoca"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_SPOCA]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoSpoca]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_PrecoAdesaoSpocaCompleto]"
+                      cachedDataType="r4"
+                      cachedName="drv_PrecoAdesaoSpocaCompleto"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_SPOCA_Completo]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoSpocaCompleto]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_ValorSIP]"
+                      cachedDataType="r4"
+                      cachedName="drv_ValorSIP"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_SIP]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ValorSIP]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_ValorCOGS]"
+                      cachedDataType="r4"
+                      cachedName="drv_ValorCOGS"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_COGS]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ValorCOGS]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_ValorCMT]"
+                      cachedDataType="r4"
+                      cachedName="drv_ValorCMT"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor_CMT]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_ValorCMT]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_PrecoCMT]"
+                      cachedDataType="r4"
+                      cachedName="drv_PrecoCMT"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_CMT]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoCMT]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_PrecoAdesaoFilial]"
+                      cachedDataType="r4"
+                      cachedName="drv_PrecoAdesaoFilial"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Filial]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoFilial]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_PrecoAdesaoUnidade]"
+                      cachedDataType="r4"
+                      cachedName="drv_PrecoAdesaoUnidade"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Unidade]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoUnidade]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_PrecoAdesaoRegional]"
+                      cachedDataType="r4"
+                      cachedName="drv_PrecoAdesaoRegional"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Adesao_Regional]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoAdesaoRegional]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_PrecoSIP]"
+                      cachedDataType="r4"
+                      cachedName="drv_PrecoSIP"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_SIP]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoSIP]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_PrecoCogs]"
+                      cachedDataType="r4"
+                      cachedName="drv_PrecoCogs"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Preco_Cogs]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_PrecoCogs]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Serie_NF]"
+                      cachedDataType="i4"
+                      cachedName="cvt_Serie_NF"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Serie_NF]"
+                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Serie_NF]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cultura]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Cultura"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cultura]"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cultura]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2015,7 +2456,7 @@
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cultura]"
                       codePage="1252"
                       dataType="str"
-                      length="2"
+                      length="20"
                       name="Cultura" />
                     <externalMetadataColumn
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grupo]"
@@ -2037,7 +2478,9 @@
                       name="Municipio" />
                     <externalMetadataColumn
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cliente]"
-                      dataType="i8"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
                       name="Cliente" />
                     <externalMetadataColumn
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOP]"
@@ -2271,7 +2714,9 @@
                       name="Modalidade_Venda" />
                     <externalMetadataColumn
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Agricola]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
                       name="Distribuidor_Agricola" />
                     <externalMetadataColumn
                       refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOP_Considera]"
@@ -2308,6 +2753,173 @@
                       refId="Package\Carga to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Carga to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga to Final\OLE DB Destination 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TB_Carga_LOG_Campos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga to Final\OLE DB Destination 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Valor_Carregado]"
+                      lineageId="Package\Carga to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Situacao_Carga]"
+                      lineageId="Package\Carga to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Dt_Erro]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Dt_Erro"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Data_Carga]"
+                      lineageId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output].Columns[Dt_Erro]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Arquivo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Arquivo"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Nome_Tabela]"
+                      lineageId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output].Columns[Arquivo]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[drv_NomeCampo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="drv_NomeCampo"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Nome_Campo]"
+                      lineageId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output].Columns[drv_NomeCampo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Data_Carga]"
+                      dataType="dbDate"
+                      name="Data_Carga" />
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Nome_Tabela]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Nome_Tabela" />
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Nome_Campo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Nome_Campo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Valor_Carregado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Valor_Carregado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Situacao_Carga]"
+                      dataType="bool"
+                      name="Situacao_Carga" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga to Final\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga to Final\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga to Final\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga to Final\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2416,7 +3028,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Cultura]"
-                      length="10"
+                      length="20"
                       lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cultura]"
                       name="Cultura"
                       truncationRowDisposition="FailComponent" />
@@ -3059,7 +3671,7 @@
                       refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Cultura]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="20"
                       name="Cultura" />
                     <externalMetadataColumn
                       refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Grupo]"
@@ -3427,7 +4039,7 @@
                       refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Cultura]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="20"
                       lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Cultura]"
                       name="Cultura" />
                     <outputColumn
@@ -3849,6 +4461,16 @@
               endId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Carga to Final.Paths[Derived Column Output1]"
+              endId="Package\Carga to Final\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Carga to Final\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Carga to Final.Paths[OLE DB Destination Error Output]"
+              endId="Package\Carga to Final\Derived Column 1.Inputs[Derived Column Input]"
+              name="OLE DB Destination Error Output"
+              startId="Package\Carga to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\Carga to Final.Paths[OLE DB Source Output]"
               endId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input]"
@@ -4315,7 +4937,7 @@
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="10"
+                      length="20"
                       lineageId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cultura]"
                       name="cvt_Cultura"
                       truncationRowDisposition="FailComponent">
@@ -7417,7 +8039,7 @@
                       refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Cultura]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="20"
                       cachedName="cvt_Cultura"
                       externalMetadataColumnId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cultura]"
                       lineageId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Cultura]" />
@@ -7886,7 +8508,7 @@
                       refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cultura]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="20"
                       name="Cultura" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grupo]"
@@ -10725,6 +11347,10 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
+          Size="144,42"
+          Id="Package\Carga to Final"
+          TopLeft="83,110" />
+        <NodeLayout
           Size="174,42"
           Id="Package\Data Flow Load CSV"
           TopLeft="71,37" />
@@ -10732,22 +11358,222 @@
           Size="174,42"
           Id="Package\Data Flow Load CSV 1"
           TopLeft="392,48" />
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Carga to Final"
-          TopLeft="83,110" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Carga to Final">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Carga to Final\OLE DB Destination"
+          TopLeft="110,110" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Carga to Final\OLE DB Source"
+          TopLeft="67,22" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Carga to Final\Derived Column"
+          TopLeft="347,54" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Carga to Final\Data Conversion"
+          TopLeft="335,115" />
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[OLE DB Source Output]"
+          TopLeft="217,43">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130,32"
+              Start="0,0"
+              End="122.5,32">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61,0"
+                    Point2="65,0"
+                    Point3="65,4" />
+                  <mssgle:LineSegment
+                    End="65,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="65,28"
+                    Point2="65,32"
+                    Point3="69,32" />
+                  <mssgle:LineSegment
+                    End="122.5,32" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Derived Column Output]"
+          TopLeft="501,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10,61"
+              Start="0,0"
+              End="-2.5,61">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,57"
+                    Point2="22.5,61"
+                    Point3="18.5,61" />
+                  <mssgle:LineSegment
+                    End="-2.5,61" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Data Conversion Output]"
+          TopLeft="335,133.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-54,0"
+              Start="0,0"
+              End="-46.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-46.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Carga to Final\OLE DB Destination 1"
+          TopLeft="265,241" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Carga to Final\Derived Column 1"
+          TopLeft="109,181" />
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[OLE DB Destination Error Output]"
+          TopLeft="193,152">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,5.033203125,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Derived Column Output1]"
+          TopLeft="272,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83,39"
+              Start="0,0"
+              End="83,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="79,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79,0"
+                    Point2="83,0"
+                    Point3="83,4" />
+                  <mssgle:LineSegment
+                    End="83,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Data Flow Load CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Load CSV\OLE DB Destination"
           TopLeft="145,149" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Load CSV\Derived Column"
+          TopLeft="418,130" />
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Load CSV\Flat File Source"
@@ -10756,36 +11582,32 @@
           Size="156,42"
           Id="Package\Data Flow Load CSV\Data Conversion"
           TopLeft="355,44" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Load CSV\Derived Column"
-          TopLeft="418,130" />
         <EdgeLayout
-          Id="Package\Data Flow Load CSV.Paths[Flat File Source Output]"
-          TopLeft="286,45">
+          Id="Package\Data Flow Load CSV.Paths[Derived Column Output]"
+          TopLeft="418,151">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="69,20"
+              StartConnector="{assembly:Null}"
+              EndConnector="-102,19"
               Start="0,0"
-              End="61.5,20">
+              End="-94.5,19">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="30.5,0" />
+                    End="-47,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="30.5,0"
-                    Point2="34.5,0"
-                    Point3="34.5,4" />
+                    Point1="-47,0"
+                    Point2="-51,0"
+                    Point3="-51,4" />
                   <mssgle:LineSegment
-                    End="34.5,16" />
+                    End="-51,15" />
                   <mssgle:CubicBezierSegment
-                    Point1="34.5,16"
-                    Point2="34.5,20"
-                    Point3="38.5,20" />
+                    Point1="-51,15"
+                    Point2="-51,19"
+                    Point3="-55,19" />
                   <mssgle:LineSegment
-                    End="61.5,20" />
+                    End="-94.5,19" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10799,7 +11621,7 @@
           TopLeft="433,86">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="62,44"
               Start="0,0"
               End="62,36.5">
@@ -10829,31 +11651,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Load CSV.Paths[Derived Column Output]"
-          TopLeft="418,151">
+          Id="Package\Data Flow Load CSV.Paths[Flat File Source Output]"
+          TopLeft="286,45">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-102,19"
+              StartConnector="{assembly:Null}"
+              EndConnector="69,20"
               Start="0,0"
-              End="-94.5,19">
+              End="61.5,20">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-47,0" />
+                    End="30.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-47,0"
-                    Point2="-51,0"
-                    Point3="-51,4" />
+                    Point1="30.5,0"
+                    Point2="34.5,0"
+                    Point3="34.5,4" />
                   <mssgle:LineSegment
-                    End="-51,15" />
+                    End="34.5,16" />
                   <mssgle:CubicBezierSegment
-                    Point1="-51,15"
-                    Point2="-51,19"
-                    Point3="-55,19" />
+                    Point1="34.5,16"
+                    Point2="34.5,20"
+                    Point3="38.5,20" />
                   <mssgle:LineSegment
-                    End="-94.5,19" />
+                    End="61.5,20" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10882,21 +11704,21 @@
     design-time-name="Package\Data Flow Load CSV 1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Load CSV 1\Flat File Source"
-          TopLeft="135,24" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Load CSV 1\OLE DB Destination"
           TopLeft="145,149" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Load CSV 1\Flat File Source"
+          TopLeft="135,24" />
         <EdgeLayout
           Id="Package\Data Flow Load CSV 1.Paths[Flat File Source Output]"
           TopLeft="210.5,66">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="20,83"
               Start="0,0"
               End="20,75.5">
@@ -10930,135 +11752,8 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <TaskHost
-    design-time-name="Package\Carga to Final">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Carga to Final\OLE DB Source"
-          TopLeft="67,22" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Carga to Final\OLE DB Destination"
-          TopLeft="110,111" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Carga to Final\Derived Column"
-          TopLeft="347,54" />
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[OLE DB Source Output]"
-          TopLeft="217,43">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="130,32"
-              Start="0,0"
-              End="122.5,32">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="61,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="61,0"
-                    Point2="65,0"
-                    Point3="65,4" />
-                  <mssgle:LineSegment
-                    End="65,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="65,28"
-                    Point2="65,32"
-                    Point3="69,32" />
-                  <mssgle:LineSegment
-                    End="122.5,32" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Carga to Final\Data Conversion"
-          TopLeft="335,115" />
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Derived Column Output]"
-          TopLeft="501,75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-10,61"
-              Start="0,0"
-              End="-2.5,61">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5,0"
-                    Point2="22.5,0"
-                    Point3="22.5,4" />
-                  <mssgle:LineSegment
-                    End="22.5,57" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.5,57"
-                    Point2="22.5,61"
-                    Point3="18.5,61" />
-                  <mssgle:LineSegment
-                    End="-2.5,61" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Data Conversion Output]"
-          TopLeft="335,134">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-54,0"
-              Start="0,0"
-              End="-46.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-46.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\OLE DB Destination">
+    design-time-name="Package\Carga to Final\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
