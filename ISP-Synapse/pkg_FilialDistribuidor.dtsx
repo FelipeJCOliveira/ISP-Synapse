@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_FilialDistribuidor"
   DTS:PackageType="5"
-  DTS:VersionBuild="41"
-  DTS:VersionGUID="{240D433C-C476-4BFC-82F8-9B1CC675196C}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{CACDC579-CEDC-4111-9069-C78D0A53EC17}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -168,6 +168,12 @@
                       cachedLength="14"
                       cachedName="CNPJ"
                       lineageId="Package\Carga to Final (com log)\OLE DB Source.Outputs[OLE DB Source Output].Columns[CNPJ]" />
+                    <inputColumn
+                      refId="Package\Carga to Final (com log)\Data Conversion.Inputs[Data Conversion Input].Columns[Municipio_IBGE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Municipio_IBGE"
+                      lineageId="Package\Carga to Final (com log)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Municipio_IBGE]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -267,6 +273,28 @@
                           name="FastParse">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final (com log)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Municipio_IBGE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Carga to Final (com log)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Municipio_IBGE]"
+                      name="cvt_Municipio_IBGE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carga to Final (com log)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Municipio_IBGE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -306,6 +334,14 @@
                   refId="Package\Carga to Final (com log)\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga to Final (com log)\Derived Column.Inputs[Derived Column Input].Columns[Municipio_IBGE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Municipio_IBGE"
+                      lineageId="Package\Carga to Final (com log)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Municipio_IBGE]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -337,6 +373,50 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final (com log)\Derived Column.Outputs[Derived Column Output].Columns[drv_MunicipioIBGE]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final (com log)\Derived Column.Outputs[Derived Column Output].Columns[drv_MunicipioIBGE]"
+                      name="drv_MunicipioIBGE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(([LEN]([TRIM](#{Package\Carga to Final (com log)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Municipio_IBGE]})) &lt; 1) ? NULL(DT_UI4) : ((DT_I4)#{Package\Carga to Final (com log)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Municipio_IBGE]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">((LEN(TRIM(Municipio_IBGE)) &lt; 1) ? NULL(DT_UI4) : ((DT_I4)Municipio_IBGE))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final (com log)\Derived Column.Outputs[Derived Column Output].Columns[drv_DTI4_NULL]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final (com log)\Derived Column.Outputs[Derived Column Output].Columns[drv_DTI4_NULL]"
+                      name="drv_DTI4_NULL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">NULL(DT_I4)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NULL(DT_I4)</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -582,7 +662,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -616,13 +696,6 @@
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
-                    <inputColumn
-                      refId="Package\Carga to Final (com log)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Municipio_IBGE]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="Municipio_IBGE"
-                      externalMetadataColumnId="Package\Carga to Final (com log)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Municipio_IBGE]"
-                      lineageId="Package\Carga to Final (com log)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Municipio_IBGE]" />
                     <inputColumn
                       refId="Package\Carga to Final (com log)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
                       cachedDataType="dbTimeStamp"
@@ -661,6 +734,12 @@
                       cachedName="cvt_CNPJ"
                       externalMetadataColumnId="Package\Carga to Final (com log)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CNPJ]"
                       lineageId="Package\Carga to Final (com log)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CNPJ]" />
+                    <inputColumn
+                      refId="Package\Carga to Final (com log)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_MunicipioIBGE]"
+                      cachedDataType="i8"
+                      cachedName="drv_MunicipioIBGE"
+                      externalMetadataColumnId="Package\Carga to Final (com log)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Municipio_IBGE]"
+                      lineageId="Package\Carga to Final (com log)\Derived Column.Outputs[Derived Column Output].Columns[drv_MunicipioIBGE]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2909,13 +2988,45 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{695D4753-A645-4BB1-B6ED-A5F7FD47E92D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{22B3E2A5-F1E2-46CC-B137-D8613766D163}"
+          SQLTask:SqlStatementSource="insert into TB_Agroview_Parametros_Filial_Distribuidor(Chave,Distribuidor_Codigo,Distribuidor_Descricao,CNPJ,Municipio_IBGE,Data_Inclusao)&#xA;select Chave,Distribuidor_Codigo,Distribuidor_Descricao,CNPJ,Municipio_IBGE, getdate() from TB_Carga_Filial_Distribuidor&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task - Limpa Tabelas"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8219EA17-ACDF-4190-8F1A-141189D640DE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task - Limpa Tabelas"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{22B3E2A5-F1E2-46CC-B137-D8613766D163}"
+          SQLTask:SqlStatementSource="DELETE from TB_Carga_Filial_Distribuidor;&#xA;DELETE from TB_Agroview_Parametros_Filial_Distribuidor;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load CSV"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{3BC4D23A-F667-4127-BCA2-B68EE999B658}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Load CSV"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -2923,7 +3034,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Derived Column"
+              refId="Package\Load CSV\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -2931,34 +3042,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\Load CSV\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[FilialDistribuidorCNPJ]"
+                      refId="Package\Load CSV\Derived Column.Inputs[Derived Column Input].Columns[FilialDistribuidorCNPJ]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="FilialDistribuidorCNPJ"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCNPJ]" />
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCNPJ]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\Load CSV\Derived Column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Load CSV\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      refId="Package\Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      lineageId="Package\Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
                       name="drv_Dt_Import"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2976,12 +3087,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[drv_CNPJ]"
+                      refId="Package\Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_CNPJ]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="14"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[drv_CNPJ]"
+                      lineageId="Package\Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_CNPJ]"
                       name="drv_CNPJ"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2989,7 +3100,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[LEFT](#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCNPJ]},14)</property>
+                          name="Expression">[LEFT](#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCNPJ]},14)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -3002,23 +3113,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\Load CSV\Derived Column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Load CSV\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3027,7 +3138,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Flat File Source"
+              refId="Package\Load CSV\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -3047,24 +3158,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                  refId="Package\Load CSV\Flat File Source.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Flat File Connection - FilialDistribuidor]"
                   connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - FilialDistribuidor]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorChave]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorChave]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[%FilialDistribuidorChave]"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[%FilialDistribuidorChave]"
                       length="30"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorChave]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorChave]"
                       name="FilialDistribuidorChave"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3079,13 +3190,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCodigo]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCodigo]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorCodigo]"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorCodigo]"
                       length="30"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCodigo]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCodigo]"
                       name="FilialDistribuidorCodigo"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3100,13 +3211,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorDescricao]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorDescricao]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorDescricao]"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorDescricao]"
                       length="60"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorDescricao]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorDescricao]"
                       name="FilialDistribuidorDescricao"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3121,13 +3232,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCNPJ]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCNPJ]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorCNPJ]"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorCNPJ]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCNPJ]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCNPJ]"
                       name="FilialDistribuidorCNPJ"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3142,13 +3253,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialMunicipioIBGE]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialMunicipioIBGE]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialMunicipioIBGE]"
+                      externalMetadataColumnId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialMunicipioIBGE]"
                       length="10"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialMunicipioIBGE]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialMunicipioIBGE]"
                       name="FilialMunicipioIBGE"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3166,54 +3277,54 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[%FilialDistribuidorChave]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[%FilialDistribuidorChave]"
                       dataType="wstr"
                       length="30"
                       name="%FilialDistribuidorChave" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorCodigo]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorCodigo]"
                       dataType="wstr"
                       length="30"
                       name="FilialDistribuidorCodigo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorDescricao]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorDescricao]"
                       dataType="wstr"
                       length="60"
                       name="FilialDistribuidorDescricao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorCNPJ]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialDistribuidorCNPJ]"
                       dataType="wstr"
                       length="50"
                       name="FilialDistribuidorCNPJ" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialMunicipioIBGE]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FilialMunicipioIBGE]"
                       dataType="wstr"
                       length="10"
                       name="FilialMunicipioIBGE" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3222,7 +3333,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\Load CSV\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -3279,7 +3390,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Load CSV\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
                   description="The OLE DB runtime connection used to access the database."
@@ -3287,83 +3398,83 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FilialDistribuidorChave]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FilialDistribuidorChave]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="FilialDistribuidorChave"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorChave]" />
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorChave]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FilialDistribuidorCodigo]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FilialDistribuidorCodigo]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="FilialDistribuidorCodigo"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Codigo]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCodigo]" />
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Codigo]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorCodigo]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FilialDistribuidorDescricao]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FilialDistribuidorDescricao]"
                       cachedDataType="wstr"
                       cachedLength="60"
                       cachedName="FilialDistribuidorDescricao"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Descricao]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorDescricao]" />
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Descricao]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialDistribuidorDescricao]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FilialMunicipioIBGE]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FilialMunicipioIBGE]"
                       cachedDataType="wstr"
                       cachedLength="10"
                       cachedName="FilialMunicipioIBGE"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Municipio_IBGE]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FilialMunicipioIBGE]" />
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Municipio_IBGE]"
+                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FilialMunicipioIBGE]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
                       cachedDataType="dbTimeStamp"
                       cachedName="drv_Dt_Import"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      lineageId="Package\Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_CNPJ]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_CNPJ]"
                       cachedDataType="wstr"
                       cachedLength="14"
                       cachedName="drv_CNPJ"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CNPJ]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[drv_CNPJ]" />
+                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CNPJ]"
+                      lineageId="Package\Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_CNPJ]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
                       dataType="wstr"
                       length="30"
                       name="Chave" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Codigo]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Codigo]"
                       dataType="wstr"
                       length="30"
                       name="Distribuidor_Codigo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Descricao]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor_Descricao]"
                       dataType="wstr"
                       length="60"
                       name="Distribuidor_Descricao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CNPJ]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CNPJ]"
                       dataType="wstr"
                       length="14"
                       name="CNPJ" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Municipio_IBGE]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Municipio_IBGE]"
                       dataType="wstr"
                       length="10"
                       name="Municipio_IBGE" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
                       dataType="dbTimeStamp"
                       name="Data_Inclusao" />
                   </externalMetadataColumns>
@@ -3371,22 +3482,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3397,49 +3508,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Load CSV.Paths[Derived Column Output]"
+              endId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Load CSV\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\Load CSV.Paths[Flat File Source Output]"
+              endId="Package\Load CSV\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{695D4753-A645-4BB1-B6ED-A5F7FD47E92D}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{22B3E2A5-F1E2-46CC-B137-D8613766D163}"
-          SQLTask:SqlStatementSource="insert into TB_Agroview_Parametros_Filial_Distribuidor(Chave,Distribuidor_Codigo,Distribuidor_Descricao,CNPJ,Municipio_IBGE,Data_Inclusao)&#xA;select Chave,Distribuidor_Codigo,Distribuidor_Descricao,CNPJ,Municipio_IBGE, getdate() from TB_Carga_Filial_Distribuidor&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute SQL Task - Limpa Tabelas"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{8219EA17-ACDF-4190-8F1A-141189D640DE}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task - Limpa Tabelas"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{22B3E2A5-F1E2-46CC-B137-D8613766D163}"
-          SQLTask:SqlStatementSource="DELETE from TB_Carga_Filial_Distribuidor;&#xA;DELETE from TB_Agroview_Parametros_Filial_Distribuidor;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -3451,7 +3530,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       DTS:From="Package\Execute SQL Task - Limpa Tabelas"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Data Flow Task" />
+      DTS:To="Package\Load CSV" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3466,8 +3545,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task"
+          Size="193,42"
+          Id="Package\Carga to Final (com log)"
+          TopLeft="121,166" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Carga to Final (sem log)"
+          TopLeft="360,165" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Load CSV"
           TopLeft="180,94" />
         <NodeLayout
           Size="163,42"
@@ -3483,9 +3570,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.5,31"
+              EndConnector="-24,31"
               Start="0,0"
-              End="-10.5,23.5">
+              End="-24,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3496,13 +3583,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                     Point2="0,15.5"
                     Point3="-4,15.5" />
                   <mssgle:LineSegment
-                    End="-6.5,15.5" />
+                    End="-20,15.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6.5,15.5"
-                    Point2="-10.5,15.5"
-                    Point3="-10.5,19.5" />
+                    Point1="-20,15.5"
+                    Point2="-24,15.5"
+                    Point3="-24,19.5" />
                   <mssgle:LineSegment
-                    End="-10.5,23.5" />
+                    End="-24,23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3511,139 +3598,64 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Carga to Final (com log)"
-          TopLeft="121,166" />
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Carga to Final (sem log)"
-          TopLeft="360,165" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="84,103" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="56,24" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="338,58" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="338,84.6666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-83,39.3333333333333"
-              Start="0,0"
-              End="-75.5,39.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-31.0275229357798,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-31.0275229357798,0"
-                    Point2="-35.0275229357798,0"
-                    Point3="-35.0275229357798,4" />
-                  <mssgle:LineSegment
-                    End="-35.0275229357798,35.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-35.0275229357798,35.3333333333333"
-                    Point2="-35.0275229357798,39.3333333333333"
-                    Point3="-39.0275229357798,39.3333333333333" />
-                  <mssgle:LineSegment
-                    End="-75.5,39.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="207,45">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="131,34"
-              Start="0,0"
-              End="123.5,34">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="61.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="61.5,0"
-                    Point2="65.5,0"
-                    Point3="65.5,4" />
-                  <mssgle:LineSegment
-                    End="65.5,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="65.5,30"
-                    Point2="65.5,34"
-                    Point3="69.5,34" />
-                  <mssgle:LineSegment
-                    End="123.5,34" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Carga to Final (com log)">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="163,42"
+          Id="Package\Carga to Final (com log)\Derived Column 1"
+          TopLeft="492,174" />
+        <NodeLayout
           Size="150,42"
           Id="Package\Carga to Final (com log)\OLE DB Source"
           TopLeft="110,25" />
         <NodeLayout
+          Size="163,42"
+          Id="Package\Carga to Final (com log)\Script Component 1"
+          TopLeft="238,181" />
+        <NodeLayout
           Size="154,42"
           Id="Package\Carga to Final (com log)\Derived Column"
-          TopLeft="318,115" />
+          TopLeft="318,111" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Carga to Final (com log)\OLE DB Destination"
+          TopLeft="104,112" />
         <NodeLayout
           Size="156,42"
           Id="Package\Carga to Final (com log)\Data Conversion"
           TopLeft="323,41" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Carga to Final (com log)\OLE DB Destination"
-          TopLeft="104,112" />
+          Size="180,42"
+          Id="Package\Carga to Final (com log)\OLE DB Destination 1"
+          TopLeft="456,250" />
+        <EdgeLayout
+          Id="Package\Carga to Final (com log).Paths[Output 0]"
+          TopLeft="401,198.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91,0"
+              Start="0,0"
+              End="83.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="83.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga to Final (com log).Paths[OLE DB Source Output]"
           TopLeft="260,46">
@@ -3679,62 +3691,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log).Paths[Data Conversion Output]"
-          TopLeft="398,83">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32"
-              Start="0,0"
-              End="0,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga to Final (com log).Paths[Derived Column Output]"
-          TopLeft="318,134.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-43,0"
-              Start="0,0"
-              End="-35.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-35.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Carga to Final (com log)\Script Component 1"
-          TopLeft="238,181" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Carga to Final (com log)\Derived Column 1"
-          TopLeft="492,174" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Carga to Final (com log)\OLE DB Destination 1"
-          TopLeft="456,250" />
-        <EdgeLayout
           Id="Package\Carga to Final (com log).Paths[OLE DB Destination Error Output]"
           TopLeft="189.5,154">
           <EdgeLayout.Curve>
@@ -3766,30 +3722,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8.20890625,18.5,146.4178125,11.43359375"
+              BoundingBox="-16.8700390625,18.5,163.740078125,16"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga to Final (com log).Paths[Output 0]"
-          TopLeft="401,198.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="91,0"
-              Start="0,0"
-              End="83.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="83.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3818,6 +3752,50 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                     Point3="-27.5,21" />
                   <mssgle:LineSegment
                     End="-27.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final (com log).Paths[Derived Column Output]"
+          TopLeft="318,132.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-43,0"
+              Start="0,0"
+              End="-35.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-35.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final (com log).Paths[Data Conversion Output]"
+          TopLeft="398,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3874,21 +3852,55 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="150,42"
+          Id="Package\Carga to Final (sem log)\OLE DB Source"
+          TopLeft="110,25" />
+        <NodeLayout
           Size="154,42"
           Id="Package\Carga to Final (sem log)\Derived Column"
           TopLeft="318,115" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Carga to Final (sem log)\OLE DB Destination"
-          TopLeft="104,112" />
         <NodeLayout
           Size="156,42"
           Id="Package\Carga to Final (sem log)\Data Conversion"
           TopLeft="323,41" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Carga to Final (sem log)\OLE DB Source"
-          TopLeft="110,25" />
+          Size="171,42"
+          Id="Package\Carga to Final (sem log)\OLE DB Destination"
+          TopLeft="104,112" />
+        <EdgeLayout
+          Id="Package\Carga to Final (sem log).Paths[OLE DB Source Output]"
+          TopLeft="260,46">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63,16"
+              Start="0,0"
+              End="55.5,16">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5,0"
+                    Point2="31.5,0"
+                    Point3="31.5,4" />
+                  <mssgle:LineSegment
+                    End="31.5,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.5,12"
+                    Point2="31.5,16"
+                    Point3="35.5,16" />
+                  <mssgle:LineSegment
+                    End="55.5,16" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga to Final (sem log).Paths[Derived Column Output]"
           TopLeft="318,134.5">
@@ -3933,32 +3945,99 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final (sem log)\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load CSV\Derived Column"
+          TopLeft="338,58" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Load CSV\Flat File Source"
+          TopLeft="56,24" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Load CSV\OLE DB Destination"
+          TopLeft="84,103" />
         <EdgeLayout
-          Id="Package\Carga to Final (sem log).Paths[OLE DB Source Output]"
-          TopLeft="260,46">
+          Id="Package\Load CSV.Paths[Flat File Source Output]"
+          TopLeft="207,45">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="63,16"
+              EndConnector="131,34"
               Start="0,0"
-              End="55.5,16">
+              End="123.5,34">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="27.5,0" />
+                    End="61.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="27.5,0"
-                    Point2="31.5,0"
-                    Point3="31.5,4" />
+                    Point1="61.5,0"
+                    Point2="65.5,0"
+                    Point3="65.5,4" />
                   <mssgle:LineSegment
-                    End="31.5,12" />
+                    End="65.5,30" />
                   <mssgle:CubicBezierSegment
-                    Point1="31.5,12"
-                    Point2="31.5,16"
-                    Point3="35.5,16" />
+                    Point1="65.5,30"
+                    Point2="65.5,34"
+                    Point3="69.5,34" />
                   <mssgle:LineSegment
-                    End="55.5,16" />
+                    End="123.5,34" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CSV.Paths[Derived Column Output]"
+          TopLeft="338,84.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-83,39.3333333333333"
+              Start="0,0"
+              End="-75.5,39.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-31.0275229357798,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.0275229357798,0"
+                    Point2="-35.0275229357798,0"
+                    Point3="-35.0275229357798,4" />
+                  <mssgle:LineSegment
+                    End="-35.0275229357798,35.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.0275229357798,35.3333333333333"
+                    Point2="-35.0275229357798,39.3333333333333"
+                    Point3="-39.0275229357798,39.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-75.5,39.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3971,7 +4050,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final (sem log)\OLE DB Destination">
+    design-time-name="Package\Load CSV\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
