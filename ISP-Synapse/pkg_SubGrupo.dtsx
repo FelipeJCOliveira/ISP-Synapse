@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_SubGrupo"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{24552707-3CD4-41EC-8923-2611BF0F422F}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{2A3CFD80-FDC7-4F33-9588-7C516B769A3A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -83,13 +83,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Carga to Final"
+      DTS:refId="Package\Carga to Final (INCREMENTAL)"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{B6D104C3-EA33-4027-8265-8B0AB951C6C6}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Carga to Final"
+      DTS:ObjectName="Carga to Final (INCREMENTAL)"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -97,7 +97,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Carga to Final\Data Conversion"
+              refId="Package\Carga to Final (INCREMENTAL)\Data Conversion"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Data Conversion"
@@ -105,40 +105,40 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Descricao]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input].Columns[Descricao]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Descricao"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]" />
+                      lineageId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]" />
                     <inputColumn
-                      refId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Codigo]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input].Columns[Codigo]"
                       cachedDataType="wstr"
                       cachedLength="10"
                       cachedName="Codigo"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]" />
+                      lineageId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
                   name="Data Conversion Output"
-                  synchronousInputId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Descricao]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Descricao]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Descricao]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Descricao]"
                       name="cvt_Descricao"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -146,7 +146,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -154,13 +154,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="10"
-                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
                       name="cvt_Codigo"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -168,7 +168,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -179,22 +179,22 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Error Output]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Data Conversion Error Output"
-                  synchronousInputId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -203,7 +203,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Carga to Final\Derived Column"
+              refId="Package\Carga to Final (INCREMENTAL)\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -211,35 +211,26 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[cvt_Codigo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="cvt_Codigo"
-                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]" />
-                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Carga to Final (INCREMENTAL)\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
                       name="drv_Dt_Import"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -256,49 +247,27 @@
                           name="FriendlyExpression">GETDATE()</property>
                       </properties>
                     </outputColumn>
-                    <outputColumn
-                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="RedirectRow"
-                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo]"
-                      name="drv_Codigo"
-                      truncationRowDisposition="RedirectRow">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_I4)#{Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_I4)cvt_Codigo</property>
-                      </properties>
-                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Carga to Final (INCREMENTAL)\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -307,7 +276,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Carga to Final\Lookup"
+              refId="Package\Carga to Final (INCREMENTAL)\Lookup"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -358,12 +327,12 @@ where [refTable].[Codigo] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Codigo" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Descricao" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Codigo" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Descricao" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo]};</property>
+                  name="ParameterMap">#{Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -375,7 +344,7 @@ where [refTable].[Codigo] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Carga to Final\Lookup.Connections[OleDbConnection]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Lookup.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
                   description="Connection manager used to access lookup data."
@@ -383,14 +352,16 @@ where [refTable].[Codigo] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Carga to Final\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Carga to Final\Lookup.Inputs[Lookup Input].Columns[drv_Codigo]"
-                      cachedDataType="i4"
-                      cachedName="drv_Codigo"
-                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo]">
+                      refId="Package\Carga to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input].Columns[cvt_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="cvt_Codigo"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -408,17 +379,19 @@ where [refTable].[Codigo] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Carga to Final\Lookup.Outputs[Lookup Match Output]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Lookup.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Carga to Final\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Carga to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Carga to Final\Lookup.Outputs[Lookup Match Output].Columns[Codigo]"
-                      dataType="i4"
+                      refId="Package\Carga to Final (INCREMENTAL)\Lookup.Outputs[Lookup Match Output].Columns[Codigo]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Carga to Final\Lookup.Outputs[Lookup Match Output].Columns[Codigo]"
+                      length="10"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Lookup.Outputs[Lookup Match Output].Columns[Codigo]"
                       name="Codigo"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -432,30 +405,30 @@ where [refTable].[Codigo] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Carga to Final\Lookup.Outputs[Lookup No Match Output]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Lookup.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Carga to Final\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Carga to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Carga to Final\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Carga to Final (INCREMENTAL)\Lookup.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Carga to Final\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Carga to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Carga to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Carga to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Carga to Final (INCREMENTAL)\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -464,31 +437,7 @@ where [refTable].[Codigo] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Carga to Final\Multicast"
-              componentClassID="Microsoft.Multicast"
-              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
-              name="Multicast">
-              <inputs>
-                <input
-                  refId="Package\Carga to Final\Multicast.Inputs[Multicast Input 1]"
-                  name="Multicast Input 1">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Carga to Final\Multicast.Outputs[Multicast Output 1]"
-                  dangling="true"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 1"
-                  synchronousInputId="Package\Carga to Final\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Carga to Final\OLE DB Destination"
+              refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -545,7 +494,7 @@ where [refTable].[Codigo] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Carga to Final\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
                   description="The OLE DB runtime connection used to access the database."
@@ -553,52 +502,55 @@ where [refTable].[Codigo] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Codigo]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="Codigo"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]" />
-                    <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
                       cachedDataType="dbTimeStamp"
                       cachedName="drv_Dt_Import"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
-                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
+                      externalMetadataColumnId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
                     <inputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Descricao]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Descricao]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="cvt_Descricao"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
-                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Descricao]" />
+                      externalMetadataColumnId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Descricao]" />
+                    <inputColumn
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="cvt_Codigo"
+                      externalMetadataColumnId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
-                      dataType="i4"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
                       name="Codigo" />
                     <externalMetadataColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Descricao" />
                     <externalMetadataColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
                       dataType="dbTimeStamp"
                       name="Data_Inclusao" />
                     <externalMetadataColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
                       dataType="dbTimeStamp"
                       name="Data_Alteracao" />
                   </externalMetadataColumns>
@@ -606,22 +558,22 @@ where [refTable].[Codigo] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Carga to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Carga to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -630,7 +582,7 @@ where [refTable].[Codigo] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Carga to Final\OLE DB Source"
+              refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -679,7 +631,7 @@ where [refTable].[Codigo] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Carga to Final\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
                   description="The OLE DB runtime connection used to access the database."
@@ -687,71 +639,71 @@ where [refTable].[Codigo] = ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
+                      externalMetadataColumnId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
                       length="10"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]"
                       name="Codigo"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
+                      externalMetadataColumnId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
                       length="50"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
                       name="Descricao"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
                       dataType="wstr"
                       length="10"
                       name="Codigo" />
                     <externalMetadataColumn
-                      refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
                       dataType="wstr"
                       length="50"
                       name="Descricao" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo]"
                       dataType="wstr"
                       length="10"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo]"
                       name="Codigo" />
                     <outputColumn
-                      refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
                       name="Descricao" />
                     <outputColumn
-                      refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -762,30 +714,25 @@ where [refTable].[Codigo] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Carga to Final.Paths[Data Conversion Output]"
-              endId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\Carga to Final (INCREMENTAL).Paths[Data Conversion Output]"
+              endId="Package\Carga to Final (INCREMENTAL)\Derived Column.Inputs[Derived Column Input]"
               name="Data Conversion Output"
-              startId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output]" />
+              startId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Carga to Final.Paths[Derived Column Error Output]"
-              endId="Package\Carga to Final\Multicast.Inputs[Multicast Input 1]"
-              name="Derived Column Error Output"
-              startId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output]" />
-            <path
-              refId="Package\Carga to Final.Paths[Derived Column Output]"
-              endId="Package\Carga to Final\Lookup.Inputs[Lookup Input]"
+              refId="Package\Carga to Final (INCREMENTAL).Paths[Derived Column Output]"
+              endId="Package\Carga to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Carga to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Carga to Final.Paths[Lookup No Match Output]"
-              endId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Carga to Final (INCREMENTAL).Paths[Lookup No Match Output]"
+              endId="Package\Carga to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
-              startId="Package\Carga to Final\Lookup.Outputs[Lookup No Match Output]" />
+              startId="Package\Carga to Final (INCREMENTAL)\Lookup.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Carga to Final.Paths[OLE DB Source Output]"
-              endId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input]"
+              refId="Package\Carga to Final (INCREMENTAL).Paths[OLE DB Source Output]"
+              endId="Package\Carga to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
-              startId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Carga to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1067,7 +1014,7 @@ where [refTable].[Codigo] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task - Limpa Tabela CARGA"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1101,7 +1048,7 @@ where [refTable].[Codigo] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task - Tabela Final"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1126,7 +1073,7 @@ where [refTable].[Codigo] = ?</property>
       DTS:From="Package\Data Flow Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Carga to Final" />
+      DTS:To="Package\Carga to Final (INCREMENTAL)" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1141,6 +1088,10 @@ where [refTable].[Codigo] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="225,42"
+          Id="Package\Carga to Final (INCREMENTAL)"
+          TopLeft="139,212" />
+        <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="230,130" />
@@ -1148,6 +1099,10 @@ where [refTable].[Codigo] = ?</property>
           Size="273,42"
           Id="Package\Execute SQL Task - Limpa Tabela CARGA"
           TopLeft="224,49" />
+        <NodeLayout
+          Size="242,42"
+          Id="Package\Execute SQL Task - Limpa Tabelas 1"
+          TopLeft="564,68" />
         <NodeLayout
           Size="231,42"
           Id="Package\Execute SQL Task - Tabela Final"
@@ -1186,23 +1141,15 @@ where [refTable].[Codigo] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="242,42"
-          Id="Package\Execute SQL Task - Limpa Tabelas 1"
-          TopLeft="564,68" />
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Carga to Final"
-          TopLeft="139,212" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="305.5,172">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-94.5,40"
+              EndConnector="-54,40"
               Start="0,0"
-              End="-94.5,32.5">
+              End="-54,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1213,13 +1160,13 @@ where [refTable].[Codigo] = ?</property>
                     Point2="0,20"
                     Point3="-4,20" />
                   <mssgle:LineSegment
-                    End="-90.5,20" />
+                    End="-50,20" />
                   <mssgle:CubicBezierSegment
-                    Point1="-90.5,20"
-                    Point2="-94.5,20"
-                    Point3="-94.5,24" />
+                    Point1="-50,20"
+                    Point2="-54,20"
+                    Point3="-54,24" />
                   <mssgle:LineSegment
-                    End="-94.5,32.5" />
+                    End="-54,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1232,10 +1179,225 @@ where [refTable].[Codigo] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Carga to Final (INCREMENTAL)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Carga to Final (INCREMENTAL)\Derived Column"
+          TopLeft="529,104" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Carga to Final (INCREMENTAL)\OLE DB Source"
+          TopLeft="100,19" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Carga to Final (INCREMENTAL)\Lookup"
+          TopLeft="356,135" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Carga to Final (INCREMENTAL)\OLE DB Destination"
+          TopLeft="61,101" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Carga to Final (INCREMENTAL)\Data Conversion"
+          TopLeft="415,30" />
+        <EdgeLayout
+          Id="Package\Carga to Final (INCREMENTAL).Paths[OLE DB Source Output]"
+          TopLeft="250,40">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="165,11"
+              Start="0,0"
+              End="157.5,11">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78.5,0"
+                    Point2="82.5,0"
+                    Point3="82.5,4" />
+                  <mssgle:LineSegment
+                    End="82.5,7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.5,7"
+                    Point2="82.5,11"
+                    Point3="86.5,11" />
+                  <mssgle:LineSegment
+                    End="157.5,11" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final (INCREMENTAL).Paths[Lookup No Match Output]"
+          TopLeft="356,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-124,-34"
+              Start="0,0"
+              End="-116.5,-34">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-58,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58,0"
+                    Point2="-62,0"
+                    Point3="-62,-4" />
+                  <mssgle:LineSegment
+                    End="-62,-30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62,-30"
+                    Point2="-62,-34"
+                    Point3="-66,-34" />
+                  <mssgle:LineSegment
+                    End="-116.5,-34" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.80638671875,1,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final (INCREMENTAL).Paths[Derived Column Output]"
+          TopLeft="529,125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60,31"
+              Start="0,0"
+              End="-52.5,31">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-26,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26,0"
+                    Point2="-30,0"
+                    Point3="-30,4" />
+                  <mssgle:LineSegment
+                    End="-30,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30,27"
+                    Point2="-30,31"
+                    Point3="-34,31" />
+                  <mssgle:LineSegment
+                    End="-52.5,31" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final (INCREMENTAL).Paths[Data Conversion Output]"
+          TopLeft="493,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="113,32"
+              Start="0,0"
+              End="113,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
+                  <mssgle:LineSegment
+                    End="109,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="109,16"
+                    Point2="113,16"
+                    Point3="113,20" />
+                  <mssgle:LineSegment
+                    End="113,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final (INCREMENTAL)\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final (INCREMENTAL)\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_Sub_Grupo]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final (INCREMENTAL)\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
@@ -1275,9 +1437,7 @@ where [refTable].[Codigo] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1293,261 +1453,6 @@ where [refTable].[Codigo] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Carga to Final">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Carga to Final\OLE DB Source"
-          TopLeft="100,19" />
-        <NodeLayout
-          Size="171,44"
-          Id="Package\Carga to Final\OLE DB Destination"
-          TopLeft="61,101" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Carga to Final\Derived Column"
-          TopLeft="529,104" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Carga to Final\Data Conversion"
-          TopLeft="415,30" />
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[OLE DB Source Output]"
-          TopLeft="250,40">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="165,11"
-              Start="0,0"
-              End="157.5,11">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="78.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="78.5,0"
-                    Point2="82.5,0"
-                    Point3="82.5,4" />
-                  <mssgle:LineSegment
-                    End="82.5,7" />
-                  <mssgle:CubicBezierSegment
-                    Point1="82.5,7"
-                    Point2="82.5,11"
-                    Point3="86.5,11" />
-                  <mssgle:LineSegment
-                    End="157.5,11" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Carga to Final\Lookup"
-          TopLeft="356,135" />
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Data Conversion Output]"
-          TopLeft="493,72">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="113,32"
-              Start="0,0"
-              End="113,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12"
-                    Point2="0,16"
-                    Point3="4,16" />
-                  <mssgle:LineSegment
-                    End="109,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="109,16"
-                    Point2="113,16"
-                    Point3="113,20" />
-                  <mssgle:LineSegment
-                    End="113,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Derived Column Output]"
-          TopLeft="529,125">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-60,31"
-              Start="0,0"
-              End="-52.5,31">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-26,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-26,0"
-                    Point2="-30,0"
-                    Point3="-30,4" />
-                  <mssgle:LineSegment
-                    End="-30,27" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-30,27"
-                    Point2="-30,31"
-                    Point3="-34,31" />
-                  <mssgle:LineSegment
-                    End="-52.5,31" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Lookup No Match Output]"
-          TopLeft="356,156">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-124,-33"
-              Start="0,0"
-              End="-116.5,-33">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-58,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-58,0"
-                    Point2="-62,0"
-                    Point3="-62,-4" />
-                  <mssgle:LineSegment
-                    End="-62,-29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-62,-29"
-                    Point2="-62,-33"
-                    Point3="-66,-33" />
-                  <mssgle:LineSegment
-                    End="-116.5,-33" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-117.80638671875,1,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Carga to Final\Multicast"
-          TopLeft="773,124" />
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Derived Column Error Output]"
-          TopLeft="683,125">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="90,20"
-              Start="0,0"
-              End="82.5,20">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="41,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41,0"
-                    Point2="45,0"
-                    Point3="45,4" />
-                  <mssgle:LineSegment
-                    End="45,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45,16"
-                    Point2="45,20"
-                    Point3="49,20" />
-                  <mssgle:LineSegment
-                    End="82.5,20" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-19.96138671875,-17.609375,129.9227734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TB_Agroview_Parametros_Sub_Grupo]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
