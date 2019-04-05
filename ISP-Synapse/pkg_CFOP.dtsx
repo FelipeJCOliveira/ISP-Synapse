@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{9D2DC00D-A6D2-4CAC-B719-6FB71DA4924E}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CFOP"
   DTS:PackageType="5"
-  DTS:VersionBuild="73"
-  DTS:VersionGUID="{664AEBD9-0044-4DC7-A1FE-0DD36E2BFDB4}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{B79EF139-B073-48A9-AF7A-11CA5FE11CF7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -93,6 +93,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2F3DB583-8701-4B44-BAA1-A25445B69774}"
+      DTS:ObjectName="IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::connAzureSQL]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=IEAZIWSQLAGLP001.syngentaazure.org;User ID=admin_Db_Synapse;Initial Catalog=Db_Synapse;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.DB_Synapse]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{B7353DE3-F9A0-4188-B7A2-F4A57E7859C5}"
@@ -104,6 +116,15 @@
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{B573DD5F-6C22-4A8C-ADF3-2F4CC67B3FA3}"
+      DTS:ObjectName="AzureSQL">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Data Source=IEAZIWSQLAGLP001.syngentaazure.org;User ID=admin_Db_Synapse;Initial Catalog=Db_Synapse;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</DTS:Property>
+    </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
@@ -389,7 +410,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -410,8 +431,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Load CSV\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerID="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse]"
+                  connectionManagerRefId="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1425,20 +1446,24 @@ where [refTable].[Codigo] = ?</property>
         <NodeLayout
           Size="174,42"
           Id="Package\Data Flow Load CSV"
-          TopLeft="188,103" />
+          TopLeft="189,103" />
         <NodeLayout
           Size="284,42"
           Id="Package\Data Flow Staging to Final (INCREMENTAL)"
           TopLeft="169,189" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="161,22" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="275,145">
+          TopLeft="276,145">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36,44"
+              EndConnector="35,44"
               Start="0,0"
-              End="36,36.5">
+              End="35,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1449,13 +1474,13 @@ where [refTable].[Codigo] = ?</property>
                     Point2="0,22"
                     Point3="4,22" />
                   <mssgle:LineSegment
-                    End="32,22" />
+                    End="31,22" />
                   <mssgle:CubicBezierSegment
-                    Point1="32,22"
-                    Point2="36,22"
-                    Point3="36,26" />
+                    Point1="31,22"
+                    Point2="35,22"
+                    Point3="35,26" />
                   <mssgle:LineSegment
-                    End="36,36.5" />
+                    End="35,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1464,19 +1489,15 @@ where [refTable].[Codigo] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="161,22" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="242.5,64">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32.5,39"
+              EndConnector="33.5,39"
               Start="0,0"
-              End="32.5,31.5">
+              End="33.5,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1487,13 +1508,13 @@ where [refTable].[Codigo] = ?</property>
                     Point2="0,19.5"
                     Point3="4,19.5" />
                   <mssgle:LineSegment
-                    End="28.5,19.5" />
+                    End="29.5,19.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="28.5,19.5"
-                    Point2="32.5,19.5"
-                    Point3="32.5,23.5" />
+                    Point1="29.5,19.5"
+                    Point2="33.5,19.5"
+                    Point3="33.5,23.5" />
                   <mssgle:LineSegment
-                    End="32.5,31.5" />
+                    End="33.5,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1725,19 +1746,6 @@ where [refTable].[Codigo] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination">
     <Properties>
       <Property>
@@ -1756,7 +1764,7 @@ where [refTable].[Codigo] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1766,10 +1774,23 @@ where [refTable].[Codigo] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
