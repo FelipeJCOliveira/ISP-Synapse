@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CFOP"
   DTS:PackageType="5"
-  DTS:VersionBuild="90"
-  DTS:VersionGUID="{041E6C35-1661-4DAB-A1EB-B39AF3A4E79C}">
+  DTS:VersionBuild="94"
+  DTS:VersionGUID="{BB9375FB-454A-4913-B02F-C6DBA98267B9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,7 +22,7 @@
       DTS:DTSID="{DD79B121-CD48-42CC-B2AE-A4E186FD87D6}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::FullFileName]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::FS_InboxPath] +  @[$Package::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -92,40 +92,16 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
-      DTS:ObjectName="IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=IEAZIWSQLAGLP001.syngentaazure.org;User ID=admin_Db_Synapse;Initial Catalog=Db_Synapse;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPcl32pf0N0O8odpg9Iy17gAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABkcxdZejNTdTwsIJz97hw5AAAAAASAAACgAAAAEAAAAGLPF7v8V5Q6H3wtE9zq/UYgAAAAtIDjFQt4ChaCvZi/6qFPQgwv/JPBEYMLq4dllADokVwUAAAA08pTZ77qNTYhkAiaZX84bbIr8wE</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{B573DD5F-6C22-4A8C-ADF3-2F4CC67B3FA3}"
-      DTS:ObjectName="AzureSQL">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">Data Source=IEAZIWSQLAGLP001.syngentaazure.org;User ID=admin_Db_Synapse;Initial Catalog=Db_Synapse;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
       DTS:DTSID="{0584F507-936F-4F09-A240-A7749C9E9D5E}"
-      DTS:ObjectName="FullFileName">
+      DTS:ObjectName="FileName">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">D:\Synapse\All CSV Files\All CSV Files\CFOP.csv</DTS:Property>
+        DTS:Name="ParameterValue">CFOP.csv</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables />
@@ -424,8 +400,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Load CSV\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -851,8 +827,8 @@ where [refTable].[Codigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1025,8 +1001,8 @@ where [refTable].[Codigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1200,8 +1176,8 @@ where [refTable].[Codigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
