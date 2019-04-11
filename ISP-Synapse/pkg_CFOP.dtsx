@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CFOP"
   DTS:PackageType="5"
-  DTS:VersionBuild="105"
-  DTS:VersionGUID="{98445449-6561-4F51-958D-0763BE9B74D9}">
+  DTS:VersionBuild="107"
+  DTS:VersionGUID="{1DC9BD94-2C6A-4207-AB97-9EDFEF879DC7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -926,7 +926,7 @@ where [refTable].[Codigo] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Codigo" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Descricao" dataType="DT_STR" length="150" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Identificador" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Multiplicador" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Consumo" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Operacao" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Codigo" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Descricao" dataType="DT_STR" length="150" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Identificador" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Multiplicador" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Consumo" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Operacao" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -1036,25 +1036,209 @@ where [refTable].[Codigo] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Staging to Final (INCREMENTAL)\Multicast"
-              componentClassID="Microsoft.Multicast"
-              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
-              name="Multicast">
+              refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE)"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command (UPDATE)"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update TB_Agroview_Parametros_CFOP
+set 
+Descricao	= ?,
+Identificador	= ?, 
+Multiplicador	= ?,
+Consumo	= ?,
+Operacao	= ?,
+Data_Alteracao	= getdate()
+where Codigo	= ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Connections[OleDbConnection]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Multicast.Inputs[Multicast Input 1]"
-                  name="Multicast Input 1">
-                  <externalMetadataColumns />
+                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="cvt_Codigo"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_ Descricao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="cvt_ Descricao"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_ Descricao]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Identificador]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="cvt_Identificador"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Identificador]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Multiplicador]"
+                      cachedDataType="i4"
+                      cachedName="cvt_Multiplicador"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Multiplicador]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Consumo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="cvt_Consumo"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Consumo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Operacao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="cvt_Operacao"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Multicast.Outputs[Multicast Output 1]"
-                  dangling="true"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 1"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\Multicast.Inputs[Multicast Input 1]">
+                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -1484,7 +1668,7 @@ where [refTable].[Codigo] = ?</property>
               startId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Lookup Match Output]"
-              endId="Package\Data Flow Staging to Final (INCREMENTAL)\Multicast.Inputs[Multicast Input 1]"
+              endId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
               startId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup Match Output]" />
             <path
@@ -1597,6 +1781,10 @@ where [refTable].[Codigo] = ?</property>
           Size="163,42"
           Id="Package\Execute SQL Task"
           TopLeft="161,22" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\LOG Carga Arquivo"
+          TopLeft="403,105" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="224,143">
@@ -1665,10 +1853,6 @@ where [refTable].[Codigo] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="169,42"
-          Id="Package\LOG Carga Arquivo"
-          TopLeft="403,105" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="311,124">
@@ -1801,81 +1985,57 @@ where [refTable].[Codigo] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="113,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup"
-          TopLeft="51,94" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination"
-          TopLeft="48,185" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)\Multicast"
-          TopLeft="462,83" />
+          Size="154,42"
+          Id="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column"
+          TopLeft="324,176" />
         <NodeLayout
           Size="150,42"
           Id="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source"
           TopLeft="39,23" />
         <NodeLayout
+          Size="113,42"
+          Id="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup"
+          TopLeft="51,94" />
+        <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion"
           TopLeft="239,17" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination"
+          TopLeft="48,185" />
         <EdgeLayout
-          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[OLE DB Source Output]"
-          TopLeft="189,41">
+          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Derived Column Output]"
+          TopLeft="324,197">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50,0"
+              EndConnector="-105,9"
               Start="0,0"
-              End="42.5,0">
+              End="-97.5,9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="42.5,0" />
+                    End="-48.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.5,0"
+                    Point2="-52.5,0"
+                    Point3="-52.5,4" />
+                  <mssgle:LineSegment
+                    End="-52.5,5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-52.5,5"
+                    Point2="-52.5,9"
+                    Point3="-56.5,9" />
+                  <mssgle:LineSegment
+                    End="-97.5,9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Lookup Match Output]"
-          TopLeft="164,115">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="298,-11"
-              Start="0,0"
-              End="290.5,-11">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="145,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="145,0"
-                    Point2="149,0"
-                    Point3="149,-4" />
-                  <mssgle:LineSegment
-                    End="149,-7" />
-                  <mssgle:CubicBezierSegment
-                    Point1="149,-7"
-                    Point2="149,-11"
-                    Point3="153,-11" />
-                  <mssgle:LineSegment
-                    End="290.5,-11" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="100.80861328125,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1912,10 +2072,28 @@ where [refTable].[Codigo] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column"
-          TopLeft="324,176" />
+        <EdgeLayout
+          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[OLE DB Source Output]"
+          TopLeft="189,41">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50,0"
+              Start="0,0"
+              End="42.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Lookup No Match Output]"
           TopLeft="90,136">
@@ -1952,45 +2130,51 @@ where [refTable].[Codigo] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE)"
+          TopLeft="408,76" />
         <EdgeLayout
-          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Derived Column Output]"
-          TopLeft="324,197">
+          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Lookup Match Output]"
+          TopLeft="164,115">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-105,9"
+              EndConnector="244,-18"
               Start="0,0"
-              End="-97.5,9">
+              End="236.5,-18">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-48.5,0" />
+                    End="118,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-48.5,0"
-                    Point2="-52.5,0"
-                    Point3="-52.5,4" />
+                    Point1="118,0"
+                    Point2="122,0"
+                    Point3="122,-4" />
                   <mssgle:LineSegment
-                    End="-52.5,5" />
+                    End="122,-14" />
                   <mssgle:CubicBezierSegment
-                    Point1="-52.5,5"
-                    Point2="-52.5,9"
-                    Point3="-56.5,9" />
+                    Point1="122,-14"
+                    Point2="122,-18"
+                    Point3="126,-18" />
                   <mssgle:LineSegment
-                    End="-97.5,9" />
+                    End="236.5,-18" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="73.80861328125,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination">
+    design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2008,7 +2192,7 @@ where [refTable].[Codigo] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2018,7 +2202,7 @@ where [refTable].[Codigo] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2026,7 +2210,7 @@ where [refTable].[Codigo] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source">
+    design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
