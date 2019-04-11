@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{6E44EB33-7762-4C1F-8BDC-0D2D29B3DBEA}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Municipio"
   DTS:PackageType="5"
-  DTS:VersionBuild="71"
-  DTS:VersionGUID="{565AB397-335D-4B38-9255-4116622DDBED}">
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{78FF0D0C-E499-4C3C-8C6C-6945A714BA79}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{0DC5E57D-BC73-401F-AD05-B522BA019743}"
       DTS:ObjectName="FF Municipio - varchar">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+ @[$Package::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="E:\All CSV Files\Municipio.csv">
+          DTS:ConnectionString="D:\Synapse\All CSV Files\All CSV Files\Municipio.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -145,136 +147,6 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection - Municipio]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{57AE131D-CEA6-49E4-B190-76FB60F9D2AC}"
-      DTS:ObjectName="Flat File Connection - Municipio">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::FullFileName]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="E:\All CSV Files\Municipio.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="10"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioCodigo"
-              DTS:DTSID="{FC77EFC7-0DD2-4486-86E3-CC9632248EDF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioDescricao"
-              DTS:DTSID="{C6B0E743-DBD4-4E87-AFDA-861FB353AC89}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioNome"
-              DTS:DTSID="{15AD0014-8F1F-4570-81D8-C200E1DEEF2B}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="10"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioMicrorregiaoCodigo"
-              DTS:DTSID="{1B17F987-CEA9-4A81-8D73-CCBD0B3C0D73}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="40"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioMicrorregiao"
-              DTS:DTSID="{B8693B60-B52B-4AD8-A90E-942025D7F96F}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="10"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioMesorregiaoCodigo"
-              DTS:DTSID="{EBD9EF8E-45F9-4FDC-8FDE-E750513A1133}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="40"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioMesorregiao"
-              DTS:DTSID="{FFFCF718-E3DE-4B3E-B3B8-28EF02A0CF5D}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="10"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioUFCodigo"
-              DTS:DTSID="{691623EC-9CB3-4123-8C32-9044F05CEBDC}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="18"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioUF"
-              DTS:DTSID="{64F98A9E-94BF-46FC-BC02-E2F568A61C4D}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="18"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioRegiao"
-              DTS:DTSID="{CEE55232-30AB-4C2C-81B4-2FB195387DEF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="10"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioLatitude"
-              DTS:DTSID="{9F1F74A1-A1C3-4C64-99A1-ED06923908BC}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="10"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MunicipioLongitude"
-              DTS:DTSID="{07FCAF9A-EBFC-4EAB-93D4-DC32020BF5A3}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.DB_Synapse]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{148EF3F6-5A63-4314-8ADF-ABCD1FA43226}"
@@ -289,14 +161,24 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{A35091AA-E153-4C5D-AF48-1BF4E0A5004D}"
-      DTS:ObjectName="FullFileName">
+      DTS:DTSID="{F2238C26-DED3-4AAC-8A6A-63E3D1D67611}"
+      DTS:ObjectName="FileName">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">E:\All CSV Files\Municipio.csv</DTS:Property>
+        DTS:Name="ParameterValue">Municipio.csv</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0D4811CE-352B-4B47-B7D4-3A9D6E3808EB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CSVRowCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Data Flow Load CSV"
@@ -1173,8 +1055,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Load CSV\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1385,6 +1267,35 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Data Flow Load CSV\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::CSVRowCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Load CSV\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Load CSV\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Data Flow Load CSV\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -1394,9 +1305,14 @@
               startId="Package\Data Flow Load CSV\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Load CSV.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Data Flow Load CSV\Row Count.Inputs[Row Count Input 1]"
               name="Flat File Source Output"
               startId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Load CSV.Paths[Row Count Output 1]"
+              endId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\Data Flow Load CSV\Row Count.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1429,64 +1345,81 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Descricao]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
                       cachedName="Descricao"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Descricao]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Nome]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
                       cachedName="Nome"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nome]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Nome]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[UF]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="18"
                       cachedName="UF"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[UF]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[UF]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Regiao]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="18"
                       cachedName="Regiao"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Regiao]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Regiao]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Microrregiao]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="40"
                       cachedName="Microrregiao"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Microrregiao]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Microrregiao]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Mesorregiao]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="40"
                       cachedName="Mesorregiao"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mesorregiao]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Mesorregiao]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Latitude]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="10"
                       cachedName="Latitude"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Latitude]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Latitude]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Longitude]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="10"
                       cachedName="Longitude"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Longitude]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Longitude]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Microrregiao_Codigo]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="10"
                       cachedName="Microrregiao_Codigo"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Microrregiao_Codigo]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Microrregiao_Codigo]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Mesorregiao_Codigo]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="10"
                       cachedName="Mesorregiao_Codigo"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mesorregiao_Codigo]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Mesorregiao_Codigo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input].Columns[Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Codigo"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Codigo]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1513,7 +1446,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Descricao]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1535,7 +1468,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nome]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Nome]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1557,7 +1490,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[UF]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[UF]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1579,7 +1512,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Regiao]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Regiao]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1601,7 +1534,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Microrregiao]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Microrregiao]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1623,7 +1556,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mesorregiao]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Mesorregiao]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1643,7 +1576,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Latitude]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Latitude]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1663,7 +1596,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Longitude]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Longitude]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1683,7 +1616,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Microrregiao_Codigo]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Microrregiao_Codigo]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1703,7 +1636,29 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mesorregiao_Codigo]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Mesorregiao_Codigo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
+                      name="cvt_Codigo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Codigo]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1730,6 +1685,79 @@
                       refId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Staging to Final\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      name="drv_Dt_Import"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1775,7 +1803,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -1796,8 +1824,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1810,19 +1838,13 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Codigo]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="Codigo"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]" />
-                    <inputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Codigo_UF]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="10"
                       cachedName="Codigo_UF"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo_UF]"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo_UF]" />
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Codigo_UF]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Descricao]"
                       cachedCodepage="1252"
@@ -1895,6 +1917,20 @@
                       cachedName="cvt_Mesorregiao_Codigo"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mesoregiao_Codigo]"
                       lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Mesorregiao_Codigo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="cvt_Codigo"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
+                      lineageId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="drv_Dt_Import"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1958,6 +1994,14 @@
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mesoregiao_Codigo]"
                       dataType="i4"
                       name="Mesoregiao_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Inclusao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Alteracao" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1987,13 +2031,12 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Staging to Final\OLE DB Source"
+              refId="Package\Data Flow Staging to Final\OLE DB Source 1"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="OLE DB Source 1"
               usesDispositions="true"
-              validateExternalMetadata="False"
               version="7">
               <properties>
                 <property
@@ -2024,7 +2067,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">true</property>
+                  name="AlwaysUseDefaultCodePage">false</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -2037,289 +2080,325 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Staging to Final\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  refId="Package\Data Flow Staging to Final\OLE DB Source 1.Connections[OleDbConnection]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Codigo]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Codigo]"
                       name="Codigo"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Descricao]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
                       length="50"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Descricao]"
                       name="Descricao"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nome]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Nome]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Nome]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Nome]"
                       length="50"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nome]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Nome]"
                       name="Nome"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Microrregiao_Codigo]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Microrregiao_Codigo]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Microrregiao_Codigo]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Microrregiao_Codigo]"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Microrregiao_Codigo]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Microrregiao_Codigo]"
                       name="Microrregiao_Codigo"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Microrregiao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Microrregiao]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Microrregiao]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Microrregiao]"
                       length="40"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Microrregiao]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Microrregiao]"
                       name="Microrregiao"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mesorregiao_Codigo]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Mesorregiao_Codigo]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mesorregiao_Codigo]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Mesorregiao_Codigo]"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mesorregiao_Codigo]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Mesorregiao_Codigo]"
                       name="Mesorregiao_Codigo"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mesorregiao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Mesorregiao]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mesorregiao]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Mesorregiao]"
                       length="40"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mesorregiao]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Mesorregiao]"
                       name="Mesorregiao"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo_UF]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Codigo_UF]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo_UF]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Codigo_UF]"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo_UF]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Codigo_UF]"
                       name="Codigo_UF"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[UF]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[UF]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UF]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[UF]"
                       length="18"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[UF]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[UF]"
                       name="UF"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Regiao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Regiao]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Regiao]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Regiao]"
                       length="18"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Regiao]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Regiao]"
                       name="Regiao"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Latitude]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Latitude]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Latitude]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Latitude]"
                       name="Latitude"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Longitude]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Longitude]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Longitude]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Longitude]"
                       name="Longitude"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       name="Codigo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="Descricao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Nome]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Nome]"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="Nome" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Microrregiao_Codigo]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Microrregiao_Codigo]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       name="Microrregiao_Codigo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Microrregiao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Microrregiao]"
+                      codePage="1252"
+                      dataType="str"
                       length="40"
                       name="Microrregiao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mesorregiao_Codigo]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Mesorregiao_Codigo]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       name="Mesorregiao_Codigo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mesorregiao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Mesorregiao]"
+                      codePage="1252"
+                      dataType="str"
                       length="40"
                       name="Mesorregiao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo_UF]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Codigo_UF]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       name="Codigo_UF" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UF]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[UF]"
+                      codePage="1252"
+                      dataType="str"
                       length="18"
                       name="UF" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Regiao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Regiao]"
+                      codePage="1252"
+                      dataType="str"
                       length="18"
                       name="Regiao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       name="Latitude" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
                       name="Longitude" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Codigo]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Codigo]"
                       name="Codigo" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Descricao]"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Descricao]"
                       name="Descricao" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Nome]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Nome]"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Nome]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Nome]"
                       name="Nome" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Microrregiao_Codigo]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Microrregiao_Codigo]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Microrregiao_Codigo]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Microrregiao_Codigo]"
                       name="Microrregiao_Codigo" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Microrregiao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Microrregiao]"
+                      codePage="1252"
+                      dataType="str"
                       length="40"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Microrregiao]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Microrregiao]"
                       name="Microrregiao" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mesorregiao_Codigo]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Mesorregiao_Codigo]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mesorregiao_Codigo]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Mesorregiao_Codigo]"
                       name="Mesorregiao_Codigo" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mesorregiao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Mesorregiao]"
+                      codePage="1252"
+                      dataType="str"
                       length="40"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mesorregiao]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Mesorregiao]"
                       name="Mesorregiao" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo_UF]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Codigo_UF]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo_UF]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Codigo_UF]"
                       name="Codigo_UF" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UF]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[UF]"
+                      codePage="1252"
+                      dataType="str"
                       length="18"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UF]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[UF]"
                       name="UF" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Regiao]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Regiao]"
+                      codePage="1252"
+                      dataType="str"
                       length="18"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Regiao]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Regiao]"
                       name="Regiao" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Latitude]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Latitude]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Latitude]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Latitude]"
                       name="Latitude" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Longitude]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Longitude]"
+                      codePage="1252"
+                      dataType="str"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Longitude]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Longitude]"
                       name="Longitude" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2331,19 +2410,95 @@
           <paths>
             <path
               refId="Package\Data Flow Staging to Final.Paths[Data Conversion Output]"
-              endId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input]"
               name="Data Conversion Output"
               startId="Package\Data Flow Staging to Final\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Staging to Final.Paths[Derived Column Output]"
+              endId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Staging to Final.Paths[OLE DB Source Output]"
               endId="Package\Data Flow Staging to Final\Data Conversion.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow Staging to Final\OLE DB Source 1.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{64427E0C-0AFE-4F86-9BCB-CDC738492911}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
+          SQLTask:SqlStatementSource="delete from tb_carga_municipio;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Log CSV"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BC21D2D8-A907-4D9E-8363-EDB8E03D9604}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Log CSV"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
+          SQLTask:SqlStatementSource="INSERT INTO TB_Carga_LOG_Arquivo(Data_Carga, Nome_Arquivo,Qtd_Registros)&#xA;VALUES(getdate(),?,?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::FileName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::CSVRowCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6F399BEE-83AA-4C44-8494-1C4F335E728C}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Load CSV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{859536C2-EC57-4594-A7AD-8F4E6B2E1B74}"
+      DTS:From="Package\Data Flow Load CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SQL Log CSV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{ED4E6075-EFEB-4CA8-9153-E0A04E840E1F}"
+      DTS:From="Package\Data Flow Load CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Data Flow Staging to Final" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -2355,61 +2510,49 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="174,42"
           Id="Package\Data Flow Load CSV"
-          TopLeft="78,14" />
+          TopLeft="50,73" />
         <NodeLayout
           Size="203,42"
           Id="Package\Data Flow Staging to Final"
-          TopLeft="75,102" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Data Flow Load CSV">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+          TopLeft="36,146" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Load CSV\OLE DB Destination"
-          TopLeft="151,143" />
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="35,6" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Load CSV\Flat File Source"
-          TopLeft="161,33" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Load CSV\Derived Column"
-          TopLeft="387,74" />
+          Size="140,42"
+          Id="Package\SQL Log CSV"
+          TopLeft="279,68" />
         <EdgeLayout
-          Id="Package\Data Flow Load CSV.Paths[Flat File Source Output]"
-          TopLeft="312,54">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="116.5,48">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="75,41"
+              EndConnector="20.5,25"
               Start="0,0"
-              End="67.5,41">
+              End="20.5,17.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="33.5,0" />
+                    End="0,8.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="33.5,0"
-                    Point2="37.5,0"
-                    Point3="37.5,4" />
+                    Point1="0,8.5"
+                    Point2="0,12.5"
+                    Point3="4,12.5" />
                   <mssgle:LineSegment
-                    End="37.5,37" />
+                    End="16.5,12.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="37.5,37"
-                    Point2="37.5,41"
-                    Point3="41.5,41" />
+                    Point1="16.5,12.5"
+                    Point2="20.5,12.5"
+                    Point3="20.5,16.5" />
                   <mssgle:LineSegment
-                    End="67.5,41" />
+                    End="20.5,17.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2419,31 +2562,143 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Load CSV.Paths[Derived Column Output]"
-          TopLeft="464,116">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="224,91.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-227.5,27"
+              EndConnector="55,0"
               Start="0,0"
-              End="-227.5,19.5">
+              End="47.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.5"
-                    Point2="0,13.5"
-                    Point3="-4,13.5" />
+                    End="47.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="137.25,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-223.5,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-223.5,13.5"
-                    Point2="-227.5,13.5"
-                    Point3="-227.5,17.5" />
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Load CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Load CSV\Derived Column"
+          TopLeft="415,130" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Load CSV\OLE DB Destination"
+          TopLeft="60,128" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Load CSV\Flat File Source"
+          TopLeft="56,26" />
+        <EdgeLayout
+          Id="Package\Data Flow Load CSV.Paths[Derived Column Output]"
+          TopLeft="415,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-184,0"
+              Start="0,0"
+              End="-176.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-227.5,19.5" />
+                    End="-176.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Data Flow Load CSV\Row Count"
+          TopLeft="296,33" />
+        <EdgeLayout
+          Id="Package\Data Flow Load CSV.Paths[Flat File Source Output]"
+          TopLeft="207,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89,0"
+              Start="0,0"
+              End="81.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="81.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Load CSV.Paths[Row Count Output 1]"
+          TopLeft="361,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131,55"
+              Start="0,0"
+              End="131,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
+                  <mssgle:LineSegment
+                    End="127,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="127,27.5"
+                    Point2="131,27.5"
+                    Point3="131,31.5" />
+                  <mssgle:LineSegment
+                    End="131,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2476,41 +2731,67 @@
         <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Staging to Final\OLE DB Destination"
-          TopLeft="144,186" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Staging to Final\OLE DB Source"
-          TopLeft="132,36" />
+          TopLeft="266,108" />
         <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Staging to Final\Data Conversion"
           TopLeft="32,103" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Data Flow Staging to Final\OLE DB Source 1"
+          TopLeft="35,11" />
         <EdgeLayout
           Id="Package\Data Flow Staging to Final.Paths[OLE DB Source Output]"
-          TopLeft="207,78">
+          TopLeft="112.25,53">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-97,25"
+              EndConnector="0,50"
               Start="0,0"
-              End="-97,17.5">
+              End="0,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.5"
-                    Point2="0,12.5"
-                    Point3="-4,12.5" />
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Staging to Final\Derived Column"
+          TopLeft="270,6" />
+        <EdgeLayout
+          Id="Package\Data Flow Staging to Final.Paths[Data Conversion Output]"
+          TopLeft="134.666666666667,103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.333333333333,-55"
+              Start="0,0"
+              End="212.333333333333,-47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-93,12.5" />
+                    End="0,-18.3350253807107" />
                   <mssgle:CubicBezierSegment
-                    Point1="-93,12.5"
-                    Point2="-97,12.5"
-                    Point3="-97,16.5" />
+                    Point1="0,-18.3350253807107"
+                    Point2="0,-22.3350253807107"
+                    Point3="4,-22.3350253807107" />
                   <mssgle:LineSegment
-                    End="-97,17.5" />
+                    End="208.333333333333,-22.3350253807107" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.333333333333,-22.3350253807107"
+                    Point2="212.333333333333,-22.3350253807107"
+                    Point3="212.333333333333,-26.3350253807107" />
+                  <mssgle:LineSegment
+                    End="212.333333333333,-47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2520,31 +2801,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Staging to Final.Paths[Data Conversion Output]"
-          TopLeft="110,145">
+          Id="Package\Data Flow Staging to Final.Paths[Derived Column Output]"
+          TopLeft="371.333333333333,48">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="119.5,41"
+              EndConnector="-19.8333333333333,60"
               Start="0,0"
-              End="119.5,33.5">
+              End="-19.8333333333333,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5" />
+                    End="0,20.3701799485861" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="4,20.5" />
+                    Point1="0,20.3701799485861"
+                    Point2="0,24.3701799485861"
+                    Point3="-4,24.3701799485861" />
                   <mssgle:LineSegment
-                    End="115.5,20.5" />
+                    End="-15.8333333333333,24.3701799485861" />
                   <mssgle:CubicBezierSegment
-                    Point1="115.5,20.5"
-                    Point2="119.5,20.5"
-                    Point3="119.5,24.5" />
+                    Point1="-15.8333333333333,24.3701799485861"
+                    Point2="-19.8333333333333,24.3701799485861"
+                    Point3="-19.8333333333333,28.3701799485861" />
                   <mssgle:LineSegment
-                    End="119.5,33.5" />
+                    End="-19.8333333333333,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2570,7 +2851,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Staging to Final\OLE DB Source">
+    design-time-name="Package\Data Flow Staging to Final\OLE DB Source 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
