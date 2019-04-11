@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CFOP"
   DTS:PackageType="5"
-  DTS:VersionBuild="107"
-  DTS:VersionGUID="{1DC9BD94-2C6A-4207-AB97-9EDFEF879DC7}">
+  DTS:VersionBuild="108"
+  DTS:VersionGUID="{AA160703-2435-4A65-A3C3-CE9BE98E893F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -572,13 +572,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Staging to Final (INCREMENTAL)"
+      DTS:refId="Package\Data Flow Staging to Final (UPINSERT)"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{A6848D4B-F338-43CC-B735-243F972904C5}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Staging to Final (INCREMENTAL)"
+      DTS:ObjectName="Data Flow Staging to Final (UPINSERT)"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -586,7 +586,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion"
+              refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Data Conversion"
@@ -594,64 +594,64 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input].Columns[Codigo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Inputs[Data Conversion Input].Columns[Codigo]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="Codigo"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]" />
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input].Columns[Multiplicador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Inputs[Data Conversion Input].Columns[Multiplicador]"
                       cachedDataType="wstr"
                       cachedLength="10"
                       cachedName="Multiplicador"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Multiplicador]" />
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Multiplicador]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input].Columns[Descricao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Inputs[Data Conversion Input].Columns[Descricao]"
                       cachedDataType="wstr"
                       cachedLength="150"
                       cachedName="Descricao"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]" />
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input].Columns[Identificador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Inputs[Data Conversion Input].Columns[Identificador]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="Identificador"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Identificador]" />
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Identificador]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input].Columns[Operacao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Inputs[Data Conversion Input].Columns[Operacao]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="Operacao"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Operacao]" />
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Operacao]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input].Columns[Consumo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Inputs[Data Conversion Input].Columns[Consumo]"
                       cachedDataType="wstr"
                       cachedLength="4"
                       cachedName="Consumo"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Consumo]" />
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Consumo]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
                   name="Data Conversion Output"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="IgnoreFailure"
                       length="5"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
                       name="cvt_Codigo"
                       truncationRowDisposition="IgnoreFailure">
                       <properties>
@@ -659,7 +659,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -667,11 +667,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Multiplicador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Multiplicador]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Multiplicador]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Multiplicador]"
                       name="cvt_Multiplicador"
                       truncationRowDisposition="IgnoreFailure">
                       <properties>
@@ -679,7 +679,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Multiplicador]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Multiplicador]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -687,13 +687,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_ Descricao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_ Descricao]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="150"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_ Descricao]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_ Descricao]"
                       name="cvt_ Descricao"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -701,7 +701,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -709,13 +709,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Identificador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Identificador]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="20"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Identificador]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Identificador]"
                       name="cvt_Identificador"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -723,7 +723,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Identificador]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Identificador]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -731,13 +731,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="30"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]"
                       name="cvt_Operacao"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -745,7 +745,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Operacao]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Operacao]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -753,13 +753,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Consumo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Consumo]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Consumo]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Consumo]"
                       name="cvt_Consumo"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -767,7 +767,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Consumo]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Consumo]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -778,22 +778,22 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Error Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Data Conversion Error Output"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -802,7 +802,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column"
+              refId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -810,7 +810,7 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -818,18 +818,18 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
                       name="drv_Dt_Import"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -850,23 +850,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -875,7 +875,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup"
+              refId="Package\Data Flow Staging to Final (UPINSERT)\Lookup"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -931,7 +931,7 @@ where [refTable].[Codigo] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]};</property>
+                  name="ParameterMap">#{Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -943,7 +943,7 @@ where [refTable].[Codigo] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Connections[OleDbConnection]"
                   connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
                   connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
@@ -951,16 +951,16 @@ where [refTable].[Codigo] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input].Columns[cvt_Codigo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Inputs[Lookup Input].Columns[cvt_Codigo]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="5"
                       cachedName="cvt_Codigo"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]">
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -978,19 +978,19 @@ where [refTable].[Codigo] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup Match Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup Match Output].Columns[Codigo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup Match Output].Columns[Codigo]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="5"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup Match Output].Columns[Codigo]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup Match Output].Columns[Codigo]"
                       name="Codigo"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1004,30 +1004,30 @@ where [refTable].[Codigo] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup No Match Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1036,7 +1036,7 @@ where [refTable].[Codigo] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE)"
+              refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE)"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
@@ -1069,7 +1069,7 @@ where Codigo	= ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Connections[OleDbConnection]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Connections[OleDbConnection]"
                   connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
                   connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1077,63 +1077,63 @@ where Codigo	= ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Codigo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Codigo]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="5"
                       cachedName="cvt_Codigo"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_ Descricao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_ Descricao]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="150"
                       cachedName="cvt_ Descricao"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_ Descricao]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_ Descricao]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Identificador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Identificador]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="cvt_Identificador"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Identificador]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Identificador]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Multiplicador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Multiplicador]"
                       cachedDataType="i4"
                       cachedName="cvt_Multiplicador"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Multiplicador]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Multiplicador]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Consumo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Consumo]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="cvt_Consumo"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Consumo]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Consumo]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Operacao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].Columns[cvt_Operacao]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="cvt_Operacao"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       codePage="1252"
                       dataType="str"
                       length="150"
@@ -1146,7 +1146,7 @@ where Codigo	= ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       codePage="1252"
                       dataType="str"
                       length="20"
@@ -1159,7 +1159,7 @@ where Codigo	= ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="i4"
                       name="Param_2">
                       <properties>
@@ -1170,7 +1170,7 @@ where Codigo	= ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
                       length="4"
@@ -1183,7 +1183,7 @@ where Codigo	= ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       codePage="1252"
                       dataType="str"
                       length="30"
@@ -1196,7 +1196,7 @@ where Codigo	= ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       codePage="1252"
                       dataType="str"
                       length="5"
@@ -1213,29 +1213,29 @@ where Codigo	= ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1244,11 +1244,11 @@ where Codigo	= ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination"
+              refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT)"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination"
+              name="OLE DB Destination (INSERT)"
               usesDispositions="true"
               version="4">
               <properties>
@@ -1301,7 +1301,7 @@ where Codigo	= ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Connections[OleDbConnection]"
                   connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
                   connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1309,107 +1309,107 @@ where Codigo	= ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Codigo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[cvt_Codigo]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="5"
                       cachedName="cvt_Codigo"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Multiplicador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[cvt_Multiplicador]"
                       cachedDataType="i4"
                       cachedName="cvt_Multiplicador"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Multiplicador]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Multiplicador]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Multiplicador]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Multiplicador]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_ Descricao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[cvt_ Descricao]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="150"
                       cachedName="cvt_ Descricao"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_ Descricao]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_ Descricao]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Identificador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[cvt_Identificador]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="cvt_Identificador"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Identificador]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Identificador]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Identificador]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Identificador]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Operacao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[cvt_Operacao]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="cvt_Operacao"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Operacao]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Operacao]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Operacao]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Consumo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[cvt_Consumo]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="cvt_Consumo"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Consumo]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Consumo]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Consumo]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Consumo]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
                       cachedDataType="dbTimeStamp"
                       cachedName="drv_Dt_Import"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
                       codePage="1252"
                       dataType="str"
                       length="5"
                       name="Codigo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
                       codePage="1252"
                       dataType="str"
                       length="150"
                       name="Descricao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Identificador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Identificador]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="Identificador" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Multiplicador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Multiplicador]"
                       dataType="i4"
                       name="Multiplicador" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Consumo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Consumo]"
                       codePage="1252"
                       dataType="str"
                       length="4"
                       name="Consumo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Operacao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Operacao]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="Operacao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
                       dataType="dbTimeStamp"
                       name="Data_Inclusao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
                       dataType="dbTimeStamp"
                       name="Data_Alteracao" />
                   </externalMetadataColumns>
@@ -1417,22 +1417,22 @@ where Codigo	= ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1441,7 +1441,7 @@ where Codigo	= ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source"
+              refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -1490,7 +1490,7 @@ where Codigo	= ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
                   connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1498,155 +1498,155 @@ where Codigo	= ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
                       length="8"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]"
                       name="Codigo"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
                       length="150"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]"
                       name="Descricao"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Identificador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Identificador]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Identificador]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Identificador]"
                       length="20"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Identificador]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Identificador]"
                       name="Identificador"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Multiplicador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Multiplicador]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Multiplicador]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Multiplicador]"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Multiplicador]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Multiplicador]"
                       name="Multiplicador"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Consumo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Consumo]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Consumo]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Consumo]"
                       length="4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Consumo]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Consumo]"
                       name="Consumo"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Operacao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Operacao]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Operacao]"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Operacao]"
                       length="30"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Operacao]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Operacao]"
                       name="Operacao"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
                       dataType="wstr"
                       length="8"
                       name="Codigo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
                       dataType="wstr"
                       length="150"
                       name="Descricao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Identificador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Identificador]"
                       dataType="wstr"
                       length="20"
                       name="Identificador" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Multiplicador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Multiplicador]"
                       dataType="wstr"
                       length="10"
                       name="Multiplicador" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Consumo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Consumo]"
                       dataType="wstr"
                       length="4"
                       name="Consumo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Operacao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Operacao]"
                       dataType="wstr"
                       length="30"
                       name="Operacao" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo]"
                       dataType="wstr"
                       length="8"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Codigo]"
                       name="Codigo" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
                       dataType="wstr"
                       length="150"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Descricao]"
                       name="Descricao" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Identificador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Identificador]"
                       dataType="wstr"
                       length="20"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Identificador]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Identificador]"
                       name="Identificador" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Multiplicador]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Multiplicador]"
                       dataType="wstr"
                       length="10"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Multiplicador]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Multiplicador]"
                       name="Multiplicador" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Consumo]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Consumo]"
                       dataType="wstr"
                       length="4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Consumo]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Consumo]"
                       name="Consumo" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Operacao]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Operacao]"
                       dataType="wstr"
                       length="30"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Operacao]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Operacao]"
                       name="Operacao" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1657,30 +1657,30 @@ where Codigo	= ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Data Conversion Output]"
-              endId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Inputs[Lookup Input]"
+              refId="Package\Data Flow Staging to Final (UPINSERT).Paths[Data Conversion Output]"
+              endId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Inputs[Lookup Input]"
               name="Data Conversion Output"
-              startId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Outputs[Data Conversion Output]" />
+              startId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Derived Column Output]"
-              endId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Data Flow Staging to Final (UPINSERT).Paths[Derived Column Output]"
+              endId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Lookup Match Output]"
-              endId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]"
+              refId="Package\Data Flow Staging to Final (UPINSERT).Paths[Lookup Match Output]"
+              endId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE).Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Lookup No Match Output]"
-              endId="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\Data Flow Staging to Final (UPINSERT).Paths[Lookup No Match Output]"
+              endId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
-              startId="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup.Outputs[Lookup No Match Output]" />
+              startId="Package\Data Flow Staging to Final (UPINSERT)\Lookup.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Data Flow Staging to Final (INCREMENTAL).Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion.Inputs[Data Conversion Input]"
+              refId="Package\Data Flow Staging to Final (UPINSERT).Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1739,7 +1739,7 @@ where Codigo	= ?</property>
       DTS:From="Package\Data Flow Load CSV"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Data Flow Staging to Final (INCREMENTAL)" />
+      DTS:To="Package\Data Flow Staging to Final (UPINSERT)" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
@@ -1774,8 +1774,8 @@ where Codigo	= ?</property>
           Id="Package\Data Flow Load CSV"
           TopLeft="137,101" />
         <NodeLayout
-          Size="284,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)"
+          Size="263,42"
+          Id="Package\Data Flow Staging to Final (UPINSERT)"
           TopLeft="169,189" />
         <NodeLayout
           Size="163,42"
@@ -1791,9 +1791,9 @@ where Codigo	= ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87,46"
+              EndConnector="76.5,46"
               Start="0,0"
-              End="87,38.5">
+              End="76.5,38.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1804,13 +1804,13 @@ where Codigo	= ?</property>
                     Point2="0,23"
                     Point3="4,23" />
                   <mssgle:LineSegment
-                    End="83,23" />
+                    End="72.5,23" />
                   <mssgle:CubicBezierSegment
-                    Point1="83,23"
-                    Point2="87,23"
-                    Point3="87,27" />
+                    Point1="72.5,23"
+                    Point2="76.5,23"
+                    Point3="76.5,27" />
                   <mssgle:LineSegment
-                    End="87,38.5" />
+                    End="76.5,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1980,100 +1980,36 @@ where Codigo	= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)">
+    design-time-name="Package\Data Flow Staging to Final (UPINSERT)">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)\Derived Column"
+          Id="Package\Data Flow Staging to Final (UPINSERT)\Derived Column"
           TopLeft="324,176" />
         <NodeLayout
+          Size="216,42"
+          Id="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Command (UPDATE)"
+          TopLeft="408,76" />
+        <NodeLayout
           Size="150,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source"
+          Id="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source"
           TopLeft="39,23" />
         <NodeLayout
+          Size="218,42"
+          Id="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT)"
+          TopLeft="48,185" />
+        <NodeLayout
           Size="113,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup"
+          Id="Package\Data Flow Staging to Final (UPINSERT)\Lookup"
           TopLeft="51,94" />
         <NodeLayout
           Size="156,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)\Data Conversion"
+          Id="Package\Data Flow Staging to Final (UPINSERT)\Data Conversion"
           TopLeft="239,17" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination"
-          TopLeft="48,185" />
         <EdgeLayout
-          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Derived Column Output]"
-          TopLeft="324,197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-105,9"
-              Start="0,0"
-              End="-97.5,9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-48.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-48.5,0"
-                    Point2="-52.5,0"
-                    Point3="-52.5,4" />
-                  <mssgle:LineSegment
-                    End="-52.5,5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-52.5,5"
-                    Point2="-52.5,9"
-                    Point3="-56.5,9" />
-                  <mssgle:LineSegment
-                    End="-97.5,9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Data Conversion Output]"
-          TopLeft="317,59">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-209.5,35"
-              Start="0,0"
-              End="-209.5,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.5"
-                    Point2="0,17.5"
-                    Point3="-4,17.5" />
-                  <mssgle:LineSegment
-                    End="-205.5,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-205.5,17.5"
-                    Point2="-209.5,17.5"
-                    Point3="-209.5,21.5" />
-                  <mssgle:LineSegment
-                    End="-209.5,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[OLE DB Source Output]"
+          Id="Package\Data Flow Staging to Final (UPINSERT).Paths[OLE DB Source Output]"
           TopLeft="189,41">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2095,7 +2031,7 @@ where Codigo	= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Lookup No Match Output]"
+          Id="Package\Data Flow Staging to Final (UPINSERT).Paths[Lookup No Match Output]"
           TopLeft="90,136">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2130,12 +2066,8 @@ where Codigo	= ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="216,42"
-          Id="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Command (UPDATE)"
-          TopLeft="408,76" />
         <EdgeLayout
-          Id="Package\Data Flow Staging to Final (INCREMENTAL).Paths[Lookup Match Output]"
+          Id="Package\Data Flow Staging to Final (UPINSERT).Paths[Lookup Match Output]"
           TopLeft="164,115">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2170,11 +2102,79 @@ where Codigo	= ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Staging to Final (UPINSERT).Paths[Derived Column Output]"
+          TopLeft="324,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-58,9"
+              Start="0,0"
+              End="-50.5,9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25,0"
+                    Point2="-29,0"
+                    Point3="-29,4" />
+                  <mssgle:LineSegment
+                    End="-29,5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29,5"
+                    Point2="-29,9"
+                    Point3="-33,9" />
+                  <mssgle:LineSegment
+                    End="-50.5,9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Staging to Final (UPINSERT).Paths[Data Conversion Output]"
+          TopLeft="317,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-209.5,35"
+              Start="0,0"
+              End="-209.5,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
+                  <mssgle:LineSegment
+                    End="-205.5,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-205.5,17.5"
+                    Point2="-209.5,17.5"
+                    Point3="-209.5,21.5" />
+                  <mssgle:LineSegment
+                    End="-209.5,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Source">
+    design-time-name="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2187,12 +2187,25 @@ where Codigo	= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)\Lookup">
+    design-time-name="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Staging to Final (UPINSERT)\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2202,23 +2215,10 @@ where Codigo	= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Staging to Final (INCREMENTAL)\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
