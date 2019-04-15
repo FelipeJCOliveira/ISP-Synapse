@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Unidade"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{65CF9213-AFC9-425E-ADD7-6C905B0FF8B9}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{41F9A905-277A-43BB-A205-6C14566CBD83}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1054,34 +1054,12 @@ from TB_Carga_Unidade</property>
                   synchronousInputId="Package\Staging to Final (UPINSERT)\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[versao]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[versao]"
-                      name="versao"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">1</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">1</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[data]"
+                      refId="Package\Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[data]"
-                      name="data"
+                      lineageId="Package\Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      name="drv_Dt_Import"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1139,13 +1117,13 @@ from TB_Carga_Unidade</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Hierarquia_Parametro_Unidade]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_Unidade]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Hierarquia_Parametro_Unidade]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_Unidade]) [refTable]
 where [refTable].[cod_Unidade] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -1177,7 +1155,7 @@ where [refTable].[cod_Unidade] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Versao" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Desativacao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ativo" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="cod_Unidade" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="desc_Unidade" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="userID" dataType="DT_STR" length="14" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="cod_Unidade" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="desc_Unidade" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -1304,7 +1282,7 @@ where [refTable].[cod_Unidade] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update TB_Hierarquia_Parametro_Unidade
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update TB_Agroview_Parametros_Unidade
 set 
 desc_Unidade = ?,
 Data_Alteracao = getdate()
@@ -1427,7 +1405,7 @@ where cod_Unidade = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[TB_Hierarquia_Parametro_Unidade]</property>
+                  name="OpenRowset">[dbo].[TB_Agroview_Parametros_Unidade]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1484,17 +1462,11 @@ where cod_Unidade = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[versao]"
-                      cachedDataType="i4"
-                      cachedName="versao"
-                      externalMetadataColumnId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Versao]"
-                      lineageId="Package\Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[versao]" />
-                    <inputColumn
-                      refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[data]"
+                      refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
                       cachedDataType="dbTimeStamp"
-                      cachedName="data"
+                      cachedName="drv_Dt_Import"
                       externalMetadataColumnId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
-                      lineageId="Package\Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[data]" />
+                      lineageId="Package\Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
                     <inputColumn
                       refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[Descricao]"
                       cachedCodepage="1252"
@@ -1515,25 +1487,9 @@ where cod_Unidade = ?</property>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[id]"
-                      dataType="i4"
-                      name="id" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Versao]"
-                      dataType="i4"
-                      name="Versao" />
-                    <externalMetadataColumn
                       refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
                       dataType="dbTimeStamp"
                       name="Data_Inclusao" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Desativacao]"
-                      dataType="dbTimeStamp"
-                      name="Data_Desativacao" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Ativo]"
-                      dataType="bool"
-                      name="Ativo" />
                     <externalMetadataColumn
                       refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[cod_Unidade]"
                       codePage="1252"
@@ -1547,11 +1503,9 @@ where cod_Unidade = ?</property>
                       length="50"
                       name="desc_Unidade" />
                     <externalMetadataColumn
-                      refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[userID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="14"
-                      name="userID" />
+                      refId="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Alteracao" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1795,10 +1749,6 @@ where cod_Unidade = ?</property>
           Id="Package\Data Flow SQL to Final  - OPCAO"
           TopLeft="341,27" />
         <NodeLayout
-          Size="213,42"
-          Id="Package\Staging to Final (UPINSERT)"
-          TopLeft="63,171" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Execute SQL - Delete Carga"
           TopLeft="67,18" />
@@ -1806,6 +1756,10 @@ where cod_Unidade = ?</property>
           Size="140,42"
           Id="Package\SQL Log CSV"
           TopLeft="289,96" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Staging to Final (UPINSERT)"
+          TopLeft="63,171" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="171.5,60">
@@ -1903,7 +1857,7 @@ where cod_Unidade = ?</property>
     design-time-name="Package\Data Flow Load CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="130,42"
           Id="Package\Data Flow Load CSV\Row Count"
@@ -1951,7 +1905,9 @@ where cod_Unidade = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1973,7 +1929,9 @@ where cod_Unidade = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1995,7 +1953,9 @@ where cod_Unidade = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2093,6 +2053,14 @@ where cod_Unidade = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="216,42"
+          Id="Package\Staging to Final (UPINSERT)\OLE DB Command (UPDATE)"
+          TopLeft="399,195" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT)"
+          TopLeft="41,203" />
+        <NodeLayout
           Size="154,42"
           Id="Package\Staging to Final (UPINSERT)\Derived Column"
           TopLeft="42,89" />
@@ -2101,27 +2069,99 @@ where cod_Unidade = ?</property>
           Id="Package\Staging to Final (UPINSERT)\OLE DB Source"
           TopLeft="45,18" />
         <NodeLayout
-          Size="218,42"
-          Id="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT)"
-          TopLeft="41,203" />
+          Size="113,42"
+          Id="Package\Staging to Final (UPINSERT)\Lookup"
+          TopLeft="263,98" />
         <NodeLayout
           Size="156,42"
           Id="Package\Staging to Final (UPINSERT)\Data Conversion"
           TopLeft="235,25" />
         <EdgeLayout
-          Id="Package\Staging to Final (UPINSERT).Paths[OLE DB Source Output]"
-          TopLeft="195,42.5">
+          Id="Package\Staging to Final (UPINSERT).Paths[Lookup No Match Output]"
+          TopLeft="319.5,140">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40,0"
+              EndConnector="-169.5,63"
               Start="0,0"
-              End="32.5,0">
+              End="-169.5,55.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="32.5,0" />
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="-4,31.5" />
+                  <mssgle:LineSegment
+                    End="-165.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-165.5,31.5"
+                    Point2="-169.5,31.5"
+                    Point3="-169.5,35.5" />
+                  <mssgle:LineSegment
+                    End="-169.5,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-140.55638671875,36.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Final (UPINSERT).Paths[Lookup Match Output]"
+          TopLeft="337,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170,55"
+              Start="0,0"
+              End="170,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4607329842932" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4607329842932"
+                    Point2="0,22.4607329842932"
+                    Point3="4,22.4607329842932" />
+                  <mssgle:LineSegment
+                    End="166,22.4607329842932" />
+                  <mssgle:CubicBezierSegment
+                    Point1="166,22.4607329842932"
+                    Point2="170,22.4607329842932"
+                    Point3="170,26.4607329842932" />
+                  <mssgle:LineSegment
+                    End="170,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="36.80861328125,27.4607329842932,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Final (UPINSERT).Paths[Derived Column Output]"
+          TopLeft="196,117.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67,0"
+              Start="0,0"
+              End="59.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="59.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2164,24 +2204,20 @@ where cod_Unidade = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Staging to Final (UPINSERT)\Lookup"
-          TopLeft="263,98" />
         <EdgeLayout
-          Id="Package\Staging to Final (UPINSERT).Paths[Derived Column Output]"
-          TopLeft="196,117.333333333333">
+          Id="Package\Staging to Final (UPINSERT).Paths[OLE DB Source Output]"
+          TopLeft="195,42.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="67,0"
+              EndConnector="40,0"
               Start="0,0"
-              End="59.5,0">
+              End="32.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="59.5,0" />
+                    End="32.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2190,87 +2226,11 @@ where cod_Unidade = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Staging to Final (UPINSERT).Paths[Lookup No Match Output]"
-          TopLeft="319.5,140">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-169.5,63"
-              Start="0,0"
-              End="-169.5,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.5"
-                    Point2="0,31.5"
-                    Point3="-4,31.5" />
-                  <mssgle:LineSegment
-                    End="-165.5,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-165.5,31.5"
-                    Point2="-169.5,31.5"
-                    Point3="-169.5,35.5" />
-                  <mssgle:LineSegment
-                    End="-169.5,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-140.55638671875,36.5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="216,42"
-          Id="Package\Staging to Final (UPINSERT)\OLE DB Command (UPDATE)"
-          TopLeft="399,195" />
-        <EdgeLayout
-          Id="Package\Staging to Final (UPINSERT).Paths[Lookup Match Output]"
-          TopLeft="337,140">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="170,55"
-              Start="0,0"
-              End="170,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.4607329842932" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.4607329842932"
-                    Point2="0,22.4607329842932"
-                    Point3="4,22.4607329842932" />
-                  <mssgle:LineSegment
-                    End="166,22.4607329842932" />
-                  <mssgle:CubicBezierSegment
-                    Point1="166,22.4607329842932"
-                    Point2="170,22.4607329842932"
-                    Point3="170,26.4607329842932" />
-                  <mssgle:LineSegment
-                    End="170,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="36.80861328125,27.4607329842932,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Staging to Final (UPINSERT)\OLE DB Source">
+    design-time-name="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT)">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2283,7 +2243,7 @@ where cod_Unidade = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Staging to Final (UPINSERT)\OLE DB Destination (INSERT)">
+    design-time-name="Package\Staging to Final (UPINSERT)\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2306,7 +2266,7 @@ where cod_Unidade = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[TB_Hierarquia_Parametro_Unidade]</Value>
+          type="q3:string">[dbo].[TB_Agroview_Parametros_Unidade]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
