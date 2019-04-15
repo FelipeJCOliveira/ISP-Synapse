@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{E97ABE78-213C-41B2-8119-FD416C094D1F}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Safra"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{BCDC0D5B-0C9D-43BE-A55F-B6299A44F621}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{2FE24011-B68E-45A4-B8FB-14C8770591AD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="E:\All CSV Files\Safra.csv">
+          DTS:ConnectionString="D:\Synapse\All CSV Files\All CSV Files\Safra.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -393,7 +393,7 @@ where [refTable].[Indice] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Indice" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Inicio" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Fim" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Indice_Anterior" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Descricao" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Indice" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Inicio" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Fim" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Indice_Anterior" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Descricao" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -411,8 +411,8 @@ where [refTable].[Indice] = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -532,8 +532,8 @@ where Indice = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -734,8 +734,8 @@ where Indice = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -901,8 +901,8 @@ where Indice = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1738,8 +1738,8 @@ where Indice = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1895,11 +1895,11 @@ where Indice = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Delete Carga"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{317A51E2-8721-497E-B186-59EB2529C86D}"
+          SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
           SQLTask:SqlStatementSource="delete FROM TB_Carga_Safra;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1912,7 +1912,7 @@ where Indice = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1928,11 +1928,11 @@ where Indice = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Log CSV"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{317A51E2-8721-497E-B186-59EB2529C86D}"
+          SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
           SQLTask:SqlStatementSource="INSERT INTO TB_Carga_LOG_Arquivo(Data_Carga, Nome_Arquivo,Qtd_Registros)&#xA;VALUES(getdate(),?,?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -1989,85 +1989,29 @@ where Indice = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="206,42"
-          Id="Package\Data Flow Task - Load CSV"
-          TopLeft="57,127" />
+          Size="144,42"
+          Id="Package\Carga to Final"
+          TopLeft="71,212" />
         <NodeLayout
           Size="243,42"
           Id="Package\Data Flow Task - csv to final direto"
           TopLeft="343,54" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="498,109" />
+          Size="206,42"
+          Id="Package\Data Flow Task - Load CSV"
+          TopLeft="57,127" />
         <NodeLayout
           Size="202,42"
           Id="Package\Execute SQL Delete Carga"
           TopLeft="44,46" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="145,88">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="15,39"
-              Start="0,0"
-              End="15,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="4,19.5" />
-                  <mssgle:LineSegment
-                    End="11,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11,19.5"
-                    Point2="15,19.5"
-                    Point3="15,23.5" />
-                  <mssgle:LineSegment
-                    End="15,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="498,109" />
         <NodeLayout
           Size="140,42"
           Id="Package\SQL Log CSV"
           TopLeft="302,127" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="263,148">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="39,0"
-              Start="0,0"
-              End="31.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="31.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Carga to Final"
-          TopLeft="71,212" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="160,169">
@@ -2102,14 +2046,380 @@ where Indice = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="145,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15,39"
+              Start="0,0"
+              End="15,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="11,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,19.5"
+                    Point2="15,19.5"
+                    Point3="15,23.5" />
+                  <mssgle:LineSegment
+                    End="15,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="263,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39,0"
+              Start="0,0"
+              End="31.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="31.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Carga to Final">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Carga to Final\Derived Column"
+          TopLeft="545,52" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Carga to Final\OLE DB Command"
+          TopLeft="282,183" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Carga to Final\Lookup"
+          TopLeft="186,88" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Carga to Final\OLE DB Destination"
+          TopLeft="41,180" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Carga to Final\OLE DB Source"
+          TopLeft="51,20" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Carga to Final\Data Conversion"
+          TopLeft="313,26" />
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[OLE DB Source Output]"
+          TopLeft="201,44">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112,0"
+              Start="0,0"
+              End="104.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="104.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Lookup No Match Output]"
+          TopLeft="242.5,130">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-116,50"
+              Start="0,0"
+              End="-116,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="-4,25" />
+                  <mssgle:LineSegment
+                    End="-112,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-112,25"
+                    Point2="-116,25"
+                    Point3="-116,29" />
+                  <mssgle:LineSegment
+                    End="-116,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-113.80638671875,30,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Lookup Match Output]"
+          TopLeft="260,130">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105,53"
+              Start="0,0"
+              End="105,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6439790575916" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6439790575916"
+                    Point2="0,21.6439790575916"
+                    Point3="4,21.6439790575916" />
+                  <mssgle:LineSegment
+                    End="101,21.6439790575916" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101,21.6439790575916"
+                    Point2="105,21.6439790575916"
+                    Point3="105,25.6439790575916" />
+                  <mssgle:LineSegment
+                    End="105,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="4.30861328125,26.6439790575916,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Derived Column Output]"
+          TopLeft="545,78.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-246,30.3333333333333"
+              Start="0,0"
+              End="-238.5,30.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-99.8165137614679,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-99.8165137614679,0"
+                    Point2="-103.816513761468,0"
+                    Point3="-103.816513761468,4" />
+                  <mssgle:LineSegment
+                    End="-103.816513761468,26.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-103.816513761468,26.3333333333333"
+                    Point2="-103.816513761468,30.3333333333333"
+                    Point3="-107.816513761468,30.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-238.5,30.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Data Conversion Output]"
+          TopLeft="469,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="76,26"
+              Start="0,0"
+              End="68.5,26">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="34,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34,0"
+                    Point2="38,0"
+                    Point3="38,4" />
+                  <mssgle:LineSegment
+                    End="38,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38,22"
+                    Point2="38,26"
+                    Point3="42,26" />
+                  <mssgle:LineSegment
+                    End="68.5,26" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_Safra]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Task - csv to final direto">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task - csv to final direto\OLE DB Destination"
+          TopLeft="224,180" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task - csv to final direto\Flat File Source"
+          TopLeft="219,70" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - csv to final direto.Paths[Flat File Source Output]"
+          TopLeft="294.5,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15,68"
+              Start="0,0"
+              End="15,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="11,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,34"
+                    Point2="15,34"
+                    Point3="15,38" />
+                  <mssgle:LineSegment
+                    End="15,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task - csv to final direto\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Data Flow Task - Load CSV">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Data Flow Task - Load CSV\Row Count"
+          TopLeft="297,61" />
         <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task - Load CSV\OLE DB Destination"
@@ -2118,10 +2428,6 @@ where Indice = ?</property>
           Size="151,42"
           Id="Package\Data Flow Task - Load CSV\Flat File Source"
           TopLeft="84,52" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Data Flow Task - Load CSV\Row Count"
-          TopLeft="297,61" />
         <EdgeLayout
           Id="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
           TopLeft="235,73">
@@ -2203,312 +2509,6 @@ where Indice = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Data Flow Task - csv to final direto">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task - csv to final direto\OLE DB Destination"
-          TopLeft="224,180" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task - csv to final direto\Flat File Source"
-          TopLeft="219,70" />
-        <EdgeLayout
-          Id="Package\Data Flow Task - csv to final direto.Paths[Flat File Source Output]"
-          TopLeft="294.5,112">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="15,68"
-              Start="0,0"
-              End="15,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
-                  <mssgle:LineSegment
-                    End="11,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11,34"
-                    Point2="15,34"
-                    Point3="15,38" />
-                  <mssgle:LineSegment
-                    End="15,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task - csv to final direto\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Carga to Final">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Carga to Final\OLE DB Source"
-          TopLeft="51,20" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Carga to Final\OLE DB Destination"
-          TopLeft="41,180" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Carga to Final\Lookup"
-          TopLeft="186,88" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Carga to Final\Data Conversion"
-          TopLeft="313,26" />
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[OLE DB Source Output]"
-          TopLeft="201,44">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="112,0"
-              Start="0,0"
-              End="104.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="104.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Lookup No Match Output]"
-          TopLeft="242.5,130">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-116,50"
-              Start="0,0"
-              End="-116,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="-4,25" />
-                  <mssgle:LineSegment
-                    End="-112,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-112,25"
-                    Point2="-116,25"
-                    Point3="-116,29" />
-                  <mssgle:LineSegment
-                    End="-116,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-113.80638671875,30,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Carga to Final\OLE DB Command"
-          TopLeft="282,183" />
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Lookup Match Output]"
-          TopLeft="260,130">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="105,53"
-              Start="0,0"
-              End="105,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.6439790575916" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.6439790575916"
-                    Point2="0,21.6439790575916"
-                    Point3="4,21.6439790575916" />
-                  <mssgle:LineSegment
-                    End="101,21.6439790575916" />
-                  <mssgle:CubicBezierSegment
-                    Point1="101,21.6439790575916"
-                    Point2="105,21.6439790575916"
-                    Point3="105,25.6439790575916" />
-                  <mssgle:LineSegment
-                    End="105,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="4.30861328125,26.6439790575916,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Carga to Final\Derived Column"
-          TopLeft="545,52" />
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Data Conversion Output]"
-          TopLeft="469,47">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="76,26"
-              Start="0,0"
-              End="68.5,26">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="34,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="34,0"
-                    Point2="38,0"
-                    Point3="38,4" />
-                  <mssgle:LineSegment
-                    End="38,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38,22"
-                    Point2="38,26"
-                    Point3="42,26" />
-                  <mssgle:LineSegment
-                    End="68.5,26" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Derived Column Output]"
-          TopLeft="545,78.6666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-246,30.3333333333333"
-              Start="0,0"
-              End="-238.5,30.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-99.8165137614679,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-99.8165137614679,0"
-                    Point2="-103.816513761468,0"
-                    Point3="-103.816513761468,4" />
-                  <mssgle:LineSegment
-                    End="-103.816513761468,26.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-103.816513761468,26.3333333333333"
-                    Point2="-103.816513761468,30.3333333333333"
-                    Point3="-107.816513761468,30.3333333333333" />
-                  <mssgle:LineSegment
-                    End="-238.5,30.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TB_Agroview_Parametros_Safra]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
