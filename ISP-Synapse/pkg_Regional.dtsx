@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Regional"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{217ED346-F494-4949-B749-34AE528AB882}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{BBC54EF5-56EB-4CD2-B1B4-2C06D3568EDB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1222,13 +1222,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Hierarquia_Parametro_Regional]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_Regional]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Hierarquia_Parametro_Regional]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_Regional]) [refTable]
 where [refTable].[cod_Regional] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -1260,7 +1260,7 @@ where [refTable].[cod_Regional] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Versao" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Desativacao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ativo" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="cod_Regional" dataType="DT_STR" length="6" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="desc_Regional" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="userID" dataType="DT_STR" length="14" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="cod_Regional" dataType="DT_STR" length="6" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="desc_Regional" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -1387,7 +1387,7 @@ where [refTable].[cod_Regional] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update TB_Hierarquia_Parametro_Regional
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update TB_Agroview_Parametros_Regional
 set desc_Regional = ?,
 Data_Alteracao = ?
 where cod_Regional = ?</property>
@@ -1525,7 +1525,7 @@ where cod_Regional = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[TB_Hierarquia_Parametro_Regional]</property>
+                  name="OpenRowset">[dbo].[TB_Agroview_Parametros_Regional]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1582,12 +1582,6 @@ where cod_Regional = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[drv_Versao]"
-                      cachedDataType="i4"
-                      cachedName="drv_Versao"
-                      externalMetadataColumnId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Versao]"
-                      lineageId="Package\Staging to Final UP-INSERT\Derived Column.Outputs[Derived Column Output].Columns[drv_Versao]" />
-                    <inputColumn
                       refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[drv_Data_Inclusao]"
                       cachedDataType="dbTimeStamp"
                       cachedName="drv_Data_Inclusao"
@@ -1609,35 +1603,13 @@ where cod_Regional = ?</property>
                       cachedName="drv_Codigo"
                       externalMetadataColumnId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[cod_Regional]"
                       lineageId="Package\Staging to Final UP-INSERT\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo]" />
-                    <inputColumn
-                      refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[drv_Data_Alteracao]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="drv_Data_Alteracao"
-                      externalMetadataColumnId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
-                      lineageId="Package\Staging to Final UP-INSERT\Derived Column.Outputs[Derived Column Output].Columns[drv_Data_Alteracao]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[id]"
-                      dataType="i4"
-                      name="id" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Versao]"
-                      dataType="i4"
-                      name="Versao" />
-                    <externalMetadataColumn
                       refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
                       dataType="dbTimeStamp"
                       name="Data_Inclusao" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Desativacao]"
-                      dataType="dbTimeStamp"
-                      name="Data_Desativacao" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Ativo]"
-                      dataType="bool"
-                      name="Ativo" />
                     <externalMetadataColumn
                       refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[cod_Regional]"
                       codePage="1252"
@@ -1650,12 +1622,6 @@ where cod_Regional = ?</property>
                       dataType="str"
                       length="50"
                       name="desc_Regional" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[userID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="14"
-                      name="userID" />
                     <externalMetadataColumn
                       refId="Package\Staging to Final UP-INSERT\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
                       dataType="dbTimeStamp"
@@ -1894,6 +1860,14 @@ where cod_Regional = ?</property>
           Id="Package\LOAD CSV to Staging"
           TopLeft="43,83" />
         <NodeLayout
+          Size="162,42"
+          Id="Package\SQL Delete Carga"
+          TopLeft="43,8" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\SQL Log CSV"
+          TopLeft="276,80" />
+        <NodeLayout
           Size="193,42"
           Id="Package\Staging to Final INITIAL"
           TopLeft="546,98" />
@@ -1901,10 +1875,6 @@ where cod_Regional = ?</property>
           Size="208,42"
           Id="Package\Staging to Final UP-INSERT"
           TopLeft="48,160" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\SQL Delete Carga"
-          TopLeft="43,8" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="132.5,125">
@@ -1973,10 +1943,6 @@ where cod_Regional = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,42"
-          Id="Package\SQL Log CSV"
-          TopLeft="276,80" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="222,102.5">
@@ -2424,7 +2390,7 @@ where cod_Regional = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[TB_Hierarquia_Parametro_Regional]</Value>
+          type="q3:string">[dbo].[TB_Agroview_Parametros_Regional]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
