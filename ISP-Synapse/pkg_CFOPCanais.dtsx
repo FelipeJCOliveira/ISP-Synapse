@@ -7,20 +7,20 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{1E49CF5C-D081-49FE-AC30-EA0A74C883C5}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CFOPCanais"
   DTS:PackageType="5"
-  DTS:VersionBuild="61"
-  DTS:VersionGUID="{E6AF3366-C399-475D-A339-50BE34BF0EE7}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{0C0FE8FE-0976-43FD-960B-A78CC345DC83}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[FF - CFOPCanais]"
+      DTS:refId="Package.ConnectionManagers[FF - CFOPCanais (65001 - unicode)]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{2A0CDCF3-7C89-4D1A-A103-E093680AC484}"
-      DTS:ObjectName="FF - CFOPCanais">
+      DTS:ObjectName="FF - CFOPCanais (65001 - unicode)">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+ @[$Package::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="D:\Synapse\All CSV Files\All CSV Files\CFOPCanais.csv">
+          DTS:ConnectionString="E:\All CSV Files\CFOPCanais.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Dist"
-              DTS:DTSID="{BB31D8D8-DDC0-4DF8-9B06-2682F916FC1F}"
+              DTS:DTSID="{BE2DF416-5522-445E-9362-AC0D08BDAE1B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,16 +50,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Código"
-              DTS:DTSID="{7B3427DC-AB55-4BF6-978B-1DED0AB0F870}"
+              DTS:DTSID="{1CEE41AD-382C-4E15-9D5D-A88DE47E8FCE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Descrição"
-              DTS:DTSID="{54BD6B71-1F8E-4BC0-BA60-B2F5E905ACD3}"
+              DTS:DTSID="{135BC8C9-2ED5-4E8B-9327-29E7588CC4D7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Identificador"
-              DTS:DTSID="{3003A0F0-3A4F-473E-8C89-5F34125DE9D5}"
+              DTS:DTSID="{CF5B4D21-81F4-475F-AA1B-ADF05FB4AC8A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Multiplicador"
-              DTS:DTSID="{534ECBE2-B6BB-46A4-A987-B12C9363EFB9}"
+              DTS:DTSID="{9E7281B2-DF6F-4535-96EF-F473509A9ABF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Consumo"
-              DTS:DTSID="{40C68D9E-3CA3-401A-953A-36BE59757027}"
+              DTS:DTSID="{2C50B524-B9DE-4092-B9EC-6322B8A4D60E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Operação"
-              DTS:DTSID="{952C03CD-373F-4265-AD45-41F11220C713}"
+              DTS:DTSID="{65C5B622-07A6-4AA7-9D48-CF0F2D5FE633}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CFOPChave"
+              DTS:DTSID="{C9A033DD-BC0C-4C44-B2D8-7B1A699B7B10}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,21 +112,11 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="CFOPChave"
-              DTS:DTSID="{ED7A9B4E-B818-4128-833A-B2B68F1E3A15}"
+              DTS:ObjectName="CFOPPadrao"
+              DTS:DTSID="{B2038091-8ED4-4BBC-9598-40C4003E9B65}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.DB_Synapse]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{4D3E26D9-DBB7-4347-B516-A85FC0F7CFEE}"
-      DTS:ObjectName="localhost.DB_Synapse">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB_Synapse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -159,6 +158,84 @@
           version="1">
           <components>
             <component
+              refId="Package\Data Flow Load CSV\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Load CSV\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[Descrição]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Descrição"
+                      lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Descrição]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Load CSV\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Descricao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Descricao]"
+                      name="cvt_Descricao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Descrição]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Load CSV\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Load CSV\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -173,50 +250,51 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input].Columns[CFOPChave]"
-                      cachedDataType="wstr"
-                      cachedLength="16"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="CFOPChave"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPChave]" />
                     <inputColumn
                       refId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input].Columns[Dist]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Dist"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Dist]" />
                     <inputColumn
                       refId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input].Columns[Código]"
-                      cachedDataType="wstr"
-                      cachedLength="5"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Código"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Código]" />
                     <inputColumn
-                      refId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input].Columns[Descrição]"
-                      cachedDataType="wstr"
-                      cachedLength="150"
-                      cachedName="Descrição"
-                      lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Descrição]" />
-                    <inputColumn
                       refId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input].Columns[Identificador]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Identificador"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Identificador]" />
                     <inputColumn
                       refId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input].Columns[Multiplicador]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Multiplicador"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Multiplicador]" />
                     <inputColumn
                       refId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input].Columns[Consumo]"
-                      cachedDataType="wstr"
-                      cachedLength="4"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Consumo"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Consumo]" />
                     <inputColumn
                       refId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input].Columns[Operação]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Operação"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Operação]" />
                   </inputColumns>
@@ -323,30 +401,6 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_STR,5,1252)[Código]</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Descricao]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="150"
-                      lineageId="Package\Data Flow Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Descricao]"
-                      name="drv_Descricao"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_STR,150,1252)#{Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Descrição]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,150,1252)[Descrição]</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -495,8 +549,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Load CSV\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[FF - CFOPCanais]"
-                  connectionManagerRefId="Package.ConnectionManagers[FF - CFOPCanais]"
+                  connectionManagerID="Package.ConnectionManagers[FF - CFOPCanais (65001 - unicode)]"
+                  connectionManagerRefId="Package.ConnectionManagers[FF - CFOPCanais (65001 - unicode)]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -506,11 +560,12 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Dist]"
-                      dataType="wstr"
+                      codePage="65001"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Dist]"
-                      length="10"
+                      length="50"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Dist]"
                       name="Dist"
                       truncationRowDisposition="FailComponent">
@@ -527,11 +582,12 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Código]"
-                      dataType="wstr"
+                      codePage="65001"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Código]"
-                      length="5"
+                      length="50"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Código]"
                       name="Código"
                       truncationRowDisposition="FailComponent">
@@ -552,7 +608,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Descrição]"
-                      length="150"
+                      length="255"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Descrição]"
                       name="Descrição"
                       truncationRowDisposition="FailComponent">
@@ -569,11 +625,12 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Identificador]"
-                      dataType="wstr"
+                      codePage="65001"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Identificador]"
-                      length="20"
+                      length="50"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Identificador]"
                       name="Identificador"
                       truncationRowDisposition="FailComponent">
@@ -590,11 +647,12 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Multiplicador]"
-                      dataType="wstr"
+                      codePage="65001"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Multiplicador]"
-                      length="10"
+                      length="50"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Multiplicador]"
                       name="Multiplicador"
                       truncationRowDisposition="FailComponent">
@@ -611,11 +669,12 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Consumo]"
-                      dataType="wstr"
+                      codePage="65001"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Consumo]"
-                      length="4"
+                      length="50"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Consumo]"
                       name="Consumo"
                       truncationRowDisposition="FailComponent">
@@ -632,11 +691,12 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Operação]"
-                      dataType="wstr"
+                      codePage="65001"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Operação]"
-                      length="30"
+                      length="50"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Operação]"
                       name="Operação"
                       truncationRowDisposition="FailComponent">
@@ -653,13 +713,36 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPChave]"
-                      dataType="wstr"
+                      codePage="65001"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPChave]"
-                      length="16"
+                      length="50"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPChave]"
                       name="CFOPChave"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPPadrao]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPPadrao]"
+                      length="50"
+                      lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPPadrao]"
+                      name="CFOPPadrao"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -689,9 +772,8 @@
                       name="Código" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Descrição]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
+                      dataType="wstr"
+                      length="255"
                       name="Descrição" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Identificador]"
@@ -723,6 +805,12 @@
                       dataType="str"
                       length="50"
                       name="CFOPChave" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPPadrao]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="CFOPPadrao" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -792,7 +880,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -804,7 +892,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -857,14 +945,6 @@
                       externalMetadataColumnId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
                       lineageId="Package\Data Flow Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo]" />
                     <inputColumn
-                      refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Descricao]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="150"
-                      cachedName="drv_Descricao"
-                      externalMetadataColumnId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
-                      lineageId="Package\Data Flow Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Descricao]" />
-                    <inputColumn
                       refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Identificador]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -896,6 +976,14 @@
                       cachedName="drv_Operacao"
                       externalMetadataColumnId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Operacao]"
                       lineageId="Package\Data Flow Load CSV\Derived Column.Outputs[Derived Column Output].Columns[drv_Operacao]" />
+                    <inputColumn
+                      refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Descricao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="cvt_Descricao"
+                      externalMetadataColumnId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
+                      lineageId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Descricao]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -915,7 +1003,7 @@
                       refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
                       codePage="1252"
                       dataType="str"
-                      length="150"
+                      length="255"
                       name="Descricao" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Identificador]"
@@ -1011,6 +1099,11 @@
           </components>
           <paths>
             <path
+              refId="Package\Data Flow Load CSV.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Load CSV\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\Data Flow Load CSV.Paths[Derived Column Output]"
               endId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
@@ -1022,7 +1115,7 @@
               startId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Data Flow Load CSV.Paths[Row Count Output 1]"
-              endId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Data Flow Load CSV\Data Conversion.Inputs[Data Conversion Input]"
               name="Row Count Output 1"
               startId="Package\Data Flow Load CSV\Row Count.Outputs[Row Count Output 1]" />
           </paths>
@@ -1408,6 +1501,401 @@
               </outputs>
             </component>
             <component
+              refId="Package\Staging to Final\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_CFOPCanais]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_CFOPCanais]) [refTable]
+where [refTable].[Chave] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Chave" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Dist" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Codigo" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Descricao" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Identificador" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Multiplicador" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Consumo" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Operacao" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[CFOPChave]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Staging to Final\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Staging to Final\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Staging to Final\Lookup.Inputs[Lookup Input].Columns[CFOPChave]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="CFOPChave"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[CFOPChave]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Chave</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Staging to Final\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Staging to Final\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Staging to Final\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Staging to Final\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Staging to Final\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Staging to Final\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Staging to Final\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update TB_Agroview_Parametros_CFOPCanais
+set 
+Dist =?,
+Codigo =?,
+Descricao =?,
+Identificador =?,
+Multiplicador =?,
+Consumo =?,
+Operacao =?,
+Data_Alteracao = getdate()
+where Chave = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Staging to Final\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[Dist]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Dist"
+                      externalMetadataColumnId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dist]" />
+                    <inputColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Codigo"
+                      externalMetadataColumnId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo]" />
+                    <inputColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[Descricao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="Descricao"
+                      externalMetadataColumnId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descricao]" />
+                    <inputColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[Identificador]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Identificador"
+                      externalMetadataColumnId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Identificador]" />
+                    <inputColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[Multiplicador]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Multiplicador"
+                      externalMetadataColumnId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Multiplicador]" />
+                    <inputColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[Consumo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Consumo"
+                      externalMetadataColumnId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Consumo]" />
+                    <inputColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[Operacao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Operacao"
+                      externalMetadataColumnId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Operacao]" />
+                    <inputColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[CFOPChave]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="CFOPChave"
+                      externalMetadataColumnId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[CFOPChave]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Staging to Final\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Staging to Final\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1445,7 +1933,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -1457,7 +1945,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1562,7 +2050,7 @@
                       refId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
                       codePage="1252"
                       dataType="str"
-                      length="150"
+                      length="255"
                       name="Descricao" />
                     <externalMetadataColumn
                       refId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Identificador]"
@@ -1930,9 +2418,19 @@
           <paths>
             <path
               refId="Package\Staging to Final.Paths[Derived Column Output]"
-              endId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Staging to Final\Lookup.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Staging to Final\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Staging to Final.Paths[Lookup Match Output]"
+              endId="Package\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Staging to Final\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Staging to Final.Paths[Lookup No Match Output]"
+              endId="Package\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Staging to Final\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Staging to Final.Paths[OLE DB Source Output]"
               endId="Package\Staging to Final\Derived Column.Inputs[Derived Column Input]"
@@ -1989,6 +2487,10 @@
           Size="140,42"
           Id="Package\Delete Carga"
           TopLeft="60,9" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\SQL LOG CSV"
+          TopLeft="376,88" />
         <NodeLayout
           Size="152,42"
           Id="Package\Staging to Final"
@@ -2061,10 +2563,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="143,42"
-          Id="Package\SQL LOG CSV"
-          TopLeft="376,88" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="303,108.5">
@@ -2094,11 +2592,15 @@
     design-time-name="Package\Data Flow Load CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Data Flow Load CSV\Row Count"
+          TopLeft="313,31" />
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Load CSV\Derived Column"
-          TopLeft="346,109" />
+          TopLeft="329,116" />
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Load CSV\Flat File Source"
@@ -2108,19 +2610,53 @@
           Id="Package\Data Flow Load CSV\OLE DB Destination"
           TopLeft="52,106" />
         <EdgeLayout
-          Id="Package\Data Flow Load CSV.Paths[Derived Column Output]"
-          TopLeft="346,128.5">
+          Id="Package\Data Flow Load CSV.Paths[Flat File Source Output]"
+          TopLeft="189,51.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-123,0"
+              EndConnector="124,0"
               Start="0,0"
-              End="-115.5,0">
+              End="116.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-115.5,0" />
+                    End="116.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Load CSV.Paths[Derived Column Output]"
+          TopLeft="329,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106,-10"
+              Start="0,0"
+              End="-98.5,-10">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-49,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-49,0"
+                    Point2="-53,0"
+                    Point3="-53,-4" />
+                  <mssgle:LineSegment
+                    End="-53,-6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-53,-6"
+                    Point2="-53,-10"
+                    Point3="-57,-10" />
+                  <mssgle:LineSegment
+                    End="-98.5,-10" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2130,23 +2666,23 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="130,42"
-          Id="Package\Data Flow Load CSV\Row Count"
-          TopLeft="361,27" />
+          Size="156,42"
+          Id="Package\Data Flow Load CSV\Data Conversion"
+          TopLeft="524,32" />
         <EdgeLayout
-          Id="Package\Data Flow Load CSV.Paths[Flat File Source Output]"
-          TopLeft="189,49.5">
+          Id="Package\Data Flow Load CSV.Paths[Row Count Output 1]"
+          TopLeft="443,52.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="172,0"
+              EndConnector="81,0"
               Start="0,0"
-              End="164.5,0">
+              End="73.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="164.5,0" />
+                    End="73.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2156,19 +2692,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Load CSV.Paths[Row Count Output 1]"
-          TopLeft="424.5,69">
+          Id="Package\Data Flow Load CSV.Paths[Data Conversion Output]"
+          TopLeft="602,74">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40"
+              EndConnector="-196,42"
               Start="0,0"
-              End="0,32.5">
+              End="-196,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.5" />
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-192,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-192,21"
+                    Point2="-196,21"
+                    Point3="-196,25" />
+                  <mssgle:LineSegment
+                    End="-196,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2197,88 +2745,152 @@
     design-time-name="Package\Staging to Final">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
           Id="Package\Staging to Final\Derived Column"
-          TopLeft="322,69" />
+          TopLeft="361,20" />
         <NodeLayout
           Size="171,42"
           Id="Package\Staging to Final\OLE DB Destination"
-          TopLeft="168,158" />
+          TopLeft="50,145" />
         <NodeLayout
           Size="150,42"
           Id="Package\Staging to Final\OLE DB Source"
-          TopLeft="136,22" />
+          TopLeft="61,27" />
         <EdgeLayout
           Id="Package\Staging to Final.Paths[OLE DB Source Output]"
-          TopLeft="286,43">
+          TopLeft="211,44.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36,47"
+              EndConnector="150,0"
               Start="0,0"
-              End="28.5,47">
+              End="142.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="14,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14,0"
-                    Point2="18,0"
-                    Point3="18,4" />
-                  <mssgle:LineSegment
-                    End="18,43" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18,43"
-                    Point2="18,47"
-                    Point3="22,47" />
-                  <mssgle:LineSegment
-                    End="28.5,47" />
+                    End="142.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Staging to Final\Lookup"
+          TopLeft="349.5,115.5" />
+        <EdgeLayout
+          Id="Package\Staging to Final.Paths[Derived Column Output]"
+          TopLeft="438,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32,53.5"
+              Start="0,0"
+              End="-32,46">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.75"
+                    Point2="0,26.75"
+                    Point3="-4,26.75" />
+                  <mssgle:LineSegment
+                    End="-28,26.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28,26.75"
+                    Point2="-32,26.75"
+                    Point3="-32,30.75" />
+                  <mssgle:LineSegment
+                    End="-32,46" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Staging to Final.Paths[Derived Column Output]"
-          TopLeft="399,111">
+          Id="Package\Staging to Final.Paths[Lookup No Match Output]"
+          TopLeft="349.5,136.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-145.5,47"
+              EndConnector="-128.5,29.5"
               Start="0,0"
-              End="-145.5,39.5">
+              End="-121,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
+                    End="-60.25,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="-4,23.5" />
+                    Point1="-60.25,0"
+                    Point2="-64.25,0"
+                    Point3="-64.25,4" />
                   <mssgle:LineSegment
-                    End="-141.5,23.5" />
+                    End="-64.25,25.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-141.5,23.5"
-                    Point2="-145.5,23.5"
-                    Point3="-145.5,27.5" />
+                    Point1="-64.25,25.5"
+                    Point2="-64.25,29.5"
+                    Point3="-68.25,29.5" />
                   <mssgle:LineSegment
-                    End="-145.5,39.5" />
+                    End="-121,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-120.05638671875,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Staging to Final\OLE DB Command"
+          TopLeft="575,139" />
+        <EdgeLayout
+          Id="Package\Staging to Final.Paths[Lookup Match Output]"
+          TopLeft="462.5,136.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.5,23.5"
+              Start="0,0"
+              End="105,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="52.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.25,0"
+                    Point2="56.25,0"
+                    Point3="56.25,4" />
+                  <mssgle:LineSegment
+                    End="56.25,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.25,19.5"
+                    Point2="56.25,23.5"
+                    Point3="60.25,23.5" />
+                  <mssgle:LineSegment
+                    End="105,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="8.05861328125,-17.609375,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2308,6 +2920,29 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Final\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_CFOPCanais]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
