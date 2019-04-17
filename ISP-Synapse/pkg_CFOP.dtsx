@@ -7,20 +7,20 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{9D2DC00D-A6D2-4CAC-B719-6FB71DA4924E}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CFOP"
   DTS:PackageType="5"
-  DTS:VersionBuild="108"
-  DTS:VersionGUID="{AA160703-2435-4A65-A3C3-CE9BE98E893F}">
+  DTS:VersionBuild="114"
+  DTS:VersionGUID="{27D36E37-C06A-4CB1-BEC0-FF57619DD272}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[FF CFOP (65001)]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{DD79B121-CD48-42CC-B2AE-A4E186FD87D6}"
-      DTS:ObjectName="Flat File Connection Manager">
+      DTS:ObjectName="FF CFOP (65001)">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::FS_InboxPath] +  @[$Package::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="D:\Synapse\All CSV Files\All CSV Files\CFOP.csv">
+          DTS:ConnectionString="E:\All CSV Files\CFOP.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Código"
-              DTS:DTSID="{719FDBD2-6D8A-43BB-AAA0-C6CA0BC0632A}"
+              DTS:DTSID="{C744E906-0F14-4632-A180-2BB20F0CA016}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Descrição"
-              DTS:DTSID="{EF1C8D34-9786-4384-9EE6-DCAFB81AB4E0}"
+              DTS:DTSID="{D70F536D-47FA-4294-B7A9-47F6D8142B24}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Identificador"
-              DTS:DTSID="{80A36832-6526-40A0-8524-DE1BED1FE536}"
+              DTS:DTSID="{EC9048BB-22E6-46CA-A28B-975AB4667D40}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Multiplicador"
-              DTS:DTSID="{55ACA57A-0543-4278-9B08-6B8845449216}"
+              DTS:DTSID="{20166EFC-9067-46A8-A494-03C15FC30669}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,16 +77,43 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Consumo"
-              DTS:DTSID="{E896797E-B484-4747-A190-38A71E017B1C}"
+              DTS:DTSID="{E870BB02-4DCE-4D00-BF70-63EF8BE7EA67}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="30"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Operação"
-              DTS:DTSID="{93D0A5C3-1534-405F-9804-D217BD738F10}"
+              DTS:DTSID="{113803D6-491E-48A9-A811-45A4D7275FCB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dist"
+              DTS:DTSID="{2BB14B4A-C51B-4C36-992B-EC0C5930FAD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CFOPChave"
+              DTS:DTSID="{18936677-82F2-4B35-BE88-C52EC56F1C70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CFOPPadrao"
+              DTS:DTSID="{A753CB3D-C27E-444C-8144-A1E385201014}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -152,8 +179,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Load CSV\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[FF CFOP (65001)]"
+                  connectionManagerRefId="Package.ConnectionManagers[FF CFOP (65001)]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -287,6 +314,72 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Dist]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Dist]"
+                      length="50"
+                      lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Dist]"
+                      name="Dist"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPChave]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPChave]"
+                      length="50"
+                      lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPChave]"
+                      name="CFOPChave"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPPadrao]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPPadrao]"
+                      length="50"
+                      lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPPadrao]"
+                      name="CFOPPadrao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -320,6 +413,24 @@
                       dataType="wstr"
                       length="30"
                       name="Operação" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Dist]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Dist" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPChave]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="CFOPChave" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPPadrao]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="CFOPPadrao" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -389,7 +500,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -1772,45 +1883,45 @@ where Codigo	= ?</property>
         <NodeLayout
           Size="174,42"
           Id="Package\Data Flow Load CSV"
-          TopLeft="137,101" />
+          TopLeft="82,97" />
         <NodeLayout
           Size="263,42"
           Id="Package\Data Flow Staging to Final (UPINSERT)"
-          TopLeft="169,189" />
+          TopLeft="62,196" />
         <NodeLayout
           Size="163,42"
           Id="Package\Execute SQL Task"
-          TopLeft="161,22" />
+          TopLeft="83,22" />
         <NodeLayout
           Size="169,42"
           Id="Package\LOG Carga Arquivo"
           TopLeft="403,105" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="224,143">
+          TopLeft="169,139">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="76.5,46"
+              EndConnector="24.5,57"
               Start="0,0"
-              End="76.5,38.5">
+              End="24.5,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19" />
+                    End="0,24.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19"
-                    Point2="0,23"
-                    Point3="4,23" />
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
                   <mssgle:LineSegment
-                    End="72.5,23" />
+                    End="20.5,28.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="72.5,23"
-                    Point2="76.5,23"
-                    Point3="76.5,27" />
+                    Point1="20.5,28.5"
+                    Point2="24.5,28.5"
+                    Point3="24.5,32.5" />
                   <mssgle:LineSegment
-                    End="76.5,38.5" />
+                    End="24.5,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1821,30 +1932,18 @@ where Codigo	= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="242.5,64">
+          TopLeft="166.75,64">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-18.5,37"
+              EndConnector="0,33"
               Start="0,0"
-              End="-18.5,29.5">
+              End="0,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="-4,18.5" />
-                  <mssgle:LineSegment
-                    End="-14.5,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-14.5,18.5"
-                    Point2="-18.5,18.5"
-                    Point3="-18.5,22.5" />
-                  <mssgle:LineSegment
-                    End="-18.5,29.5" />
+                    End="0,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1855,18 +1954,30 @@ where Codigo	= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="311,124">
+          TopLeft="256,118">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="92,0"
+              EndConnector="147,8"
               Start="0,0"
-              End="84.5,0">
+              End="139.5,8">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="84.5,0" />
+                    End="69.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.5,0"
+                    Point2="73.5,0"
+                    Point3="73.5,4" />
+                  <mssgle:LineSegment
+                    End="73.5,4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.5,4"
+                    Point2="73.5,8"
+                    Point3="77.5,8" />
+                  <mssgle:LineSegment
+                    End="139.5,8" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1888,47 +1999,13 @@ where Codigo	= ?</property>
           Id="Package\Data Flow Load CSV\Flat File Source"
           TopLeft="217,39" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Load CSV\OLE DB Destination"
-          TopLeft="235,163" />
-        <NodeLayout
           Size="130,42"
           Id="Package\Data Flow Load CSV\Row Count"
           TopLeft="484,90" />
-        <EdgeLayout
-          Id="Package\Data Flow Load CSV.Paths[Flat File Source Output]"
-          TopLeft="368,60">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="116,51"
-              Start="0,0"
-              End="108.5,51">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="54,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="54,0"
-                    Point2="58,0"
-                    Point3="58,4" />
-                  <mssgle:LineSegment
-                    End="58,47" />
-                  <mssgle:CubicBezierSegment
-                    Point1="58,47"
-                    Point2="58,51"
-                    Point3="62,51" />
-                  <mssgle:LineSegment
-                    End="108.5,51" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Load CSV\OLE DB Destination"
+          TopLeft="235,163" />
         <EdgeLayout
           Id="Package\Data Flow Load CSV.Paths[Row Count Output 1]"
           TopLeft="549,132">
@@ -1955,6 +2032,40 @@ where Codigo	= ?</property>
                     Point3="-228.5,19.5" />
                   <mssgle:LineSegment
                     End="-228.5,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Load CSV.Paths[Flat File Source Output]"
+          TopLeft="368,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116,51"
+              Start="0,0"
+              End="108.5,51">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54,0"
+                    Point2="58,0"
+                    Point3="58,4" />
+                  <mssgle:LineSegment
+                    End="58,47" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58,47"
+                    Point2="58,51"
+                    Point3="62,51" />
+                  <mssgle:LineSegment
+                    End="108.5,51" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2027,7 +2138,9 @@ where Codigo	= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2133,7 +2246,9 @@ where Codigo	= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2167,7 +2282,9 @@ where Codigo	= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
