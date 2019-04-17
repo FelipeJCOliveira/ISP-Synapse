@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_VendaAgroview"
   DTS:PackageType="5"
-  DTS:VersionBuild="270"
-  DTS:VersionGUID="{5E7C3C6E-B2D3-4928-8DDE-7A1F98CC00B8}">
+  DTS:VersionBuild="272"
+  DTS:VersionGUID="{964A8CDB-A336-4342-BDF0-C119FBBA3431}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{C51B711C-1838-4CE0-86C0-183C2F3DBC88}"
       DTS:ObjectName="FF VendaAgroview (65001 - unicode)">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+ @[$Package::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="E:\FTP\VendaAgroview201901.csv">
+          DTS:ConnectionString="E:\All CSV Files\VendaAgroview.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -540,16 +542,6 @@
       <DTS:Property
         DTS:DataType="8"
         DTS:Name="ParameterValue">VendaAgroview.csv</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{E9980982-CFEF-4E41-A3A7-7BEF3F1DE63C}"
-      DTS:ObjectName="FullFileName"
-      DTS:Required="True">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\BISTERCO\Synapse Files\Arquivos de Dados Synapse-20190104T162220Z-001\Arquivos de Dados Synapse\VendaAgroview.csv</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
