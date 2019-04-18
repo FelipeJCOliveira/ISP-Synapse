@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CFOP"
   DTS:PackageType="5"
-  DTS:VersionBuild="114"
-  DTS:VersionGUID="{27D36E37-C06A-4CB1-BEC0-FF57619DD272}">
+  DTS:VersionBuild="118"
+  DTS:VersionGUID="{7704A1A5-F60B-471B-8FA7-DB20F32A7A60}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Código"
-              DTS:DTSID="{C744E906-0F14-4632-A180-2BB20F0CA016}"
+              DTS:DTSID="{41E6CE91-E9BF-4A01-B016-23D79F6404D9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Descrição"
-              DTS:DTSID="{D70F536D-47FA-4294-B7A9-47F6D8142B24}"
+              DTS:DTSID="{18C2DFA0-D413-444B-AE3C-EB50BBC41173}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Identificador"
-              DTS:DTSID="{EC9048BB-22E6-46CA-A28B-975AB4667D40}"
+              DTS:DTSID="{684E752D-34A5-481D-BE2E-739A56A897FE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Multiplicador"
-              DTS:DTSID="{20166EFC-9067-46A8-A494-03C15FC30669}"
+              DTS:DTSID="{1B5935BF-62FF-4DC2-9162-0531D1DF2CB2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Consumo"
-              DTS:DTSID="{E870BB02-4DCE-4D00-BF70-63EF8BE7EA67}"
+              DTS:DTSID="{277B1AE4-37FC-48C0-83EF-7DB27744DADF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Operação"
-              DTS:DTSID="{113803D6-491E-48A9-A811-45A4D7275FCB}"
+              DTS:DTSID="{0DA91BE0-FA38-4F66-8D41-5F31309FD153}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,16 +95,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Dist"
-              DTS:DTSID="{2BB14B4A-C51B-4C36-992B-EC0C5930FAD0}"
+              DTS:DTSID="{7C1D90CF-968C-4744-B94C-4998684DB050}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="20"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CFOPChave"
-              DTS:DTSID="{18936677-82F2-4B35-BE88-C52EC56F1C70}"
+              DTS:DTSID="{0B4194B9-B72B-4929-8A35-3E486B9169A6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CFOPPadrao"
-              DTS:DTSID="{A753CB3D-C27E-444C-8144-A1E385201014}"
+              DTS:DTSID="{AD0B8DAF-5FB4-454B-B4DB-17BA32DFDB33}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -343,7 +343,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPChave]"
-                      length="50"
+                      length="20"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPChave]"
                       name="CFOPChave"
                       truncationRowDisposition="FailComponent">
@@ -423,7 +423,7 @@
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPChave]"
                       codePage="65001"
                       dataType="str"
-                      length="50"
+                      length="20"
                       name="CFOPChave" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CFOPPadrao]"
@@ -576,6 +576,14 @@
                       cachedName="Operação"
                       externalMetadataColumnId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Operacao]"
                       lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Operação]" />
+                    <inputColumn
+                      refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CFOPChave]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CFOPChave"
+                      externalMetadataColumnId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
+                      lineageId="Package\Data Flow Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CFOPChave]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -609,6 +617,12 @@
                       dataType="wstr"
                       length="30"
                       name="Operacao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
+                      codePage="65001"
+                      dataType="str"
+                      length="20"
+                      name="Chave" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1478,6 +1492,14 @@ where Codigo	= ?</property>
                       cachedName="drv_Dt_Import"
                       externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
                       lineageId="Package\Data Flow Staging to Final (UPINSERT)\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].Columns[Chave]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Chave"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1523,6 +1545,12 @@ where Codigo	= ?</property>
                       refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
                       dataType="dbTimeStamp"
                       name="Data_Alteracao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Destination (INSERT).Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Chave" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1672,6 +1700,17 @@ where Codigo	= ?</property>
                       lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Operacao]"
                       name="Operacao"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Chave]"
+                      length="20"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]"
+                      name="Chave"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1705,6 +1744,12 @@ where Codigo	= ?</property>
                       dataType="wstr"
                       length="30"
                       name="Operacao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Chave]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Chave" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1748,6 +1793,13 @@ where Codigo	= ?</property>
                       length="30"
                       lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Operacao]"
                       name="Operacao" />
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Chave]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Chave]"
+                      name="Chave" />
                     <outputColumn
                       refId="Package\Data Flow Staging to Final (UPINSERT)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1995,10 +2047,6 @@ where Codigo	= ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Load CSV\Flat File Source"
-          TopLeft="217,39" />
-        <NodeLayout
           Size="130,42"
           Id="Package\Data Flow Load CSV\Row Count"
           TopLeft="484,90" />
@@ -2006,6 +2054,10 @@ where Codigo	= ?</property>
           Size="171,42"
           Id="Package\Data Flow Load CSV\OLE DB Destination"
           TopLeft="235,163" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Load CSV\Flat File Source"
+          TopLeft="217,39" />
         <EdgeLayout
           Id="Package\Data Flow Load CSV.Paths[Row Count Output 1]"
           TopLeft="549,132">
@@ -2138,9 +2190,7 @@ where Codigo	= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2246,9 +2296,7 @@ where Codigo	= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2282,9 +2330,7 @@ where Codigo	= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
