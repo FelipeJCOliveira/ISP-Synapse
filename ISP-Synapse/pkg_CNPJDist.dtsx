@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CNPJDist"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{34EA3319-FA82-4337-8F42-072ED088E186}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{E1CAEB95-2850-4D0E-8FFC-54735CBAD527}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="D:\Synapse\All CSV Files\All CSV Files\CNPJDist.csv">
+          DTS:ConnectionString="E:\All CSV Files\CNPJDist.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,13 +86,22 @@
         DTS:Name="ParameterValue">CNPJDist.csv</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{84B536E3-EF89-4269-89B5-FC0517497D91}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CSVRowCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Carga to Final"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{A083BE75-BFF3-47B4-A898-32E62948467D}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -104,44 +113,512 @@
           version="1">
           <components>
             <component
-              refId="Package\Carga to Final\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
+              refId="Package\Carga to Final\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
+                  refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[CPF_CNPJ]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="CPF_CNPJ"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF_CNPJ]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Codigo_Agrupado]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Codigo_Agrupado"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo_Agrupado]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input].Columns[Tipo_Acesso]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Tipo_Acesso"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tipo_Acesso]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output]"
+                  refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input]">
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                      name="drv_Dt_Import"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Alteracao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Alteracao]"
+                      name="drv_Dt_Alteracao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CPF_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="14"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CPF_CNPJ]"
+                      name="drv_CPF_CNPJ"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,14,1252)#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF_CNPJ]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,14,1252)CPF_CNPJ</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo_Agrupado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo_Agrupado]"
+                      name="drv_Codigo_Agrupado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,10,1252)#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Codigo_Agrupado]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,10,1252)Codigo_Agrupado</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Tipo_Acesso]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Tipo_Acesso]"
+                      name="drv_Tipo_Acesso"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,20,1252)#{Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tipo_Acesso]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,20,1252)Tipo_Acesso</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Error Output]"
+                  refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input]">
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga to Final\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_CNPJ_Dist]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_CNPJ_Dist]) [refTable]
+where [refTable].[CPF_CNPJ] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CPF_CNPJ" dataType="DT_STR" length="14" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Codigo_Agrupado" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Tipo_Acesso" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Nome" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CPF_CNPJ]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga to Final\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga to Final\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga to Final\Lookup.Inputs[Lookup Input].Columns[drv_CPF_CNPJ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="drv_CPF_CNPJ"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CPF_CNPJ]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CPF_CNPJ</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga to Final\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Carga to Final\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga to Final\Lookup.Outputs[Lookup Match Output].Columns[CPF_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="14"
+                      lineageId="Package\Carga to Final\Lookup.Outputs[Lookup Match Output].Columns[CPF_CNPJ]"
+                      name="CPF_CNPJ"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CPF_CNPJ</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga to Final\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Carga to Final\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga to Final\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Carga to Final\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga to Final\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update TB_Agroview_Parametros_CNPJ_Dist
+set 
+Codigo_Agrupado = ?,
+Tipo_Acesso = ?,
+Nome = ?,
+Data_Alteracao = getdate()
+where CPF_CNPJ = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga to Final\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[drv_CPF_CNPJ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="drv_CPF_CNPJ"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CPF_CNPJ]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[drv_Codigo_Agrupado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="drv_Codigo_Agrupado"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo_Agrupado]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[drv_Tipo_Acesso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="drv_Tipo_Acesso"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Tipo_Acesso]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[Nome]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nome"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nome]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga to Final\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga to Final\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -165,7 +642,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[dbo].[TB_Agroview_Parametros_CNPJ_Dist]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -187,7 +664,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -199,7 +676,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -208,6 +685,8 @@
               <connections>
                 <connection
                   refId="Package\Carga to Final\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -218,8 +697,79 @@
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nome]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nome"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nome]"
+                      lineageId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Nome]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="drv_Dt_Import"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_CPF_CNPJ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="drv_CPF_CNPJ"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPF_CNPJ]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_CPF_CNPJ]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Codigo_Agrupado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="drv_Codigo_Agrupado"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo_Agrupado]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Codigo_Agrupado]" />
+                    <inputColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Tipo_Acesso]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="drv_Tipo_Acesso"
+                      externalMetadataColumnId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Acesso]"
+                      lineageId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Tipo_Acesso]" />
+                  </inputColumns>
                   <externalMetadataColumns
-                    isUsed="True" />
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo_Agrupado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Codigo_Agrupado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPF_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="CPF_CNPJ" />
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Acesso]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Tipo_Acesso" />
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nome]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nome" />
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Inclusao" />
+                    <externalMetadataColumn
+                      refId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
+                      dataType="dbTimeStamp"
+                      name="Data_Alteracao" />
+                  </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
@@ -422,13 +972,23 @@
           </components>
           <paths>
             <path
-              refId="Package\Carga to Final.Paths[Data Conversion Output]"
+              refId="Package\Carga to Final.Paths[Derived Column Output]"
+              endId="Package\Carga to Final\Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Carga to Final\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Carga to Final.Paths[Lookup Match Output]"
+              endId="Package\Carga to Final\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Carga to Final\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Carga to Final.Paths[Lookup No Match Output]"
               endId="Package\Carga to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Carga to Final\Data Conversion.Outputs[Data Conversion Output]" />
+              name="Lookup No Match Output"
+              startId="Package\Carga to Final\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Carga to Final.Paths[OLE DB Source Output]"
-              endId="Package\Carga to Final\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\Carga to Final\Derived Column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Carga to Final\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
@@ -769,15 +1329,79 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Data Flow Task - Load CSV\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::CSVRowCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Load CSV\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Load CSV\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Data Flow Task - Load CSV\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task - Load CSV\Row Count.Inputs[Row Count Input 1]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task - Load CSV\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task - Load CSV.Paths[Row Count Output 1]"
+              endId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Data Flow Task - Load CSV\Row Count.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D9AFDA97-7E2E-46B5-BBBF-12A3CCE29250}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
+          SQLTask:SqlStatementSource="INSERT INTO TB_Carga_LOG_Arquivo(Data_Carga, Nome_Arquivo,Qtd_Registros)&#xA;VALUES(getdate(),?,?);"
+          SQLTask:TypeConversionMode="None" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::FileName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::CSVRowCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -796,23 +1420,6 @@
           SQLTask:SqlStatementSource="DELETE FROM TB_Carga_CNPJ_Dist;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\SQL Insert to Final"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{B510A9D5-1027-4880-8FEB-4D78867CBF57}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="SQL Insert to Final"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
-          SQLTask:SqlStatementSource="insert into TB_Agroview_Parametros_Distribuidor(Codigo_Origem,CPF_CNPJ,&#xA;Tipo_Acesso,Codigo_Agrupado,Nome_Origem)&#xA;select&#xA;    next value for seq_codigo_origem as codigo_origem,   &#xA;    [CPF_CNPJ],&#xA;&#x9;[Tipo_Acesso],&#xA;&#x9;[Codigo_Agrupado],&#xA;&#x9;[Nome]&#xA;FROM TB_Carga_CNPJ_Dist&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -823,6 +1430,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Data Flow Task - Load CSV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{01176940-4AD6-4080-B910-BD8965FF798E}"
+      DTS:From="Package\Data Flow Task - Load CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Execute SQL Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{CE31CDA9-A894-43A3-A8E2-8647E552A16C}"
+      DTS:From="Package\Data Flow Task - Load CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Carga to Final" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -837,43 +1460,47 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
+          Size="144,42"
+          Id="Package\Carga to Final"
+          TopLeft="73,178" />
+        <NodeLayout
           Size="206,42"
           Id="Package\Data Flow Task - Load CSV"
-          TopLeft="55,106" />
+          TopLeft="50,101" />
         <NodeLayout
-          Size="167,42"
-          Id="Package\SQL Insert to Final"
-          TopLeft="535,95" />
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="283,146" />
         <NodeLayout
           Size="237,42"
           Id="Package\Execute SQL Task  - Delete Initial"
-          TopLeft="69,16" />
+          TopLeft="26,14" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="187.5,58">
+          TopLeft="144.5,56">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-29.5,48"
+              EndConnector="8.5,45"
               Start="0,0"
-              End="-29.5,40.5">
+              End="8.5,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20" />
+                    End="0,18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20"
-                    Point2="0,24"
-                    Point3="-4,24" />
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
                   <mssgle:LineSegment
-                    End="-25.5,24" />
+                    End="4.5,22.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-25.5,24"
-                    Point2="-29.5,24"
-                    Point3="-29.5,28" />
+                    Point1="4.5,22.5"
+                    Point2="8.5,22.5"
+                    Point3="8.5,26.5" />
                   <mssgle:LineSegment
-                    End="-29.5,40.5" />
+                    End="8.5,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -882,14 +1509,78 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Carga to Final"
-          TopLeft="353,96" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="256,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27,45"
+              Start="0,0"
+              End="19.5,45">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="9.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.5,0"
+                    Point2="13.5,0"
+                    Point3="13.5,4" />
+                  <mssgle:LineSegment
+                    End="13.5,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.5,41"
+                    Point2="13.5,45"
+                    Point3="17.5,45" />
+                  <mssgle:LineSegment
+                    End="19.5,45" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="153,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8,35"
+              Start="0,0"
+              End="-8,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
+                  <mssgle:LineSegment
+                    End="-4,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4,17.5"
+                    Point2="-8,17.5"
+                    Point3="-8,21.5" />
+                  <mssgle:LineSegment
+                    End="-8,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <AnnotationLayout
-          Text="10/04 - A tabela final (Parametros_Distribuidor) foi deletada. &#xD;&#xA;Script deve ser excluído.&#xD;&#xA;"
+          Text="10/04 - A tabela final (Parametros_Distribuidor) foi deletada. &#xA;Script deve ser excluído.&#xA;15/04 - tabela será necessária - TB_Agroview_Paramentros_CNPJDist&#xA;"
           ParentId="Package"
-          Size="334,65"
+          Size="374,78"
           Id="634709c0-b761-4bae-97b9-b1117873ceb2"
           TopLeft="364,7">
           <AnnotationLayout.FontInfo>
@@ -907,44 +1598,299 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task - Load CSV">
+    design-time-name="Package\Carga to Final">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Carga to Final\OLE DB Source"
+          TopLeft="76,55" />
         <NodeLayout
           Size="171,42"
-          Id="Package\Data Flow Task - Load CSV\OLE DB Destination"
-          TopLeft="150,120" />
+          Id="Package\Carga to Final\OLE DB Destination"
+          TopLeft="90,145" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task - Load CSV\Flat File Source"
-          TopLeft="146,16" />
+          Size="154,42"
+          Id="Package\Carga to Final\Derived Column"
+          TopLeft="289,12" />
         <EdgeLayout
-          Id="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
-          TopLeft="221.5,58">
+          Id="Package\Carga to Final.Paths[OLE DB Source Output]"
+          TopLeft="226,76">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="14,62"
+              EndConnector="63,-43"
               Start="0,0"
-              End="14,54.5">
+              End="55.5,-43">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27" />
+                    End="27.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27"
-                    Point2="0,31"
-                    Point3="4,31" />
+                    Point1="27.5,0"
+                    Point2="31.5,0"
+                    Point3="31.5,-4" />
                   <mssgle:LineSegment
-                    End="10,31" />
+                    End="31.5,-39" />
                   <mssgle:CubicBezierSegment
-                    Point1="10,31"
-                    Point2="14,31"
-                    Point3="14,35" />
+                    Point1="31.5,-39"
+                    Point2="31.5,-43"
+                    Point3="35.5,-43" />
                   <mssgle:LineSegment
-                    End="14,54.5" />
+                    End="55.5,-43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Carga to Final\Lookup"
+          TopLeft="335,119" />
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Derived Column Output]"
+          TopLeft="366,54">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="25.5,65"
+              Start="0,0"
+              End="25.5,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
+                  <mssgle:LineSegment
+                    End="21.5,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.5,32.5"
+                    Point2="25.5,32.5"
+                    Point3="25.5,36.5" />
+                  <mssgle:LineSegment
+                    End="25.5,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Lookup No Match Output]"
+          TopLeft="335,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-74,26"
+              Start="0,0"
+              End="-66.5,26">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-33,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-33,0"
+                    Point2="-37,0"
+                    Point3="-37,4" />
+                  <mssgle:LineSegment
+                    End="-37,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37,22"
+                    Point2="-37,26"
+                    Point3="-41,26" />
+                  <mssgle:LineSegment
+                    End="-66.5,26" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-92.80638671875,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Carga to Final\OLE DB Command"
+          TopLeft="517,142" />
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Lookup Match Output]"
+          TopLeft="448,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="69,23"
+              Start="0,0"
+              End="61.5,23">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.5,0"
+                    Point2="34.5,0"
+                    Point3="34.5,4" />
+                  <mssgle:LineSegment
+                    End="34.5,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.5,19"
+                    Point2="34.5,23"
+                    Point3="38.5,23" />
+                  <mssgle:LineSegment
+                    End="61.5,23" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-13.69138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_CNPJ_Dist]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga to Final\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Task - Load CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task - Load CSV\OLE DB Destination"
+          TopLeft="76,112" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Data Flow Task - Load CSV\Row Count"
+          TopLeft="294,35" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task - Load CSV\Flat File Source"
+          TopLeft="79,18" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - Load CSV.Paths[Row Count Output 1]"
+          TopLeft="359,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-197.5,35"
+              Start="0,0"
+              End="-197.5,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
+                  <mssgle:LineSegment
+                    End="-193.5,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-193.5,17.5"
+                    Point2="-197.5,17.5"
+                    Point3="-197.5,21.5" />
+                  <mssgle:LineSegment
+                    End="-197.5,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Load CSV.Paths[Flat File Source Output]"
+          TopLeft="230,39">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="64,17"
+              Start="0,0"
+              End="56.5,17">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="28,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28,0"
+                    Point2="32,0"
+                    Point3="32,4" />
+                  <mssgle:LineSegment
+                    End="32,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32,13"
+                    Point2="32,17"
+                    Point3="36,17" />
+                  <mssgle:LineSegment
+                    End="56.5,17" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -958,107 +1904,6 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task - Load CSV\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Carga to Final">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Carga to Final\Data Conversion"
-          TopLeft="311,76" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Carga to Final\OLE DB Source"
-          TopLeft="76,55" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Carga to Final\OLE DB Destination"
-          TopLeft="132,154" />
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[OLE DB Source Output]"
-          TopLeft="226,76">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="85,21"
-              Start="0,0"
-              End="77.5,21">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="38.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.5,0"
-                    Point2="42.5,0"
-                    Point3="42.5,4" />
-                  <mssgle:LineSegment
-                    End="42.5,17" />
-                  <mssgle:CubicBezierSegment
-                    Point1="42.5,17"
-                    Point2="42.5,21"
-                    Point3="46.5,21" />
-                  <mssgle:LineSegment
-                    End="77.5,21" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Data Conversion Output]"
-          TopLeft="389,118">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-171.5,36"
-              Start="0,0"
-              End="-171.5,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14"
-                    Point2="0,18"
-                    Point3="-4,18" />
-                  <mssgle:LineSegment
-                    End="-167.5,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-167.5,18"
-                    Point2="-171.5,18"
-                    Point3="-171.5,22" />
-                  <mssgle:LineSegment
-                    End="-171.5,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
