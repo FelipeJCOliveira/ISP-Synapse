@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Regional"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{BBC54EF5-56EB-4CD2-B1B4-2C06D3568EDB}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{2E041A04-CE94-42B5-90B3-E0AE5CBFCCF7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="D:\Synapse\All CSV Files\All CSV Files\Regional.csv">
+          DTS:ConnectionString="C:\SYNAPSE\ALL_CSV_FILES\Regional.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -54,16 +54,6 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.DB_Synapse]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{EBA06739-F087-4AD2-87E5-5F92FA834AE0}"
-      DTS:ObjectName="localhost.DB_Synapse">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB_Synapse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -2211,10 +2201,6 @@ where cod_Regional = ?</property>
           Id="Package\Staging to Final UP-INSERT\OLE DB Command (UPDATE)"
           TopLeft="83.222222222222,232.777777777778" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Staging to Final UP-INSERT\OLE DB Source"
-          TopLeft="70,29" />
-        <NodeLayout
           Size="113,42"
           Id="Package\Staging to Final UP-INSERT\Lookup"
           TopLeft="100,96" />
@@ -2222,6 +2208,10 @@ where cod_Regional = ?</property>
           Size="154,42"
           Id="Package\Staging to Final UP-INSERT\Derived Column"
           TopLeft="415,91" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Staging to Final UP-INSERT\OLE DB Source"
+          TopLeft="70,29" />
         <EdgeLayout
           Id="Package\Staging to Final UP-INSERT.Paths[Lookup Match Output]"
           TopLeft="139,138">
@@ -2385,7 +2375,7 @@ where cod_Regional = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2395,7 +2385,7 @@ where cod_Regional = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
