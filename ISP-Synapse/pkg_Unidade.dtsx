@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Unidade"
   DTS:PackageType="5"
-  DTS:VersionBuild="61"
-  DTS:VersionGUID="{41F9A905-277A-43BB-A205-6C14566CBD83}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{79D54045-501B-4AD8-AD98-0646E876238C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="D:\Synapse\All CSV Files\All CSV Files\Unidade.csv">
+          DTS:ConnectionString="C:\SYNAPSE\ALL_CSV_FILES\Unidade.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -54,16 +54,6 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.DB_Synapse]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{63CA146B-E762-4DD7-B7AA-A9F3041C1E53}"
-      DTS:ObjectName="localhost.DB_Synapse">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB_Synapse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -517,377 +507,6 @@
               endId="Package\Data Flow Load CSV\Derived Column.Inputs[Derived Column Input]"
               name="Row Count Output 1"
               startId="Package\Data Flow Load CSV\Row Count.Outputs[Row Count Output 1]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Data Flow SQL to Final  - OPCAO"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{76724F69-538F-43DC-B685-7D825886F93F}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow SQL to Final  - OPCAO"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[TB_Hierarquia_Parametro_Unidade]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Versao]"
-                      cachedDataType="i4"
-                      cachedName="Versao"
-                      externalMetadataColumnId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Versao]"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[Versao]" />
-                    <inputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Data"
-                      externalMetadataColumnId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[Data]" />
-                    <inputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vDescricao]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="vDescricao"
-                      externalMetadataColumnId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[desc_Unidade]"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[vDescricao]" />
-                    <inputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vCodigo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="vCodigo"
-                      externalMetadataColumnId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_Unidade]"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[vCodigo]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
-                      dataType="i4"
-                      name="id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Versao]"
-                      dataType="i4"
-                      name="Versao" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
-                      dataType="dbTimeStamp"
-                      name="Data_Inclusao" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Desativacao]"
-                      dataType="dbTimeStamp"
-                      name="Data_Desativacao" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ativo]"
-                      dataType="bool"
-                      name="Ativo" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cod_Unidade]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="cod_Unidade" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[desc_Unidade]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="desc_Unidade" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[userID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="14"
-                      name="userID" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="OLE DB Source SQL"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select CAST(Codigo AS VARCHAR(8)) AS vCodigo,
-           1 as Versao,
-          getdate() as Data,
-      CAST(Descricao AS VARCHAR(20)) AS vDescricao 
-from TB_Carga_Unidade</property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">2</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[vDescricao]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].ExternalColumns[vDescricao]"
-                      length="20"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[vDescricao]"
-                      name="vDescricao"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[Versao]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].ExternalColumns[Versao]"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[Versao]"
-                      name="Versao"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[Data]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].ExternalColumns[Data]"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[Data]"
-                      name="Data"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[vCodigo]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].ExternalColumns[vCodigo]"
-                      length="8"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].Columns[vCodigo]"
-                      name="vCodigo"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].ExternalColumns[vDescricao]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="vDescricao" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].ExternalColumns[Versao]"
-                      dataType="i4"
-                      name="Versao" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].ExternalColumns[Data]"
-                      dataType="dbTimeStamp"
-                      name="Data" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output].ExternalColumns[vCodigo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="vCodigo" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[vCodigo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[vCodigo]"
-                      name="vCodigo" />
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[Versao]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[Versao]"
-                      name="Versao" />
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[Data]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[Data]"
-                      name="Data" />
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[vDescricao]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[vDescricao]"
-                      name="vDescricao" />
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Data Flow SQL to Final  - OPCAO.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1745,10 +1364,6 @@ where cod_Unidade = ?</property>
           Id="Package\Data Flow Load CSV"
           TopLeft="57,94" />
         <NodeLayout
-          Size="234,42"
-          Id="Package\Data Flow SQL to Final  - OPCAO"
-          TopLeft="341,27" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Execute SQL - Delete Carga"
           TopLeft="67,18" />
@@ -1975,79 +1590,6 @@ where cod_Unidade = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Data Flow SQL to Final  - OPCAO">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL"
-          TopLeft="97,47" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination"
-          TopLeft="116,138" />
-        <EdgeLayout
-          Id="Package\Data Flow SQL to Final  - OPCAO.Paths[OLE DB Source Output]"
-          TopLeft="183,89">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.5,49"
-              Start="0,0"
-              End="18.5,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="4,24.5" />
-                  <mssgle:LineSegment
-                    End="14.5,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.5,24.5"
-                    Point2="18.5,24.5"
-                    Point3="18.5,28.5" />
-                  <mssgle:LineSegment
-                    End="18.5,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow SQL to Final  - OPCAO\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow SQL to Final  - OPCAO\OLE DB Source SQL">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Staging to Final (UPINSERT)">
     <LayoutInfo>
       <GraphLayout
@@ -2243,25 +1785,12 @@ where cod_Unidade = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Staging to Final (UPINSERT)\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Staging to Final (UPINSERT)\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2271,10 +1800,23 @@ where cod_Unidade = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Final (UPINSERT)\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
