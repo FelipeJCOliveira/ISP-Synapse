@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_ConsumoConcorrencia"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{D9C4CF47-3127-467F-B68E-8A498263C01F}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{BC6DD4E8-1E0B-4683-8EED-B56F2C68F4B9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2036,12 +2036,6 @@
                       cachedName="ConsumoConcCFOPDist"
                       lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOPDist]" />
                     <inputColumn
-                      refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcMunicipioIBGE]"
-                      cachedDataType="wstr"
-                      cachedLength="25"
-                      cachedName="ConsumoConcMunicipioIBGE"
-                      lineageId="Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcMunicipioIBGE]" />
-                    <inputColumn
                       refId="Package\Load CSV\Data Conversion.Inputs[Data Conversion Input].Columns[ConsumoConcAno]"
                       cachedDataType="wstr"
                       cachedLength="4"
@@ -2250,28 +2244,6 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcCFOPDist]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_MunicipioIBGE]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="25"
-                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_MunicipioIBGE]"
-                      name="cvt_MunicipioIBGE"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ConsumoConcMunicipioIBGE]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -3753,14 +3725,6 @@
                       cachedName="cvt_CFOPDist"
                       externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CFOPDist]"
                       lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_CFOPDist]" />
-                    <inputColumn
-                      refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_MunicipioIBGE]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="25"
-                      cachedName="cvt_MunicipioIBGE"
-                      externalMetadataColumnId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MunicipioIBGE]"
-                      lineageId="Package\Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_MunicipioIBGE]" />
                     <inputColumn
                       refId="Package\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Ano]"
                       cachedCodepage="1252"
