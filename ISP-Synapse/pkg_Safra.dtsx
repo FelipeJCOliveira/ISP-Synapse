@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Safra"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{2FE24011-B68E-45A4-B8FB-14C8770591AD}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{58CE63FF-B5C6-478F-98FE-6119E145F406}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="D:\Synapse\All CSV Files\All CSV Files\Safra.csv">
+          DTS:ConnectionString="C:\SYNAPSE\ALL_CSV_FILES\Safra.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -82,16 +82,6 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.DB_Synapse]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{317A51E2-8721-497E-B186-59EB2529C86D}"
-      DTS:ObjectName="localhost.DB_Synapse">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB_Synapse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1075,402 +1065,6 @@ where Indice = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task - csv to final direto"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{8F91DB21-5288-42DB-99FB-6D5BB5A19464}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task - csv to final direto"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Data Flow Task - csv to final direto\Flat File Source"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Source"
-              localeId="1046"
-              name="Flat File Source"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task - csv to final direto\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection - Safra]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - Safra]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output]"
-                  name="Flat File Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraIndice]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SafraIndice]"
-                      length="50"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraIndice]"
-                      name="SafraIndice"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraInicio]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SafraInicio]"
-                      length="50"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraInicio]"
-                      name="SafraInicio"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraFim]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SafraFim]"
-                      length="50"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraFim]"
-                      name="SafraFim"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraIndiceAnterior]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SafraIndiceAnterior]"
-                      length="50"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraIndiceAnterior]"
-                      name="SafraIndiceAnterior"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraDescricao]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SafraDescricao]"
-                      length="50"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraDescricao]"
-                      name="SafraDescricao"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SafraIndice]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="SafraIndice" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SafraInicio]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="SafraInicio" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SafraFim]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="SafraFim" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SafraIndiceAnterior]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="SafraIndiceAnterior" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SafraDescricao]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="SafraDescricao" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Error Output]"
-                  isErrorOut="true"
-                  name="Flat File Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      codePage="1252"
-                      dataType="text"
-                      description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      name="Flat File Source Error Output Column" />
-                    <outputColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task - csv to final direto\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[TB_Agroview_Parametros_Safra]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">65001</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">true</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DB_Synapse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SafraIndice]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="SafraIndice"
-                      externalMetadataColumnId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Indice]"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraIndice]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SafraInicio]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="SafraInicio"
-                      externalMetadataColumnId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inicio]"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraInicio]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SafraFim]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="SafraFim"
-                      externalMetadataColumnId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Fim]"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraFim]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SafraIndiceAnterior]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="SafraIndiceAnterior"
-                      externalMetadataColumnId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Indice_Anterior]"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraIndiceAnterior]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SafraDescricao]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="SafraDescricao"
-                      externalMetadataColumnId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
-                      lineageId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output].Columns[SafraDescricao]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Indice]"
-                      dataType="i4"
-                      name="Indice" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inicio]"
-                      dataType="dbDate"
-                      name="Data_Inicio" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Fim]"
-                      dataType="dbDate"
-                      name="Data_Fim" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Indice_Anterior]"
-                      dataType="i4"
-                      name="Indice_Anterior" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descricao]"
-                      codePage="65001"
-                      dataType="str"
-                      length="8"
-                      name="Descricao" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Data Flow Task - csv to final direto.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task - csv to final direto\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Flat File Source Output"
-              startId="Package\Data Flow Task - csv to final direto\Flat File Source.Outputs[Flat File Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Data Flow Task - Load CSV"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -1916,7 +1510,7 @@ where Indice = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{317A51E2-8721-497E-B186-59EB2529C86D}"
+          SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
           SQLTask:SqlStatementSource="INSERT INTO TB_Agroview_Parametros_Safra(Indice,Data_Inicio,Data_Fim,Indice_Anterior,Descricao)&#xA;SELECT Indice, convert(Date,Data_Inicio,103), convert(Date,Data_Fim,103), Indice_Anterior, Descricao FROM TB_Carga_Safra;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1987,15 +1581,11 @@ where Indice = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="144,42"
           Id="Package\Carga to Final"
           TopLeft="71,212" />
-        <NodeLayout
-          Size="243,42"
-          Id="Package\Data Flow Task - csv to final direto"
-          TopLeft="343,54" />
         <NodeLayout
           Size="206,42"
           Id="Package\Data Flow Task - Load CSV"
@@ -2007,7 +1597,7 @@ where Indice = ?</property>
         <NodeLayout
           Size="163,42"
           Id="Package\Execute SQL Task"
-          TopLeft="498,109" />
+          TopLeft="319,50" />
         <NodeLayout
           Size="140,42"
           Id="Package\SQL Log CSV"
@@ -2305,7 +1895,7 @@ where Indice = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2315,7 +1905,7 @@ where Indice = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2337,69 +1927,6 @@ where Indice = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Carga to Final\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Data Flow Task - csv to final direto">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task - csv to final direto\OLE DB Destination"
-          TopLeft="224,180" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task - csv to final direto\Flat File Source"
-          TopLeft="219,70" />
-        <EdgeLayout
-          Id="Package\Data Flow Task - csv to final direto.Paths[Flat File Source Output]"
-          TopLeft="294.5,112">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="15,68"
-              Start="0,0"
-              End="15,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
-                  <mssgle:LineSegment
-                    End="11,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11,34"
-                    Point2="15,34"
-                    Point3="15,38" />
-                  <mssgle:LineSegment
-                    End="15,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task - csv to final direto\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
