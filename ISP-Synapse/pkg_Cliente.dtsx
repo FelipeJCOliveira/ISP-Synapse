@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{874D7D4A-FDA1-4A2E-AAD2-60A7A8789882}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Cliente"
   DTS:PackageType="5"
-  DTS:VersionBuild="111"
-  DTS:VersionGUID="{02658284-406A-446D-9A95-A096051B0905}">
+  DTS:VersionBuild="115"
+  DTS:VersionGUID="{474561FD-9A37-4B1C-9621-B840567FEF0A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="E:\All CSV Files\Cliente.csv">
+          DTS:ConnectionString="C:\SYNAPSE\ALL_CSV_FILES\Cliente.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="%ClienteChave"
-              DTS:DTSID="{F2EBCDE5-B355-4557-825C-D6509B9E85BE}"
+              DTS:DTSID="{0BC8E726-9349-4B2D-9DC7-7AD4742DF6F9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ClienteCodigo"
-              DTS:DTSID="{3997C583-75A0-466A-A8A6-0FF06B149DCF}"
+              DTS:DTSID="{19A4ED0F-C070-4D66-AD8A-DC40FF06EA19}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ClienteCPFCNPJ"
-              DTS:DTSID="{C47B747F-DC25-42D5-9E58-30782907B2F6}"
+              DTS:DTSID="{963F7360-B0B5-4C8F-BD65-E91FBE788FE8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ClientePrincipal"
-              DTS:DTSID="{79B0A22E-DB11-4D31-84F6-3E7C3CF6533F}"
+              DTS:DTSID="{D45C9673-E56B-4B20-BD87-E6B0CFBC42FE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ClienteDist"
-              DTS:DTSID="{17501195-B517-4A5E-A8F0-7ABAC3378214}"
+              DTS:DTSID="{17B5BE78-8FDD-4AEB-968B-091CDAC17317}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ClienteCategoria"
-              DTS:DTSID="{B9902C67-8E2D-402B-B803-994572AF6249}"
+              DTS:DTSID="{1F98F923-8793-401E-886A-11AF41DD2FC5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ClienteNome"
-              DTS:DTSID="{7DD6BD4E-4FEF-417F-8B6C-FB92501288F4}"
+              DTS:DTSID="{0CC7BFEA-63D4-4D6F-B94C-4FB4DD564652}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -173,7 +173,7 @@
                       refId="Package\Data Flow Task - Final Table\Data Conversion.Inputs[Data Conversion Input].Columns[Chave]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="Chave"
                       lineageId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]" />
                     <inputColumn
@@ -228,7 +228,7 @@
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="15"
+                      length="30"
                       lineageId="Package\Data Flow Task - Final Table\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]"
                       name="cvt_Chave"
                       truncationRowDisposition="IgnoreFailure">
@@ -541,7 +541,7 @@
                       refId="Package\Data Flow Task - Final Table\Derived Column.Inputs[Derived Column Input].Columns[Chave]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="Chave"
                       lineageId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]" />
                     <inputColumn
@@ -1051,7 +1051,7 @@ where [refTable].[Chave] = ?</property>
                       refId="Package\Data Flow Task - Final Table\Lookup 1.Inputs[Lookup Input].Columns[Chave]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="Chave"
                       lineageId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]">
                       <properties>
@@ -1163,7 +1163,7 @@ where Chave = ?</property>
                       refId="Package\Data Flow Task - Final Table\OLE DB Command.Inputs[OLE DB Command Input].Columns[Chave]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="Chave"
                       externalMetadataColumnId="Package\Data Flow Task - Final Table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]" />
@@ -1298,7 +1298,7 @@ where Chave = ?</property>
                       refId="Package\Data Flow Task - Final Table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       codePage="1252"
                       dataType="str"
-                      length="15"
+                      length="30"
                       name="Param_6">
                       <properties>
                         <property
@@ -1483,7 +1483,7 @@ where Chave = ?</property>
                       refId="Package\Data Flow Task - Final Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
                       codePage="1252"
                       dataType="str"
-                      length="15"
+                      length="30"
                       name="Chave" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Final Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
@@ -1623,7 +1623,7 @@ where Chave = ?</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Chave]"
-                      length="50"
+                      length="30"
                       lineageId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]"
                       name="Chave"
                       truncationRowDisposition="FailComponent" />
@@ -1700,7 +1700,7 @@ where Chave = ?</property>
                       refId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Chave]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       name="Chave" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Codigo]"
@@ -1753,7 +1753,7 @@ where Chave = ?</property>
                       refId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Chave]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       lineageId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Chave]"
                       name="Chave" />
                     <outputColumn
@@ -3176,7 +3176,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       refId="Package\Data Flow Task - Final Table\SC - Get error details.Inputs[Input 0].Columns[cvt_Chave]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="15"
+                      cachedLength="30"
                       cachedName="cvt_Chave"
                       lineageId="Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]" />
                     <inputColumn
@@ -4242,7 +4242,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 2].Columns[Chave]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="Chave"
                       lineageId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]">
                       <properties>
@@ -4372,21 +4372,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 2].Columns[cvt_Chave]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="cvt_Chave"
-                      lineageId="Package\Data Flow Task - Final Table\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 2].Columns[cvt_CPF_CNPJ]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -4472,6 +4457,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           name="OutputColumnLineageID">#{Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 2].Columns[cvt_Chave]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="cvt_Chave"
+                      lineageId="Package\Data Flow Task - Final Table\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -4484,7 +4484,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 3].Columns[Chave]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="Chave"
                       lineageId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]">
                       <properties>
@@ -4614,21 +4614,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 3].Columns[cvt_Chave]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="cvt_Chave"
-                      lineageId="Package\Data Flow Task - Final Table\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 3].Columns[cvt_CPF_CNPJ]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -4714,6 +4699,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           name="OutputColumnLineageID">#{Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 3].Columns[cvt_Chave]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="cvt_Chave"
+                      lineageId="Package\Data Flow Task - Final Table\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -4726,7 +4726,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 1].Columns[Chave]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="Chave"
                       lineageId="Package\Data Flow Task - Final Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]">
                       <properties>
@@ -4856,21 +4856,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 1].Columns[cvt_Chave]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="cvt_Chave"
-                      lineageId="Package\Data Flow Task - Final Table\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 1].Columns[cvt_CPF_CNPJ]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -4956,6 +4941,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           name="OutputColumnLineageID">#{Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Final Table\Union All.Inputs[Union All Input 1].Columns[cvt_Chave]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="cvt_Chave"
+                      lineageId="Package\Data Flow Task - Final Table\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -5034,13 +5034,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       lineageId="Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[errorComment]"
                       name="errorComment" />
                     <outputColumn
-                      refId="Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]"
-                      name="cvt_Chave" />
-                    <outputColumn
                       refId="Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_CPF_CNPJ]"
                       codePage="1252"
                       dataType="str"
@@ -5078,6 +5071,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="i4"
                       lineageId="Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
                       name="ErrorColumn" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Data Flow Task - Final Table\Union All.Outputs[Union All Output 1].Columns[cvt_Chave]"
+                      name="cvt_Chave" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -5239,7 +5239,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="50"
+                      length="30"
                       lineageId="Package\Data Flow Task - Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]"
                       name="cvt_Chave"
                       truncationRowDisposition="FailComponent">
@@ -5810,7 +5810,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cvt_Chave]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="cvt_Chave"
                       externalMetadataColumnId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
                       lineageId="Package\Data Flow Task - Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]" />
@@ -5875,7 +5875,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       name="Chave" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
@@ -6214,21 +6214,89 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="181,42"
+          Id="Package\Data Flow Task - Final Table\DC - Add audit details"
+          TopLeft="249.71428574348,304.094116694705" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task - Final Table\Derived Column 1"
+          TopLeft="48,198" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Data Flow Task - Final Table\Union All"
+          TopLeft="353,204" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Data Flow Task - Final Table\OLE DB Command"
+          TopLeft="656,103" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task - Final Table\OLE DB Destination"
           TopLeft="44,86" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Data Flow Task - Final Table\SC - Get error details"
+          TopLeft="34,304.847056815864" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Data Flow Task - Final Table\LOG Errors"
+          TopLeft="468.1428570942,303" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Data Flow Task - Final Table\Script RowCount"
+          TopLeft="266,15" />
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task - Final Table\Derived Column"
           TopLeft="769,22" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Task - Final Table\OLE DB Source"
-          TopLeft="38,17" />
+          Size="122,42"
+          Id="Package\Data Flow Task - Final Table\Lookup 1"
+          TopLeft="374,106" />
         <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Task - Final Table\Data Conversion"
           TopLeft="490,20" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task - Final Table\OLE DB Source"
+          TopLeft="38,17" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - Final Table.Paths[Derived Column Error Output]"
+          TopLeft="915,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-501.5,140"
+              Start="0,0"
+              End="-501.5,147.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,144.863753213368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,144.863753213368"
+                    Point2="0,148.863753213368"
+                    Point3="-4,148.863753213368" />
+                  <mssgle:LineSegment
+                    End="-497.5,148.863753213368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-497.5,148.863753213368"
+                    Point2="-501.5,148.863753213368"
+                    Point3="-501.5,144.863753213368" />
+                  <mssgle:LineSegment
+                    End="-501.5,147.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-315.71138671875,153.863753213368,147.660078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task - Final Table.Paths[Data Conversion Output]"
           TopLeft="646,42">
@@ -6243,164 +6311,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="115.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Data Flow Task - Final Table\Script RowCount"
-          TopLeft="266,15" />
-        <EdgeLayout
-          Id="Package\Data Flow Task - Final Table.Paths[OLE DB Source Output]"
-          TopLeft="188,37">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="78,0"
-              Start="0,0"
-              End="70.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="70.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task - Final Table.Paths[Output 0]"
-          TopLeft="423,38.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="67,0"
-              Start="0,0"
-              End="59.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="59.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="178,42"
-          Id="Package\Data Flow Task - Final Table\SC - Get error details"
-          TopLeft="34,304.847056815864" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Data Flow Task - Final Table\DC - Add audit details"
-          TopLeft="249.71428574348,304.094116694705" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Data Flow Task - Final Table\LOG Errors"
-          TopLeft="468.1428570942,303" />
-        <EdgeLayout
-          Id="Package\Data Flow Task - Final Table.Paths[Output 01]"
-          TopLeft="212,325.470586755284">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="37.71428574348,0"
-              Start="0,0"
-              End="30.21428574348,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="30.21428574348,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task - Final Table.Paths[Derived Column Output]"
-          TopLeft="430.71428574348,324.547058347353">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="37.4285713507201,0"
-              Start="0,0"
-              End="29.9285713507201,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="29.9285713507201,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Data Flow Task - Final Table\Derived Column 1"
-          TopLeft="48,198" />
-        <EdgeLayout
-          Id="Package\Data Flow Task - Final Table.Paths[OLE DB Destination Error Output]"
-          TopLeft="129.5,128">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70"
-              Start="0,0"
-              End="0,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,25.533203125,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Data Flow Task - Final Table\Union All"
-          TopLeft="353,204" />
-        <EdgeLayout
-          Id="Package\Data Flow Task - Final Table.Paths[Derived Column Output1]"
-          TopLeft="211,222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="142,0"
-              Start="0,0"
-              End="134.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="134.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6443,36 +6353,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Data Flow Task - Final Table\Lookup 1"
-          TopLeft="374,106" />
         <EdgeLayout
-          Id="Package\Data Flow Task - Final Table.Paths[Derived Column Output2]"
-          TopLeft="870.333333333333,64">
+          Id="Package\Data Flow Task - Final Table.Paths[Output 01]"
+          TopLeft="212,325.470586755284">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-435.333333333333,42"
+              EndConnector="37.71428574348,0"
               Start="0,0"
-              End="-435.333333333333,34.5">
+              End="30.21428574348,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.0591259640103" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.0591259640103"
-                    Point2="0,17.0591259640103"
-                    Point3="-4,17.0591259640103" />
-                  <mssgle:LineSegment
-                    End="-431.333333333333,17.0591259640103" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-431.333333333333,17.0591259640103"
-                    Point2="-435.333333333333,17.0591259640103"
-                    Point3="-435.333333333333,21.0591259640103" />
-                  <mssgle:LineSegment
-                    End="-435.333333333333,34.5" />
+                    End="30.21428574348,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6482,102 +6376,70 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task - Final Table.Paths[Lookup No Match Output]"
-          TopLeft="374,127">
+          Id="Package\Data Flow Task - Final Table.Paths[Output 0]"
+          TopLeft="423,38.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-159,-20"
+              EndConnector="67,0"
               Start="0,0"
-              End="-151.5,-20">
+              End="59.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-75.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-75.5,0"
-                    Point2="-79.5,0"
-                    Point3="-79.5,-4" />
-                  <mssgle:LineSegment
-                    End="-79.5,-16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-79.5,-16"
-                    Point2="-79.5,-20"
-                    Point3="-83.5,-20" />
-                  <mssgle:LineSegment
-                    End="-151.5,-20" />
+                    End="59.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-135.30638671875,1,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Data Flow Task - Final Table\OLE DB Command"
-          TopLeft="656,103" />
-        <EdgeLayout
-          Id="Package\Data Flow Task - Final Table.Paths[Derived Column Error Output]"
-          TopLeft="915,64">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-501.5,140"
-              Start="0,0"
-              End="-501.5,147.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,144.863753213368" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,144.863753213368"
-                    Point2="0,148.863753213368"
-                    Point3="-4,148.863753213368" />
-                  <mssgle:LineSegment
-                    End="-497.5,148.863753213368" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-497.5,148.863753213368"
-                    Point2="-501.5,148.863753213368"
-                    Point3="-501.5,144.863753213368" />
-                  <mssgle:LineSegment
-                    End="-501.5,147.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-315.71138671875,153.863753213368,129.9227734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task - Final Table.Paths[Lookup Match Output]"
-          TopLeft="496,125.5">
+          Id="Package\Data Flow Task - Final Table.Paths[OLE DB Source Output]"
+          TopLeft="188,37">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="160,0"
+              EndConnector="78,0"
               Start="0,0"
-              End="152.5,0">
+              End="70.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="152.5,0" />
+                    End="70.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Final Table.Paths[OLE DB Destination Error Output]"
+          TopLeft="129.5,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70"
+              Start="0,0"
+              End="0,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="28.05861328125,5,96.3827734375,11.609375"
+              BoundingBox="-73.20890625,25.533203125,163.740078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6617,9 +6479,170 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Final Table.Paths[Lookup No Match Output]"
+          TopLeft="374,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-159,-20"
+              Start="0,0"
+              End="-151.5,-20">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-75.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-75.5,0"
+                    Point2="-79.5,0"
+                    Point3="-79.5,-4" />
+                  <mssgle:LineSegment
+                    End="-79.5,-16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-79.5,-16"
+                    Point2="-79.5,-20"
+                    Point3="-83.5,-20" />
+                  <mssgle:LineSegment
+                    End="-151.5,-20" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-135.30638671875,1,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Final Table.Paths[Lookup Match Output]"
+          TopLeft="496,125.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="160,0"
+              Start="0,0"
+              End="152.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="152.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="28.05861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Final Table.Paths[Derived Column Output2]"
+          TopLeft="870.333333333333,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-435.333333333333,42"
+              Start="0,0"
+              End="-435.333333333333,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.0591259640103" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0591259640103"
+                    Point2="0,17.0591259640103"
+                    Point3="-4,17.0591259640103" />
+                  <mssgle:LineSegment
+                    End="-431.333333333333,17.0591259640103" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-431.333333333333,17.0591259640103"
+                    Point2="-435.333333333333,17.0591259640103"
+                    Point3="-435.333333333333,21.0591259640103" />
+                  <mssgle:LineSegment
+                    End="-435.333333333333,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Final Table.Paths[Derived Column Output1]"
+          TopLeft="211,222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142,0"
+              Start="0,0"
+              End="134.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="134.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Final Table.Paths[Derived Column Output]"
+          TopLeft="430.71428574348,324.547058347353">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37.4285713507201,0"
+              Start="0,0"
+              End="29.9285713507201,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.9285713507201,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task - Final Table\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_Cliente]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task - Final Table\OLE DB Destination">
     <Properties>
@@ -6796,29 +6819,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task - Final Table\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TB_Agroview_Parametros_Cliente]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
