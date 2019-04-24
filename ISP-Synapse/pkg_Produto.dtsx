@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Produto"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{E72B3804-4049-4F5B-9C2B-B55DC91B0A82}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{A57B422B-7B76-4ABF-920D-391CA3BD1CC4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -104,7 +104,7 @@
   </DTS:ConnectionManagers>
   <DTS:LogProviders>
     <DTS:LogProvider
-      DTS:ConfigString="{3AC1F2E1-6B37-4706-A979-42C2606E040C}"
+      DTS:ConfigString="IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Writes log entries for events to a SQL Server database"
       DTS:DTSID="{4DB1D697-6B71-4F28-A027-E1CCFB83CD72}"
@@ -1011,6 +1011,8 @@
       DTS:ObjectName="Execute SQL Task"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
@@ -1027,6 +1029,8 @@
       DTS:ObjectName="SQL Log CSV"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
@@ -2581,7 +2585,7 @@ where Codigo = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
