@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_ConsumoConcorrencia"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{BC6DD4E8-1E0B-4683-8EED-B56F2C68F4B9}">
+  DTS:VersionBuild="80"
+  DTS:VersionGUID="{A8D4DDF0-2DDD-4A8A-905D-79171CBA904A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4360,43 +4360,25 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="171,42"
-          Id="Package\Carga to Final\OLE DB Destination"
-          TopLeft="66,120" />
-        <NodeLayout
           Size="154,42"
           Id="Package\Carga to Final\Derived Column"
           TopLeft="332,39" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\Carga to Final\Data Conversion"
-          TopLeft="324,119" />
-        <NodeLayout
           Size="150,42"
           Id="Package\Carga to Final\OLE DB Source"
           TopLeft="54,32" />
-        <EdgeLayout
-          Id="Package\Carga to Final.Paths[Derived Column Output]"
-          TopLeft="405.5,81">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38"
-              Start="0,0"
-              End="0,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Carga to Final\Multicast"
+          TopLeft="610,68" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Carga to Final\OLE DB Destination"
+          TopLeft="66,120" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Carga to Final\Data Conversion"
+          TopLeft="324,119" />
         <EdgeLayout
           Id="Package\Carga to Final.Paths[Data Conversion Output]"
           TopLeft="324,140.5">
@@ -4441,10 +4423,28 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Carga to Final\Multicast"
-          TopLeft="610,68" />
+        <EdgeLayout
+          Id="Package\Carga to Final.Paths[Derived Column Output]"
+          TopLeft="405.5,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga to Final.Paths[Derived Column Error Output]"
           TopLeft="486,60">
@@ -4485,7 +4485,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\OLE DB Destination">
+    design-time-name="Package\Carga to Final\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4498,7 +4498,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga to Final\OLE DB Source">
+    design-time-name="Package\Carga to Final\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
