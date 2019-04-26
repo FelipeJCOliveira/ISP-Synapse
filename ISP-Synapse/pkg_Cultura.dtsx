@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{6A89B983-3A26-4A7D-9F9B-203756CE5FAD}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Cultura"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{CD62EDE4-8259-4DB2-885C-41540AD9AB6F}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{2398025C-0800-49C1-8C2E-29645C0B75C9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="E:\All CSV Files\Cultura.csv">
+          DTS:ConnectionString="S:\Data&amp;Insights\Cultura.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -78,6 +78,28 @@
       DTS:ObjectName="CSVRowCount">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8D2D6063-7AC5-4D0C-9EA2-55CE172BD5E0}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::RemotePath]+ &quot;/&quot;+@[$Package::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FTPFile">
+      <DTS:VariableValue
+        DTS:DataType="8">/Qlikview/Synapse/Entrada/Csv/Cultura.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C1223BD0-4270-4287-A3EF-63B07B0F9856}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::FS_InboxPath]+ @[$Package::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="InboxFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">S:\Data&amp;Insights\Cultura.csv</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -1332,6 +1354,22 @@ where Codigo = ?
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\DISCONNECT DRIVE S"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{23557aff-fb6f-47a8-8bdc-8064aabc2912}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DISCONNECT DRIVE S"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="cmd.exe"
+          Arguments="/c &quot;NET USE S: /delete&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Execute SQL Task - Limpa Tabela Carga"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -1348,37 +1386,59 @@ where Codigo = ?
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task - Limpa Tabelas Cultura"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{b84c2568-7eb4-4d72-88a2-cb35358a485b}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:refId="Package\File System Task"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{3b38ba4a-48cf-4fbe-9fd0-a394b26e5d9e}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task - Limpa Tabelas Cultura"
-      DTS:ThreadHint="2">
+      DTS:ObjectName="File System Task"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{DD0065CC-821A-4B2C-BF5D-375A1D81F516}"
-          SQLTask:SqlStatementSource="DELETE FROM TB_Carga_Cultura;&#xA;DELETE from TB_Agroview_Parametros_Cultura;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+        <FileSystemData
+          TaskOperationType="MoveFile"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::InboxFilePath"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="$Project::FS_LoadedPath"
+          TaskIsDestinationVariable="True" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task - To Final"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{5731C76D-C6C4-4859-A817-B4F689FC10A5}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:refId="Package\FTP Task"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="FTP Task"
+      DTS:DTSID="{0cefa709-a9b7-459a-bea5-193fee587ce8}"
+      DTS:ExecutableType="Microsoft.FtpTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task - To Final"
-      DTS:ThreadHint="1">
+      DTS:ObjectName="FTP Task"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{DD0065CC-821A-4B2C-BF5D-375A1D81F516}"
-          SQLTask:SqlStatementSource="insert into TB_Agroview_Parametros_Cultura &#xA;select left(codigo,2), left(descricao,10) from TB_Carga_Cultura order by convert(Numeric(10),TB_Carga_Cultura.Codigo)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+        <FtpData
+          ConnectionName="{70CEFD86-8588-40CE-AE4E-4CA5BA592000}"
+          TaskOperationType="Receive"
+          TaskIsLocalPathVar="True"
+          TaskLocalPath="$Project::FS_InboxPath"
+          TaskIsRemotePathVar="True"
+          TaskRemotePath="User::FTPFile" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\MAP DRIVE S"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{51f290ea-f1df-49f5-8c34-68e5ac0c9b70}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MAP DRIVE S"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="cmd.exe"
+          Arguments="/c net use S: \\BRSPFPC01VFIL1\Custom /user:H975835 SyngentaAgro01SyngentaAgro01 /persistent:no" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1436,6 +1496,38 @@ where Codigo = ?
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Data Flow Task - CSV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{7C26875D-1C16-4DF6-8FC3-37F81D014A9A}"
+      DTS:From="Package\MAP DRIVE S"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\FTP Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{857DC7D6-9F21-4718-B5C5-45D54C512645}"
+      DTS:From="Package\FTP Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Execute SQL Task - Limpa Tabela Carga" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{651C566B-2EA7-4E0E-82E7-CB2998DB590C}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\File System Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{C9BF9E44-747E-44DE-B14B-E19CF60B88C0}"
+      DTS:From="Package\File System Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\DISCONNECT DRIVE S" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1452,41 +1544,45 @@ where Codigo = ?
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
-          TopLeft="90,192" />
+          TopLeft="146,243" />
         <NodeLayout
           Size="181,42"
           Id="Package\Data Flow Task - CSV"
-          TopLeft="81,102" />
+          TopLeft="144,165" />
         <NodeLayout
           Size="267,42"
           Id="Package\Execute SQL Task - Limpa Tabela Carga"
-          TopLeft="63,22" />
-        <NodeLayout
-          Size="279,42"
-          Id="Package\Execute SQL Task - Limpa Tabelas Cultura"
-          TopLeft="475,66" />
-        <NodeLayout
-          Size="211,42"
-          Id="Package\Execute SQL Task - To Final"
-          TopLeft="522,131" />
+          TopLeft="127,92" />
         <NodeLayout
           Size="140,42"
           Id="Package\SQL Log CSV"
-          TopLeft="312,110" />
+          TopLeft="420,165" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="168.5,144">
+          TopLeft="234.5,207">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="-13,36"
               Start="0,0"
-              End="0,40.5">
+              End="-13,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="-4,18" />
+                  <mssgle:LineSegment
+                    End="-9,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9,18"
+                    Point2="-13,18"
+                    Point3="-13,22" />
+                  <mssgle:LineSegment
+                    End="-13,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1497,30 +1593,18 @@ where Codigo = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="262,123">
+          TopLeft="325,186">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50,8"
+              EndConnector="95,0"
               Start="0,0"
-              End="42.5,8">
+              End="87.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="21,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21,0"
-                    Point2="25,0"
-                    Point3="25,4" />
-                  <mssgle:LineSegment
-                    End="25,4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25,4"
-                    Point2="25,8"
-                    Point3="29,8" />
-                  <mssgle:LineSegment
-                    End="42.5,8" />
+                    End="87.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1531,30 +1615,146 @@ where Codigo = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="196.5,64">
+          TopLeft="260.5,134">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-25,38"
+              EndConnector="-26,31"
               Start="0,0"
-              End="-25,30.5">
+              End="-26,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15" />
+                    End="0,11.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="-4,19" />
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="-4,15.5" />
                   <mssgle:LineSegment
-                    End="-21,19" />
+                    End="-22,15.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-21,19"
-                    Point2="-25,19"
-                    Point3="-25,23" />
+                    Point1="-22,15.5"
+                    Point2="-26,15.5"
+                    Point3="-26,19.5" />
                   <mssgle:LineSegment
-                    End="-25,30.5" />
+                    End="-26,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142,42"
+          Id="Package\MAP DRIVE S"
+          TopLeft="30,10" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\FTP Task"
+          TopLeft="255,8" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="172,30">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83,0"
+              Start="0,0"
+              End="75.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="75.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="316,50">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55.5,42"
+              Start="0,0"
+              End="-55.5,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-51.5,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51.5,21"
+                    Point2="-55.5,21"
+                    Point3="-55.5,25" />
+                  <mssgle:LineSegment
+                    End="-55.5,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158,42"
+          Id="Package\File System Task"
+          TopLeft="412,246" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\DISCONNECT DRIVE S"
+          TopLeft="635,243" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="297,265.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="115,0"
+              Start="0,0"
+              End="107.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="107.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="570,265.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65,0"
+              Start="0,0"
+              End="57.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="57.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1572,17 +1772,25 @@ where Codigo = ?
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="49,48" />
+          Size="154,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="511,48" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Data Flow Task\OLE DB Command"
+          TopLeft="419,212" />
         <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="59,208" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="511,48" />
+          Size="113,42"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="293,138" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="49,48" />
         <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Task\Data Conversion"
@@ -1601,66 +1809,6 @@ where Codigo = ?
                   Capacity="5">
                   <mssgle:LineSegment
                     End="59.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="422,71">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="89,0"
-              Start="0,0"
-              End="81.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="81.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="293,138" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="588,90">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-238.5,48"
-              Start="0,0"
-              End="-238.5,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20"
-                    Point2="0,24"
-                    Point3="-4,24" />
-                  <mssgle:LineSegment
-                    End="-234.5,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-234.5,24"
-                    Point2="-238.5,24"
-                    Point3="-238.5,28" />
-                  <mssgle:LineSegment
-                    End="-238.5,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1705,10 +1853,6 @@ where Codigo = ?
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Data Flow Task\OLE DB Command"
-          TopLeft="419,212" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output]"
           TopLeft="367,180">
@@ -1745,11 +1889,67 @@ where Codigo = ?
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="588,90">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-238.5,48"
+              Start="0,0"
+              End="-238.5,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="-4,24" />
+                  <mssgle:LineSegment
+                    End="-234.5,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-234.5,24"
+                    Point2="-238.5,24"
+                    Point3="-238.5,28" />
+                  <mssgle:LineSegment
+                    End="-238.5,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="422,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89,0"
+              Start="0,0"
+              End="81.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="81.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1762,7 +1962,30 @@ where Codigo = ?
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_Cultura]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1886,29 +2109,6 @@ where Codigo = ?
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TB_Agroview_Parametros_Cultura]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
