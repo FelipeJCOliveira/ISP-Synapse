@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{1D36D866-B169-4E05-A1B7-973777D509CF}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_ConsumoConcorrencia"
   DTS:PackageType="5"
-  DTS:VersionBuild="111"
-  DTS:VersionGUID="{195159B0-BA78-4115-83D6-BE70B6E1E774}">
+  DTS:VersionBuild="112"
+  DTS:VersionGUID="{B68BEA6C-8D52-4369-81A2-EACCE6E5FD22}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2097,7 +2097,7 @@
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="File System Task"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -4713,7 +4713,7 @@
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
       DTS:ObjectName="MAP DRIVE S"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Arguments">@[User::Batch]</DTS:PropertyExpression>
@@ -4981,7 +4981,7 @@ End Class]]></ProjectItem>
     <msb:CodeName>ST_e55a4cfb638046b0a91d51fb168ebea0</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_e55a4cfb638046b0a91d51fb168ebea0</msb:DisplayName>
-    <msb:ProjectId>{5A835C3E-BAA9-4684-A155-10E7E95DDCD0}</msb:ProjectId>
+    <msb:ProjectId>{12090234-A561-4160-BAAB-7DFA11933C44}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_e55a4cfb638046b0a91d51fb168ebea0.vbproj" />
@@ -4991,30 +4991,6 @@ End Class]]></ProjectItem>
     <msb:File Include="My Project\Resources.resx" />
     <msb:File Include="My Project\Resources.Designer.vb" />
     <msb:File Include="My Project\Settings.settings" />
-    <msb:Breakpoint Include="4e09cc35f9824e88ab081d5896ad4133">
-      <msb:FileName>ScriptMain.vb</msb:FileName>
-      <msb:ColumnNumber>21</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>116</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>Basic</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
-    <msb:Breakpoint Include="beb9955248e2422891edd1d6be28a6f3">
-      <msb:FileName>ScriptMain.vb</msb:FileName>
-      <msb:ColumnNumber>9</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>99</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>Basic</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
@@ -5146,7 +5122,7 @@ End Class]]></ProjectItem>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{f79b9455-7936-4e53-8490-0574a550b413}</ProjectGuid>
+    <ProjectGuid>{F79B9455-7936-4E53-8490-0574A550B413}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>My Project</AppDesignerFolder>
     <RootNamespace>ST_e55a4cfb638046b0a91d51fb168ebea0</RootNamespace>
@@ -5154,7 +5130,8 @@ End Class]]></ProjectItem>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -5227,8 +5204,8 @@ End Class]]></ProjectItem>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="ScriptTask" IconIndex=""></Host>
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" />
+        <Host Name="ScriptTask" />
         <ProjectClient>
           <HostIdentifier>SSIS_ST140</HostIdentifier>
         </ProjectClient>
@@ -5302,7 +5279,7 @@ End Namespace]]></ProjectItem>
           <BinaryItem
             Name="ST_e55a4cfb638046b0a91d51fb168ebea0.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJqFyFwAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAWj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGpGy1wAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAWj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAg+AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -5423,7 +5400,7 @@ AHMAbwB1AHIAYwBlAHMAABVGAFMATQBhAHAARAByAGkAdgBlAAATRgBTAE0AYQBwAFUAcwBlAHIA
 ABNGAFMATQBhAHAAUABhAHMAcwAAEUYAUwBNAGEAcABEAGkAcgAAH1cAUwBjAHIAaQBwAHQALgBO
 AGUAdAB3AG8AcgBrAAABACNFAG4AdQBtAE4AZQB0AHcAbwByAGsARAByAGkAdgBlAHMAAAtDAG8A
 dQBuAHQAAAlJAHQAZQBtAAAlUgBlAG0AbwB2AGUATgBlAHQAdwBvAHIAawBEAHIAaQB2AGUAAB9N
-AGEAcABOAGUAdAB3AG8AcgBrAEQAcgBpAHYAZQAAAAAA55k0SgQ4TU+kYdWFsg3NwwAEIAEBCAMg
+AGEAcABOAGUAdAB3AG8AcgBrAEQAcgBpAHYAZQAAAAAAzP/JpElAVk+TFMFlCHq5UQAEIAEBCAMg
 AAEFIAEBEREEIAEBDgQgAQECBSACAQ4OBSABARFFByAEAQ4ODg4GFRIoARIMBhUSKAESCAYVEigB
 EmUGFRIoARIkBCAAEwAHAAESbRGAoQUgABKApQcgAgEOEoClBAABHBwEAAEBHA8HCw4ODg4cHAgC
 CB0cHQIFIAASgLEFIAASgLUGIAESgLkcAyAAHAMgAA4FAAIcDg4QAAccHBJtDh0cHQ4dEm0dAgYA
@@ -5489,16 +5466,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.vb"
-            Line="116"
-            Column="21" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.vb"
-            Line="99"
-            Column="9" />
         </ScriptProject>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -5706,6 +5673,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Size="142,42"
           Id="Package\MAP DRIVE S"
           TopLeft="606,13" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Script Task - MAP DRIVE S"
+          TopLeft="32,20" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="237,43.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35,0"
+              Start="0,0"
+              End="27.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="333,67">
@@ -5766,32 +5759,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                     Point3="32,-71.5" />
                   <mssgle:LineSegment
                     End="48.5,-71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="205,42"
-          Id="Package\Script Task - MAP DRIVE S"
-          TopLeft="32,20" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="237,43.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="35,0"
-              Start="0,0"
-              End="27.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="27.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5969,7 +5936,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package\Foreach Loop Container\Load CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="156,42"
           Id="Package\Foreach Loop Container\Load CSV\Data Conversion"
@@ -6021,7 +5988,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6043,7 +6012,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6065,7 +6036,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6087,7 +6060,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
