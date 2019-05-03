@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{7A49E0EB-D40F-46C7-84A6-31A6B655A484}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Consumo"
   DTS:PackageType="5"
-  DTS:VersionBuild="399"
-  DTS:VersionGUID="{F945E2CD-D524-4BDA-8AD7-21E30BCEABB6}">
+  DTS:VersionBuild="400"
+  DTS:VersionGUID="{AB018F5A-3A90-484D-8FA0-39E40AE9533F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -17884,14 +17884,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Carga to Final (com log) 1\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
-              endId="Package\Carga to Final (com log) 1\Sub-Grupo.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Vendedor.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Vendedor.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
-              endId="Package\Carga to Final (com log) 1\CFOP.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Cliente.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup CFOP.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Cliente.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output2]"
               endId="Package\Carga to Final (com log) 1\Produto.Inputs[Derived Column Input]"
@@ -17899,14 +17899,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Carga to Final (com log) 1\Lookup Produto.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
-              endId="Package\Carga to Final (com log) 1\Cliente.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\CFOP.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Cliente.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup CFOP.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
-              endId="Package\Carga to Final (com log) 1\Vendedor.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Sub-Grupo.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Vendedor.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Match Output]"
               endId="Package\Carga to Final (com log) 1\Lookup Vendedor.Inputs[Lookup Input]"
@@ -33615,15 +33615,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Derived Column.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
-                  endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Inputs[Derived Column Input]"
-                  name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP.Outputs[Lookup Error Output]" />
-                <path
                   refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Sub-Grupo.Inputs[Derived Column Input]"
                   name="Lookup Error Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
+                  endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Inputs[Derived Column Input]"
+                  name="Lookup Error Output"
+                  startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO.Inputs[OLE DB Destination Input]"
@@ -33645,12 +33645,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   name="OLE DB Source Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Output 01]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Output 0]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Derived Column.Inputs[Derived Column Input]"
                   name="Output 0"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Script RowCount.Outputs[Output 0]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Output 0]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Output 01]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\DC - Add audit details.Inputs[Derived Column Input]"
                   name="Output 0"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\SC - Get error details.Outputs[Output 0]" />
@@ -40257,140 +40257,6 @@ where NOT EXISTS (select pv.Chave from TB_Agroview_Parametros_Vendedor as pv
           Language="VisualBasic"
           ReadOnlyVariables="$Project::FSMapDir,$Project::FSMapDrive,$Project::FSMapUser,$Project::FSMapPass">
           <ProjectItem
-            Name="My Project\AssemblyInfo.vb"
-            Encoding="UTF8"><![CDATA[Imports System
-Imports System.Reflection
-Imports System.Runtime.InteropServices
-
-' General Information about an assembly is controlled through the following 
-' set of attributes. Change these attribute values to modify the information
-' associated with an assembly.
-
-' Review the values of the assembly attributes
-
-<Assembly: AssemblyTitle("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
-<Assembly: AssemblyCopyright("Copyright @  2019")> 
-<Assembly: AssemblyTrademark("")> 
-<Assembly: CLSCompliant(True)> 
-
-<Assembly: ComVisible(False)> 
-
-'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("cd78111e-3163-4c31-9662-7778e1349f2c")> 
-
-' Version information for an assembly consists of the following four values:
-'
-'      Major Version
-'      Minor Version 
-'      Build Number
-'      Revision
-'
-' You can specify all the values or you can default the Build and Revision Numbers 
-' by using the '*' as shown below:
-' <Assembly: AssemblyVersion("1.0.*")>
-
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
-          <ProjectItem
-            Name="ST_d3bdf86fbf5f49d4a8ef094ebff0878c.vbproj"
-            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{f79b9455-7936-4e53-8490-0574a550b413}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>My Project</AppDesignerFolder><RootNamespace>ST_e55a4cfb638046b0a91d51fb168ebea0</RootNamespace><AssemblyName>ST_d3bdf86fbf5f49d4a8ef094ebff0878c</AssemblyName><TargetFrameworkVersion>v4.5</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch><TargetFrameworkProfile></TargetFrameworkProfile></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineDebug>true</DefineDebug><DefineTrace>true</DefineTrace><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineDebug>false</DefineDebug><DefineTrace>true</DefineTrace><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><Import Include="Microsoft.VisualBasic" /><Import Include="System" /><Import Include="System.Collections" /><Import Include="System.Data" /><Import Include="System.Diagnostics" /><Import Include="System.Windows.Forms" /></ItemGroup><ItemGroup><AppDesigner Include="My Project\" /><Compile Include="My Project\AssemblyInfo.vb"><SubType>Code</SubType></Compile><EmbeddedResource Include="My Project\Resources.resx"><Generator>VbMyResourcesResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.vb</LastGenOutput><CustomToolNamespace>My.Resources</CustomToolNamespace></EmbeddedResource><Compile Include="My Project\Resources.Designer.vb"><AutoGen>True</AutoGen><DesignTime>True</DesignTime><DependentUpon>Resources.resx</DependentUpon><SubType>Code</SubType></Compile><None Include="My Project\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.vb</LastGenOutput></None><Compile Include="My Project\Settings.Designer.vb"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon><SubType>Code</SubType></Compile><Compile Include="ScriptMain.vb"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a VB project.--><Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptTask" IconIndex=""></Host><ProjectClient><HostIdentifier>SSIS_ST140</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\Settings.Designer.vb"
-            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
-' <autogenerated>
-'     This code was generated by a tool.
-'
-'     Changes to this file may cause incorrect behavior and will be lost if
-'     the code is regenerated.
-' </autogenerated>
-'------------------------------------------------------------------------------
-
-Option Strict Off
-Option Explicit On
-
-
-
-Partial Friend NotInheritable Class MySettings
-    Inherits System.Configuration.ApplicationSettingsBase
-
-    Private Shared m_Value As MySettings
-
-    Private Shared m_SyncObject As Object = New Object
-
-    <System.Diagnostics.DebuggerNonUserCode()> _
-    Public Shared ReadOnly Property Value() As MySettings
-        Get
-            If (MySettings.m_Value Is Nothing) Then
-                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
-                If (MySettings.m_Value Is Nothing) Then
-                    Try
-                        MySettings.m_Value = New MySettings
-                    Finally
-                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
-                    End Try
-                End If
-            End If
-            Return MySettings.m_Value
-        End Get
-    End Property
-End Class]]></ProjectItem>
-          <ProjectItem
-            Name="Project"
-            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_e55a4cfb638046b0a91d51fb168ebea0</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_e55a4cfb638046b0a91d51fb168ebea0</msb:DisplayName>
-    <msb:ProjectId>{5A835C3E-BAA9-4684-A155-10E7E95DDCD0}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_d3bdf86fbf5f49d4a8ef094ebff0878c.vbproj" />
-    <msb:File Include="My Project\Settings.Designer.vb" />
-    <msb:File Include="My Project\AssemblyInfo.vb" />
-    <msb:File Include="ScriptMain.vb" />
-    <msb:File Include="My Project\Resources.resx" />
-    <msb:File Include="My Project\Resources.Designer.vb" />
-    <msb:File Include="My Project\Settings.settings" />
-    <msb:Breakpoint Include="4e09cc35f9824e88ab081d5896ad4133">
-      <msb:FileName>ScriptMain.vb</msb:FileName>
-      <msb:ColumnNumber>21</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>116</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>Basic</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
-    <msb:Breakpoint Include="beb9955248e2422891edd1d6be28a6f3">
-      <msb:FileName>ScriptMain.vb</msb:FileName>
-      <msb:ColumnNumber>9</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>99</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>Basic</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-          <ProjectItem
             Name="ScriptMain.vb"
             Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
 'The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -40537,6 +40403,176 @@ Partial Public Class ScriptMain
 
 End Class]]></ProjectItem>
           <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="ST_d3bdf86fbf5f49d4a8ef094ebff0878c.vbproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F79B9455-7936-4E53-8490-0574A550B413}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>ST_e55a4cfb638046b0a91d51fb168ebea0</RootNamespace>
+    <AssemblyName>ST_d3bdf86fbf5f49d4a8ef094ebff0878c</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST140</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_d3bdf86fbf5f49d4a8ef094ebff0878c</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_d3bdf86fbf5f49d4a8ef094ebff0878c</msb:DisplayName>
+    <msb:ProjectId>{DCE1230F-DEDE-418C-84A2-FF6753FE11CD}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_d3bdf86fbf5f49d4a8ef094ebff0878c.vbproj" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
             Name="My Project\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -40656,6 +40692,44 @@ End Class]]></ProjectItem>
   </resheader>
 </root>]]></ProjectItem>
           <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
+<Assembly: AssemblyCopyright("Copyright @  2019")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("cd78111e-3163-4c31-9662-7778e1349f2c")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
             Name="My Project\Resources.Designer.vb"
             Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
 ' <autogenerated>
@@ -40719,16 +40793,16 @@ Namespace My.Resources
     End Class
 End Namespace]]></ProjectItem>
           <BinaryItem
-            Name="ST_e55a4cfb638046b0a91d51fb168ebea0.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            Name="ST_d3bdf86fbf5f49d4a8ef094ebff0878c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJqFyFwAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAWj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJQ4zFwAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAfj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAg+AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAACw+AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAaB4AAAAgAAAAIAAAAAIA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAjB4AAAAgAAAAIAAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAiAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAKAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAA8
-PgAAAAAAAEgAAAACAAUADCUAAEQYAAABAAAAAAAAAFA9AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAKAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABg
+PgAAAAAAAEgAAAACAAUADCUAAGgYAAABAAAAAAAAAHQ9AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBkAAAoqHgIoGgAACiqmcxsAAAqAAQAABHMcAAAKgAIA
 AARzHQAACoADAAAEcx4AAAqABAAABCoufgEAAARvHwAACioufgIAAARvIAAACioufgMAAARvIQAA
 CioufgQAAARvIgAACioeAigjAAAKKq5+BQAABC0ecgEAAHDQBQAAAigkAAAKbyUAAApzJgAACoAF
@@ -40751,121 +40825,121 @@ GpEsHhEJGpooJwAACtA1AAABKCQAAAooNgAACnQ1AAABDAIoLAAAChZvOwAACio2AgMoJwAACig8
 AAAKKh4CKD0AAAoqLtAJAAACKCQAAAoqHgIoMAAACioAAAATMAEAFAAAAAIAABECjAUAABstCCgB
 AAArCisCAgoGKiID/hUFAAAbKgAAABMwAgAoAAAAAwAAEQJ7PwAACm9AAAAKCgaMCAAAGy0SKAIA
 ACsKAns/AAAKBm9BAAAKBipKAigjAAAKAnNCAAAKfT8AAAoqAEJTSkIBAAEAAAAAAAwAAAB2NC4w
-LjMwMzE5AAAAAAUAbAAAAHAIAAAjfgAA3AgAAHQKAAAjU3RyaW5ncwAAAABQEwAAKAEAACNVUwB4
-FAAAEAAAACNHVUlEAAAAiBQAALwDAAAjQmxvYgAAAAAAAAACAAABV52iKQkPAAAA+gEzABYAAAEA
+LjMwMzE5AAAAAAUAbAAAAHAIAAAjfgAA3AgAAJgKAAAjU3RyaW5ncwAAAAB0EwAAKAEAACNVUwCc
+FAAAEAAAACNHVUlEAAAArBQAALwDAAAjQmxvYgAAAAAAAAACAAABV52iKQkPAAAA+gEzABYAAAEA
 AAA4AAAADAAAAA0AAAAZAAAABAAAAEIAAAACAAAAOAAAAAEAAAADAAAABAAAAAgAAAAJAAAACAAA
-AAEAAAABAAAABQAAAAEAAAAEAAAAAwAAAAIAAAAAABoGAQAAAAAABgACBLwIBgCnBLwIBgDZAv0H
-DwBiCQAABgAaA9sGBgDlA9sGBgCOBNsGBgAiBNsGBgA7BNsGBgBhA9sGBgBWBEsGBgAGA3YIBgCC
-AnYIBgCtA9sGBgB8AxAFCgClAncHCgBSAvsFCgDtAvsFDgAqAkwIDgDNBxAIBgCVA/0HDgAxA5UI
-DgBJAxsBBgD2CUsGDgCTB0wIDgDKAxsBBgDdAUsGDgBOAIAFCgCQAl8GBgBdB9wIBgDtBroGCgA6
-AqUGBgC8Av0HEgBsBFcFEgAOAlcFBgAzBUsGBgBSBksGBgBnArwIBgDQAUsGBgCBAUsGBgBoCtsG
-BgCdCbwIBgD1B/AEEgDpBVcFFgB1CaUBFgBlAaUBDgDPBhsBDgABBZUIBgB4AEsGDgCsCZUIDgCR
-CZUIBgBXBksGBgAsBUsGBgBeCksGBgBuAUsGBgDeB0sGAAAAAJoAAAAAAAEAAQAAAAAAlwYtCk0A
-AQABAAAAAADLBy0KUQABAAIAAAEQAP0JLQphAAEAAwAAAAAAHgntCGEABQAIAAABEAB/CQEAgQAH
-AAwAAQAAAHwGAQCNAAkADwAAAQAAowAAAGEACQARAAUBAAA+CAAAYQAKABEABQEAAF0AAABhAAoA
-GAACAQAAxgkAAJUACwAaABMBAAB+AAAAnQAOABoAMQAiB1ABMQD5BlgBMQANB2ABMQA7B2gBEQDW
-B3ABEQACAnQBEQDFBHgBEQDUCXwBMwElAH8BIQAjCg4BBgYKAYMBVoC2CYYBVoDiAYYBUCAAAAAA
-BhjoBwYAAQBYIAAAAAAGGOgHBgABAGAgAAAAABEY7geKAQEAiiAAAAAAEwi+B44BAQCWIAAAAAAT
-CIcGkwEBAKIgAAAAABMIjweYAQEAriAAAAAAEwguCJ0BAQC6IAAAAAADGOgHBgABAMIgAAAAABYI
-WQeiAQEA7iAAAAAAFgjqAacBAQD1IAAAAAAWCPYBrAEBAP0gAAAAABEY7geKAQIADiEAAAAABhjo
-BwYAAgAYIQAAAAAWCM0EsgECAHQhAAAAAAYY6AcGAAIAfCEAAAAABgCCBgYAAgBrJAAAAADGAooJ
-5gACAHkkAAAAAMYCWQHrAAMAgSQAAAAAgwDaAbcBAwCNJAAAAADGAioFlgADAJgkAAAAABEA9wC8
-AQMAuCQAAAAAAQDjAMQBBAC6IAAAAAAGGOgHBgAFAMQkAAAAAAMIQAFKAAUA+CQAAAAABhjoBwYA
-BQAAAAEA6gQAAAEA9wYAAAEAUAEAAAEAUAEJAOgHAQARAOgHBgAZAOgHCgApAOgHEAAxAOgHEAA5
-AOgHEABBAOgHEABJAOgHEABRAOgHEABZAOgHFQBhAOgHFQBpAOgHEABxAOgHEAB5AOgHEACBAOgH
-GgCRAOgHIACpAOgHBgCxAOgHBgC5AOgHBgDRAOgHJgDpAOgHEAAJAegHBgARAegHBgAxAegHBgCZ
-AOgHBgChAOgHBgAMAOgHBgAUAOgHBgAcAOgHBgAkAOgHBgAMAEABSgAUAEABSgAcAEABSgAkAEAB
-SgDBAOgHBgDZAJMBTwDZAGQKVwDxAOgHXQBRAeEEZQABAegHBgBZAbgHagBZAQ8KagAZAegHBgAZ
-Ab4JfwBhAXEJhQBpAUIGiwBxAc0EkgDBACoFlgB5AeEJmgCBAQcKoACRAZgHsQCRAe4JuACZAW0H
-vgCZAcUBwwCRAaoFsQCRAcgFsQCBAREGygBRAVQK3ABhARQKAQDBAIoJ5gDBAFkB6wDBATEB9wA0
-ACMKDgE8AM0ESgA8ANcEJQE8AOgHBgAIADAARgEIADQASwEpAKsAdgMuAAsA9AEuABMA/QEuABsA
+AAEAAAABAAAABQAAAAEAAAAEAAAAAwAAAAIAAAAAAD4GAQAAAAAABgAmBOAIBgDLBOAIBgD9AiEI
+DwCGCQAABgA+A/8GBgAJBP8GBgCyBP8GBgBGBP8GBgBfBP8GBgCFA/8GBgB6BG8GBgAqA5oIBgCm
+ApoIBgDRA/8GBgCgAzQFCgDJApsHCgB2Ah8GCgARAx8GDgBOAnAIDgDxBzQIBgC5AyEIDgBVA7kI
+DgBtAz8BBgAaCm8GDgC3B3AIDgDuAz8BBgABAm8GDgBOAKQFCgC0AoMGBgCBBwAJBgARB94GCgBe
+AskGBgDgAiEIEgCQBHsFEgAyAnsFBgBXBW8GBgB2Bm8GBgCLAuAIBgD0AW8GBgClAW8GBgCMCv8G
+BgDBCeAIBgAZCBQFEgANBnsFFgCZCckBFgCJAckBDgDzBj8BDgAlBbkIBgB4AG8GDgDQCbkIDgC1
+CbkIBgB7Bm8GBgBQBW8GBgCCCm8GBgCSAW8GBgACCG8GAAAAAJoAAAAAAAEAAQAAAAAAuwZRCk0A
+AQABAAAAAADvB1EKUQABAAIAAAEQACEKUQphAAEAAwAAAAAAQgkRCWEABQAIAAABEACjCQEAgQAH
+AAwAAQAAAKAGAQCNAAkADwAAAQAAowAAAGEACQARAAUBAABiCAAAYQAKABEABQEAAF0AAABhAAoA
+GAACAQAA6gkAAJUACwAaABMBAAB+AAAAnQAOABoAMQBGB1ABMQAdB1gBMQAxB2ABMQBfB2gBEQD6
+B3ABEQAmAnQBEQDpBHgBEQD4CXwBMwElAH8BIQBHCg4BBgYKAYMBVoDaCYYBVoAGAoYBUCAAAAAA
+BhgMCAYAAQBYIAAAAAAGGAwIBgABAGAgAAAAABEYEgiKAQEAiiAAAAAAEwjiB44BAQCWIAAAAAAT
+CKsGkwEBAKIgAAAAABMIsweYAQEAriAAAAAAEwhSCJ0BAQC6IAAAAAADGAwIBgABAMIgAAAAABYI
+fQeiAQEA7iAAAAAAFggOAqcBAQD1IAAAAAAWCBoCrAEBAP0gAAAAABEYEgiKAQIADiEAAAAABhgM
+CAYAAgAYIQAAAAAWCPEEsgECAHQhAAAAAAYYDAgGAAIAfCEAAAAABgCmBgYAAgBrJAAAAADGAq4J
+5gACAHkkAAAAAMYCfQHrAAMAgSQAAAAAgwD+AbcBAwCNJAAAAADGAk4FlgADAJgkAAAAABEA9wC8
+AQMAuCQAAAAAAQDjAMQBBAC6IAAAAAAGGAwIBgAFAMQkAAAAAAMIZAFKAAUA+CQAAAAABhgMCAYA
+BQAAAAEADgUAAAEAGwcAAAEAdAEAAAEAdAEJAAwIAQARAAwIBgAZAAwICgApAAwIEAAxAAwIEAA5
+AAwIEABBAAwIEABJAAwIEABRAAwIEABZAAwIFQBhAAwIFQBpAAwIEABxAAwIEAB5AAwIEACBAAwI
+GgCRAAwIIACpAAwIBgCxAAwIBgC5AAwIBgDRAAwIJgDpAAwIEAAJAQwIBgARAQwIBgAxAQwIBgCZ
+AAwIBgChAAwIBgAMAAwIBgAUAAwIBgAcAAwIBgAkAAwIBgAMAGQBSgAUAGQBSgAcAGQBSgAkAGQB
+SgDBAAwIBgDZALcBTwDZAIgKVwDxAAwIXQBRAQUFZQABAQwIBgBZAdwHagBZATMKagAZAQwIBgAZ
+AeIJfwBhAZUJhQBpAWYGiwBxAfEEkgDBAE4FlgB5AQUKmgCBASsKoACRAbwHsQCRARIKuACZAZEH
+vgCZAekBwwCRAc4FsQCRAewFsQCBATUGygBRAXgK3ABhATgKAQDBAK4J5gDBAH0B6wDBAVUB9wA0
+AEcKDgE8APEESgA8APsEJQE8AAwIBgAIADAARgEIADQASwEpAKsAdgMuAAsA9AEuABMA/QEuABsA
 HAIuACMAJQIuACsATgIuADMATgIuADsAJQIuAEMAVAIuAEsATgIuAFMAawIuAFsATgIuAGMAcQIu
 AGsAmwIuAHMAqAJAAIsASwFAAIMA8gJDAHsA+wJDAIMA8gJJAKsAhwNjAHsA+wJjAIMA8gJpAKsA
 mwOAAIsASwGDAJMASwGDAJsASwGDAHsA+wKJAKsAqAOgAIsASwGpAIMAHALAAIsASwHJAIMAHALg
 AIsASwHjALsASwHjAFMATgLpALMASwEDAcMASwEjAYMA8gIjAaMAFANDAYMA8gJDAVsATgIgAoMA
 8gIgAosASwFAAoMA8gJAAosASwFgAoMA8gJgAosASwGAAoMA8gKAAosASwGgAosASwHAAosASwHg
 AosASwHgAoMA8gIAA4sASwEgA4sASwEgA4MA8gIBAAUAAAAMAG8A7wACAQQAAQAFAAUABgAHAAoA
-CAAAAM0HzAEAAJkG0QEAAJMH1gEAAEAI2wEAAF0H4AEAAAYC5QEAAOoE6gEAAEQB7wECAAQAAwAC
+CAAAAPEHzAEAAL0G0QEAALcH1gEAAGQI2wEAAIEH4AEAACoC5QEAAA4F6gEAAGgB7wECAAQAAwAC
 AAUABQACAAYABwACAAcACQACAAkACwACAAoADQABAAsADQACAA4ADwACABgAEQAuADUAPABDAPQA
-BwEWAR0BYD4AAAkABIAAAAEAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAACsBEgEAAAAABAAA
-AAAAAAAAAAAAKwFLBgAAAAAKAAAAAAAAAAAAAAA0ARsBAAAAAA4AAAAAAAAAAAAAAD0BOAUAAAAA
-DgAAAAAAAAAAAAAAPQHCAAAAAAAAAAAAAQAAACoJAAAJAAQACgAEAAsABwAMAAgAAAAQABQA4QAA
+BwEWAR0BhD4AAAkABIAAAAEAAAAAAAAAAAAAAAAAGwEAAAQAAAAAAAAAAAAAACsBEgEAAAAABAAA
+AAAAAAAAAAAAKwFvBgAAAAAKAAAAAAAAAAAAAAA0AT8BAAAAAA4AAAAAAAAAAAAAAD0BXAUAAAAA
+DgAAAAAAAAAAAAAAPQHCAAAAAAAAAAAAAQAAAE4JAAAJAAQACgAEAAsABwAMAAgAAAAQABQA4QAA
 ABAAKwDhAAAAAAAtAOEAfQD9AH0AIAEAAABTVF9lNTVhNGNmYjYzODA0NmIwYTkxZDUxZmIxNjhl
 YmVhMAA3MjhGRjY2M0U2MzFDOEY2MjZFOUNGOUY0MEY3RkNENDI3OUFDMDMxAENvbnRleHRWYWx1
 ZWAxAFRocmVhZFNhZmVPYmplY3RQcm92aWRlcmAxAEludDMyAF9fU3RhdGljQXJyYXlJbml0VHlw
 ZVNpemU9NQA8TW9kdWxlPgA8UHJpdmF0ZUltcGxlbWVudGF0aW9uRGV0YWlscz4ATWljcm9zb2Z0
 LlNxbFNlcnZlci5NYW5hZ2VkRFRTAFQARGlzcG9zZV9fSW5zdGFuY2VfXwBDcmVhdGVfX0luc3Rh
-bmNlX18AdmFsdWVfXwBtc2NvcmxpYgBNaWNyb3NvZnQuVmlzdWFsQmFzaWMAQ3JlYXRlSW5zdGFu
-Y2UAZ2V0X0dldEluc3RhbmNlAGluc3RhbmNlAEdldEhhc2hDb2RlAFZhcmlhYmxlAFJ1bnRpbWVG
-aWVsZEhhbmRsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBNaWNyb3NvZnQu
-U3FsU2VydmVyLkR0cy5SdW50aW1lAENoYW5nZVR5cGUAVmFsdWVUeXBlAEdldFR5cGUARmFpbHVy
-ZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQBfcmVzQ3VsdHVyZQBWU1RBUlRTY3JpcHRPYmplY3RN
-b2RlbEJhc2UAQXBwbGljYXRpb25CYXNlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAEVkaXRvckJy
-b3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAEd1aWRBdHRyaWJ1dGUASGVs
-cEtleXdvcmRBdHRyaWJ1dGUAR2VuZXJhdGVkQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJD
-b2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRl
-AENvbVZpc2libGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBTdGFuZGFyZE1vZHVs
-ZUF0dHJpYnV0ZQBIaWRlTW9kdWxlTmFtZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJp
-YnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUARGVidWdnZXJIaWRkZW5BdHRyaWJ1dGUAQXNz
-ZW1ibHlGaWxlVmVyc2lvbkF0dHJpYnV0ZQBNeUdyb3VwQ29sbGVjdGlvbkF0dHJpYnV0ZQBBc3Nl
-bWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUA
-QXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAENMU0Nv
-bXBsaWFudEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1i
-bHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAG1fVmFsdWUA
-Z2V0X1ZhbHVlAHNldF9WYWx1ZQBHZXRPYmplY3RWYWx1ZQBTeXN0ZW0uVGhyZWFkaW5nAE5ld0xh
-dGVCaW5kaW5nAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAVG9TdHJpbmcATWF0aABNaWNyb3Nv
-ZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2Ny
-aXB0VGFzawBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuTXlTZXJ2aWNlcy5JbnRlcm5hbABDb25kaXRp
-b25hbENvbXBhcmVPYmplY3RFcXVhbABDb25kaXRpb25hbENvbXBhcmVPYmplY3ROb3RFcXVhbABT
-Y3JpcHRPYmplY3RNb2RlbABTeXN0ZW0uQ29tcG9uZW50TW9kZWwATGF0ZUNhbGwAU1RfZTU1YTRj
-ZmI2MzgwNDZiMGE5MWQ1MWZiMTY4ZWJlYTAuZGxsAGdldF9JdGVtAFN5c3RlbQBFbnVtAEJvb2xl
-YW4AU3lzdGVtLkNvbXBvbmVudE1vZGVsLkRlc2lnbgBTY3JpcHRNYWluAGdldF9BcHBsaWNhdGlv
-bgBNeUFwcGxpY2F0aW9uAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9u
-AEludGVyYWN0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEN1bHR1cmVJbmZvAG1fQXBwT2JqZWN0UHJv
-dmlkZXIAbV9Vc2VyT2JqZWN0UHJvdmlkZXIAbV9Db21wdXRlck9iamVjdFByb3ZpZGVyAG1fTXlX
-ZWJTZXJ2aWNlc09iamVjdFByb3ZpZGVyAGdldF9SZXNvdXJjZU1hbmFnZXIAVG9JbnRlZ2VyAFN5
-c3RlbS5Db2RlRG9tLkNvbXBpbGVyAGdldF9Vc2VyAENvbmRpdGlvbmFsQ29tcGFyZU9iamVjdEdy
-ZWF0ZXIARW50ZXIAZ2V0X0NvbXB1dGVyAE15Q29tcHV0ZXIAX3Jlc01ncgBBY3RpdmF0b3IALmN0
-b3IALmNjdG9yAE1vbml0b3IAU3lzdGVtLkRpYWdub3N0aWNzAE1pY3Jvc29mdC5WaXN1YWxCYXNp
-Yy5EZXZpY2VzAGdldF9XZWJTZXJ2aWNlcwBNeVdlYlNlcnZpY2VzAE1pY3Jvc29mdC5WaXN1YWxC
-YXNpYy5BcHBsaWNhdGlvblNlcnZpY2VzAFN5c3RlbS5SdW50aW1lLkludGVyb3BTZXJ2aWNlcwBN
-aWNyb3NvZnQuVmlzdWFsQmFzaWMuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUnVudGltZS5Db21w
-aWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfZTU1YTRjZmI2MzgwNDZiMGE5MWQ1MWZi
-MTY4ZWJlYTAuTXkuUmVzb3VyY2VzAE15UmVzb3VyY2VzAFNUX2U1NWE0Y2ZiNjM4MDQ2YjBhOTFk
-NTFmYjE2OGViZWEwLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAZ2V0X1Zhcmlh
-YmxlcwBNeVNldHRpbmdzAEVxdWFscwBDb252ZXJzaW9ucwBSdW50aW1lSGVscGVycwBPcGVyYXRv
-cnMAU3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAbV9TeW5jT2JqZWN0AENyZWF0ZU9iamVj
-dABTdWJ0cmFjdE9iamVjdABNeVByb2plY3QATGF0ZUdldABFeGl0AHNldF9UYXNrUmVzdWx0AG1f
-Q29udGV4dABTVF9lNTVhNGNmYjYzODA0NmIwYTkxZDUxZmIxNjhlYmVhMC5NeQBJbml0aWFsaXpl
-QXJyYXkAZ2V0X0Fzc2VtYmx5AAAAAAAxTQB5AC4AUgBlAHMAbwB1AHIAYwBlAHMALgBNAHkAUgBl
-AHMAbwB1AHIAYwBlAHMAABVGAFMATQBhAHAARAByAGkAdgBlAAATRgBTAE0AYQBwAFUAcwBlAHIA
-ABNGAFMATQBhAHAAUABhAHMAcwAAEUYAUwBNAGEAcABEAGkAcgAAH1cAUwBjAHIAaQBwAHQALgBO
-AGUAdAB3AG8AcgBrAAABACNFAG4AdQBtAE4AZQB0AHcAbwByAGsARAByAGkAdgBlAHMAAAtDAG8A
-dQBuAHQAAAlJAHQAZQBtAAAlUgBlAG0AbwB2AGUATgBlAHQAdwBvAHIAawBEAHIAaQB2AGUAAB9N
-AGEAcABOAGUAdAB3AG8AcgBrAEQAcgBpAHYAZQAAAAAA55k0SgQ4TU+kYdWFsg3NwwAEIAEBCAMg
-AAEFIAEBEREEIAEBDgQgAQECBSACAQ4OBSABARFFByAEAQ4ODg4GFRIoARIMBhUSKAESCAYVEigB
-EmUGFRIoARIkBCAAEwAHAAESbRGAoQUgABKApQcgAgEOEoClBAABHBwEAAEBHA8HCw4ODg4cHAgC
-CB0cHQIFIAASgLEFIAASgLUGIAESgLkcAyAAHAMgAA4FAAIcDg4QAAccHBJtDh0cHQ4dEm0dAgYA
-AwIcHAIFAAIcHBwEAAEIHAYAAhwcEm0RAAgcHBJtDh0cHQ4dEm0dAgIJAAIBEoDZEYDdBCABAhwD
-IAAIBAcBHgACHgAFEAEAHgAECgEeAAQHARMABhUSKAETAAcGFRJxARMABhUScQETAAITAAQKARMA
-BSABARMACLd6XFYZNOCJCLA/X38R1Qo6CImEXc2AgMyRBAAAAAAEAQAAAAcGFRIoARIMBwYVEigB
-EggHBhUSKAESZQcGFRIoARIkAwYSeQMGEn0DBhIYAgYcAwYRMAIGCAMGESwDAAABBAAAEgwEAAAS
-CAQAABJlBAAAEiQEAAASeQQAABJ9BQABARJ9BAAAEhgEIAASbQcQAQEeAB4ABzABAQEQHgAECAAS
-DAQIABIIBAgAEmUECAASJAQIABJ5BAgAEn0ECAASGAQoABMACAEACAAAAAAAHgEAAQBUAhZXcmFw
-Tm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTVF9lNTVhNGNmYjYzODA0NmIwYTkxZDUx
-ZmIxNjhlYmVhMAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDE5AAAFAQABAAApAQAkY2Q3ODEx
-MWUtMzE2My00YzMxLTk2NjItNzc3OGUxMzQ5ZjJjAAAMAQAHMS4wLjAuMAAASQEAGi5ORVRGcmFt
-ZXdvcmssVmVyc2lvbj12NC41AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29y
-ayA0LjUIAQABAAAAAAAYAQAKTXlUZW1wbGF0ZQgxMS4wLjAuMAAAYQEANFN5c3RlbS5XZWIuU2Vy
-dmljZXMuUHJvdG9jb2xzLlNvYXBIdHRwQ2xpZW50UHJvdG9jb2wSQ3JlYXRlX19JbnN0YW5jZV9f
-E0Rpc3Bvc2VfX0luc3RhbmNlX18AAAAQAQALTXkuQ29tcHV0ZXIAABMBAA5NeS5BcHBsaWNhdGlv
-bgAADAEAB015LlVzZXIAABMBAA5NeS5XZWJTZXJ2aWNlcwAAtAAAAM7K774BAAAAkQAAAGxTeXN0
-ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBD
-dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJl
-c291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAADA+AAAAAAAA
-AAAAAEo+AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8PgAAAAAAAAAAAAAAAF9Db3JEbGxNYWlu
-AG1zY29yZWUuZGxsAAAAAAD/JQAgABABAQABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+bmNlX18AdmFsdWVfXwBtc2NvcmxpYgBTVF9kM2JkZjg2ZmJmNWY0OWQ0YThlZjA5NGViZmYwODc4
+YwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMAQ3JlYXRlSW5zdGFuY2UAZ2V0X0dldEluc3RhbmNlAGlu
+c3RhbmNlAEdldEhhc2hDb2RlAFZhcmlhYmxlAFJ1bnRpbWVGaWVsZEhhbmRsZQBSdW50aW1lVHlw
+ZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50aW1l
+AENoYW5nZVR5cGUAVmFsdWVUeXBlAEdldFR5cGUARmFpbHVyZQBnZXRfQ3VsdHVyZQBzZXRfQ3Vs
+dHVyZQBfcmVzQ3VsdHVyZQBWU1RBUlRTY3JpcHRPYmplY3RNb2RlbEJhc2UAQXBwbGljYXRpb25C
+YXNlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAEVkaXRvckJyb3dzYWJsZVN0YXRlAENvbXBpbGVy
+R2VuZXJhdGVkQXR0cmlidXRlAEd1aWRBdHRyaWJ1dGUASGVscEtleXdvcmRBdHRyaWJ1dGUAR2Vu
+ZXJhdGVkQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2Fi
+bGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAENvbVZpc2libGVBdHRyaWJ1dGUA
+QXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBTdGFuZGFyZE1vZHVsZUF0dHJpYnV0ZQBIaWRlTW9kdWxl
+TmFtZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtB
+dHRyaWJ1dGUARGVidWdnZXJIaWRkZW5BdHRyaWJ1dGUAQXNzZW1ibHlGaWxlVmVyc2lvbkF0dHJp
+YnV0ZQBNeUdyb3VwQ29sbGVjdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmli
+dXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmli
+dXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAENMU0NvbXBsaWFudEF0dHJpYnV0ZQBTU0lT
+U2NyaXB0VGFza0VudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1
+bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAG1fVmFsdWUAZ2V0X1ZhbHVlAHNldF9WYWx1ZQBH
+ZXRPYmplY3RWYWx1ZQBTeXN0ZW0uVGhyZWFkaW5nAE5ld0xhdGVCaW5kaW5nAFN5c3RlbS5SdW50
+aW1lLlZlcnNpb25pbmcAVG9TdHJpbmcATWF0aABNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRh
+c2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBNaWNyb3NvZnQuVmlz
+dWFsQmFzaWMuTXlTZXJ2aWNlcy5JbnRlcm5hbABDb25kaXRpb25hbENvbXBhcmVPYmplY3RFcXVh
+bABDb25kaXRpb25hbENvbXBhcmVPYmplY3ROb3RFcXVhbABTY3JpcHRPYmplY3RNb2RlbABTeXN0
+ZW0uQ29tcG9uZW50TW9kZWwATGF0ZUNhbGwAU1RfZDNiZGY4NmZiZjVmNDlkNGE4ZWYwOTRlYmZm
+MDg3OGMuZGxsAGdldF9JdGVtAFN5c3RlbQBFbnVtAEJvb2xlYW4AU3lzdGVtLkNvbXBvbmVudE1v
+ZGVsLkRlc2lnbgBTY3JpcHRNYWluAGdldF9BcHBsaWNhdGlvbgBNeUFwcGxpY2F0aW9uAFN5c3Rl
+bS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAEludGVyYWN0aW9uAFN5c3RlbS5S
+ZWZsZWN0aW9uAEN1bHR1cmVJbmZvAG1fQXBwT2JqZWN0UHJvdmlkZXIAbV9Vc2VyT2JqZWN0UHJv
+dmlkZXIAbV9Db21wdXRlck9iamVjdFByb3ZpZGVyAG1fTXlXZWJTZXJ2aWNlc09iamVjdFByb3Zp
+ZGVyAGdldF9SZXNvdXJjZU1hbmFnZXIAVG9JbnRlZ2VyAFN5c3RlbS5Db2RlRG9tLkNvbXBpbGVy
+AGdldF9Vc2VyAENvbmRpdGlvbmFsQ29tcGFyZU9iamVjdEdyZWF0ZXIARW50ZXIAZ2V0X0NvbXB1
+dGVyAE15Q29tcHV0ZXIAX3Jlc01ncgBBY3RpdmF0b3IALmN0b3IALmNjdG9yAE1vbml0b3IAU3lz
+dGVtLkRpYWdub3N0aWNzAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5EZXZpY2VzAGdldF9XZWJTZXJ2
+aWNlcwBNeVdlYlNlcnZpY2VzAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5BcHBsaWNhdGlvblNlcnZp
+Y2VzAFN5c3RlbS5SdW50aW1lLkludGVyb3BTZXJ2aWNlcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMu
+Q29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5S
+ZXNvdXJjZXMAU1RfZTU1YTRjZmI2MzgwNDZiMGE5MWQ1MWZiMTY4ZWJlYTAuTXkuUmVzb3VyY2Vz
+AE15UmVzb3VyY2VzAFNUX2U1NWE0Y2ZiNjM4MDQ2YjBhOTFkNTFmYjE2OGViZWEwLlJlc291cmNl
+cy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAZ2V0X1ZhcmlhYmxlcwBNeVNldHRpbmdzAEVxdWFs
+cwBDb252ZXJzaW9ucwBSdW50aW1lSGVscGVycwBPcGVyYXRvcnMAU3VjY2VzcwBnZXRfRHRzAFNj
+cmlwdFJlc3VsdHMAbV9TeW5jT2JqZWN0AENyZWF0ZU9iamVjdABTdWJ0cmFjdE9iamVjdABNeVBy
+b2plY3QATGF0ZUdldABFeGl0AHNldF9UYXNrUmVzdWx0AG1fQ29udGV4dABTVF9lNTVhNGNmYjYz
+ODA0NmIwYTkxZDUxZmIxNjhlYmVhMC5NeQBJbml0aWFsaXplQXJyYXkAZ2V0X0Fzc2VtYmx5AAAA
+AAAxTQB5AC4AUgBlAHMAbwB1AHIAYwBlAHMALgBNAHkAUgBlAHMAbwB1AHIAYwBlAHMAABVGAFMA
+TQBhAHAARAByAGkAdgBlAAATRgBTAE0AYQBwAFUAcwBlAHIAABNGAFMATQBhAHAAUABhAHMAcwAA
+EUYAUwBNAGEAcABEAGkAcgAAH1cAUwBjAHIAaQBwAHQALgBOAGUAdAB3AG8AcgBrAAABACNFAG4A
+dQBtAE4AZQB0AHcAbwByAGsARAByAGkAdgBlAHMAAAtDAG8AdQBuAHQAAAlJAHQAZQBtAAAlUgBl
+AG0AbwB2AGUATgBlAHQAdwBvAHIAawBEAHIAaQB2AGUAAB9NAGEAcABOAGUAdAB3AG8AcgBrAEQA
+cgBpAHYAZQAAAAAA/nE3CJU8V0CYKZBRSWOGVAAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSAC
+AQ4OBSABARFFByAEAQ4ODg4GFRIoARIMBhUSKAESCAYVEigBEmUGFRIoARIkBCAAEwAHAAESbRGA
+oQUgABKApQcgAgEOEoClBAABHBwEAAEBHA8HCw4ODg4cHAgCCB0cHQIFIAASgLEFIAASgLUGIAES
+gLkcAyAAHAMgAA4FAAIcDg4QAAccHBJtDh0cHQ4dEm0dAgYAAwIcHAIFAAIcHBwEAAEIHAYAAhwc
+Em0RAAgcHBJtDh0cHQ4dEm0dAgIJAAIBEoDZEYDdBCABAhwDIAAIBAcBHgACHgAFEAEAHgAECgEe
+AAQHARMABhUSKAETAAcGFRJxARMABhUScQETAAITAAQKARMABSABARMACLd6XFYZNOCJCLA/X38R
+1Qo6CImEXc2AgMyRBAAAAAAEAQAAAAcGFRIoARIMBwYVEigBEggHBhUSKAESZQcGFRIoARIkAwYS
+eQMGEn0DBhIYAgYcAwYRMAIGCAMGESwDAAABBAAAEgwEAAASCAQAABJlBAAAEiQEAAASeQQAABJ9
+BQABARJ9BAAAEhgEIAASbQcQAQEeAB4ABzABAQEQHgAECAASDAQIABIIBAgAEmUECAASJAQIABJ5
+BAgAEn0ECAASGAQoABMACAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgB
+AAIAAAAAACgBACNTVF9lNTVhNGNmYjYzODA0NmIwYTkxZDUxZmIxNjhlYmVhMAAABQEAAAAAFgEA
+EUNvcHlyaWdodCBAICAyMDE5AAAFAQABAAApAQAkY2Q3ODExMWUtMzE2My00YzMxLTk2NjItNzc3
+OGUxMzQ5ZjJjAAAMAQAHMS4wLjAuMAAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC41AQBU
+DhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjUIAQABAAAAAAAYAQAKTXlU
+ZW1wbGF0ZQgxMS4wLjAuMAAAYQEANFN5c3RlbS5XZWIuU2VydmljZXMuUHJvdG9jb2xzLlNvYXBI
+dHRwQ2xpZW50UHJvdG9jb2wSQ3JlYXRlX19JbnN0YW5jZV9fE0Rpc3Bvc2VfX0luc3RhbmNlX18A
+AAAQAQALTXkuQ29tcHV0ZXIAABMBAA5NeS5BcHBsaWNhdGlvbgAADAEAB015LlVzZXIAABMBAA5N
+eS5XZWJTZXJ2aWNlcwAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNl
+UmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1Ymxp
+Y0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3Vy
+Y2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAFQ+AAAAAAAAAAAAAG4+AAAAIAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAABgPgAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAg
+ABABAQABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -40881,12 +40955,12 @@ YgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkATgBh
 AG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQA
 XwBlADUANQBhADQAYwBmAGIANgAzADgAMAA0ADYAYgAwAGEAOQAxAGQANQAxAGYAYgAxADYAOABl
 AGIAZQBhADAAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AMAAuADAA
-AABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfAGUANQA1AGEANABjAGYAYgA2
-ADMAOAAwADQANgBiADAAYQA5ADEAZAA1ADEAZgBiADEANgA4AGUAYgBlAGEAMAAuAGQAbABsAAAA
+AABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfAGQAMwBiAGQAZgA4ADYAZgBi
+AGYANQBmADQAOQBkADQAYQA4AGUAZgAwADkANABlAGIAZgBmADAAOAA3ADgAYwAuAGQAbABsAAAA
 SAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABA
 ACAAIAAyADAAMQA5AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAA
-AAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBUAF8AZQA1ADUAYQA0
-AGMAZgBiADYAMwA4ADAANAA2AGIAMABhADkAMQBkADUAMQBmAGIAMQA2ADgAZQBiAGUAYQAwAC4A
+AAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBUAF8AZAAzAGIAZABm
+ADgANgBmAGIAZgA1AGYANAA5AGQANABhADgAZQBmADAAOQA0AGUAYgBmAGYAMAA4ADcAOABjAC4A
 ZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAVABfAGUANQA1AGEANABj
 AGYAYgA2ADMAOAAwADQANgBiADAAYQA5ADEAZAA1ADEAZgBiADEANgA4AGUAYgBlAGEAMAAAADQA
 CAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4AAgAAQBB
@@ -40898,7 +40972,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAXD4AAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAgD4AAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -40908,16 +40982,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.vb"
-            Line="116"
-            Column="21" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.vb"
-            Line="99"
-            Column="9" />
         </ScriptProject>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -41100,6 +41164,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Foreach Loop Container\Verifica CLIENTE"
           TopLeft="56.5,244.5" />
         <NodeLayout
+          Size="215,42"
+          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta"
+          TopLeft="514,242" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Foreach Loop Container\Verifica FILIAL"
+          TopLeft="329,247" />
+        <NodeLayout
           Size="221,42"
           Id="Package\Foreach Loop Container\VERIFICA PERIODO DELECAO"
           TopLeft="5.5,152.5" />
@@ -41107,6 +41179,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Size="165,42"
           Id="Package\Foreach Loop Container\Verifica PRODUTO"
           TopLeft="535.5,145.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Foreach Loop Container\Verifica UNIDADE"
+          TopLeft="62,334" />
         <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\Verifica VENDEDOR"
@@ -41147,6 +41223,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="79.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 10]"
+          TopLeft="224,355.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.5,0"
+              Start="0,0"
+              End="60,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="60,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -41234,6 +41332,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="619.75,187.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.5"
+              Start="0,0"
+              End="0,47">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 6]"
           TopLeft="113.25,194.5">
           <EdgeLayout.Curve>
@@ -41289,36 +41409,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="215,42"
-          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta"
-          TopLeft="514,242" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
-          TopLeft="619.75,187.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54.5"
-              Start="0,0"
-              End="0,47">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Foreach Loop Container\Verifica FILIAL"
-          TopLeft="329,247" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 8]"
           TopLeft="514,265.5">
@@ -41341,10 +41431,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Foreach Loop Container\Verifica UNIDADE"
-          TopLeft="62,334" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
           TopLeft="402.5,289">
@@ -41379,32 +41465,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 10]"
-          TopLeft="224,355.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="67.5,0"
-              Start="0,0"
-              End="60,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="60,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="752,432"
+          PanelSize="752,433"
           Size="752,476"
           Id="Package\Foreach Loop Container"
           TopLeft="29,87" />
@@ -41612,37 +41676,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="79,262" />
         <EdgeLayout
           Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
-          TopLeft="212,192">
+          TopLeft="240,389">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="160,37"
+              EndConnector="115,14"
               Start="0,0"
-              End="160,29.5">
+              End="107.5,14">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.0184501845018" />
+                    End="53.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.0184501845018"
-                    Point2="0,15.0184501845018"
-                    Point3="4,15.0184501845018" />
+                    Point1="53.5,0"
+                    Point2="57.5,0"
+                    Point3="57.5,4" />
                   <mssgle:LineSegment
-                    End="156,15.0184501845018" />
+                    End="57.5,10" />
                   <mssgle:CubicBezierSegment
-                    Point1="156,15.0184501845018"
-                    Point2="160,15.0184501845018"
-                    Point3="160,19.0184501845018" />
+                    Point1="57.5,10"
+                    Point2="57.5,14"
+                    Point3="61.5,14" />
                   <mssgle:LineSegment
-                    End="160,29.5" />
+                    End="107.5,14" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="34.13361328125,20.0184501845018,91.7327734375,11.609375"
+              BoundingBox="11.63361328125,-17.609375,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -41665,7 +41729,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41699,7 +41765,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41733,7 +41801,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41767,7 +41837,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41801,7 +41873,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41835,7 +41909,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41869,7 +41945,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41891,7 +41969,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41949,7 +42029,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41983,7 +42065,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42005,7 +42089,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42027,7 +42113,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42049,7 +42137,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42246,73 +42336,73 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
-          TopLeft="240,389">
+          TopLeft="212,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="115,14"
+              EndConnector="160,37"
               Start="0,0"
-              End="107.5,14">
+              End="160,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="53.5,0" />
+                    End="0,11.0184501845018" />
                   <mssgle:CubicBezierSegment
-                    Point1="53.5,0"
-                    Point2="57.5,0"
-                    Point3="57.5,4" />
+                    Point1="0,11.0184501845018"
+                    Point2="0,15.0184501845018"
+                    Point3="4,15.0184501845018" />
                   <mssgle:LineSegment
-                    End="57.5,10" />
+                    End="156,15.0184501845018" />
                   <mssgle:CubicBezierSegment
-                    Point1="57.5,10"
-                    Point2="57.5,14"
-                    Point3="61.5,14" />
+                    Point1="156,15.0184501845018"
+                    Point2="160,15.0184501845018"
+                    Point3="160,19.0184501845018" />
                   <mssgle:LineSegment
-                    End="107.5,14" />
+                    End="160,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="11.63361328125,-17.609375,91.7327734375,11.609375"
+              BoundingBox="34.13361328125,20.0184501845018,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
-          TopLeft="221,283">
+          TopLeft="914.333333333333,111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78,35"
+              EndConnector="-18.8333333333334,53"
               Start="0,0"
-              End="70.5,35">
+              End="-18.8333333333334,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="35,0" />
+                    End="0,17.5401069518716" />
                   <mssgle:CubicBezierSegment
-                    Point1="35,0"
-                    Point2="39,0"
-                    Point3="39,4" />
+                    Point1="0,17.5401069518716"
+                    Point2="0,21.5401069518716"
+                    Point3="-4,21.5401069518716" />
                   <mssgle:LineSegment
-                    End="39,31" />
+                    End="-14.8333333333334,21.5401069518716" />
                   <mssgle:CubicBezierSegment
-                    Point1="39,31"
-                    Point2="39,35"
-                    Point3="43,35" />
+                    Point1="-14.8333333333334,21.5401069518716"
+                    Point2="-18.8333333333334,21.5401069518716"
+                    Point3="-18.8333333333334,25.5401069518716" />
                   <mssgle:LineSegment
-                    End="70.5,35" />
+                    End="-18.8333333333334,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-6.86638671875001,-17.609375,91.7327734375,11.609375"
+              BoundingBox="-55.2830533854167,26.5401069518716,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -42354,37 +42444,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
-          TopLeft="914.333333333333,111">
+          TopLeft="221,283">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-18.8333333333334,53"
+              EndConnector="78,35"
               Start="0,0"
-              End="-18.8333333333334,45.5">
+              End="70.5,35">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5401069518716" />
+                    End="35,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5401069518716"
-                    Point2="0,21.5401069518716"
-                    Point3="-4,21.5401069518716" />
+                    Point1="35,0"
+                    Point2="39,0"
+                    Point3="39,4" />
                   <mssgle:LineSegment
-                    End="-14.8333333333334,21.5401069518716" />
+                    End="39,31" />
                   <mssgle:CubicBezierSegment
-                    Point1="-14.8333333333334,21.5401069518716"
-                    Point2="-18.8333333333334,21.5401069518716"
-                    Point3="-18.8333333333334,25.5401069518716" />
+                    Point1="39,31"
+                    Point2="39,35"
+                    Point3="43,35" />
                   <mssgle:LineSegment
-                    End="-18.8333333333334,45.5" />
+                    End="70.5,35" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.2830533854167,26.5401069518716,91.7327734375,11.609375"
+              BoundingBox="-6.86638671875001,-17.609375,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -42409,33 +42499,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="129,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Sub-Grupo"
-          TopLeft="337,329" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Multicast"
-          TopLeft="520,0" />
-        <NodeLayout
-          Size="115,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT"
-          TopLeft="581,476" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Derived Column"
-          TopLeft="419,69" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors"
-          TopLeft="888.1428570942,420" />
+          Size="168,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO"
+          TopLeft="255,481" />
         <NodeLayout
           Size="142,42"
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP"
           TopLeft="325,156" />
         <NodeLayout
+          Size="115,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT"
+          TopLeft="581,476" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Data Conversion"
+          TopLeft="662,62" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors"
+          TopLeft="888.1428570942,420" />
+        <NodeLayout
           Size="157,42"
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Script RowCount"
           TopLeft="216,68" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\DC - Add audit details"
+          TopLeft="860.71428574348,336.094116694705" />
         <NodeLayout
           Size="167,42"
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo"
@@ -42445,13 +42535,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\SC - Get error details"
           TopLeft="858,261.847056815864" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Data Conversion"
-          TopLeft="662,62" />
+          Size="130,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1"
+          TopLeft="60,257" />
         <NodeLayout
-          Size="181,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\DC - Add audit details"
-          TopLeft="860.71428574348,336.094116694705" />
+          Size="155,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Conditional Split"
+          TopLeft="22,149" />
         <NodeLayout
           Size="121,42"
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All"
@@ -42461,13 +42551,57 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\OLE DB Source"
           TopLeft="18,66" />
         <NodeLayout
+          Size="154,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Derived Column"
+          TopLeft="419,69" />
+        <NodeLayout
           Size="104,42"
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP"
           TopLeft="629,151" />
         <NodeLayout
-          Size="168,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO"
-          TopLeft="255,481" />
+          Size="120,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Multicast"
+          TopLeft="520,0" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Sub-Grupo"
+          TopLeft="337,329" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Union All Output 11]"
+          TopLeft="125,299">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.5,34"
+              Start="0,0"
+              End="24.5,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="4,17" />
+                  <mssgle:LineSegment
+                    End="20.5,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.5,17"
+                    Point2="24.5,17"
+                    Point3="24.5,21" />
+                  <mssgle:LineSegment
+                    End="24.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Union All Output 1]"
           TopLeft="769,300">
@@ -42499,33 +42633,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Output 01]"
-          TopLeft="373,89.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="46,0"
-              Start="0,0"
-              End="38.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="38.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Output 0]"
           TopLeft="949.10714287174,303.847056815864">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42543,7 +42657,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Output 0]"
+          TopLeft="373,89.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46,0"
+              Start="0,0"
+              End="38.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42565,7 +42705,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42589,6 +42731,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-6.6200390625,5,163.740078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output1]"
+          TopLeft="396,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-250.666666666667,59"
+              Start="0,0"
+              End="-250.666666666667,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.9696048632219" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.9696048632219"
+                    Point2="0,34.9696048632219"
+                    Point3="-4,34.9696048632219" />
+                  <mssgle:LineSegment
+                    End="-246.666666666667,34.9696048632219" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-246.666666666667,34.9696048632219"
+                    Point2="-250.666666666667,34.9696048632219"
+                    Point3="-250.666666666667,38.9696048632219" />
+                  <mssgle:LineSegment
+                    End="-250.666666666667,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-173.524720052083,39.9696048632219,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -42695,7 +42873,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42729,7 +42909,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42763,7 +42945,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42797,7 +42981,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42819,7 +43005,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42858,10 +43046,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Conditional Split"
-          TopLeft="22,149" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Data Conversion Output]"
           TopLeft="740,104">
@@ -42893,7 +43077,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[CFOP IS NULL]"
+          TopLeft="102.083333333333,191">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.104453125,24.46337890625,64.20890625,9.5732421875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42920,104 +43130,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1"
-          TopLeft="60,257" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[CFOP IS NULL]"
-          TopLeft="102.083333333333,191">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66"
-              Start="0,0"
-              End="0,58.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-32.104453125,24.46337890625,64.20890625,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output1]"
-          TopLeft="396,198">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-250.666666666667,59"
-              Start="0,0"
-              End="-250.666666666667,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.9696048632219" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.9696048632219"
-                    Point2="0,34.9696048632219"
-                    Point3="-4,34.9696048632219" />
-                  <mssgle:LineSegment
-                    End="-246.666666666667,34.9696048632219" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-246.666666666667,34.9696048632219"
-                    Point2="-250.666666666667,34.9696048632219"
-                    Point3="-250.666666666667,38.9696048632219" />
-                  <mssgle:LineSegment
-                    End="-250.666666666667,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-173.524720052083,39.9696048632219,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Union All Output 11]"
-          TopLeft="125,299">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="24.5,34"
-              Start="0,0"
-              End="24.5,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13"
-                    Point2="0,17"
-                    Point3="4,17" />
-                  <mssgle:LineSegment
-                    End="20.5,17" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.5,17"
-                    Point2="24.5,17"
-                    Point3="24.5,21" />
-                  <mssgle:LineSegment
-                    End="24.5,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -43034,7 +43146,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </LayoutInfo>
   </DtsEventHandler>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors">
+    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -43066,6 +43178,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -43105,24 +43230,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Foreach Loop Container\Data Flow Load CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
           Id="Package\Foreach Loop Container\Data Flow Load CSV\Derived Column"
@@ -43162,7 +43274,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43184,7 +43298,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43206,7 +43322,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43240,7 +43358,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43307,7 +43427,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43358,6 +43480,158 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Foreach Loop Container\Verifica DistribuidorSyngenta">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta\OLE DB Command"
+          TopLeft="320,61" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta\OLE DB Source"
+          TopLeft="92,61" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta\Multicast"
+          TopLeft="565,61" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta.Paths[OLE DB Source Output]"
+          TopLeft="242,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78,0"
+              Start="0,0"
+              End="70.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="70.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta.Paths[OLE DB Command Error Output]"
+          TopLeft="486,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79,0"
+              Start="0,0"
+              End="71.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-43.6200390625,5,141.4178125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Verifica DistribuidorSyngenta\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Verifica FILIAL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Foreach Loop Container\Verifica FILIAL\OLE DB Command"
+          TopLeft="320,61" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Foreach Loop Container\Verifica FILIAL\OLE DB Source"
+          TopLeft="92,61" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Foreach Loop Container\Verifica FILIAL\Multicast"
+          TopLeft="565,61" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Verifica FILIAL.Paths[OLE DB Source Output]"
+          TopLeft="242,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78,0"
+              Start="0,0"
+              End="70.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="70.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Verifica FILIAL.Paths[OLE DB Command Error Output]"
+          TopLeft="486,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79,0"
+              Start="0,0"
+              End="71.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-43.6200390625,5,141.4178125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Verifica FILIAL\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Foreach Loop Container\VERIFICA PERIODO DELECAO">
     <LayoutInfo>
       <GraphLayout
@@ -43393,7 +43667,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43479,7 +43755,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43511,228 +43789,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Verifica PRODUTO\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Foreach Loop Container\Verifica VENDEDOR">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Foreach Loop Container\Verifica VENDEDOR\OLE DB Source"
-          TopLeft="96,40" />
-        <NodeLayout
-          Size="187,42"
-          Id="Package\Foreach Loop Container\Verifica VENDEDOR\INSERT VENDEDOR NI"
-          TopLeft="311,42" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Foreach Loop Container\Verifica VENDEDOR\Multicast"
-          TopLeft="582,42" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Verifica VENDEDOR.Paths[OLE DB Source Output]"
-          TopLeft="246,62">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="65,0"
-              Start="0,0"
-              End="57.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="57.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Verifica VENDEDOR.Paths[OLE DB Command Error Output]"
-          TopLeft="498,63">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="84,0"
-              Start="0,0"
-              End="76.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="76.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-41.1200390625,5,158.740078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Verifica VENDEDOR\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Foreach Loop Container\Verifica DistribuidorSyngenta">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta\OLE DB Command"
-          TopLeft="320,61" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta\OLE DB Source"
-          TopLeft="92,61" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta\Multicast"
-          TopLeft="565,61" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta.Paths[OLE DB Source Output]"
-          TopLeft="242,82">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="78,0"
-              Start="0,0"
-              End="70.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="70.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Verifica DistribuidorSyngenta.Paths[OLE DB Command Error Output]"
-          TopLeft="486,82">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="79,0"
-              Start="0,0"
-              End="71.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="71.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-43.6200390625,5,141.4178125,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Verifica DistribuidorSyngenta\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Foreach Loop Container\Verifica FILIAL">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Foreach Loop Container\Verifica FILIAL\OLE DB Command"
-          TopLeft="320,61" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Foreach Loop Container\Verifica FILIAL\OLE DB Source"
-          TopLeft="92,61" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Foreach Loop Container\Verifica FILIAL\Multicast"
-          TopLeft="565,61" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Verifica FILIAL.Paths[OLE DB Source Output]"
-          TopLeft="242,82">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="78,0"
-              Start="0,0"
-              End="70.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="70.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Verifica FILIAL.Paths[OLE DB Command Error Output]"
-          TopLeft="486,82">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="79,0"
-              Start="0,0"
-              End="71.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="71.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-43.6200390625,5,141.4178125,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Verifica FILIAL\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -43775,7 +43831,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43807,6 +43865,82 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Verifica UNIDADE\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Verifica VENDEDOR">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Foreach Loop Container\Verifica VENDEDOR\OLE DB Source"
+          TopLeft="96,40" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Foreach Loop Container\Verifica VENDEDOR\INSERT VENDEDOR NI"
+          TopLeft="311,42" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Foreach Loop Container\Verifica VENDEDOR\Multicast"
+          TopLeft="582,42" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Verifica VENDEDOR.Paths[OLE DB Source Output]"
+          TopLeft="246,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65,0"
+              Start="0,0"
+              End="57.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="57.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Verifica VENDEDOR.Paths[OLE DB Command Error Output]"
+          TopLeft="498,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84,0"
+              Start="0,0"
+              End="76.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="76.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.1200390625,5,158.740078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Verifica VENDEDOR\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
