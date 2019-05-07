@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{8A9E65BA-DCC8-4B8C-A567-B7DDA8DAD441}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_DistribuidorAgroview"
   DTS:PackageType="5"
-  DTS:VersionBuild="138"
-  DTS:VersionGUID="{2077D66C-7C1B-4ADB-9B13-550B64B4FE85}">
+  DTS:VersionBuild="139"
+  DTS:VersionGUID="{AFC6EA3D-8458-40EF-A46C-0CC6A767A885}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3960,7 +3960,7 @@ where DistCodigo = ?</property>
       DTS:ExecutableType="Microsoft.FileSystemTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="File System Task"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <FileSystemData
@@ -3970,6 +3970,26 @@ where DistCodigo = ?</property>
           TaskIsSourceVariable="True"
           TaskDestinationPath="$Project::FS_LoadedPath"
           TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FTP DEL"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="FTP Task"
+      DTS:DTSID="{6e05503b-8e3f-4cf4-aa73-233596a81250}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FTP DEL"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FtpData
+          ConnectionName="{70CEFD86-8588-40CE-AE4E-4CA5BA592000}"
+          TaskOperationType="DeleteRemote"
+          TaskIsLocalPathVar="True"
+          TaskLocalPath="$Project::FS_InboxPath"
+          TaskIsRemotePathVar="True"
+          TaskRemotePath="User::FTPFile" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -4816,6 +4836,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\File System Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{22547908-DF9F-45BB-BF57-F7E47F5A7B19}"
+      DTS:From="Package\File System Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\FTP DEL" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -5005,6 +5033,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="99.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="119,42"
+          Id="Package\FTP DEL"
+          TopLeft="586,197" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="506,219">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80,0"
+              Start="0,0"
+              End="72.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="72.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
