@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Produto"
   DTS:PackageType="5"
-  DTS:VersionBuild="73"
-  DTS:VersionGUID="{1CED442F-DFD0-4E77-995A-8E60CA048977}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{6CBD1604-903E-4783-AABE-A7D79D60AF62}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -206,6 +206,26 @@
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FTP DEL"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="FTP Task"
+      DTS:DTSID="{427dab18-96ca-4303-abe2-51874d426135}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FTP DEL"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FtpData
+          ConnectionName="{70CEFD86-8588-40CE-AE4E-4CA5BA592000}"
+          TaskOperationType="DeleteRemote"
+          TaskIsLocalPathVar="True"
+          TaskLocalPath="$Project::FS_InboxPath"
+          TaskIsRemotePathVar="True"
+          TaskRemotePath="User::FTPFile" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\FTP Task"
       DTS:CreationName="Microsoft.FtpTask"
@@ -3607,6 +3627,14 @@ where Codigo = ?</property>
       DTS:ObjectName="Constraint"
       DTS:To="Package\Sequence Container" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{E0B38644-6E87-4501-8AE7-38997C21391B}"
+      DTS:From="Package\Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\FTP DEL" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
       DTS:DTSID="{11B53716-32AF-48FB-962F-81487CF21C0C}"
@@ -3648,13 +3676,17 @@ where Codigo = ?</property>
           Id="Package\Sequence Container\File System Task"
           TopLeft="489.5,102" />
         <NodeLayout
+          Size="115,42"
+          Id="Package\Sequence Container\INSERT"
+          TopLeft="277.5,104" />
+        <NodeLayout
           Size="140,42"
           Id="Package\Sequence Container\SQL Log CSV"
           TopLeft="500.5,11" />
         <NodeLayout
-          Size="115,42"
-          Id="Package\Sequence Container\INSERT"
-          TopLeft="277.5,104" />
+          Size="118,42"
+          Id="Package\Sequence Container\UPDATE"
+          TopLeft="35,101" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
           TopLeft="168.5,33">
@@ -3699,32 +3731,6 @@ where Codigo = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
-          TopLeft="392.5,124">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="97,0"
-              Start="0,0"
-              End="89.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="89.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="118,42"
-          Id="Package\Sequence Container\UPDATE"
-          TopLeft="35,101" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
           TopLeft="343.5,54">
@@ -3781,6 +3787,28 @@ where Codigo = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="392.5,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="97,0"
+              Start="0,0"
+              End="89.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="89.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -3788,6 +3816,10 @@ where Codigo = ?</property>
           Size="671,240"
           Id="Package\Sequence Container"
           TopLeft="49,82" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Staging to Final"
+          TopLeft="708,14" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="373,50">
@@ -3844,10 +3876,6 @@ where Codigo = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Staging to Final"
-          TopLeft="708,14" />
         <AnnotationLayout
           Text="[07.05.19] O processo normal de Insert/Update &#xA;(Staging to Final) &#xA;estava muito lento, demorando horas. Por isso foi dividido em: &#xA;- Update (update from) &#xA;- Insert (not exists)"
           ParentId="Package"
@@ -3855,6 +3883,44 @@ where Codigo = ?</property>
           Size="363,104"
           Id="acc530d5-a75b-4c1a-af0f-81dacad9fd20"
           TopLeft="726,81" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\FTP DEL"
+          TopLeft="521,10" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="495,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.5,-30"
+              Start="0,0"
+              End="85.5,-22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-8.04281891168599" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-8.04281891168599"
+                    Point2="0,-12.042818911686"
+                    Point3="4,-12.042818911686" />
+                  <mssgle:LineSegment
+                    End="81.5,-12.042818911686" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81.5,-12.042818911686"
+                    Point2="85.5,-12.042818911686"
+                    Point3="85.5,-16.042818911686" />
+                  <mssgle:LineSegment
+                    End="85.5,-22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
