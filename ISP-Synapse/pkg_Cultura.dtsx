@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Cultura"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{2330BD35-7C51-4668-AD97-4CE28E6706FA}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{E4395603-876F-4A27-8565-0A73E8635D7A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1362,7 +1362,7 @@ where Codigo = ?
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
       DTS:ObjectName="DISCONNECT DRIVE S"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -1394,7 +1394,7 @@ where Codigo = ?
       DTS:ExecutableType="Microsoft.FileSystemTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="File System Task"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <FileSystemData
@@ -1404,6 +1404,26 @@ where Codigo = ?
           TaskIsSourceVariable="True"
           TaskDestinationPath="$Project::FS_LoadedPath"
           TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FTP DEL"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="FTP Task"
+      DTS:DTSID="{3153cdff-e7e7-4656-80a6-da7c4eb63024}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FTP DEL"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FtpData
+          ConnectionName="{70CEFD86-8588-40CE-AE4E-4CA5BA592000}"
+          TaskOperationType="DeleteRemote"
+          TaskIsLocalPathVar="True"
+          TaskLocalPath="$Project::FS_InboxPath"
+          TaskIsRemotePathVar="True"
+          TaskRemotePath="User::FTPFile" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1435,7 +1455,7 @@ where Codigo = ?
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
       DTS:ObjectName="MAP DRIVE S"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -2270,11 +2290,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{C9BF9E44-747E-44DE-B14B-E19CF60B88C0}"
+      DTS:DTSID="{A02CDBE8-D931-4B02-84F2-7CD37A9C3340}"
       DTS:From="Package\File System Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
-      DTS:To="Package\DISCONNECT DRIVE S" />
+      DTS:To="Package\FTP DEL" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2287,7 +2307,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
@@ -2307,7 +2327,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="158,42"
           Id="Package\File System Task"
-          TopLeft="404,174" />
+          TopLeft="381,200" />
         <NodeLayout
           Size="122,42"
           Id="Package\FTP Task"
@@ -2464,26 +2484,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="163,-61"
+              EndConnector="140,-35"
               Start="0,0"
-              End="155.5,-61">
+              End="132.5,-35">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="77.5,0" />
+                    End="66,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="77.5,0"
-                    Point2="81.5,0"
-                    Point3="81.5,-4" />
+                    Point1="66,0"
+                    Point2="70,0"
+                    Point3="70,-4" />
                   <mssgle:LineSegment
-                    End="81.5,-57" />
+                    End="70,-31" />
                   <mssgle:CubicBezierSegment
-                    Point1="81.5,-57"
-                    Point2="81.5,-61"
-                    Point3="85.5,-61" />
+                    Point1="70,-31"
+                    Point2="70,-35"
+                    Point3="74,-35" />
                   <mssgle:LineSegment
-                    End="155.5,-61" />
+                    End="132.5,-35" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2492,32 +2512,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="119,42"
+          Id="Package\FTP DEL"
+          TopLeft="612,185" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="483,174">
+          TopLeft="539,221">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="204,-28"
+              EndConnector="73,-15"
               Start="0,0"
-              End="204,-20.5">
+              End="65.5,-15">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-10" />
+                    End="32.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-10"
-                    Point2="0,-14"
-                    Point3="4,-14" />
+                    Point1="32.5,0"
+                    Point2="36.5,0"
+                    Point3="36.5,-4" />
                   <mssgle:LineSegment
-                    End="200,-14" />
+                    End="36.5,-11" />
                   <mssgle:CubicBezierSegment
-                    Point1="200,-14"
-                    Point2="204,-14"
-                    Point3="204,-18" />
+                    Point1="36.5,-11"
+                    Point2="36.5,-15"
+                    Point3="40.5,-15" />
                   <mssgle:LineSegment
-                    End="204,-20.5" />
+                    End="65.5,-15" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
