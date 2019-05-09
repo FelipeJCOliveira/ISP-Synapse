@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_ClientePorDistribuidor"
   DTS:PackageType="5"
-  DTS:VersionBuild="190"
-  DTS:VersionGUID="{39FA3024-04A7-4637-9970-72B57F0D3DBA}">
+  DTS:VersionBuild="193"
+  DTS:VersionGUID="{840F0D8C-3550-430B-B89B-2AF68B52193B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -130,6 +130,17 @@
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{21C96441-70B2-45C7-8CE3-D0841A6FF917}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::RemotePath]+&quot;/&quot;+ @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FTPCurrentFile">
+      <DTS:VariableValue
+        DTS:DataType="8">/Qlikview/Synapse/Entrada/Csv/</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -6192,6 +6203,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\FTP DEL"
+          DTS:CreationName="Microsoft.FtpTask"
+          DTS:Description="FTP Task"
+          DTS:DTSID="{37cd2c93-76b4-4d41-8d89-470860b910d6}"
+          DTS:ExecutableType="Microsoft.FtpTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FTP DEL"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FtpData
+              ConnectionName="{70CEFD86-8588-40CE-AE4E-4CA5BA592000}"
+              TaskOperationType="DeleteRemote"
+              TaskIsLocalPathVar="True"
+              TaskLocalPath="$Project::FS_InboxPath"
+              TaskIsRemotePathVar="True"
+              TaskRemotePath="User::FTPCurrentFile" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\INSERT"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
@@ -10693,6 +10724,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\Foreach Loop Container\UPDATE" />
         <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{73E8F376-90EA-4936-BB44-B67738C72A86}"
+          DTS:From="Package\Foreach Loop Container\File System Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Foreach Loop Container\FTP DEL" />
+        <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
           DTS:DTSID="{C693CD5A-3230-4D3C-B1A0-F0D0B40A396C}"
@@ -10744,23 +10783,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           TaskLocalPath="$Project::FS_InboxPath"
           TaskIsRemotePathVar="True"
           TaskRemotePath="User::FTPFileMask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\MAP DRIVE S"
-      DTS:CreationName="Microsoft.ExecuteProcess"
-      DTS:Description="Execute Process Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{AD8027E1-25BB-4CB8-BB5C-80DD7BD9E28D}"
-      DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="MAP DRIVE S"
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecuteProcessData
-          Executable="cmd.exe"
-          Arguments="/c net use |find &quot; S: &quot;|find &quot;\\BRSPFPC01VFIL1\Custom&quot;&gt;nul &amp;&amp; (" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -10818,152 +10840,6 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyVersion("1.0.0.0")> 
 <Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
-          <ProjectItem
-            Name="ScriptMain.vb"
-            Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
-'The Script Task allows you to perform virtually any operation that can be accomplished in
-'a .Net application within the context of an Integration Services control flow. 
-
-'Expand the other regions which have "Help" prefixes for examples of specific ways to use
-'Integration Services features within this script task.
-#End Region
-
-
-#Region "Imports"
-Imports System
-Imports System.Data
-Imports System.Math
-Imports Microsoft.SqlServer.Dts.Runtime
-#End Region
-
-'ScriptMain is the entry point class of the script.  Do not change the name, attributes,
-'or parent of this class.
-<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute()> _
-<System.CLSCompliantAttribute(False)> _
-Partial Public Class ScriptMain
-    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
-
-#Region "Help:  Using Integration Services variables and parameters in a script"
-    'To use a variable in this script, first ensure that the variable has been added to 
-    'either the list contained in the ReadOnlyVariables property or the list contained in 
-    'the ReadWriteVariables property of this script task, according to whether or not your
-    'code needs to write to the variable.  To add the variable, save this script, close this instance of
-    'Visual Studio, and update the ReadOnlyVariables and 
-    'ReadWriteVariables properties in the Script Transformation Editor window.
-    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
-
-    'Example of reading from a variable:
-    ' startTime = Dts.Variables("System::StartTime").Value
-
-    'Example of writing to a variable:
-    ' Dts.Variables("User::myStringVariable").Value = "new value"
-
-    'Example of reading from a package parameter:
-    ' batchId = Dts.Variables("$Package::batchId").Value
-
-    'Example of reading from a project parameter:
-    ' batchId = Dts.Variables("$Project::batchId").Value
-
-    'Example of reading from a sensitive project parameter:
-    ' batchId = Dts.Variables("$Project::batchId").GetSensitiveValue()
-#End Region
-
-#Region "Help:  Firing Integration Services events from a script"
-    'This script task can fire events for logging purposes.
-
-    'Example of firing an error event:
-    ' Dts.Events.FireError(18, "Process Values", "Bad value", "", 0)
-
-    'Example of firing an information event:
-    ' Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, fireAgain)
-
-    'Example of firing a warning event:
-    ' Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0)
-#End Region
-
-#Region "Help:  Using Integration Services connection managers in a script"
-    'Some types of connection managers can be used in this script task.  See the topic 
-    '"Working with Connection Managers Programatically" for details.
-
-    'Example of using an ADO.Net connection manager:
-    ' Dim rawConnection As Object = Dts.Connections("Sales DB").AcquireConnection(Dts.Transaction)
-    ' Dim myADONETConnection As SqlConnection = CType(rawConnection, SqlConnection)
-    ' <Use the connection in some code here, then release the connection>
-    ' Dts.Connections("Sales DB").ReleaseConnection(rawConnection)
-
-    'Example of using a File connection manager
-    ' Dim rawConnection As Object = Dts.Connections("Prices.zip").AcquireConnection(Dts.Transaction)
-    ' Dim filePath As String = CType(rawConnection, String)
-    ' <Use the connection in some code here, then release the connection>
-    ' Dts.Connections("Prices.zip").ReleaseConnection(rawConnection)
-#End Region
-
-    'This method is called when this script task executes in the control flow.
-    'Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
-    'To open Help, press F1.
-
-    Public Sub Main()
-        '
-        ' Add your code here
-        '
-        '-- INICIO
-        'profile = "false"
-        'landingPadDir = Dts.Variables("strLandingPadDir").Value.ToString
-        'resultsDir = Dts.Variables("strResultsDir").Value.ToString
-        'user = Dts.Variables("strUserName").Value.ToString
-        'pass = Dts.Variables("strPassword").Value.ToString
-        'driveLetter = Dts.Variables("strDriveLetter").Value.ToString
-
-        'Dim profile As String
-        'profile = "false"
-        'resultsDir = Dts.Variables("strResultsDir").Value.ToString
-        Dim driveLetter, user, pass, landingPadDir As String
-        driveLetter = Dts.Variables("FSMapDrive").Value.ToString ' "S:"
-        user = Dts.Variables("FSMapUser").Value.ToString '"H975835"
-        pass = Dts.Variables("FSMapPass").Value.ToString '"SyngentaAgro01SyngentaAgro01"
-        landingPadDir = Dts.Variables("FSMapDir").Value.ToString '"\\BRSPFPC01VFIL1\Custom"
-
-        Dim objNetwork As Object
-        objNetwork = CreateObject("WScript.Network")
-        Dim CheckDrive As Object
-        CheckDrive = objNetwork.EnumNetworkDrives()
-        Dim intcount As Integer
-        Dim achouDrive As Boolean
-
-        achouDrive = False
-
-        If CheckDrive.Count > 0 Then
-            For intcount = 0 To CheckDrive.Count - 1 Step 2 'if drive is already mapped, then disconnect it
-                If CheckDrive.Item(intcount) = driveLetter Then
-                    If CheckDrive.Item(intcount + 1) <> landingPadDir Then
-
-                        objNetwork.RemoveNetworkDrive(driveLetter)
-                    Else
-                        achouDrive = True
-                    End If
-                End If
-            Next
-        End If
-        If Not achouDrive Then
-            objNetwork.MapNetworkDrive(driveLetter, landingPadDir, False, user, pass)
-        End If
-        '-- FIM
-        Dts.TaskResult = ScriptResults.Success
-    End Sub
-
-#Region "ScriptResults declaration"
-    'This enum provides a convenient shorthand within the scope of this class for setting the
-    'result of the script.
-
-    'This code was generated automatically.
-    Enum ScriptResults
-        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
-        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
-    End Enum
-
-#End Region
-
-End Class]]></ProjectItem>
           <ProjectItem
             Name="ST_f81dd97ed4d548cea29b5c6a16041db9.vbproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -11133,6 +11009,152 @@ End Class]]></ProjectItem>
     <msb:File Include="My Project\Settings.settings" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
+'The Script Task allows you to perform virtually any operation that can be accomplished in
+'a .Net application within the context of an Integration Services control flow. 
+
+'Expand the other regions which have "Help" prefixes for examples of specific ways to use
+'Integration Services features within this script task.
+#End Region
+
+
+#Region "Imports"
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+#End Region
+
+'ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+'or parent of this class.
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute()> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+#Region "Help:  Using Integration Services variables and parameters in a script"
+    'To use a variable in this script, first ensure that the variable has been added to 
+    'either the list contained in the ReadOnlyVariables property or the list contained in 
+    'the ReadWriteVariables property of this script task, according to whether or not your
+    'code needs to write to the variable.  To add the variable, save this script, close this instance of
+    'Visual Studio, and update the ReadOnlyVariables and 
+    'ReadWriteVariables properties in the Script Transformation Editor window.
+    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
+
+    'Example of reading from a variable:
+    ' startTime = Dts.Variables("System::StartTime").Value
+
+    'Example of writing to a variable:
+    ' Dts.Variables("User::myStringVariable").Value = "new value"
+
+    'Example of reading from a package parameter:
+    ' batchId = Dts.Variables("$Package::batchId").Value
+
+    'Example of reading from a project parameter:
+    ' batchId = Dts.Variables("$Project::batchId").Value
+
+    'Example of reading from a sensitive project parameter:
+    ' batchId = Dts.Variables("$Project::batchId").GetSensitiveValue()
+#End Region
+
+#Region "Help:  Firing Integration Services events from a script"
+    'This script task can fire events for logging purposes.
+
+    'Example of firing an error event:
+    ' Dts.Events.FireError(18, "Process Values", "Bad value", "", 0)
+
+    'Example of firing an information event:
+    ' Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, fireAgain)
+
+    'Example of firing a warning event:
+    ' Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0)
+#End Region
+
+#Region "Help:  Using Integration Services connection managers in a script"
+    'Some types of connection managers can be used in this script task.  See the topic 
+    '"Working with Connection Managers Programatically" for details.
+
+    'Example of using an ADO.Net connection manager:
+    ' Dim rawConnection As Object = Dts.Connections("Sales DB").AcquireConnection(Dts.Transaction)
+    ' Dim myADONETConnection As SqlConnection = CType(rawConnection, SqlConnection)
+    ' <Use the connection in some code here, then release the connection>
+    ' Dts.Connections("Sales DB").ReleaseConnection(rawConnection)
+
+    'Example of using a File connection manager
+    ' Dim rawConnection As Object = Dts.Connections("Prices.zip").AcquireConnection(Dts.Transaction)
+    ' Dim filePath As String = CType(rawConnection, String)
+    ' <Use the connection in some code here, then release the connection>
+    ' Dts.Connections("Prices.zip").ReleaseConnection(rawConnection)
+#End Region
+
+    'This method is called when this script task executes in the control flow.
+    'Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+    'To open Help, press F1.
+
+    Public Sub Main()
+        '
+        ' Add your code here
+        '
+        '-- INICIO
+        'profile = "false"
+        'landingPadDir = Dts.Variables("strLandingPadDir").Value.ToString
+        'resultsDir = Dts.Variables("strResultsDir").Value.ToString
+        'user = Dts.Variables("strUserName").Value.ToString
+        'pass = Dts.Variables("strPassword").Value.ToString
+        'driveLetter = Dts.Variables("strDriveLetter").Value.ToString
+
+        'Dim profile As String
+        'profile = "false"
+        'resultsDir = Dts.Variables("strResultsDir").Value.ToString
+        Dim driveLetter, user, pass, landingPadDir As String
+        driveLetter = Dts.Variables("FSMapDrive").Value.ToString ' "S:"
+        user = Dts.Variables("FSMapUser").Value.ToString '"H975835"
+        pass = Dts.Variables("FSMapPass").Value.ToString '"SyngentaAgro01SyngentaAgro01"
+        landingPadDir = Dts.Variables("FSMapDir").Value.ToString '"\\BRSPFPC01VFIL1\Custom"
+
+        Dim objNetwork As Object
+        objNetwork = CreateObject("WScript.Network")
+        Dim CheckDrive As Object
+        CheckDrive = objNetwork.EnumNetworkDrives()
+        Dim intcount As Integer
+        Dim achouDrive As Boolean
+
+        achouDrive = False
+
+        If CheckDrive.Count > 0 Then
+            For intcount = 0 To CheckDrive.Count - 1 Step 2 'if drive is already mapped, then disconnect it
+                If CheckDrive.Item(intcount) = driveLetter Then
+                    If CheckDrive.Item(intcount + 1) <> landingPadDir Then
+
+                        objNetwork.RemoveNetworkDrive(driveLetter)
+                    Else
+                        achouDrive = True
+                    End If
+                End If
+            Next
+        End If
+        If Not achouDrive Then
+            objNetwork.MapNetworkDrive(driveLetter, landingPadDir, False, user, pass)
+        End If
+        '-- FIM
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+#Region "ScriptResults declaration"
+    'This enum provides a convenient shorthand within the scope of this class for setting the
+    'result of the script.
+
+    'This code was generated automatically.
+    Enum ScriptResults
+        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+    End Enum
+
+#End Region
+
+End Class]]></ProjectItem>
           <ProjectItem
             Name="My Project\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -11550,23 +11572,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="213,42"
           Id="Package\Data Flow Task - Final Table"
-          TopLeft="722,23" />
+          TopLeft="533,24" />
         <NodeLayout
           Size="186,42"
           Id="Package\DISCONNECT DRIVE S"
-          TopLeft="753,184" />
+          TopLeft="753,213" />
         <NodeLayout
           Size="206,42"
           Id="Package\Foreach Loop Container\Data Flow Task - Load CSV"
-          TopLeft="22,92" />
+          TopLeft="266,14" />
         <NodeLayout
           Size="158,42"
           Id="Package\Foreach Loop Container\File System Task"
-          TopLeft="499,179" />
+          TopLeft="443,96" />
         <NodeLayout
           Size="115,42"
           Id="Package\Foreach Loop Container\INSERT"
-          TopLeft="289,175" />
+          TopLeft="214,128" />
         <NodeLayout
           Size="214,42"
           Id="Package\Foreach Loop Container\SQL DELETE TABELA CARGA"
@@ -11574,14 +11596,126 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="143,42"
           Id="Package\Foreach Loop Container\SQL LOG CSV"
-          TopLeft="277,95" />
+          TopLeft="504,14" />
         <NodeLayout
           Size="118,42"
           Id="Package\Foreach Loop Container\UPDATE"
-          TopLeft="65,182" />
+          TopLeft="47,126" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="228,114.5">
+          TopLeft="472,35">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="32,0"
+              Start="0,0"
+              End="24.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="369,56">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-263,70"
+              Start="0,0"
+              End="-263,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31"
+                    Point2="0,35"
+                    Point3="-4,35" />
+                  <mssgle:LineSegment
+                    End="-259,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-259,35"
+                    Point2="-263,35"
+                    Point3="-263,39" />
+                  <mssgle:LineSegment
+                    End="-263,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="234,37">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="32,0"
+              Start="0,0"
+              End="24.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="329,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="114,-32"
+              Start="0,0"
+              End="106.5,-32">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="53,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53,0"
+                    Point2="57,0"
+                    Point3="57,-4" />
+                  <mssgle:LineSegment
+                    End="57,-28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57,-28"
+                    Point2="57,-32"
+                    Point3="61,-32" />
+                  <mssgle:LineSegment
+                    End="106.5,-32" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="165,148">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -11601,86 +11735,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Foreach Loop Container\FTP DEL"
+          TopLeft="509,181" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="124.5,134">
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="522,138">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,48"
+              EndConnector="46.5,43"
               Start="0,0"
-              End="0,40.5">
+              End="46.5,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
-          TopLeft="126,60">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,32"
-              Start="0,0"
-              End="0,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
                   <mssgle:LineSegment
-                    End="0,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
-          TopLeft="404,198">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="95,0"
-              Start="0,0"
-              End="87.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="42.5,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.5,21.5"
+                    Point2="46.5,21.5"
+                    Point3="46.5,25.5" />
                   <mssgle:LineSegment
-                    End="87.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
-          TopLeft="183,199.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="106,0"
-              Start="0,0"
-              End="98.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="98.5,0" />
+                    End="46.5,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11692,36 +11776,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="680,379"
-          Size="680,422"
+          PanelSize="680,279"
+          Size="680,322"
           Id="Package\Foreach Loop Container"
           TopLeft="37,97" />
         <NodeLayout
           Size="122,42"
           Id="Package\FTP Task"
-          TopLeft="320,18" />
-        <NodeLayout
-          Size="142,42"
-          Id="Package\MAP DRIVE S"
-          TopLeft="551,26" />
+          TopLeft="350,25" />
         <NodeLayout
           Size="205,42"
           Id="Package\Script Task - MAP DRIVE S"
-          TopLeft="34,19" />
+          TopLeft="34,21" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="379,60">
+          TopLeft="411,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,37"
+              EndConnector="-34,30"
               Start="0,0"
-              End="0,29.5">
+              End="-34,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="0,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="-4,15" />
+                  <mssgle:LineSegment
+                    End="-30,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30,15"
+                    Point2="-34,15"
+                    Point3="-34,19" />
+                  <mssgle:LineSegment
+                    End="-34,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11732,13 +11824,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="717,308">
+          TopLeft="717,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="36,-103"
+              EndConnector="36,-24"
               Start="0,0"
-              End="28.5,-103">
+              End="28.5,-24">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -11749,13 +11841,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                     Point2="18,0"
                     Point3="18,-4" />
                   <mssgle:LineSegment
-                    End="18,-99" />
+                    End="18,-20" />
                   <mssgle:CubicBezierSegment
-                    Point1="18,-99"
-                    Point2="18,-103"
-                    Point3="22,-103" />
+                    Point1="18,-20"
+                    Point2="18,-24"
+                    Point3="22,-24" />
                   <mssgle:LineSegment
-                    End="28.5,-103" />
+                    End="28.5,-24" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11766,18 +11858,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="239,39.5">
+          TopLeft="239,44">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="81,0"
+              EndConnector="111,0"
               Start="0,0"
-              End="73.5,0">
+              End="103.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="73.5,0" />
+                    End="103.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11791,7 +11883,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           ParentId="Package"
           Size="363,92"
           Id="0e67ef64-ed36-4e5c-8c56-a9e81a45f63f"
-          TopLeft="735,71">
+          TopLeft="735,100">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -12240,6 +12332,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="156,42"
+          Id="Package\Foreach Loop Container\Data Flow Task - Load CSV\Data Conversion"
+          TopLeft="477,18" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\Data Flow Task - Load CSV\OLE DB Destination"
           TopLeft="46,97" />
@@ -12248,17 +12344,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Foreach Loop Container\Data Flow Task - Load CSV\Row Count"
           TopLeft="270,17" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\Foreach Loop Container\Data Flow Task - Load CSV\Flat File Source"
-          TopLeft="49,19" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Foreach Loop Container\Data Flow Task - Load CSV\Data Conversion"
-          TopLeft="477,18" />
-        <NodeLayout
           Size="154,42"
           Id="Package\Foreach Loop Container\Data Flow Task - Load CSV\Derived Column"
           TopLeft="309,107" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach Loop Container\Data Flow Task - Load CSV\Flat File Source"
+          TopLeft="49,19" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Flow Task - Load CSV.Paths[Row Count Output 1]"
           TopLeft="400,38.5">
@@ -12278,7 +12370,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="9.6255859375,5,50.248828125,11.2431640625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12300,7 +12394,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="6.1255859375,5,50.248828125,11.2431640625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12335,7 +12431,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-54,1,16,16"
+              BoundingBox="-71.1244140625,1,50.248828125,11.2431640625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -12370,7 +12466,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-75.1244140625,28.5,50.248828125,11.2431640625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
