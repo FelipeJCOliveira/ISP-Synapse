@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{2821E4C9-B2F8-4107-B6F6-D6FA6F90DA30}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_VendaAgroview"
   DTS:PackageType="5"
-  DTS:VersionBuild="306"
-  DTS:VersionGUID="{8D0DD9C6-6E63-4E88-933F-3ECEA775BBEF}">
+  DTS:VersionBuild="310"
+  DTS:VersionGUID="{1B4ADDA0-6F73-4634-B62C-30C0851B3BB4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -561,6 +561,17 @@
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E0D12A84-59F4-47C0-891B-215B61CA700A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::RemotePath]+&quot;/&quot;+ @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FTPCurrentFile">
+      <DTS:VariableValue
+        DTS:DataType="8">/Qlikview/Synapse/Entrada/Csv/</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -10779,6 +10790,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\FTP DEL"
+          DTS:CreationName="Microsoft.FtpTask"
+          DTS:Description="FTP Task"
+          DTS:DTSID="{63e774e0-780e-4088-8962-7d16d9a71bc5}"
+          DTS:ExecutableType="Microsoft.FtpTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FTP DEL"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FtpData
+              ConnectionName="{70CEFD86-8588-40CE-AE4E-4CA5BA592000}"
+              TaskOperationType="DeleteRemote"
+              TaskIsLocalPathVar="True"
+              TaskLocalPath="$Project::FS_InboxPath"
+              TaskIsRemotePathVar="True"
+              TaskRemotePath="User::FTPCurrentFile" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\SQL DELETE TBL CARGA"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -11173,6 +11204,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
           DTS:To="Package\Foreach Loop Container\File System Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{F1E9E00B-A1DB-42A1-9151-C04BD1A99E73}"
+          DTS:From="Package\Foreach Loop Container\File System Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Foreach Loop Container\FTP DEL" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -11986,23 +12025,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="186,42"
           Id="Package\DISCONNECT DRIVE S"
-          TopLeft="597,91" />
+          TopLeft="678,18" />
         <NodeLayout
           Size="211,42"
           Id="Package\Foreach Loop Container\Data Flow Task - Carga CSV"
-          TopLeft="21.5,106.5" />
+          TopLeft="258.5,14.5" />
         <NodeLayout
           Size="219,42"
           Id="Package\Foreach Loop Container\Data Flow Task - Tabela Final"
-          TopLeft="32.5,246.5" />
+          TopLeft="286.5,103.5" />
         <NodeLayout
           Size="158,42"
           Id="Package\Foreach Loop Container\File System Task"
-          TopLeft="21.5,348.5" />
+          TopLeft="565.5,100.5" />
         <NodeLayout
           Size="195,42"
           Id="Package\Foreach Loop Container\SQL DELETE TBL CARGA"
@@ -12010,25 +12049,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="140,42"
           Id="Package\Foreach Loop Container\SQL Log CSV"
-          TopLeft="317.5,100.5" />
+          TopLeft="524.5,15.5" />
         <NodeLayout
           Size="221,42"
           Id="Package\Foreach Loop Container\VERIFICA PERIODO DELECAO"
-          TopLeft="204.5,176.5" />
+          TopLeft="25.5,96.5" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="124,61.5">
+          TopLeft="218.5,38">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,45"
+              StartConnector="{assembly:Null}"
+              EndConnector="40,0"
               Start="0,0"
-              End="0,37.5">
+              End="32.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="32.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12039,30 +12078,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="127,148.5">
+          TopLeft="364,56.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="188,28"
+              StartConnector="{assembly:Null}"
+              EndConnector="-228,40"
               Start="0,0"
-              End="188,20.5">
+              End="-228,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10" />
+                    End="0,16" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="4,14" />
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="-4,20" />
                   <mssgle:LineSegment
-                    End="184,14" />
+                    End="-224,20" />
                   <mssgle:CubicBezierSegment
-                    Point1="184,14"
-                    Point2="188,14"
-                    Point3="188,18" />
+                    Point1="-224,20"
+                    Point2="-228,20"
+                    Point3="-228,24" />
                   <mssgle:LineSegment
-                    End="188,20.5" />
+                    End="-228,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12073,18 +12112,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="232.5,124.5">
+          TopLeft="469.5,36">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="85,0"
+              StartConnector="{assembly:Null}"
+              EndConnector="55,0"
               Start="0,0"
-              End="77.5,0">
+              End="47.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="77.5,0" />
+                    End="47.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12095,30 +12134,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
-          TopLeft="315,218.5">
+          TopLeft="246.5,121">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-173,28"
+              StartConnector="{assembly:Null}"
+              EndConnector="40,0"
               Start="0,0"
-              End="-173,20.5">
+              End="32.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="-4,14" />
-                  <mssgle:LineSegment
-                    End="-169,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-169,14"
-                    Point2="-173,14"
-                    Point3="-173,18" />
-                  <mssgle:LineSegment
-                    End="-173,20.5" />
+                    End="32.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12129,30 +12156,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
-          TopLeft="142,288.5">
+          TopLeft="505.5,123">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-41.5,60"
+              StartConnector="{assembly:Null}"
+              EndConnector="60,0"
               Start="0,0"
-              End="-41.5,52.5">
+              End="52.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
+                    End="52.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Foreach Loop Container\FTP DEL"
+          TopLeft="590,183" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="647,142.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.5"
+              Start="0,0"
+              End="0,33">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-37.5,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-37.5,30"
-                    Point2="-41.5,30"
-                    Point3="-41.5,34" />
-                  <mssgle:LineSegment
-                    End="-41.5,52.5" />
+                    End="0,33" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12164,10 +12205,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="462,446"
-          Size="462,489"
+          PanelSize="761,280"
+          Size="761,323"
           Id="Package\Foreach Loop Container"
-          TopLeft="76,141" />
+          TopLeft="75,141" />
         <NodeLayout
           Size="122,42"
           Id="Package\FTP Task"
@@ -12181,27 +12222,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="386,94">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-79,47"
+              StartConnector="{assembly:Null}"
+              EndConnector="-56,47"
               Start="0,0"
-              End="-79,39.5">
+              End="-56,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
+                    End="0,24.1408339889851" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="-4,23.5" />
+                    Point1="0,24.1408339889851"
+                    Point2="0,28.1408339889851"
+                    Point3="-4,28.1408339889851" />
                   <mssgle:LineSegment
-                    End="-75,23.5" />
+                    End="-52,28.1408339889851" />
                   <mssgle:CubicBezierSegment
-                    Point1="-75,23.5"
-                    Point2="-79,23.5"
-                    Point3="-79,27.5" />
+                    Point1="-52,28.1408339889851"
+                    Point2="-56,28.1408339889851"
+                    Point3="-56,32.1408339889851" />
                   <mssgle:LineSegment
-                    End="-79,39.5" />
+                    End="-56,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12212,30 +12253,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="538,385.5">
+          TopLeft="581,141">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="59,-273.5"
+              StartConnector="{assembly:Null}"
+              EndConnector="190,-81"
               Start="0,0"
-              End="51.5,-273.5">
+              End="190,-73.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="25.5,0" />
+                    End="0,-28.5019669551534" />
                   <mssgle:CubicBezierSegment
-                    Point1="25.5,0"
-                    Point2="29.5,0"
-                    Point3="29.5,-4" />
+                    Point1="0,-28.5019669551534"
+                    Point2="0,-32.5019669551534"
+                    Point3="4,-32.5019669551534" />
                   <mssgle:LineSegment
-                    End="29.5,-269.5" />
+                    End="186,-32.5019669551534" />
                   <mssgle:CubicBezierSegment
-                    Point1="29.5,-269.5"
-                    Point2="29.5,-273.5"
-                    Point3="33.5,-273.5" />
+                    Point1="186,-32.5019669551534"
+                    Point2="190,-32.5019669551534"
+                    Point3="190,-36.5019669551534" />
                   <mssgle:LineSegment
-                    End="51.5,-273.5" />
+                    End="190,-73.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12249,7 +12290,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="244,75">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="81,0"
               Start="0,0"
               End="73.5,0">
