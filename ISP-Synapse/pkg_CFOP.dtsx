@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CFOP"
   DTS:PackageType="5"
-  DTS:VersionBuild="127"
-  DTS:VersionGUID="{97CA2373-C5FF-46F6-8B8F-B8A4B8DB48F9}">
+  DTS:VersionBuild="131"
+  DTS:VersionGUID="{44680162-E500-4CCC-BC70-4DEDAD2C6F21}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,7 +22,7 @@
       DTS:DTSID="{DD79B121-CD48-42CC-B2AE-A4E186FD87D6}"
       DTS:ObjectName="FF CFOP (65001)">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::FS_InboxPath] +  @[$Package::FileName]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::FS_InboxPath] +  @[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -120,17 +120,6 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:PackageParameters>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{0584F507-936F-4F09-A240-A7749C9E9D5E}"
-      DTS:ObjectName="FileName">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">CFOP.csv</DTS:Property>
-    </DTS:PackageParameter>
-  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -143,9 +132,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{7003D919-177E-4C7D-A514-0DBB0DA2B6D7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">CFOP.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{6109B6D3-9D21-4D50-B34B-69A01D277BE3}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Project::RemotePath]+ &quot;/&quot;+@[$Package::FileName]"
+      DTS:Expression="@[$Project::RemotePath]+ &quot;/&quot;+ @[User::FileName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FTPFile">
@@ -156,7 +154,7 @@
       DTS:CreationName=""
       DTS:DTSID="{87CE58BC-66BD-49B5-855F-A28F2202861B}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Project::FS_InboxPath]+ @[$Package::FileName]"
+      DTS:Expression="@[$Project::FS_InboxPath]+  @[User::FileName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="InboxFilePath">
@@ -1979,7 +1977,7 @@ where Codigo	= ?</property>
           SQLTask:SqlStatementSource="INSERT INTO &#xA;TB_Carga_LOG_Arquivo(&#xA;Data_Carga, Nome_Arquivo, Qtd_Registros )&#xA;VALUES(getdate(),?,?);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="$Package::FileName"
+            SQLTask:DtsVariableName="User::FileName"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="129"
             SQLTask:ParameterSize="0" />
@@ -2064,6 +2062,152 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyVersion("1.0.0.0")> 
 <Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
+'The Script Task allows you to perform virtually any operation that can be accomplished in
+'a .Net application within the context of an Integration Services control flow. 
+
+'Expand the other regions which have "Help" prefixes for examples of specific ways to use
+'Integration Services features within this script task.
+#End Region
+
+
+#Region "Imports"
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+#End Region
+
+'ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+'or parent of this class.
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute()> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+#Region "Help:  Using Integration Services variables and parameters in a script"
+    'To use a variable in this script, first ensure that the variable has been added to 
+    'either the list contained in the ReadOnlyVariables property or the list contained in 
+    'the ReadWriteVariables property of this script task, according to whether or not your
+    'code needs to write to the variable.  To add the variable, save this script, close this instance of
+    'Visual Studio, and update the ReadOnlyVariables and 
+    'ReadWriteVariables properties in the Script Transformation Editor window.
+    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
+
+    'Example of reading from a variable:
+    ' startTime = Dts.Variables("System::StartTime").Value
+
+    'Example of writing to a variable:
+    ' Dts.Variables("User::myStringVariable").Value = "new value"
+
+    'Example of reading from a package parameter:
+    ' batchId = Dts.Variables("$Package::batchId").Value
+
+    'Example of reading from a project parameter:
+    ' batchId = Dts.Variables("$Project::batchId").Value
+
+    'Example of reading from a sensitive project parameter:
+    ' batchId = Dts.Variables("$Project::batchId").GetSensitiveValue()
+#End Region
+
+#Region "Help:  Firing Integration Services events from a script"
+    'This script task can fire events for logging purposes.
+
+    'Example of firing an error event:
+    ' Dts.Events.FireError(18, "Process Values", "Bad value", "", 0)
+
+    'Example of firing an information event:
+    ' Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, fireAgain)
+
+    'Example of firing a warning event:
+    ' Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0)
+#End Region
+
+#Region "Help:  Using Integration Services connection managers in a script"
+    'Some types of connection managers can be used in this script task.  See the topic 
+    '"Working with Connection Managers Programatically" for details.
+
+    'Example of using an ADO.Net connection manager:
+    ' Dim rawConnection As Object = Dts.Connections("Sales DB").AcquireConnection(Dts.Transaction)
+    ' Dim myADONETConnection As SqlConnection = CType(rawConnection, SqlConnection)
+    ' <Use the connection in some code here, then release the connection>
+    ' Dts.Connections("Sales DB").ReleaseConnection(rawConnection)
+
+    'Example of using a File connection manager
+    ' Dim rawConnection As Object = Dts.Connections("Prices.zip").AcquireConnection(Dts.Transaction)
+    ' Dim filePath As String = CType(rawConnection, String)
+    ' <Use the connection in some code here, then release the connection>
+    ' Dts.Connections("Prices.zip").ReleaseConnection(rawConnection)
+#End Region
+
+    'This method is called when this script task executes in the control flow.
+    'Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+    'To open Help, press F1.
+
+    Public Sub Main()
+        '
+        ' Add your code here
+        '
+        '-- INICIO
+        'profile = "false"
+        'landingPadDir = Dts.Variables("strLandingPadDir").Value.ToString
+        'resultsDir = Dts.Variables("strResultsDir").Value.ToString
+        'user = Dts.Variables("strUserName").Value.ToString
+        'pass = Dts.Variables("strPassword").Value.ToString
+        'driveLetter = Dts.Variables("strDriveLetter").Value.ToString
+
+        'Dim profile As String
+        'profile = "false"
+        'resultsDir = Dts.Variables("strResultsDir").Value.ToString
+        Dim driveLetter, user, pass, landingPadDir As String
+        driveLetter = Dts.Variables("FSMapDrive").Value.ToString ' "S:"
+        user = Dts.Variables("FSMapUser").Value.ToString '"H975835"
+        pass = Dts.Variables("FSMapPass").Value.ToString '"SyngentaAgro01SyngentaAgro01"
+        landingPadDir = Dts.Variables("FSMapDir").Value.ToString '"\\BRSPFPC01VFIL1\Custom"
+
+        Dim objNetwork As Object
+        objNetwork = CreateObject("WScript.Network")
+        Dim CheckDrive As Object
+        CheckDrive = objNetwork.EnumNetworkDrives()
+        Dim intcount As Integer
+        Dim achouDrive As Boolean
+
+        achouDrive = False
+
+        If CheckDrive.Count > 0 Then
+            For intcount = 0 To CheckDrive.Count - 1 Step 2 'if drive is already mapped, then disconnect it
+                If CheckDrive.Item(intcount) = driveLetter Then
+                    If CheckDrive.Item(intcount + 1) <> landingPadDir Then
+
+                        objNetwork.RemoveNetworkDrive(driveLetter)
+                    Else
+                        achouDrive = True
+                    End If
+                End If
+            Next
+        End If
+        If Not achouDrive Then
+            objNetwork.MapNetworkDrive(driveLetter, landingPadDir, False, user, pass)
+        End If
+        '-- FIM
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+#Region "ScriptResults declaration"
+    'This enum provides a convenient shorthand within the scope of this class for setting the
+    'result of the script.
+
+    'This code was generated automatically.
+    Enum ScriptResults
+        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+    End Enum
+
+#End Region
+
+End Class]]></ProjectItem>
           <ProjectItem
             Name="ST_22dfa175862646bba7536e64163d03b2.vbproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2234,152 +2378,6 @@ End Class]]></ProjectItem>
     <msb:File Include="My Project\Settings.Designer.vb" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
-          <ProjectItem
-            Name="ScriptMain.vb"
-            Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
-'The Script Task allows you to perform virtually any operation that can be accomplished in
-'a .Net application within the context of an Integration Services control flow. 
-
-'Expand the other regions which have "Help" prefixes for examples of specific ways to use
-'Integration Services features within this script task.
-#End Region
-
-
-#Region "Imports"
-Imports System
-Imports System.Data
-Imports System.Math
-Imports Microsoft.SqlServer.Dts.Runtime
-#End Region
-
-'ScriptMain is the entry point class of the script.  Do not change the name, attributes,
-'or parent of this class.
-<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute()> _
-<System.CLSCompliantAttribute(False)> _
-Partial Public Class ScriptMain
-    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
-
-#Region "Help:  Using Integration Services variables and parameters in a script"
-    'To use a variable in this script, first ensure that the variable has been added to 
-    'either the list contained in the ReadOnlyVariables property or the list contained in 
-    'the ReadWriteVariables property of this script task, according to whether or not your
-    'code needs to write to the variable.  To add the variable, save this script, close this instance of
-    'Visual Studio, and update the ReadOnlyVariables and 
-    'ReadWriteVariables properties in the Script Transformation Editor window.
-    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
-
-    'Example of reading from a variable:
-    ' startTime = Dts.Variables("System::StartTime").Value
-
-    'Example of writing to a variable:
-    ' Dts.Variables("User::myStringVariable").Value = "new value"
-
-    'Example of reading from a package parameter:
-    ' batchId = Dts.Variables("$Package::batchId").Value
-
-    'Example of reading from a project parameter:
-    ' batchId = Dts.Variables("$Project::batchId").Value
-
-    'Example of reading from a sensitive project parameter:
-    ' batchId = Dts.Variables("$Project::batchId").GetSensitiveValue()
-#End Region
-
-#Region "Help:  Firing Integration Services events from a script"
-    'This script task can fire events for logging purposes.
-
-    'Example of firing an error event:
-    ' Dts.Events.FireError(18, "Process Values", "Bad value", "", 0)
-
-    'Example of firing an information event:
-    ' Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, fireAgain)
-
-    'Example of firing a warning event:
-    ' Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0)
-#End Region
-
-#Region "Help:  Using Integration Services connection managers in a script"
-    'Some types of connection managers can be used in this script task.  See the topic 
-    '"Working with Connection Managers Programatically" for details.
-
-    'Example of using an ADO.Net connection manager:
-    ' Dim rawConnection As Object = Dts.Connections("Sales DB").AcquireConnection(Dts.Transaction)
-    ' Dim myADONETConnection As SqlConnection = CType(rawConnection, SqlConnection)
-    ' <Use the connection in some code here, then release the connection>
-    ' Dts.Connections("Sales DB").ReleaseConnection(rawConnection)
-
-    'Example of using a File connection manager
-    ' Dim rawConnection As Object = Dts.Connections("Prices.zip").AcquireConnection(Dts.Transaction)
-    ' Dim filePath As String = CType(rawConnection, String)
-    ' <Use the connection in some code here, then release the connection>
-    ' Dts.Connections("Prices.zip").ReleaseConnection(rawConnection)
-#End Region
-
-    'This method is called when this script task executes in the control flow.
-    'Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
-    'To open Help, press F1.
-
-    Public Sub Main()
-        '
-        ' Add your code here
-        '
-        '-- INICIO
-        'profile = "false"
-        'landingPadDir = Dts.Variables("strLandingPadDir").Value.ToString
-        'resultsDir = Dts.Variables("strResultsDir").Value.ToString
-        'user = Dts.Variables("strUserName").Value.ToString
-        'pass = Dts.Variables("strPassword").Value.ToString
-        'driveLetter = Dts.Variables("strDriveLetter").Value.ToString
-
-        'Dim profile As String
-        'profile = "false"
-        'resultsDir = Dts.Variables("strResultsDir").Value.ToString
-        Dim driveLetter, user, pass, landingPadDir As String
-        driveLetter = Dts.Variables("FSMapDrive").Value.ToString ' "S:"
-        user = Dts.Variables("FSMapUser").Value.ToString '"H975835"
-        pass = Dts.Variables("FSMapPass").Value.ToString '"SyngentaAgro01SyngentaAgro01"
-        landingPadDir = Dts.Variables("FSMapDir").Value.ToString '"\\BRSPFPC01VFIL1\Custom"
-
-        Dim objNetwork As Object
-        objNetwork = CreateObject("WScript.Network")
-        Dim CheckDrive As Object
-        CheckDrive = objNetwork.EnumNetworkDrives()
-        Dim intcount As Integer
-        Dim achouDrive As Boolean
-
-        achouDrive = False
-
-        If CheckDrive.Count > 0 Then
-            For intcount = 0 To CheckDrive.Count - 1 Step 2 'if drive is already mapped, then disconnect it
-                If CheckDrive.Item(intcount) = driveLetter Then
-                    If CheckDrive.Item(intcount + 1) <> landingPadDir Then
-
-                        objNetwork.RemoveNetworkDrive(driveLetter)
-                    Else
-                        achouDrive = True
-                    End If
-                End If
-            Next
-        End If
-        If Not achouDrive Then
-            objNetwork.MapNetworkDrive(driveLetter, landingPadDir, False, user, pass)
-        End If
-        '-- FIM
-        Dts.TaskResult = ScriptResults.Success
-    End Sub
-
-#Region "ScriptResults declaration"
-    'This enum provides a convenient shorthand within the scope of this class for setting the
-    'result of the script.
-
-    'This code was generated automatically.
-    Enum ScriptResults
-        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
-        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
-    End Enum
-
-#End Region
-
-End Class]]></ProjectItem>
           <ProjectItem
             Name="My Project\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2847,6 +2845,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\File System Task"
           TopLeft="341,214" />
         <NodeLayout
+          Size="119,42"
+          Id="Package\FTP DEL"
+          TopLeft="565,209" />
+        <NodeLayout
           Size="122,42"
           Id="Package\FTP Task"
           TopLeft="341,40" />
@@ -3030,10 +3032,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="119,42"
-          Id="Package\FTP DEL"
-          TopLeft="565,209" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="499,232.5">
@@ -3063,7 +3061,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package\Data Flow Load CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Load CSV\OLE DB Destination"
@@ -3081,7 +3079,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="549,132">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-228.5,31"
               Start="0,0"
               End="-228.5,23.5">
@@ -3107,9 +3105,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3117,7 +3113,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="368,60">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="116,51"
               Start="0,0"
               End="108.5,51">
@@ -3143,9 +3139,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

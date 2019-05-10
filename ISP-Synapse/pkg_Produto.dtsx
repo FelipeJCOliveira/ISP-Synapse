@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Produto"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{6CBD1604-903E-4783-AABE-A7D79D60AF62}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{786422CB-2870-4F09-AE5D-437A2DDF8D7E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,7 +22,7 @@
       DTS:DTSID="{3B8A5D74-495F-4E54-83DC-8B105F7B54EA}"
       DTS:ObjectName="FF Produto">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+ @[$Package::FileName]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+  @[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -114,17 +114,6 @@
       </DTS:ObjectData>
     </DTS:LogProvider>
   </DTS:LogProviders>
-  <DTS:PackageParameters>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{AC759EBF-F83E-45D1-8837-28736CBCFE54}"
-      DTS:ObjectName="FileName">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">Produto.csv</DTS:Property>
-    </DTS:PackageParameter>
-  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -137,9 +126,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{491C6DF6-A220-42D5-8A53-937BC429A1B4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">Produto.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{1A9D418A-5B2F-492A-8C90-1217CCD8EE5D}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Project::RemotePath]+&quot;/&quot;+ @[$Package::FileName]"
+      DTS:Expression="@[$Project::RemotePath]+&quot;/&quot;+  @[User::FileName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FTPFile">
@@ -150,7 +148,7 @@
       DTS:CreationName=""
       DTS:DTSID="{8EF9F0B2-B255-4FBB-AC63-A1A3A70C43E7}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Project::FS_InboxPath]+ @[$Package::FileName]"
+      DTS:Expression="@[$Project::FS_InboxPath]+ @[User::FileName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="InboxFilePath">
@@ -2458,7 +2456,7 @@ where not exists(select pp.Codigo from TB_Agroview_Parametros_Produto as pp
               SQLTask:SqlStatementSource="INSERT INTO TB_Carga_LOG_Arquivo(Data_Carga, Nome_Arquivo,Qtd_Registros)&#xA;VALUES(getdate(),?,?);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="$Package::FileName"
+                SQLTask:DtsVariableName="User::FileName"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="129"
                 SQLTask:ParameterSize="-1" />
@@ -3656,6 +3654,10 @@ where Codigo = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="119,42"
+          Id="Package\FTP DEL"
+          TopLeft="521,10" />
+        <NodeLayout
           Size="122,42"
           Id="Package\FTP Task"
           TopLeft="312,8" />
@@ -3855,39 +3857,6 @@ where Codigo = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="224,30">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="88,0"
-              Start="0,0"
-              End="80.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="80.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="[07.05.19] O processo normal de Insert/Update &#xA;(Staging to Final) &#xA;estava muito lento, demorando horas. Por isso foi dividido em: &#xA;- Update (update from) &#xA;- Insert (not exists)"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="363,104"
-          Id="acc530d5-a75b-4c1a-af0f-81dacad9fd20"
-          TopLeft="726,81" />
-        <NodeLayout
-          Size="119,42"
-          Id="Package\FTP DEL"
-          TopLeft="521,10" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="495,82">
           <EdgeLayout.Curve>
@@ -3921,6 +3890,35 @@ where Codigo = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="224,30">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88,0"
+              Start="0,0"
+              End="80.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="80.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="[07.05.19] O processo normal de Insert/Update &#xA;(Staging to Final) &#xA;estava muito lento, demorando horas. Por isso foi dividido em: &#xA;- Update (update from) &#xA;- Insert (not exists)"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="363,104"
+          Id="acc530d5-a75b-4c1a-af0f-81dacad9fd20"
+          TopLeft="726,81" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

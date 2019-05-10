@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CategoriaCliente"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{0667F23F-E4B7-4939-BFCF-B1AB26CF8611}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{2430A513-CEE4-4BA3-A510-AE75CD004D8F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,7 +22,7 @@
       DTS:DTSID="{F2795962-3702-4EF1-A640-72C87EDED2C2}"
       DTS:ObjectName="FF - CategoriaCliente">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+ @[$Package::FileName]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+  @[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -56,65 +56,7 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection - CategoriaCliente]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{1F665451-4596-4195-BF60-2AD19E9C272A}"
-      DTS:ObjectName="Flat File Connection - CategoriaCliente">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1046"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="E:\All CSV Files\CategoriaCliente.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="10"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="CategoriaClienteCodigo"
-              DTS:DTSID="{8A2DB8A3-313A-4BAF-8C20-CF6B47F02448}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="CategoriaClienteDescricao"
-              DTS:DTSID="{A92A0D1B-ACA6-4BA1-9FFB-96499114EDEA}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:PackageParameters>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{1D9C602A-BEEC-42A8-9210-5CDA079FAF9B}"
-      DTS:ObjectName="FileName">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">CategoriaCliente.csv</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{07B6AD7E-EAE6-496B-B8AA-967FBD9530FD}"
-      DTS:ObjectName="FullFileName">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">E:\All CSV Files\CategoriaCliente.csv</DTS:Property>
-    </DTS:PackageParameter>
-  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -127,9 +69,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{0A2240EA-F833-4763-8AFF-3679CCBB62AE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">CategoriaCliente.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{AB0A2798-231C-4E67-B254-0C3116D09F74}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Project::RemotePath]+ &quot;/&quot;+@[$Package::FileName]"
+      DTS:Expression="@[$Project::RemotePath]+ &quot;/&quot;+ @[User::FileName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FTPFile">
@@ -140,7 +91,7 @@
       DTS:CreationName=""
       DTS:DTSID="{D71A5475-AD48-428C-8FE0-AFF097F39ED7}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Project::FS_InboxPath]+ @[$Package::FileName]"
+      DTS:Expression="@[$Project::FS_InboxPath]+  @[User::FileName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="InboxFilePath">
@@ -1585,75 +1536,6 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyVersion("1.0.0.0")> 
 <Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
           <ProjectItem
-            Name="My Project\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\Settings.Designer.vb"
-            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
-' <autogenerated>
-'     This code was generated by a tool.
-'
-'     Changes to this file may cause incorrect behavior and will be lost if
-'     the code is regenerated.
-' </autogenerated>
-'------------------------------------------------------------------------------
-
-Option Strict Off
-Option Explicit On
-
-
-
-Partial Friend NotInheritable Class MySettings
-    Inherits System.Configuration.ApplicationSettingsBase
-
-    Private Shared m_Value As MySettings
-
-    Private Shared m_SyncObject As Object = New Object
-
-    <System.Diagnostics.DebuggerNonUserCode()> _
-    Public Shared ReadOnly Property Value() As MySettings
-        Get
-            If (MySettings.m_Value Is Nothing) Then
-                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
-                If (MySettings.m_Value Is Nothing) Then
-                    Try
-                        MySettings.m_Value = New MySettings
-                    Finally
-                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
-                    End Try
-                End If
-            End If
-            Return MySettings.m_Value
-        End Get
-    End Property
-End Class]]></ProjectItem>
-          <ProjectItem
-            Name="Project"
-            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_8adeec4e684f4dc4b208cd2df8a8b8f9</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_8adeec4e684f4dc4b208cd2df8a8b8f9</msb:DisplayName>
-    <msb:ProjectId>{5E752A57-A235-4A45-8984-2DC9F820B85E}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_8adeec4e684f4dc4b208cd2df8a8b8f9.vbproj" />
-    <msb:File Include="My Project\Resources.Designer.vb" />
-    <msb:File Include="My Project\AssemblyInfo.vb" />
-    <msb:File Include="ScriptMain.vb" />
-    <msb:File Include="My Project\Resources.resx" />
-    <msb:File Include="My Project\Settings.settings" />
-    <msb:File Include="My Project\Settings.Designer.vb" />
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-          <ProjectItem
             Name="ScriptMain.vb"
             Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
 'The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -1799,6 +1681,75 @@ Partial Public Class ScriptMain
 #End Region
 
 End Class]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_8adeec4e684f4dc4b208cd2df8a8b8f9</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_8adeec4e684f4dc4b208cd2df8a8b8f9</msb:DisplayName>
+    <msb:ProjectId>{5E752A57-A235-4A45-8984-2DC9F820B85E}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_8adeec4e684f4dc4b208cd2df8a8b8f9.vbproj" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
           <ProjectItem
             Name="My Project\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2206,7 +2157,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           SQLTask:SqlStatementSource="INSERT INTO TB_Carga_LOG_Arquivo(Data_Carga, Nome_Arquivo,Qtd_Registros)&#xA;VALUES(getdate(),?,?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="$Package::FileName"
+            SQLTask:DtsVariableName="User::FileName"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="129"
             SQLTask:ParameterSize="-1" />
@@ -2306,6 +2257,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Size="158,42"
           Id="Package\File System Task"
           TopLeft="334,189" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\FTP DEL"
+          TopLeft="577,187" />
         <NodeLayout
           Size="122,42"
           Id="Package\FTP Task"
@@ -2478,10 +2433,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="119,42"
-          Id="Package\FTP DEL"
-          TopLeft="577,187" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="492,209">
@@ -2551,9 +2502,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2659,9 +2608,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2720,7 +2667,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package\Data Flow Load CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Load CSV\Derived Column"
@@ -2760,9 +2707,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2796,9 +2741,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2820,9 +2763,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2856,9 +2797,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
