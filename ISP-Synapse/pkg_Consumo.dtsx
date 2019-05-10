@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{7A49E0EB-D40F-46C7-84A6-31A6B655A484}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Consumo"
   DTS:PackageType="5"
-  DTS:VersionBuild="428"
-  DTS:VersionGUID="{D875436F-40E0-46B1-803F-A8FCCCA1D2EF}">
+  DTS:VersionBuild="429"
+  DTS:VersionGUID="{DF507EE8-56A4-4571-B58C-F7A01156BF9E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1234,7 +1234,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileMask">
       <DTS:VariableValue
-        DTS:DataType="8">Consumo*.csv</DTS:VariableValue>
+        DTS:DataType="8">Consumo2*.csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1255,7 +1255,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FTPFileMask">
       <DTS:VariableValue
-        DTS:DataType="8">/Qlikview/Synapse/Entrada/Csv/Consumo*.csv</DTS:VariableValue>
+        DTS:DataType="8">/Qlikview/Synapse/Entrada/Csv/Consumo2*.csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -17884,14 +17884,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Carga to Final (com log) 1\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
-              endId="Package\Carga to Final (com log) 1\Sub-Grupo.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Vendedor.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Vendedor.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
-              endId="Package\Carga to Final (com log) 1\CFOP.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Cliente.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup CFOP.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Cliente.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output2]"
               endId="Package\Carga to Final (com log) 1\Produto.Inputs[Derived Column Input]"
@@ -17899,14 +17899,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Carga to Final (com log) 1\Lookup Produto.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
-              endId="Package\Carga to Final (com log) 1\Cliente.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\CFOP.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Cliente.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup CFOP.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
-              endId="Package\Carga to Final (com log) 1\Vendedor.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Sub-Grupo.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Vendedor.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Match Output]"
               endId="Package\Carga to Final (com log) 1\Lookup Vendedor.Inputs[Lookup Input]"
@@ -17999,7 +17999,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <FEFEProperty
               Folder="S:\Data&amp;Insights\" />
             <FEFEProperty
-              FileSpec="Consumo*.csv" />
+              FileSpec="Consumo2*.csv" />
             <FEFEProperty
               FileNameRetrievalType="1" />
             <FEFEProperty
@@ -35118,50 +35118,50 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   name="Derived Column Error Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Derived Column.Outputs[Derived Column Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output4]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Data Conversion.Inputs[Data Conversion Input]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Derived Column.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output3]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output1]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All.Inputs[Union All Input 1]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output5]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output2]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All.Inputs[Union All Input 7]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\GRUPO.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output1]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output3]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All.Inputs[Union All Input 6]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Sub-Grupo.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output4]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\DC - Add audit details.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output2]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output5]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All.Inputs[Union All Input 5]"
                   name="Derived Column Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
+                  endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Inputs[Derived Column Input]"
+                  name="Lookup Error Output"
+                  startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Sub-Grupo.Inputs[Derived Column Input]"
                   name="Lookup Error Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\GRUPO.Inputs[Derived Column Input]"
                   name="Lookup Error Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO.Outputs[Lookup Error Output]" />
-                <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
-                  endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Inputs[Derived Column Input]"
-                  name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1.Inputs[Union All Input 2]"
@@ -39685,7 +39685,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="File System Task"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -42950,7 +42950,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="202,42"
           Id="Package\Carga to Final (com log) 1"
@@ -43016,7 +43016,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="210.5,35">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="66,0"
               Start="0,0"
               End="58.5,0">
@@ -43038,7 +43038,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="450.5,33.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="102,0"
               Start="0,0"
               End="94.5,0">
@@ -43060,7 +43060,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="224,355.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="67.5,0"
               Start="0,0"
               End="60,0">
@@ -43082,7 +43082,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="135,279">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="8,55"
               Start="0,0"
               End="8,47.5">
@@ -43116,7 +43116,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="363.5,57.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-236.5,44"
               Start="0,0"
               End="-236.5,36.5">
@@ -43150,7 +43150,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="459.5,115.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="65,0"
               Start="0,0"
               End="57.5,0">
@@ -43172,7 +43172,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="610,138.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-496,32"
               Start="0,0"
               End="-496,24.5">
@@ -43206,7 +43206,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="196.5,193.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="68.5,0"
               Start="0,0"
               End="61,0">
@@ -43228,7 +43228,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="237.5,121">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="64,0"
               Start="0,0"
               End="56.5,0">
@@ -43250,7 +43250,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="528.5,356.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="35,-18"
               Start="0,0"
               End="27.5,-18">
@@ -43284,7 +43284,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="480,197">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="57,0"
               Start="0,0"
               End="49.5,0">
@@ -43306,7 +43306,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="537,204.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-292,53.3333333333333"
               Start="0,0"
               End="-284.5,53.3333333333333">
@@ -43355,7 +43355,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="267,27.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="81,0"
               Start="0,0"
               End="73.5,0">
@@ -43377,7 +43377,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="409,50">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-96,37"
               Start="0,0"
               End="-96,29.5">
@@ -43411,7 +43411,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="561,87">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="46.5,-34.5"
               Start="0,0"
               End="46.5,-27">
@@ -43545,7 +43545,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Carga to Final (com log) 1\Lookup CFOP"
           TopLeft="79,262" />
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
           TopLeft="212,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44205,7 +44205,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
           TopLeft="240,389">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44241,7 +44241,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
           TopLeft="221,283">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44313,7 +44313,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
           TopLeft="914.333333333333,111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44619,7 +44619,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
           TopLeft="467,174.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44679,7 +44679,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output4]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output]"
           TopLeft="573,86.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44701,7 +44701,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output3]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output1]"
           TopLeft="717.416666666667,479">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44723,7 +44723,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output2]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output5]"
           TopLeft="681,193">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44757,7 +44757,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output1]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output3]"
           TopLeft="475,327">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44791,7 +44791,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output4]"
           TopLeft="952.17857141884,378.094116694705">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -45011,7 +45011,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\GRUPO"
           TopLeft="382,401" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
           TopLeft="213,454.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -45047,7 +45047,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output5]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output2]"
           TopLeft="438.5,401">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -45096,6 +45096,52 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </LayoutInfo>
   </DtsEventHandler>
   <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_Grupo]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_Sub_Grupo]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO">
     <Properties>
       <Property>
@@ -45132,7 +45178,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors">
+    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -45145,30 +45191,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TB_Agroview_Parametros_Sub_Grupo]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\OLE DB Source">
+    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -45958,29 +45981,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
   <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Verifica VENDEDOR\OLE DB Source">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TB_Agroview_Parametros_Grupo]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
