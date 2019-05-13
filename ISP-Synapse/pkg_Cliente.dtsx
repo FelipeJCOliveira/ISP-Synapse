@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Cliente"
   DTS:PackageType="5"
-  DTS:VersionBuild="126"
-  DTS:VersionGUID="{17880B82-21C2-449D-90B5-ACC1D6259776}">
+  DTS:VersionBuild="128"
+  DTS:VersionGUID="{F580E851-97B5-4FA4-BB7E-7D927177A0FF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5438,6 +5438,65 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[cvt_Chave]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="cvt_Chave"
+                      lineageId="Package\Data Flow Task - Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[cvt_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cvt_Codigo"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task - Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Data Flow Task - Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]}) ? #{Package\Data Flow Task - Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Chave]} : #{Package\Data Flow Task - Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Codigo]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(cvt_Codigo) ? cvt_Chave : cvt_Codigo</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Load CSV\Derived Column.Inputs[Derived Column Input].Columns[cvt_Nome]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="cvt_Nome"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task - Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Nome]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Data Flow Task - Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Nome]}) ? (DT_STR,255,1252)"CLIENTE NAO IDENTIFICADO" : #{Package\Data Flow Task - Load CSV\Data Conversion.Outputs[Data Conversion Output].Columns[cvt_Nome]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(cvt_Nome) ? (DT_STR,255,1252)"CLIENTE NAO IDENTIFICADO" : cvt_Nome</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>

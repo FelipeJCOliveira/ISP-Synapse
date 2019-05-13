@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="pkg_EquipeComercial"
-  DTS:VersionBuild="154"
-  DTS:VersionGUID="{DEF077E0-74B3-4E90-AEC6-641BF68D67BD}">
+  DTS:VersionBuild="162"
+  DTS:VersionGUID="{3FDFDB2F-EC11-4858-816A-0CEE9001AAC4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,6 +22,154 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{46C370DF-C17D-477C-B981-89F99978F764}"
       DTS:ObjectName="FF EquipeComercial (65001 - string)">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+  @[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="S:\Data&amp;Insights\EquipeComercial.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NodeParent"
+              DTS:DTSID="{AAFADF1B-4EE5-4758-ACBE-CFB43359ABF1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EquipeComercialDescricaoBase1"
+              DTS:DTSID="{B8ED09E7-F85F-4B9E-B120-51D02A452332}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EquipeComercialDescricaoBase2"
+              DTS:DTSID="{4BA2EF77-3A63-4D0D-8776-0675E9AE3098}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EquipeComercialDescricaoBase3"
+              DTS:DTSID="{A81FDEC4-8E7B-48C1-ADB3-A49462B57265}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NodePath"
+              DTS:DTSID="{04BFBE9E-12C5-4755-8883-5D20DE9A057B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="%EquipeComercialChave"
+              DTS:DTSID="{A4B6A919-B416-4515-88C5-01AD9C73494D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EquipeComercialSuperior"
+              DTS:DTSID="{43F4E5A9-5EBC-4F51-AA91-CB8E6733291C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EquipeComercialDescricaoBase"
+              DTS:DTSID="{E43D0236-BC24-44DA-AC78-7114C573A9C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EquipeComercialCPF"
+              DTS:DTSID="{0173A2B9-82C8-4B89-A053-8DDBECB02366}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nivel"
+              DTS:DTSID="{761EAC24-CA84-4600-B9BB-95D3E1BDBA28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SuperiorCPF"
+              DTS:DTSID="{3C1FDA55-5AC1-4329-995C-3FB6D0390449}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SuperiorDescricaoBase"
+              DTS:DTSID="{21458072-6D41-46F9-850B-3402E3D406CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EquipeComercialDescricao"
+              DTS:DTSID="{84859572-9A87-49CA-B38E-F03EC4CCADC7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SuperiorDescricao"
+              DTS:DTSID="{FB205DDE-3002-44F9-86F9-F37524FD9C02}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF EquipeComercial 65001]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4D1EAC8D-192F-4530-9841-9B3AB89F3430}"
+      DTS:ObjectName="FF EquipeComercial 65001">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+  @[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -39,127 +187,127 @@
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="100"
-              DTS:DataType="130"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NodeParent"
-              DTS:DTSID="{BFF47DC9-237B-412E-916F-92BA1254794B}"
+              DTS:DTSID="{424A69C8-B0DF-4288-A481-21F957A583CF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EquipeComercialDescricaoBase1"
-              DTS:DTSID="{A49E52F3-433B-457A-B7AB-C835FDE72F90}"
+              DTS:DTSID="{1333E748-8A82-4B4B-B31B-709C186A8FF0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EquipeComercialDescricaoBase2"
-              DTS:DTSID="{862B5D18-934C-4058-BD80-4A16FAEC6DB2}"
+              DTS:DTSID="{A1AD9B67-A589-4DBE-BDFD-76A7807A6BB4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EquipeComercialDescricaoBase3"
-              DTS:DTSID="{54FF3ED1-85B6-48A5-BE73-C89BD7D9E926}"
+              DTS:DTSID="{EE255FFC-A243-4579-9392-EFC76294E928}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="15"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NodePath"
-              DTS:DTSID="{9F1E89B8-3509-4596-8115-F43CEBDB8D08}"
+              DTS:DTSID="{742B38D9-E59B-4FAD-B699-7C30700E6D03}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="30"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="%EquipeComercialChave"
-              DTS:DTSID="{77CD1548-E846-476F-8A0E-F222AB25DB63}"
+              DTS:DTSID="{1DC590B9-73EB-4A31-AAFC-35928195016B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="30"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EquipeComercialSuperior"
-              DTS:DTSID="{A9A986B6-88CE-4024-836A-17665EE43C5D}"
+              DTS:DTSID="{8FE9A9F5-647D-4755-9970-33BDBAAB0DCC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EquipeComercialDescricaoBase"
-              DTS:DTSID="{AF933F55-EDD7-4F62-A986-8E24C62D013D}"
+              DTS:DTSID="{085D6CD6-C91C-47DC-85C8-CC1CB5949AD8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="20"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EquipeComercialCPF"
-              DTS:DTSID="{3859FA88-45C4-4A1F-AF36-B254CE2EC6EC}"
+              DTS:DTSID="{91E9018D-AFDB-4C59-A8C7-30901C6E4A53}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="2"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Nivel"
-              DTS:DTSID="{3694DCE8-6CA9-4A91-B915-A112AB8F2567}"
+              DTS:DTSID="{52F7B97B-A5C6-434B-B71B-AB4682E6B2A1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="20"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SuperiorCPF"
-              DTS:DTSID="{ABB39BDC-E1FA-4E20-BF73-8FA56AA51331}"
+              DTS:DTSID="{CB3F24CC-A284-49AE-AF7A-F3D64956AF65}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SuperiorDescricaoBase"
-              DTS:DTSID="{C61C4650-3CB5-4C5F-9F1A-73DB0B27EC3F}"
+              DTS:DTSID="{AF7D099B-BB03-4016-A3EA-37C5E9F47740}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EquipeComercialDescricao"
-              DTS:DTSID="{B09F3A05-3435-441B-B158-49DEA6098967}"
+              DTS:DTSID="{40EEA071-5339-4345-927B-45BCC5E5BBA3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="130"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SuperiorDescricao"
-              DTS:DTSID="{BB7B9202-15B0-4434-A97E-6E17954BD2A1}"
+              DTS:DTSID="{E04EFD21-5B62-4AEE-823B-5A78F0D94D58}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -266,6 +414,113 @@
           VSTAMinorVersion="0"
           Language="VisualBasic"
           ReadOnlyVariables="$Project::FSMapDir,$Project::FSMapDrive,$Project::FSMapUser,$Project::FSMapPass">
+          <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
+<Assembly: AssemblyCopyright("Copyright @  2019")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("cd78111e-3163-4c31-9662-7778e1349f2c")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_8b08fd3736f847ff954ed7362ad94043</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_8b08fd3736f847ff954ed7362ad94043</msb:DisplayName>
+    <msb:ProjectId>{DDD383C3-E481-4757-AA77-ACE8C202BED8}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_36b95894592d4008a2fdf5a5ff856a2c.vbproj" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
           <ProjectItem
             Name="ScriptMain.vb"
             Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
@@ -412,116 +667,6 @@ Partial Public Class ScriptMain
 #End Region
 
 End Class]]></ProjectItem>
-          <ProjectItem
-            Name="ST_36b95894592d4008a2fdf5a5ff856a2c.vbproj"
-            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{f79b9455-7936-4e53-8490-0574a550b413}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>My Project</AppDesignerFolder><RootNamespace>ST_e55a4cfb638046b0a91d51fb168ebea0</RootNamespace><AssemblyName>ST_36b95894592d4008a2fdf5a5ff856a2c</AssemblyName><TargetFrameworkVersion>v4.5</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch><TargetFrameworkProfile></TargetFrameworkProfile></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineDebug>true</DefineDebug><DefineTrace>true</DefineTrace><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineDebug>false</DefineDebug><DefineTrace>true</DefineTrace><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><Import Include="Microsoft.VisualBasic" /><Import Include="System" /><Import Include="System.Collections" /><Import Include="System.Data" /><Import Include="System.Diagnostics" /><Import Include="System.Windows.Forms" /></ItemGroup><ItemGroup><AppDesigner Include="My Project\" /><Compile Include="My Project\AssemblyInfo.vb"><SubType>Code</SubType></Compile><EmbeddedResource Include="My Project\Resources.resx"><Generator>VbMyResourcesResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.vb</LastGenOutput><CustomToolNamespace>My.Resources</CustomToolNamespace></EmbeddedResource><Compile Include="My Project\Resources.Designer.vb"><AutoGen>True</AutoGen><DesignTime>True</DesignTime><DependentUpon>Resources.resx</DependentUpon><SubType>Code</SubType></Compile><None Include="My Project\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.vb</LastGenOutput></None><Compile Include="My Project\Settings.Designer.vb"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon><SubType>Code</SubType></Compile><Compile Include="ScriptMain.vb"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a VB project.--><Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptTask" IconIndex=""></Host><ProjectClient><HostIdentifier>SSIS_ST140</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\AssemblyInfo.vb"
-            Encoding="UTF8"><![CDATA[Imports System
-Imports System.Reflection
-Imports System.Runtime.InteropServices
-
-' General Information about an assembly is controlled through the following 
-' set of attributes. Change these attribute values to modify the information
-' associated with an assembly.
-
-' Review the values of the assembly attributes
-
-<Assembly: AssemblyTitle("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
-<Assembly: AssemblyCopyright("Copyright @  2019")> 
-<Assembly: AssemblyTrademark("")> 
-<Assembly: CLSCompliant(True)> 
-
-<Assembly: ComVisible(False)> 
-
-'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("cd78111e-3163-4c31-9662-7778e1349f2c")> 
-
-' Version information for an assembly consists of the following four values:
-'
-'      Major Version
-'      Minor Version 
-'      Build Number
-'      Revision
-'
-' You can specify all the values or you can default the Build and Revision Numbers 
-' by using the '*' as shown below:
-' <Assembly: AssemblyVersion("1.0.*")>
-
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\Settings.Designer.vb"
-            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
-' <autogenerated>
-'     This code was generated by a tool.
-'
-'     Changes to this file may cause incorrect behavior and will be lost if
-'     the code is regenerated.
-' </autogenerated>
-'------------------------------------------------------------------------------
-
-Option Strict Off
-Option Explicit On
-
-
-
-Partial Friend NotInheritable Class MySettings
-    Inherits System.Configuration.ApplicationSettingsBase
-
-    Private Shared m_Value As MySettings
-
-    Private Shared m_SyncObject As Object = New Object
-
-    <System.Diagnostics.DebuggerNonUserCode()> _
-    Public Shared ReadOnly Property Value() As MySettings
-        Get
-            If (MySettings.m_Value Is Nothing) Then
-                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
-                If (MySettings.m_Value Is Nothing) Then
-                    Try
-                        MySettings.m_Value = New MySettings
-                    Finally
-                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
-                    End Try
-                End If
-            End If
-            Return MySettings.m_Value
-        End Get
-    End Property
-End Class]]></ProjectItem>
-          <ProjectItem
-            Name="Project"
-            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_8b08fd3736f847ff954ed7362ad94043</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_8b08fd3736f847ff954ed7362ad94043</msb:DisplayName>
-    <msb:ProjectId>{DDD383C3-E481-4757-AA77-ACE8C202BED8}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_36b95894592d4008a2fdf5a5ff856a2c.vbproj" />
-    <msb:File Include="My Project\AssemblyInfo.vb" />
-    <msb:File Include="ScriptMain.vb" />
-    <msb:File Include="My Project\Resources.resx" />
-    <msb:File Include="My Project\Resources.Designer.vb" />
-    <msb:File Include="My Project\Settings.settings" />
-    <msb:File Include="My Project\Settings.Designer.vb" />
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
           <ProjectItem
             Name="My Project\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -704,6 +849,9 @@ Namespace My.Resources
         End Property
     End Class
 End Namespace]]></ProjectItem>
+          <ProjectItem
+            Name="ST_36b95894592d4008a2fdf5a5ff856a2c.vbproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{f79b9455-7936-4e53-8490-0574a550b413}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>My Project</AppDesignerFolder><RootNamespace>ST_e55a4cfb638046b0a91d51fb168ebea0</RootNamespace><AssemblyName>ST_36b95894592d4008a2fdf5a5ff856a2c</AssemblyName><TargetFrameworkVersion>v4.5</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch><TargetFrameworkProfile></TargetFrameworkProfile></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineDebug>true</DefineDebug><DefineTrace>true</DefineTrace><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineDebug>false</DefineDebug><DefineTrace>true</DefineTrace><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><Import Include="Microsoft.VisualBasic" /><Import Include="System" /><Import Include="System.Collections" /><Import Include="System.Data" /><Import Include="System.Diagnostics" /><Import Include="System.Windows.Forms" /></ItemGroup><ItemGroup><AppDesigner Include="My Project\" /><Compile Include="My Project\AssemblyInfo.vb"><SubType>Code</SubType></Compile><EmbeddedResource Include="My Project\Resources.resx"><Generator>VbMyResourcesResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.vb</LastGenOutput><CustomToolNamespace>My.Resources</CustomToolNamespace></EmbeddedResource><Compile Include="My Project\Resources.Designer.vb"><AutoGen>True</AutoGen><DesignTime>True</DesignTime><DependentUpon>Resources.resx</DependentUpon><SubType>Code</SubType></Compile><None Include="My Project\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.vb</LastGenOutput></None><Compile Include="My Project\Settings.Designer.vb"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon><SubType>Code</SubType></Compile><Compile Include="ScriptMain.vb"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a VB project.--><Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptTask" IconIndex=""></Host><ProjectClient><HostIdentifier>SSIS_ST140</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
           <BinaryItem
             Name="ST_8b08fd3736f847ff954ed7362ad94043.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
@@ -1494,8 +1642,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[FF EquipeComercial (65001 - string)]"
-                      connectionManagerRefId="Package.ConnectionManagers[FF EquipeComercial (65001 - string)]"
+                      connectionManagerID="Package.ConnectionManagers[FF EquipeComercial 65001]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF EquipeComercial 65001]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -1528,12 +1676,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[EquipeComercialDescricaoBase1]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EquipeComercialDescricaoBase1]"
                           length="100"
                           lineageId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[EquipeComercialDescricaoBase1]"
                           name="EquipeComercialDescricaoBase1"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1675,12 +1823,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[EquipeComercialCPF]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EquipeComercialCPF]"
                           length="20"
                           lineageId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[EquipeComercialCPF]"
                           name="EquipeComercialCPF"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1696,12 +1844,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[Nivel]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Nivel]"
                           length="2"
                           lineageId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[Nivel]"
                           name="Nivel"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1802,73 +1950,87 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NodeParent]"
-                          dataType="wstr"
-                          length="100"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="NodeParent" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EquipeComercialDescricaoBase1]"
-                          dataType="wstr"
-                          length="100"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="EquipeComercialDescricaoBase1" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EquipeComercialDescricaoBase2]"
-                          dataType="wstr"
-                          length="100"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="EquipeComercialDescricaoBase2" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EquipeComercialDescricaoBase3]"
-                          dataType="wstr"
-                          length="100"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="EquipeComercialDescricaoBase3" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NodePath]"
-                          dataType="wstr"
-                          length="15"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="NodePath" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[%EquipeComercialChave]"
-                          dataType="wstr"
-                          length="30"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="%EquipeComercialChave" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EquipeComercialSuperior]"
-                          dataType="wstr"
-                          length="30"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="EquipeComercialSuperior" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EquipeComercialDescricaoBase]"
-                          dataType="wstr"
-                          length="100"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="EquipeComercialDescricaoBase" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EquipeComercialCPF]"
-                          dataType="wstr"
-                          length="20"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="EquipeComercialCPF" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Nivel]"
-                          dataType="wstr"
-                          length="2"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="Nivel" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SuperiorCPF]"
-                          dataType="wstr"
-                          length="20"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="SuperiorCPF" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SuperiorDescricaoBase]"
-                          dataType="wstr"
-                          length="100"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="SuperiorDescricaoBase" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EquipeComercialDescricao]"
-                          dataType="wstr"
-                          length="100"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="EquipeComercialDescricao" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SuperiorDescricao]"
-                          dataType="wstr"
-                          length="100"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
                           name="SuperiorDescricao" />
                       </externalMetadataColumns>
                     </output>
@@ -3877,7 +4039,7 @@ WHERE Chave = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="119,42"
           Id="Package\FTP DEL"
@@ -3915,7 +4077,7 @@ WHERE Chave = ?</property>
           TopLeft="191.5,53.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="75,0"
               Start="0,0"
               End="67.5,0">
@@ -3937,7 +4099,7 @@ WHERE Chave = ?</property>
           TopLeft="421.5,49">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="81,0"
               Start="0,0"
               End="73.5,0">
@@ -3959,7 +4121,7 @@ WHERE Chave = ?</property>
           TopLeft="344,73.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-259.5,83"
               Start="0,0"
               End="-259.5,75.5">
@@ -3993,7 +4155,7 @@ WHERE Chave = ?</property>
           TopLeft="160.5,178.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="82,0"
               Start="0,0"
               End="74.5,0">
@@ -4022,7 +4184,7 @@ WHERE Chave = ?</property>
           TopLeft="388,85">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-99,45"
               Start="0,0"
               End="-99,37.5">
@@ -4056,7 +4218,7 @@ WHERE Chave = ?</property>
           TopLeft="517,130">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="49.5,-45"
               Start="0,0"
               End="49.5,-37.5">
@@ -4090,7 +4252,7 @@ WHERE Chave = ?</property>
           TopLeft="244,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="83,0"
               Start="0,0"
               End="75.5,0">
@@ -4114,7 +4276,7 @@ WHERE Chave = ?</property>
     design-time-name="Package\Sequence Container\Load CSV - Filial">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
           Id="Package\Sequence Container\Load CSV - Filial\Derived Column"
@@ -4148,7 +4310,7 @@ WHERE Chave = ?</property>
           TopLeft="466,46">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="89,31"
               Start="0,0"
               End="81.5,31">
@@ -4182,7 +4344,7 @@ WHERE Chave = ?</property>
           TopLeft="233,30">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="103,16"
               Start="0,0"
               End="95.5,16">
@@ -4216,7 +4378,7 @@ WHERE Chave = ?</property>
           TopLeft="157.5,51">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="180.5,54"
               Start="0,0"
               End="180.5,46.5">
@@ -4252,7 +4414,7 @@ WHERE Chave = ?</property>
           TopLeft="509,175">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-257,14"
               Start="0,0"
               End="-249.5,14">
@@ -4286,7 +4448,7 @@ WHERE Chave = ?</property>
           TopLeft="633,98">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-47,56"
               Start="0,0"
               End="-47,48.5">
@@ -4320,7 +4482,7 @@ WHERE Chave = ?</property>
           TopLeft="711,77">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="78,54"
               Start="0,0"
               End="70.5,54">
@@ -4371,7 +4533,7 @@ WHERE Chave = ?</property>
     design-time-name="Package\Sequence Container\Staging to Final">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
           Id="Package\Sequence Container\Staging to Final\Derived Column"
@@ -4401,7 +4563,7 @@ WHERE Chave = ?</property>
           TopLeft="504.5,93">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-84,66"
               Start="0,0"
               End="-84,58.5">
@@ -4437,7 +4599,7 @@ WHERE Chave = ?</property>
           TopLeft="522,93">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="110,67"
               Start="0,0"
               End="110,59.5">
@@ -4473,7 +4635,7 @@ WHERE Chave = ?</property>
           TopLeft="377,72">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="71,0"
               Start="0,0"
               End="63.5,0">
@@ -4487,7 +4649,9 @@ WHERE Chave = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4495,7 +4659,7 @@ WHERE Chave = ?</property>
           TopLeft="152.666666666667,130">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="147.333333333333,-37"
               Start="0,0"
               End="147.333333333333,-29.5">
@@ -4521,7 +4685,9 @@ WHERE Chave = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4529,7 +4695,7 @@ WHERE Chave = ?</property>
           TopLeft="114,93">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-10.6666666666667,37"
               Start="0,0"
               End="-10.6666666666667,29.5">
@@ -4555,7 +4721,9 @@ WHERE Chave = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
