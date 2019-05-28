@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Consumo"
   DTS:PackageType="5"
-  DTS:VersionBuild="429"
-  DTS:VersionGUID="{DF507EE8-56A4-4571-B58C-F7A01156BF9E}">
+  DTS:VersionBuild="430"
+  DTS:VersionGUID="{EA5E1983-D963-4AAD-9431-594036CEF2CD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -17884,14 +17884,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Carga to Final (com log) 1\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
-              endId="Package\Carga to Final (com log) 1\Vendedor.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Sub-Grupo.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Vendedor.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
-              endId="Package\Carga to Final (com log) 1\Cliente.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\CFOP.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Cliente.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup CFOP.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output2]"
               endId="Package\Carga to Final (com log) 1\Produto.Inputs[Derived Column Input]"
@@ -17899,14 +17899,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Carga to Final (com log) 1\Lookup Produto.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
-              endId="Package\Carga to Final (com log) 1\CFOP.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Cliente.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup CFOP.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Cliente.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
-              endId="Package\Carga to Final (com log) 1\Sub-Grupo.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Vendedor.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Vendedor.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Match Output]"
               endId="Package\Carga to Final (com log) 1\Lookup Vendedor.Inputs[Lookup Input]"
@@ -20177,6 +20177,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           cachedName="Filial_Distribuidor"
                           externalMetadataColumnId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO.Inputs[OLE DB Destination Input].ExternalColumns[Filial_Distribuidor]"
                           lineageId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1.Outputs[Union All Output 1].Columns[Filial_Distribuidor]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO.Inputs[OLE DB Destination Input].Columns[TipoFato]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="TipoFato"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO.Inputs[OLE DB Destination Input].ExternalColumns[TipoFato]"
+                          lineageId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1.Outputs[Union All Output 1].Columns[TipoFato]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO.Inputs[OLE DB Destination Input].Columns[DistribuidorIgnorarShelfShare]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="DistribuidorIgnorarShelfShare"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO.Inputs[OLE DB Destination Input].ExternalColumns[DistribuidorIgnorarShelfShare]"
+                          lineageId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1.Outputs[Union All Output 1].Columns[DistribuidorIgnorarShelfShare]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -20492,6 +20508,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           dataType="str"
                           length="66"
                           name="ChaveClienteVendedor" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO.Inputs[OLE DB Destination Input].ExternalColumns[TipoFato]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="TipoFato" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO.Inputs[OLE DB Destination Input].ExternalColumns[DistribuidorIgnorarShelfShare]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="DistribuidorIgnorarShelfShare" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -35149,19 +35177,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
+                  endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\GRUPO.Inputs[Derived Column Input]"
+                  name="Lookup Error Output"
+                  startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO.Outputs[Lookup Error Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Inputs[Derived Column Input]"
                   name="Lookup Error Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP.Outputs[Lookup Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Sub-Grupo.Inputs[Derived Column Input]"
                   name="Lookup Error Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
-                <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
-                  endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\GRUPO.Inputs[Derived Column Input]"
-                  name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1.Inputs[Union All Input 2]"
@@ -42950,7 +42978,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="202,42"
           Id="Package\Carga to Final (com log) 1"
@@ -43016,7 +43044,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="210.5,35">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="66,0"
               Start="0,0"
               End="58.5,0">
@@ -43038,7 +43066,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="450.5,33.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="102,0"
               Start="0,0"
               End="94.5,0">
@@ -43060,7 +43088,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="224,355.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="67.5,0"
               Start="0,0"
               End="60,0">
@@ -43082,7 +43110,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="135,279">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="8,55"
               Start="0,0"
               End="8,47.5">
@@ -43116,7 +43144,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="363.5,57.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-236.5,44"
               Start="0,0"
               End="-236.5,36.5">
@@ -43150,7 +43178,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="459.5,115.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="65,0"
               Start="0,0"
               End="57.5,0">
@@ -43172,7 +43200,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="610,138.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-496,32"
               Start="0,0"
               End="-496,24.5">
@@ -43206,7 +43234,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="196.5,193.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="68.5,0"
               Start="0,0"
               End="61,0">
@@ -43228,7 +43256,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="237.5,121">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="64,0"
               Start="0,0"
               End="56.5,0">
@@ -43250,7 +43278,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="528.5,356.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="35,-18"
               Start="0,0"
               End="27.5,-18">
@@ -43284,7 +43312,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="480,197">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="57,0"
               Start="0,0"
               End="49.5,0">
@@ -43306,7 +43334,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="537,204.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-292,53.3333333333333"
               Start="0,0"
               End="-284.5,53.3333333333333">
@@ -43355,7 +43383,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="267,27.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="81,0"
               Start="0,0"
               End="73.5,0">
@@ -43377,7 +43405,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="409,50">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-96,37"
               Start="0,0"
               End="-96,29.5">
@@ -43411,7 +43439,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="561,87">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="46.5,-34.5"
               Start="0,0"
               End="46.5,-27">
@@ -43545,7 +43573,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Carga to Final (com log) 1\Lookup CFOP"
           TopLeft="79,262" />
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
           TopLeft="212,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44205,7 +44233,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
           TopLeft="240,389">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44241,7 +44269,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
           TopLeft="221,283">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44313,7 +44341,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
           TopLeft="914.333333333333,111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44369,9 +44397,61 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="129,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Sub-Grupo"
+          TopLeft="346,306" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All"
+          TopLeft="639,279" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\GRUPO"
+          TopLeft="382,401" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1"
+          TopLeft="73,254" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO"
+          TopLeft="62,439" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Data Conversion"
+          TopLeft="662,62" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\DC - Add audit details"
+          TopLeft="860.71428574348,336.094116694705" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Script RowCount"
+          TopLeft="216,68" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Multicast"
+          TopLeft="520,0" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo"
+          TopLeft="52,337" />
+        <NodeLayout
           Size="168,42"
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO"
           TopLeft="379,477" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\SC - Get error details"
+          TopLeft="858,261.847056815864" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Conditional Split"
+          TopLeft="22,149" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Derived Column"
+          TopLeft="419,69" />
         <NodeLayout
           Size="142,42"
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP"
@@ -44381,61 +44461,169 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT"
           TopLeft="659,479" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Data Conversion"
-          TopLeft="662,62" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors"
-          TopLeft="888.1428570942,420" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Script RowCount"
-          TopLeft="216,68" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\DC - Add audit details"
-          TopLeft="860.71428574348,336.094116694705" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo"
-          TopLeft="52,337" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\SC - Get error details"
-          TopLeft="858,261.847056815864" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1"
-          TopLeft="73,254" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Conditional Split"
-          TopLeft="22,149" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All"
-          TopLeft="639,279" />
-        <NodeLayout
           Size="150,42"
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\OLE DB Source"
           TopLeft="18,66" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Derived Column"
-          TopLeft="419,69" />
         <NodeLayout
           Size="104,42"
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP"
           TopLeft="629,151" />
         <NodeLayout
-          Size="120,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Multicast"
-          TopLeft="520,0" />
-        <NodeLayout
-          Size="129,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Sub-Grupo"
-          TopLeft="346,306" />
+          Size="130,42"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors"
+          TopLeft="888.1428570942,420" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output]"
+          TopLeft="573,86.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89,0"
+              Start="0,0"
+              End="81.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="81.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Error Output]"
+          TopLeft="496,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84,-27"
+              Start="0,0"
+              End="84,-19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-9.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-9.5"
+                    Point2="0,-13.5"
+                    Point3="4,-13.5" />
+                  <mssgle:LineSegment
+                    End="80,-13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="80,-13.5"
+                    Point2="84,-13.5"
+                    Point3="84,-17.5" />
+                  <mssgle:LineSegment
+                    End="84,-19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-31.8300390625,-8.5,147.660078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Data Conversion Output]"
+          TopLeft="740,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-640.5,45"
+              Start="0,0"
+              End="-640.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="-4,22.5" />
+                  <mssgle:LineSegment
+                    End="-636.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-636.5,22.5"
+                    Point2="-640.5,22.5"
+                    Point3="-640.5,26.5" />
+                  <mssgle:LineSegment
+                    End="-640.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[CFOP IS NULL]"
+          TopLeft="99.5,191">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.1666666666667,63"
+              Start="0,0"
+              End="18.1666666666667,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.3404255319149" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.3404255319149"
+                    Point2="0,37.3404255319149"
+                    Point3="4,37.3404255319149" />
+                  <mssgle:LineSegment
+                    End="14.1666666666667,37.3404255319149" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.1666666666667,37.3404255319149"
+                    Point2="18.1666666666667,37.3404255319149"
+                    Point3="18.1666666666667,41.3404255319149" />
+                  <mssgle:LineSegment
+                    End="18.1666666666667,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.0211197916667,42.3404255319149,64.20890625,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[CFOP IS NOT NULL]"
+          TopLeft="177,173.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="148,0"
+              Start="0,0"
+              End="140.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="140.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="26.785546875,5,86.92890625,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Union All Output 11]"
           TopLeft="136.75,296">
@@ -44578,7 +44766,67 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-20.95890625,5,146.4178125,11.43359375"
+              BoundingBox="-20.95890625,5,163.740078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output2]"
+          TopLeft="213,465.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="166,32.3333333333333"
+              Start="0,0"
+              End="158.5,32.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.0550458715596,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66.0550458715596,0"
+                    Point2="70.0550458715596,0"
+                    Point3="70.0550458715596,4" />
+                  <mssgle:LineSegment
+                    End="70.0550458715596,28.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.0550458715596,28.3333333333333"
+                    Point2="70.0550458715596,32.3333333333333"
+                    Point3="74.0550458715596,32.3333333333333" />
+                  <mssgle:LineSegment
+                    End="158.5,32.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="21.8636591528096,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output1]"
+          TopLeft="136.5,379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -44620,30 +44868,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
-          TopLeft="467,174.5">
+          TopLeft="213,454.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="162,0"
+              EndConnector="169,-32.3333333333333"
               Start="0,0"
-              End="154.5,0">
+              End="161.5,-32.3333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="154.5,0" />
+                    End="67.3211009174311,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.3211009174311,0"
+                    Point2="71.3211009174311,0"
+                    Point3="71.3211009174311,-4" />
+                  <mssgle:LineSegment
+                    End="71.3211009174311,-28.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.3211009174311,-28.3333333333333"
+                    Point2="71.3211009174311,-32.3333333333333"
+                    Point3="75.3211009174311,-32.3333333333333" />
+                  <mssgle:LineSegment
+                    End="161.5,-32.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="31.38361328125,5,91.7327734375,11.609375"
+              BoundingBox="25.4547141986811,1,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
           TopLeft="219,358">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44679,47 +44939,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output]"
-          TopLeft="573,86.5">
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
+          TopLeft="467,174.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="89,0"
+              EndConnector="162,0"
               Start="0,0"
-              End="81.5,0">
+              End="154.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="81.5,0" />
+                    End="154.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output1]"
-          TopLeft="717.416666666667,479">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-158"
-              Start="0,0"
-              End="0,-150.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-150.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="31.38361328125,5,91.7327734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44748,6 +44988,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                     Point3="18.5,47" />
                   <mssgle:LineSegment
                     End="18.5,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output4]"
+          TopLeft="952.17857141884,378.094116694705">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.905883305295"
+              Start="0,0"
+              End="0,34.405883305295">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.405883305295" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -44791,262 +45053,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output4]"
-          TopLeft="952.17857141884,378.094116694705">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.905883305295"
-              Start="0,0"
-              End="0,34.405883305295">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.405883305295" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Error Output]"
-          TopLeft="496,69">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="84,-27"
-              Start="0,0"
-              End="84,-19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-9.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-9.5"
-                    Point2="0,-13.5"
-                    Point3="4,-13.5" />
-                  <mssgle:LineSegment
-                    End="80,-13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="80,-13.5"
-                    Point2="84,-13.5"
-                    Point3="84,-17.5" />
-                  <mssgle:LineSegment
-                    End="84,-19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-31.8300390625,-8.5,129.9227734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Data Conversion Output]"
-          TopLeft="740,104">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-640.5,45"
-              Start="0,0"
-              End="-640.5,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="-4,22.5" />
-                  <mssgle:LineSegment
-                    End="-636.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-636.5,22.5"
-                    Point2="-640.5,22.5"
-                    Point3="-640.5,26.5" />
-                  <mssgle:LineSegment
-                    End="-640.5,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[CFOP IS NULL]"
-          TopLeft="99.5,191">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.1666666666667,63"
-              Start="0,0"
-              End="18.1666666666667,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.3404255319149" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.3404255319149"
-                    Point2="0,37.3404255319149"
-                    Point3="4,37.3404255319149" />
-                  <mssgle:LineSegment
-                    End="14.1666666666667,37.3404255319149" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.1666666666667,37.3404255319149"
-                    Point2="18.1666666666667,37.3404255319149"
-                    Point3="18.1666666666667,41.3404255319149" />
-                  <mssgle:LineSegment
-                    End="18.1666666666667,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.0211197916667,42.3404255319149,64.20890625,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[CFOP IS NOT NULL]"
-          TopLeft="177,173.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="148,0"
-              Start="0,0"
-              End="140.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="140.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="26.785546875,5,86.92890625,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO"
-          TopLeft="62,439" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output1]"
-          TopLeft="136.5,379">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output2]"
-          TopLeft="213,465.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="166,32.3333333333333"
-              Start="0,0"
-              End="158.5,32.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="66.0550458715596,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="66.0550458715596,0"
-                    Point2="70.0550458715596,0"
-                    Point3="70.0550458715596,4" />
-                  <mssgle:LineSegment
-                    End="70.0550458715596,28.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="70.0550458715596,28.3333333333333"
-                    Point2="70.0550458715596,32.3333333333333"
-                    Point3="74.0550458715596,32.3333333333333" />
-                  <mssgle:LineSegment
-                    End="158.5,32.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="21.8636591528096,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\GRUPO"
-          TopLeft="382,401" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
-          TopLeft="213,454.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="169,-32.3333333333333"
-              Start="0,0"
-              End="161.5,-32.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="67.3211009174311,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="67.3211009174311,0"
-                    Point2="71.3211009174311,0"
-                    Point3="71.3211009174311,-4" />
-                  <mssgle:LineSegment
-                    End="71.3211009174311,-28.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="71.3211009174311,-28.3333333333333"
-                    Point2="71.3211009174311,-32.3333333333333"
-                    Point3="75.3211009174311,-32.3333333333333" />
-                  <mssgle:LineSegment
-                    End="161.5,-32.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="25.4547141986811,1,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output2]"
           TopLeft="438.5,401">
           <EdgeLayout.Curve>
@@ -45072,6 +45078,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                     Point3="242.166666666667,-51.373572593801" />
                   <mssgle:LineSegment
                     End="242.166666666667,-72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Derived Column Output1]"
+          TopLeft="717.416666666667,479">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-158"
+              Start="0,0"
+              End="0,-150.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-150.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
