@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="1/17/2019 11:32:54 AM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{06E84A17-9B62-4434-AB09-CAFDD7E649D8}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LastModifiedProductVersion="13.0.4495.10"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_CNPJDist"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{A601FB31-3798-4ED8-91F1-FDD3B897255E}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{057F6E1C-9E97-4D44-A986-C854014DE227}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -333,13 +333,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_CNPJ_Dist]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_CNPJ_Dist]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_CNPJ_Dist]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_CNPJ_Dist]) [refTable]
 where [refTable].[CPF_CNPJ] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -389,8 +389,8 @@ where [refTable].[CPF_CNPJ] = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -498,7 +498,7 @@ where [refTable].[CPF_CNPJ] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update TB_Agroview_Parametros_CNPJ_Dist
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update TB_Agroview_Parametros_CNPJ_Dist
 set 
 Codigo_Agrupado = ?,
 Tipo_Acesso = ?,
@@ -513,8 +513,8 @@ where CPF_CNPJ = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -671,7 +671,7 @@ where CPF_CNPJ = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -705,8 +705,8 @@ where CPF_CNPJ = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -842,7 +842,7 @@ where CPF_CNPJ = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -868,8 +868,8 @@ where CPF_CNPJ = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1223,7 +1223,7 @@ where CPF_CNPJ = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1257,8 +1257,8 @@ where CPF_CNPJ = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1500,51 +1500,13 @@ where CPF_CNPJ = ?</property>
       <DTS:ObjectData>
         <ScriptProject
           Name="ST_09eb710d5bb843d9b96078fd824f772c"
-          VSTAMajorVersion="3"
+          VSTAMajorVersion="14"
           VSTAMinorVersion="0"
           Language="VisualBasic"
           ReadOnlyVariables="$Project::FSMapDir,$Project::FSMapDrive,$Project::FSMapUser,$Project::FSMapPass">
           <ProjectItem
             Name="ST_09eb710d5bb843d9b96078fd824f772c.vbproj"
-            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{f79b9455-7936-4e53-8490-0574a550b413}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>My Project</AppDesignerFolder><RootNamespace>ST_e55a4cfb638046b0a91d51fb168ebea0</RootNamespace><AssemblyName>ST_09eb710d5bb843d9b96078fd824f772c</AssemblyName><TargetFrameworkVersion>v4.5</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch><TargetFrameworkProfile></TargetFrameworkProfile></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineDebug>true</DefineDebug><DefineTrace>true</DefineTrace><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineDebug>false</DefineDebug><DefineTrace>true</DefineTrace><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><Import Include="Microsoft.VisualBasic" /><Import Include="System" /><Import Include="System.Collections" /><Import Include="System.Data" /><Import Include="System.Diagnostics" /><Import Include="System.Windows.Forms" /></ItemGroup><ItemGroup><AppDesigner Include="My Project\" /><Compile Include="My Project\AssemblyInfo.vb"><SubType>Code</SubType></Compile><EmbeddedResource Include="My Project\Resources.resx"><Generator>VbMyResourcesResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.vb</LastGenOutput><CustomToolNamespace>My.Resources</CustomToolNamespace></EmbeddedResource><Compile Include="My Project\Resources.Designer.vb"><AutoGen>True</AutoGen><DesignTime>True</DesignTime><DependentUpon>Resources.resx</DependentUpon><SubType>Code</SubType></Compile><None Include="My Project\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.vb</LastGenOutput></None><Compile Include="My Project\Settings.Designer.vb"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon><SubType>Code</SubType></Compile><Compile Include="ScriptMain.vb"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a VB project.--><Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptTask" IconIndex=""></Host><ProjectClient><HostIdentifier>SSIS_ST140</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\AssemblyInfo.vb"
-            Encoding="UTF8"><![CDATA[Imports System
-Imports System.Reflection
-Imports System.Runtime.InteropServices
-
-' General Information about an assembly is controlled through the following 
-' set of attributes. Change these attribute values to modify the information
-' associated with an assembly.
-
-' Review the values of the assembly attributes
-
-<Assembly: AssemblyTitle("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
-<Assembly: AssemblyCopyright("Copyright @  2019")> 
-<Assembly: AssemblyTrademark("")> 
-<Assembly: CLSCompliant(True)> 
-
-<Assembly: ComVisible(False)> 
-
-'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("cd78111e-3163-4c31-9662-7778e1349f2c")> 
-
-' Version information for an assembly consists of the following four values:
-'
-'      Major Version
-'      Minor Version 
-'      Build Number
-'      Revision
-'
-' You can specify all the values or you can default the Build and Revision Numbers 
-' by using the '*' as shown below:
-' <Assembly: AssemblyVersion("1.0.*")>
-
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{f79b9455-7936-4e53-8490-0574a550b413}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>My Project</AppDesignerFolder><RootNamespace>ST_e55a4cfb638046b0a91d51fb168ebea0</RootNamespace><AssemblyName>ST_09eb710d5bb843d9b96078fd824f772c</AssemblyName><TargetFrameworkVersion>v4.5</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch><TargetFrameworkProfile></TargetFrameworkProfile></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineDebug>true</DefineDebug><DefineTrace>true</DefineTrace><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineDebug>false</DefineDebug><DefineTrace>true</DefineTrace><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><Import Include="Microsoft.VisualBasic" /><Import Include="System" /><Import Include="System.Collections" /><Import Include="System.Data" /><Import Include="System.Diagnostics" /><Import Include="System.Windows.Forms" /></ItemGroup><ItemGroup><AppDesigner Include="My Project\" /><Compile Include="My Project\AssemblyInfo.vb"><SubType>Code</SubType></Compile><EmbeddedResource Include="My Project\Resources.resx"><Generator>VbMyResourcesResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.vb</LastGenOutput><CustomToolNamespace>My.Resources</CustomToolNamespace></EmbeddedResource><Compile Include="My Project\Resources.Designer.vb"><AutoGen>True</AutoGen><DesignTime>True</DesignTime><DependentUpon>Resources.resx</DependentUpon><SubType>Code</SubType></Compile><None Include="My Project\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.vb</LastGenOutput></None><Compile Include="My Project\Settings.Designer.vb"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon><SubType>Code</SubType></Compile><Compile Include="ScriptMain.vb"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a VB project.--><Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptTask" IconIndex=""></Host><ProjectClient><HostIdentifier>SSIS_ST130</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
           <ProjectItem
             Name="ScriptMain.vb"
             Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
@@ -1701,6 +1663,44 @@ End Class]]></ProjectItem>
   <Settings />
 </SettingsFile>]]></ProjectItem>
           <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_e55a4cfb638046b0a91d51fb168ebea0")> 
+<Assembly: AssemblyCopyright("Copyright @  2019")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("cd78111e-3163-4c31-9662-7778e1349f2c")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
             Name="My Project\Settings.Designer.vb"
             Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
 ' <autogenerated>
@@ -1744,21 +1744,21 @@ End Class]]></ProjectItem>
             Name="Project"
             Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_8b08fd3736f847ff954ed7362ad94043</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_8b08fd3736f847ff954ed7362ad94043</msb:DisplayName>
-    <msb:ProjectId>{DDD383C3-E481-4757-AA77-ACE8C202BED8}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_09eb710d5bb843d9b96078fd824f772c.vbproj" />
-    <msb:File Include="My Project\AssemblyInfo.vb" />
-    <msb:File Include="ScriptMain.vb" />
-    <msb:File Include="My Project\Resources.resx" />
-    <msb:File Include="My Project\Resources.Designer.vb" />
-    <msb:File Include="My Project\Settings.settings" />
-    <msb:File Include="My Project\Settings.Designer.vb" />
-  </msb:ItemGroup>
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_8b08fd3736f847ff954ed7362ad94043</msb:CodeName>
+		<msb:DisplayName>ST_8b08fd3736f847ff954ed7362ad94043</msb:DisplayName>
+		<msb:ProjectId>{DDD383C3-E481-4757-AA77-ACE8C202BED8}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_09eb710d5bb843d9b96078fd824f772c.vbproj"/>
+		<msb:File Include="My Project\AssemblyInfo.vb"/>
+		<msb:File Include="My Project\Resources.resx"/>
+		<msb:File Include="ScriptMain.vb"/>
+		<msb:File Include="My Project\Resources.Designer.vb"/>
+		<msb:File Include="My Project\Settings.settings"/>
+		<msb:File Include="My Project\Settings.Designer.vb"/>
+	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
             Name="My Project\Resources.resx"
@@ -1943,9 +1943,9 @@ Namespace My.Resources
     End Class
 End Namespace]]></ProjectItem>
           <BinaryItem
-            Name="ST_8b08fd3736f847ff954ed7362ad94043.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            Name="ST_09eb710d5bb843d9b96078fd824f772c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGExzFwAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAfj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGPp71wAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAfj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAACw+AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1984,17 +1984,17 @@ ApoIBgDRA/8GBgCgAzQFCgDJApsHCgB2Ah8GCgARAx8GDgBOAnAIDgDxBzQIBgC5AyEIDgBVA7kI
 DgBtAz8BBgAaCm8GDgC3B3AIDgDuAz8BBgABAm8GDgBOAKQFCgC0AoMGBgCBBwAJBgARB94GCgBe
 AskGBgDgAiEIEgCQBHsFEgAyAnsFBgBXBW8GBgB2Bm8GBgCLAuAIBgD0AW8GBgClAW8GBgCMCv8G
 BgDBCeAIBgAZCBQFEgANBnsFFgCZCckBFgCJAckBDgDzBj8BDgAlBbkIBgB4AG8GDgDQCbkIDgC1
-CbkIBgB7Bm8GBgBQBW8GBgCCCm8GBgCSAW8GBgACCG8GAAAAAL4AAAAAAAEAAQAAAAAAuwZRCk0A
+CbkIBgB7Bm8GBgBQBW8GBgCCCm8GBgCSAW8GBgACCG8GAAAAAJoAAAAAAAEAAQAAAAAAuwZRCk0A
 AQABAAAAAADvB1EKUQABAAIAAAEQACEKUQphAAEAAwAAAAAAQgkRCWEABQAIAAABEACjCQEAgQAH
-AAwAAQAAAKAGAQCNAAkADwAAAQAAxwAAAGEACQARAAUBAABiCAAAYQAKABEABQEAAF0AAABhAAoA
-GAACAQAA6gkAAJUACwAaABMBAACiAAAAnQAOABoAMQBGB1ABMQAdB1gBMQAxB2ABMQBfB2gBEQD6
-B3ABEQAmAnQBEQDpBHgBEQD4CXwBMwElAH8BIQBHCg4BBgYuAYMBVoDaCYYBVoAGAoYBUCAAAAAA
+AAwAAQAAAKAGAQCNAAkADwAAAQAAowAAAGEACQARAAUBAABiCAAAYQAKABEABQEAAF0AAABhAAoA
+GAACAQAA6gkAAJUACwAaABMBAAB+AAAAnQAOABoAMQBGB1ABMQAdB1gBMQAxB2ABMQBfB2gBEQD6
+B3ABEQAmAnQBEQDpBHgBEQD4CXwBMwElAH8BIQBHCg4BBgYKAYMBVoDaCYYBVoAGAoYBUCAAAAAA
 BhgMCAYAAQBYIAAAAAAGGAwIBgABAGAgAAAAABEYEgiKAQEAiiAAAAAAEwjiB44BAQCWIAAAAAAT
 CKsGkwEBAKIgAAAAABMIsweYAQEAriAAAAAAEwhSCJ0BAQC6IAAAAAADGAwIBgABAMIgAAAAABYI
 fQeiAQEA7iAAAAAAFggOAqcBAQD1IAAAAAAWCBoCrAEBAP0gAAAAABEYEgiKAQIADiEAAAAABhgM
 CAYAAgAYIQAAAAAWCPEEsgECAHQhAAAAAAYYDAgGAAIAfCEAAAAABgCmBgYAAgBrJAAAAADGAq4J
-5gACAHkkAAAAAMYCfQHrAAMAgSQAAAAAgwD+AbcBAwCNJAAAAADGAk4FlgADAJgkAAAAABEAGwG8
-AQMAuCQAAAAAAQAHAcQBBAC6IAAAAAAGGAwIBgAFAMQkAAAAAAMIZAFKAAUA+CQAAAAABhgMCAYA
+5gACAHkkAAAAAMYCfQHrAAMAgSQAAAAAgwD+AbcBAwCNJAAAAADGAk4FlgADAJgkAAAAABEA9wC8
+AQMAuCQAAAAAAQDjAMQBBAC6IAAAAAAGGAwIBgAFAMQkAAAAAAMIZAFKAAUA+CQAAAAABhgMCAYA
 BQAAAAEADgUAAAEAGwcAAAEAdAEAAAEAdAEJAAwIAQARAAwIBgAZAAwICgApAAwIEAAxAAwIEAA5
 AAwIEABBAAwIEABJAAwIEABRAAwIEABZAAwIFQBhAAwIFQBpAAwIEABxAAwIEAB5AAwIEACBAAwI
 GgCRAAwIIACpAAwIBgCxAAwIBgC5AAwIBgDRAAwIJgDpAAwIEAAJAQwIBgARAQwIBgAxAQwIBgCZ
@@ -2011,16 +2011,16 @@ AIsASwHjALsASwHjAFMATgLpALMASwEDAcMASwEjAYMA8gIjAaMAFANDAYMA8gJDAVsATgIgAoMA
 AosASwHgAoMA8gIAA4sASwEgA4sASwEgA4MA8gIBAAUAAAAMAG8A7wACAQQAAQAFAAUABgAHAAoA
 CAAAAPEHzAEAAL0G0QEAALcH1gEAAGQI2wEAAIEH4AEAACoC5QEAAA4F6gEAAGgB7wECAAQAAwAC
 AAUABQACAAYABwACAAcACQACAAkACwACAAoADQABAAsADQACAA4ADwACABgAEQAuADUAPABDAPQA
-BwEWAR0BhD4AAAkABIAAAAEAAAAAAAAAAAAAAAAAfgAAAAQAAAAAAAAAAAAAACsBNgEAAAAABAAA
-AAAAAAAAAAAAKwFvBgAAAAAKAAAAAAAAAAAAAAA0AT8BAAAAAA4AAAAAAAAAAAAAAD0BXAUAAAAA
-DgAAAAAAAAAAAAAAPQHmAAAAAAAAAAAAAQAAAE4JAAAJAAQACgAEAAsABwAMAAgAAAAQABQABQEA
-ABAAKwAFAQAAAAAtAAUBfQD9AH0AIAEAAABTVF9lNTVhNGNmYjYzODA0NmIwYTkxZDUxZmIxNjhl
+BwEWAR0BhD4AAAkABIAAAAEAAAAAAAAAAAAAAAAAGwEAAAQAAAAAAAAAAAAAACsBEgEAAAAABAAA
+AAAAAAAAAAAAKwFvBgAAAAAKAAAAAAAAAAAAAAA0AT8BAAAAAA0AAAAAAAAAAAAAAD0BXAUAAAAA
+DQAAAAAAAAAAAAAAPQHCAAAAAAAAAAAAAQAAAE4JAAAJAAQACgAEAAsABwAMAAgAAAAQABQA4QAA
+ABAAKwDhAAAAAAAtAOEAfQD9AH0AIAEAAABTVF9lNTVhNGNmYjYzODA0NmIwYTkxZDUxZmIxNjhl
 YmVhMAA3MjhGRjY2M0U2MzFDOEY2MjZFOUNGOUY0MEY3RkNENDI3OUFDMDMxAENvbnRleHRWYWx1
-ZWAxAFRocmVhZFNhZmVPYmplY3RQcm92aWRlcmAxAEludDMyAFNUXzhiMDhmZDM3MzZmODQ3ZmY5
-NTRlZDczNjJhZDk0MDQzAF9fU3RhdGljQXJyYXlJbml0VHlwZVNpemU9NQA8TW9kdWxlPgA8UHJp
-dmF0ZUltcGxlbWVudGF0aW9uRGV0YWlscz4ATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRT
-AFQARGlzcG9zZV9fSW5zdGFuY2VfXwBDcmVhdGVfX0luc3RhbmNlX18AdmFsdWVfXwBtc2Nvcmxp
-YgBNaWNyb3NvZnQuVmlzdWFsQmFzaWMAQ3JlYXRlSW5zdGFuY2UAZ2V0X0dldEluc3RhbmNlAGlu
+ZWAxAFRocmVhZFNhZmVPYmplY3RQcm92aWRlcmAxAEludDMyAF9fU3RhdGljQXJyYXlJbml0VHlw
+ZVNpemU9NQA8TW9kdWxlPgA8UHJpdmF0ZUltcGxlbWVudGF0aW9uRGV0YWlscz4ATWljcm9zb2Z0
+LlNxbFNlcnZlci5NYW5hZ2VkRFRTAFQARGlzcG9zZV9fSW5zdGFuY2VfXwBDcmVhdGVfX0luc3Rh
+bmNlX18AdmFsdWVfXwBtc2NvcmxpYgBTVF8wOWViNzEwZDViYjg0M2Q5Yjk2MDc4ZmQ4MjRmNzcy
+YwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMAQ3JlYXRlSW5zdGFuY2UAZ2V0X0dldEluc3RhbmNlAGlu
 c3RhbmNlAEdldEhhc2hDb2RlAFZhcmlhYmxlAFJ1bnRpbWVGaWVsZEhhbmRsZQBSdW50aW1lVHlw
 ZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50aW1l
 AENoYW5nZVR5cGUAVmFsdWVUeXBlAEdldFR5cGUARmFpbHVyZQBnZXRfQ3VsdHVyZQBzZXRfQ3Vs
@@ -2042,8 +2042,8 @@ aW1lLlZlcnNpb25pbmcAVG9TdHJpbmcATWF0aABNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRh
 c2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBNaWNyb3NvZnQuVmlz
 dWFsQmFzaWMuTXlTZXJ2aWNlcy5JbnRlcm5hbABDb25kaXRpb25hbENvbXBhcmVPYmplY3RFcXVh
 bABDb25kaXRpb25hbENvbXBhcmVPYmplY3ROb3RFcXVhbABTY3JpcHRPYmplY3RNb2RlbABTeXN0
-ZW0uQ29tcG9uZW50TW9kZWwATGF0ZUNhbGwAU1RfOGIwOGZkMzczNmY4NDdmZjk1NGVkNzM2MmFk
-OTQwNDMuZGxsAGdldF9JdGVtAFN5c3RlbQBFbnVtAEJvb2xlYW4AU3lzdGVtLkNvbXBvbmVudE1v
+ZW0uQ29tcG9uZW50TW9kZWwATGF0ZUNhbGwAU1RfMDllYjcxMGQ1YmI4NDNkOWI5NjA3OGZkODI0
+Zjc3MmMuZGxsAGdldF9JdGVtAFN5c3RlbQBFbnVtAEJvb2xlYW4AU3lzdGVtLkNvbXBvbmVudE1v
 ZGVsLkRlc2lnbgBTY3JpcHRNYWluAGdldF9BcHBsaWNhdGlvbgBNeUFwcGxpY2F0aW9uAFN5c3Rl
 bS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAEludGVyYWN0aW9uAFN5c3RlbS5S
 ZWZsZWN0aW9uAEN1bHR1cmVJbmZvAG1fQXBwT2JqZWN0UHJvdmlkZXIAbV9Vc2VyT2JqZWN0UHJv
@@ -2067,7 +2067,7 @@ TQBhAHAARAByAGkAdgBlAAATRgBTAE0AYQBwAFUAcwBlAHIAABNGAFMATQBhAHAAUABhAHMAcwAA
 EUYAUwBNAGEAcABEAGkAcgAAH1cAUwBjAHIAaQBwAHQALgBOAGUAdAB3AG8AcgBrAAABACNFAG4A
 dQBtAE4AZQB0AHcAbwByAGsARAByAGkAdgBlAHMAAAtDAG8AdQBuAHQAAAlJAHQAZQBtAAAlUgBl
 AG0AbwB2AGUATgBlAHQAdwBvAHIAawBEAHIAaQB2AGUAAB9NAGEAcABOAGUAdAB3AG8AcgBrAEQA
-cgBpAHYAZQAAAAAAPmiM8xGi+EeZscJGhXSuwwAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSAC
+cgBpAHYAZQAAAAAAhg6N2JOviUGlEZp+gb/e+wAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSAC
 AQ4OBSABARFFByAEAQ4ODg4GFRIoARIMBhUSKAESCAYVEigBEmUGFRIoARIkBCAAEwAHAAESbRGA
 oQUgABKApQcgAgEOEoClBAABHBwEAAEBHA8HCw4ODg4cHAgCCB0cHQIFIAASgLEFIAASgLUGIAES
 gLkcAyAAHAMgAA4FAAIcDg4QAAccHBJtDh0cHQ4dEm0dAgYAAwIcHAIFAAIcHBwEAAEIHAYAAhwc
@@ -2105,12 +2105,12 @@ YgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkATgBh
 AG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQA
 XwBlADUANQBhADQAYwBmAGIANgAzADgAMAA0ADYAYgAwAGEAOQAxAGQANQAxAGYAYgAxADYAOABl
 AGIAZQBhADAAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AMAAuADAA
-AABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfADgAYgAwADgAZgBkADMANwAz
-ADYAZgA4ADQANwBmAGYAOQA1ADQAZQBkADcAMwA2ADIAYQBkADkANAAwADQAMwAuAGQAbABsAAAA
+AABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfADAAOQBlAGIANwAxADAAZAA1
+AGIAYgA4ADQAMwBkADkAYgA5ADYAMAA3ADgAZgBkADgAMgA0AGYANwA3ADIAYwAuAGQAbABsAAAA
 SAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABA
 ACAAIAAyADAAMQA5AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAA
-AAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBUAF8AOABiADAAOABm
-AGQAMwA3ADMANgBmADgANAA3AGYAZgA5ADUANABlAGQANwAzADYAMgBhAGQAOQA0ADAANAAzAC4A
+AAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBUAF8AMAA5AGUAYgA3
+ADEAMABkADUAYgBiADgANAAzAGQAOQBiADkANgAwADcAOABmAGQAOAAyADQAZgA3ADcAMgBjAC4A
 ZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAVABfAGUANQA1AGEANABj
 AGYAYgA2ADMAOAAwADQANgBiADAAYQA5ADEAZAA1ADEAZgBiADEANgA4AGUAYgBlAGEAMAAAADQA
 CAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4AAgAAQBB
@@ -2235,7 +2235,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="144,42"
           Id="Package\Carga to Final"
@@ -2248,10 +2248,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Size="186,42"
           Id="Package\DISCONNECT DRIVE S"
           TopLeft="500,5" />
-        <NodeLayout
-          Size="140,42"
-          Id="Package\SQL Log CSV"
-          TopLeft="597,123" />
         <NodeLayout
           Size="237,42"
           Id="Package\Execute SQL Task  - Delete Initial"
@@ -2272,12 +2268,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Size="205,42"
           Id="Package\Script Task - MAP DRIVE S"
           TopLeft="31,11" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\SQL Log CSV"
+          TopLeft="597,123" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="268,116">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="46,0"
               Start="0,0"
               End="38.5,0">
@@ -2299,7 +2299,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="520,116">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="77,28"
               Start="0,0"
               End="69.5,28">
@@ -2333,7 +2333,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="417,137">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-303,54"
               Start="0,0"
               End="-303,46.5">
@@ -2367,7 +2367,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="236,33.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="94,0"
               Start="0,0"
               End="86.5,0">
@@ -2389,7 +2389,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="391,56">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-241.5,39"
               Start="0,0"
               End="-241.5,31.5">
@@ -2423,7 +2423,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="186,212">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="139,15"
               Start="0,0"
               End="131.5,15">
@@ -2457,7 +2457,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="483,227">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="78,0"
               Start="0,0"
               End="70.5,0">

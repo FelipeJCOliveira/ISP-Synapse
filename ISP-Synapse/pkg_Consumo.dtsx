@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/8/2019 10:58:10 AM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{7A49E0EB-D40F-46C7-84A6-31A6B655A484}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LastModifiedProductVersion="13.0.4495.10"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Consumo"
   DTS:PackageType="5"
-  DTS:VersionBuild="430"
-  DTS:VersionGUID="{378C99EB-F423-480A-82CD-5E3984461779}">
+  DTS:VersionBuild="431"
+  DTS:VersionGUID="{2BC1B165-5C67-4902-BE5D-E18D35D54A70}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2682,7 +2682,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2716,8 +2716,8 @@
               <connections>
                 <connection
                   refId="Package\Carga to Final (com log) 1\INSERT CONSUMO.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3525,7 +3525,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3559,8 +3559,8 @@
               <connections>
                 <connection
                   refId="Package\Carga to Final (com log) 1\LOG Errors.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3758,13 +3758,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_CFOP]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_CFOP]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_CFOP]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_CFOP]) [refTable]
 where [refTable].[Codigo] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -3814,8 +3814,8 @@ where [refTable].[Codigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final (com log) 1\Lookup CFOP.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -3902,13 +3902,13 @@ where [refTable].[Codigo] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_Cliente]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_Cliente]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_Cliente]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_Cliente]) [refTable]
 where [refTable].[Chave] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -3958,8 +3958,8 @@ where [refTable].[Chave] = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final (com log) 1\Lookup Cliente.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -4046,13 +4046,13 @@ where [refTable].[Chave] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_Produto]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_Produto]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_Produto]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_Produto]) [refTable]
 where [refTable].[Codigo] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -4102,8 +4102,8 @@ where [refTable].[Codigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final (com log) 1\Lookup Produto.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -4190,13 +4190,13 @@ where [refTable].[Codigo] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_Sub_Grupo]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_Sub_Grupo]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_Sub_Grupo]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_Sub_Grupo]) [refTable]
 where [refTable].[Codigo] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -4246,8 +4246,8 @@ where [refTable].[Codigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -4334,13 +4334,13 @@ where [refTable].[Codigo] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_Vendedor]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_Vendedor]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_Vendedor]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_Vendedor]) [refTable]
 where [refTable].[Chave] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -4390,8 +4390,8 @@ where [refTable].[Chave] = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final (com log) 1\Lookup Vendedor.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -4513,7 +4513,7 @@ where [refTable].[Chave] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -4539,8 +4539,8 @@ where [refTable].[Chave] = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final (com log) 1\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6092,7 +6092,7 @@ where [refTable].[Chave] = ?</property>
               contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;10"
               description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
               name="SC - Get error details"
-              version="9">
+              version="10">
               <properties>
                 <property
                   dataType="System.String"
@@ -7712,10 +7712,10 @@ public class Variables
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
     <Compile Include="main.cs" />
     <Compile Include="BufferWrapper.cs" />
     <Compile Include="ComponentWrapper.cs" />
@@ -7751,7 +7751,7 @@ public class Variables
         <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
         <Host Name="ScriptComponent" IconIndex="0" />
         <ProjectClient>
-          <HostIdentifier>SSIS_SC140</HostIdentifier>
+          <HostIdentifier>SSIS_SC130</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
@@ -7764,23 +7764,23 @@ public class Variables
                     <arrayElement
                       dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>SC_a676710decc048d283117434eb8bd6ab</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>SC_a676710decc048d283117434eb8bd6ab</msb:DisplayName>
-    <msb:ProjectId>{9422DFAC-258E-4868-A50D-00874CCB59EB}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="SC_a676710decc048d283117434eb8bd6ab.csproj" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="main.cs" />
-    <msb:File Include="BufferWrapper.cs" />
-    <msb:File Include="ComponentWrapper.cs" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-  </msb:ItemGroup>
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_a676710decc048d283117434eb8bd6ab</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_a676710decc048d283117434eb8bd6ab</msb:DisplayName>
+		<msb:ProjectId>{9422DFAC-258E-4868-A50D-00874CCB59EB}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_a676710decc048d283117434eb8bd6ab.csproj"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+	</msb:ItemGroup>
 </c:Project>]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
@@ -7914,7 +7914,7 @@ namespace SC_a676710decc048d283117434eb8bd6ab.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAE3YwFwAAAAAAAAAAOAAIiALATAAADoAAAAIAAAAAAAAblkA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAC/p71wAAAAAAAAAAOAAIiALATAAADoAAAAIAAAAAAAAblkA
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABxZAABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -8066,8 +8066,8 @@ AgBwANMAAgBxANUAAgByANcAAgBzANkAAgB0ANsAAgB1AN0AAgB2AN8AAgB3AOEAAgB4AOMAAgB5
 AOUAAgB6AOcAAgB7AOkAAgB8AOsAAgB9AO0AAgB+AO8AAgB/APEAAgCAAPMAAgCBAPUAAgCCAPcA
 AgCDAPkAAgCEAPsAAgCFAP0AAgCGAP8AAgCHAAEBAgCIAAMBAgCJAAUBAQCKAAcBAQCLAAkBAQCM
 AAsBAQCNAA0BAQCOAA8BAQCPABEBAgCZABMBAgCaABUBAQCbABUBAgCcABcBBIAAAAEAAAAAAAAA
-AAAAAAAABwIAAAQAAAAAAAAAAAAAAMgAKwIAAAAADgAAAAAAAAAAAAAA0QC4EgAAAAAEAAAAAAAA
-AAAAAADIAK8MAAAAAA4AAAAAAAAAAAAAANEALQ8AAAAADgAAAAAAAAAAAAAA0QAGEwAAAAAEAAAA
+AAAAAAAABwIAAAQAAAAAAAAAAAAAAMgAKwIAAAAADQAAAAAAAAAAAAAA0QC4EgAAAAAEAAAAAAAA
+AAAAAADIAK8MAAAAAA0AAAAAAAAAAAAAANEALQ8AAAAADQAAAAAAAAAAAAAA0QAGEwAAAAAEAAAA
 AAAAAAAAAADIAN4MAAAAAAAAAAABAAAA5xAAAAAAAAAASURUU0NvbXBvbmVudE1ldGFEYXRhMTAw
 AElEVFNJbnB1dENvbHVtbjEwMABJRFRTSW5wdXRDb2x1bW5Db2xsZWN0aW9uMTAwAElEVFNJbnB1
 dENvbGxlY3Rpb24xMDAASURUU0lucHV0MTAwAElEVFNDb21wb25lbnRNZXRhRGF0YTEzMABHZXRJ
@@ -8164,7 +8164,7 @@ ACAAYgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYA
 YQBsAHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9J
 AG4AcAB1AHQAIAAwAABxUwBDAF8AYQA2ADcANgA3ADEAMABkAGUAYwBjADAANAA4AGQAMgA4ADMA
 MQAxADcANAAzADQAZQBiADgAYgBkADYAYQBiAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBz
-AG8AdQByAGMAZQBzAAAAAC8zbKmsZUpLgOY4zVCEHaYABCABAQgDIAABBSABARERBCABAQ4FIAEB
+AG8AdQByAGMAZQBzAAAAAJqjJ07icSdLuiu6beIafVsABCABAQgDIAABBSABARERBCABAQ4FIAEB
 EX0LBwUOEkUSSRJNElEGIAEBEoCNBCAAEkEFIAASgJUFIAASgJkGIAESgKEcBSAAEoClBCAAEkUD
 IAAcAyAADgcgAgIOEYCtBiABEoCxDgYgAhwcHRwDIAACBSACAQkJBCABDggFIAIODg4JIAMBEmEd
 CBJlAwYSYQMGHQgEIAECCAUgARFpCAQgAQgIBSACAQgcBSABHQgIBwABEkERgLkFIAASgL0HIAIB
@@ -8253,12 +8253,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   dataType="System.String"
                   description="Checksum to match component metedata against compiled codes."
                   name="MetadataChecksum"
-                  typeConverter="NOTBROWSABLE">bc2d119428bbaae0793a1a2b60c79557</property>
+                  typeConverter="NOTBROWSABLE">acbcf6cc57082dfe07c4c610b69a3ea9</property>
                 <property
                   dataType="System.String"
                   description="Checksum to match component metedata against compiled codes."
                   name="MetadataShaChecksum"
-                  typeConverter="NOTBROWSABLE">5956a6d059327de1a83445a10a6d686ae41e376b</property>
+                  typeConverter="NOTBROWSABLE">e5afdf3b0342eb69919f4bf18982cf1b5ce42529</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -8760,7 +8760,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;11"
               description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
               name="Script RowCount"
-              version="9">
+              version="10">
               <properties>
                 <property
                   dataType="System.String"
@@ -8771,88 +8771,38 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   <arrayElements
                     arrayElementCount="30">
                     <arrayElement
-                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
-*  Microsoft SQL Server Integration Services component wrapper
-*  This module defines the base class for your component
-*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
 
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_aa1b631db43b4442b4558f0b8a1235cb")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_aa1b631db43b4442b4558f0b8a1235cb")]
+[assembly: AssemblyCopyright("Copyright @  2019")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-public class UserComponent: ScriptComponent
-{
-    public Connections Connections;
-    public Variables Variables;
-    public UserComponent()
-    {
-        Connections = new Connections(this);
-        Variables = new Variables(this);
-    }
-
-    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
-    {
-
-        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
-        {
-            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
-        }
-
-    }
-
-    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
-    {
-        while (Buffer.NextRow())
-        {
-            Input0_ProcessInputRow(Buffer);
-        }
-    }
-
-    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
-    {
-    }
-
-}
-
-public class Connections
-{
-    ScriptComponent ParentComponent;
-
-    public Connections(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-}
-
-public class Variables
-{
-    ScriptComponent ParentComponent;
-
-    public Variables(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-    public Int32 RowCount
-    {
-        get
-        {
-            return (Int32)(ParentComponent.ReadWriteVariables["RowCount"].GetValueWithContext(ScriptComponent.EvaluatorContext));
-        }
-        set
-        {
-            ParentComponent.ReadWriteVariables["RowCount"].Value = value;
-        }
-    }
-
-}
+[assembly: AssemblyVersion("1.0.0.0")]
 ]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
@@ -9192,36 +9142,87 @@ public class Input0Buffer: ScriptBuffer
 }
 ]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_aa1b631db43b4442b4558f0b8a1235cb.Properties.Settings.get_Default():SC_aa1b631db43b4442b4558f0b8a1235cb.Properties.Sett" +
-    "ings")]
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
 
-namespace SC_aa1b631db43b4442b4558f0b8a1235cb.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
         }
     }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+    public Int32 RowCount
+    {
+        get
+        {
+            return (Int32)(ParentComponent.ReadWriteVariables["RowCount"].GetValueWithContext(ScriptComponent.EvaluatorContext));
+        }
+        set
+        {
+            ParentComponent.ReadWriteVariables["RowCount"].Value = value;
+        }
+    }
+
 }
 ]]></arrayElement>
                     <arrayElement
@@ -9303,57 +9304,56 @@ namespace SC_aa1b631db43b4442b4558f0b8a1235cb.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>SC_aa1b631db43b4442b4558f0b8a1235cb</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>SC_aa1b631db43b4442b4558f0b8a1235cb</msb:DisplayName>
-    <msb:ProjectId>{286E4DDB-7BFA-440C-B4ED-D553662C9FB3}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="SC_aa1b631db43b4442b4558f0b8a1235cb.csproj" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="main.cs" />
-    <msb:File Include="BufferWrapper.cs" />
-    <msb:File Include="ComponentWrapper.cs" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-  </msb:ItemGroup>
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_aa1b631db43b4442b4558f0b8a1235cb</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_aa1b631db43b4442b4558f0b8a1235cb</msb:DisplayName>
+		<msb:ProjectId>{286E4DDB-7BFA-440C-B4ED-D553662C9FB3}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_aa1b631db43b4442b4558f0b8a1235cb.csproj"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+	</msb:ItemGroup>
 </c:Project>]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("SC_aa1b631db43b4442b4558f0b8a1235cb")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SC_aa1b631db43b4442b4558f0b8a1235cb")]
-[assembly: AssemblyCopyright("Copyright @  2019")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_aa1b631db43b4442b4558f0b8a1235cb.Properties.Settings.get_Default():SC_aa1b631db43b4442b4558f0b8a1235cb.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.0.0")]
+namespace SC_aa1b631db43b4442b4558f0b8a1235cb.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
 ]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
@@ -9414,10 +9414,10 @@ using System.Runtime.CompilerServices;
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
     <Compile Include="main.cs" />
     <Compile Include="BufferWrapper.cs" />
     <Compile Include="ComponentWrapper.cs" />
@@ -9453,7 +9453,7 @@ using System.Runtime.CompilerServices;
         <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
         <Host Name="ScriptComponent" GeneratedNamespace="SC_aa1b631db43b4442b4558f0b8a1235cb" IconIndex="0"></Host>
         <ProjectClient>
-          <HostIdentifier>SSIS_SC140</HostIdentifier>
+          <HostIdentifier>SSIS_SC130</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
@@ -9474,7 +9474,7 @@ using System.Runtime.CompilerServices;
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDABO6sFwAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAtjMA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDADHp71wAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAtjMA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAGQzAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -9516,8 +9516,8 @@ EQFAB2IAoQDSBGgAwQDSBAYALgALAPAALgATAPkALgAbABgBLgAjACEBLgArAEoBLgAzAEoBLgA7
 AEoBLgBDACEBLgBLAFABLgBTAEoBLgBbAGcBQwBjALEByQBzABgB4wBrALEB6QBzABgBAQF7ALEB
 AwABAAYABQAHAAYACAAIAAAAggbVAAAAdwPZAAAAHwbdAAAAXwPZAAAAdQbVAAAAmgThAAAAAgHm
 AAAAEwbrAAEABgADAAEABwAFAAEACAAHAAEACQAJAAIAEgALAAEAEwALAAIAFQANAAIAFgAPAAEA
-FwAPAAIAGAARAASAAAABAAAAAAAAAAAAAAAAAFEAAAAEAAAAAAAAAAAAAABwAHUAAAAAAA4AAAAA
-AAAAAAAAAHkAiwYAAAAADgAAAAAAAAAAAAAAeQCoBgAAAAAEAAAAAAAAAAAAAABwAKEDAAAAAA4A
+FwAPAAIAGAARAASAAAABAAAAAAAAAAAAAAAAAFEAAAAEAAAAAAAAAAAAAABwAHUAAAAAAA0AAAAA
+AAAAAAAAAHkAiwYAAAAADQAAAAAAAAAAAAAAeQCoBgAAAAAEAAAAAAAAAAAAAABwAKEDAAAAAA0A
 AAAAAAAAAAAAAHkASgQAAAAAAAAAAAEAAAAjBQAAAAAAAABJRFRTVmFyaWFibGUxMDAASURUU1Zh
 cmlhYmxlczEwMABJRFRTRXZhbHVhdG9yQ29udGV4dDEwMABJbnQzMgA8TW9kdWxlPgBJbnB1dElE
 AFNDX2FhMWI2MzFkYjQzYjQ0NDJiNDU1OGYwYjhhMTIzNWNiAG1zY29ybGliAGRlZmF1bHRJbnN0
@@ -9556,8 +9556,8 @@ ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMA
 aQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBz
 AHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAABFSAG8AdwBDAG8AdQBuAHQAAHFTAEMAXwBhAGEA
 MQBiADYAMwAxAGQAYgA0ADMAYgA0ADQANAAyAGIANAA1ADUAOABmADAAYgA4AGEAMQAyADMANQBj
-AGIALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAAeBKRs4/9m0ur
-cfdk37bwfwAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERWQkgAwESPR0IEkEFIAIBCBwDIAACBiAC
+AGIALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAAk1yRkPCbpk++
+q/UX7hOplAAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERWQkgAwESPR0IEkEFIAIBCBwDIAACBiAC
 Ag4RdQUgAR0ICAQgABJ5BSABEn0cBQAAEoCBBiABHBKAhQQgAQEcCAABEoCJEYCNBSAAEoCRByAC
 AQ4SgJEIt3pcVhk04IkIiYRdzYCAzJECBggDBhIUAwYSGAMGEkUDBhJRAwYSVQMGEiAFIAEBEgwE
 IAEBAgkgBAEIDhI9EkEFIAEBEkUDIAAIBAAAElEEAAASVQUAAQESVQQAABIgAwAAAQMoAAgDKAAC
@@ -9646,6 +9646,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataShaChecksum"
+                  typeConverter="NOTBROWSABLE">98262fb5c011cce2b378128e3bebf5e236fb7cf4</property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum"
+                  typeConverter="NOTBROWSABLE">f607001974e8f0d45492f8a88a056385</property>
               </properties>
               <inputs>
                 <input
@@ -17884,14 +17894,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Carga to Final (com log) 1\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
-              endId="Package\Carga to Final (com log) 1\Vendedor.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Sub-Grupo.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Vendedor.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
-              endId="Package\Carga to Final (com log) 1\Cliente.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\CFOP.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Cliente.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup CFOP.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output2]"
               endId="Package\Carga to Final (com log) 1\Produto.Inputs[Derived Column Input]"
@@ -17899,14 +17909,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Carga to Final (com log) 1\Lookup Produto.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
-              endId="Package\Carga to Final (com log) 1\CFOP.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Cliente.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup CFOP.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Cliente.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
-              endId="Package\Carga to Final (com log) 1\Sub-Grupo.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Vendedor.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Vendedor.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Match Output]"
               endId="Package\Carga to Final (com log) 1\Lookup Vendedor.Inputs[Lookup Input]"
@@ -19698,7 +19708,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -19732,8 +19742,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -20573,7 +20583,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -20607,8 +20617,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -20814,13 +20824,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_CFOP]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_CFOP]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_CFOP]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_CFOP]) [refTable]
 where [refTable].[Codigo] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -20870,8 +20880,8 @@ where [refTable].[Codigo] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -20958,13 +20968,13 @@ where [refTable].[Codigo] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_Grupo]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_Grupo]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_Grupo]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_Grupo]) [refTable]
 where [refTable].[Codigo] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -21014,8 +21024,8 @@ where [refTable].[Codigo] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -21100,13 +21110,13 @@ where [refTable].[Codigo] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_Sub_Grupo]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_Sub_Grupo]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_Sub_Grupo]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_Sub_Grupo]) [refTable]
 where [refTable].[Codigo] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -21156,8 +21166,8 @@ where [refTable].[Codigo] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -21279,7 +21289,7 @@ where [refTable].[Codigo] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -21305,8 +21315,8 @@ where [refTable].[Codigo] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -22782,7 +22792,7 @@ where [refTable].[Codigo] = ?</property>
                   contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;10"
                   description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
                   name="SC - Get error details"
-                  version="9">
+                  version="10">
                   <properties>
                     <property
                       dataType="System.String"
@@ -24402,10 +24412,10 @@ public class Variables
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
     <Compile Include="main.cs" />
     <Compile Include="BufferWrapper.cs" />
     <Compile Include="ComponentWrapper.cs" />
@@ -24441,7 +24451,7 @@ public class Variables
         <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
         <Host Name="ScriptComponent" IconIndex="0" />
         <ProjectClient>
-          <HostIdentifier>SSIS_SC140</HostIdentifier>
+          <HostIdentifier>SSIS_SC130</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
@@ -24454,23 +24464,23 @@ public class Variables
                         <arrayElement
                           dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>SC_a676710decc048d283117434eb8bd6ab</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>SC_a676710decc048d283117434eb8bd6ab</msb:DisplayName>
-    <msb:ProjectId>{9422DFAC-258E-4868-A50D-00874CCB59EB}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="SC_a676710decc048d283117434eb8bd6ab.csproj" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="main.cs" />
-    <msb:File Include="BufferWrapper.cs" />
-    <msb:File Include="ComponentWrapper.cs" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-  </msb:ItemGroup>
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_a676710decc048d283117434eb8bd6ab</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_a676710decc048d283117434eb8bd6ab</msb:DisplayName>
+		<msb:ProjectId>{9422DFAC-258E-4868-A50D-00874CCB59EB}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_a676710decc048d283117434eb8bd6ab.csproj"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+	</msb:ItemGroup>
 </c:Project>]]></arrayElement>
                         <arrayElement
                           dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
@@ -24604,7 +24614,7 @@ namespace SC_a676710decc048d283117434eb8bd6ab.Properties {
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAE3YwFwAAAAAAAAAAOAAIiALATAAADoAAAAIAAAAAAAAblkA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDADPp71wAAAAAAAAAAOAAIiALATAAADoAAAAIAAAAAAAAblkA
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABxZAABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -24756,8 +24766,8 @@ AgBwANMAAgBxANUAAgByANcAAgBzANkAAgB0ANsAAgB1AN0AAgB2AN8AAgB3AOEAAgB4AOMAAgB5
 AOUAAgB6AOcAAgB7AOkAAgB8AOsAAgB9AO0AAgB+AO8AAgB/APEAAgCAAPMAAgCBAPUAAgCCAPcA
 AgCDAPkAAgCEAPsAAgCFAP0AAgCGAP8AAgCHAAEBAgCIAAMBAgCJAAUBAQCKAAcBAQCLAAkBAQCM
 AAsBAQCNAA0BAQCOAA8BAQCPABEBAgCZABMBAgCaABUBAQCbABUBAgCcABcBBIAAAAEAAAAAAAAA
-AAAAAAAABwIAAAQAAAAAAAAAAAAAAMgAKwIAAAAADgAAAAAAAAAAAAAA0QC4EgAAAAAEAAAAAAAA
-AAAAAADIAK8MAAAAAA4AAAAAAAAAAAAAANEALQ8AAAAADgAAAAAAAAAAAAAA0QAGEwAAAAAEAAAA
+AAAAAAAABwIAAAQAAAAAAAAAAAAAAMgAKwIAAAAADQAAAAAAAAAAAAAA0QC4EgAAAAAEAAAAAAAA
+AAAAAADIAK8MAAAAAA0AAAAAAAAAAAAAANEALQ8AAAAADQAAAAAAAAAAAAAA0QAGEwAAAAAEAAAA
 AAAAAAAAAADIAN4MAAAAAAAAAAABAAAA5xAAAAAAAAAASURUU0NvbXBvbmVudE1ldGFEYXRhMTAw
 AElEVFNJbnB1dENvbHVtbjEwMABJRFRTSW5wdXRDb2x1bW5Db2xsZWN0aW9uMTAwAElEVFNJbnB1
 dENvbGxlY3Rpb24xMDAASURUU0lucHV0MTAwAElEVFNDb21wb25lbnRNZXRhRGF0YTEzMABHZXRJ
@@ -24854,7 +24864,7 @@ ACAAYgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYA
 YQBsAHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9J
 AG4AcAB1AHQAIAAwAABxUwBDAF8AYQA2ADcANgA3ADEAMABkAGUAYwBjADAANAA4AGQAMgA4ADMA
 MQAxADcANAAzADQAZQBiADgAYgBkADYAYQBiAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBz
-AG8AdQByAGMAZQBzAAAAAC8zbKmsZUpLgOY4zVCEHaYABCABAQgDIAABBSABARERBCABAQ4FIAEB
+AG8AdQByAGMAZQBzAAAAAGeYZZ05pItBquD00LGk/JMABCABAQgDIAABBSABARERBCABAQ4FIAEB
 EX0LBwUOEkUSSRJNElEGIAEBEoCNBCAAEkEFIAASgJUFIAASgJkGIAESgKEcBSAAEoClBCAAEkUD
 IAAcAyAADgcgAgIOEYCtBiABEoCxDgYgAhwcHRwDIAACBSACAQkJBCABDggFIAIODg4JIAMBEmEd
 CBJlAwYSYQMGHQgEIAECCAUgARFpCAQgAQgIBSACAQgcBSABHQgIBwABEkERgLkFIAASgL0HIAIB
@@ -24943,12 +24953,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       dataType="System.String"
                       description="Checksum to match component metedata against compiled codes."
                       name="MetadataChecksum"
-                      typeConverter="NOTBROWSABLE">bc2d119428bbaae0793a1a2b60c79557</property>
+                      typeConverter="NOTBROWSABLE">acbcf6cc57082dfe07c4c610b69a3ea9</property>
                     <property
                       dataType="System.String"
                       description="Checksum to match component metedata against compiled codes."
                       name="MetadataShaChecksum"
-                      typeConverter="NOTBROWSABLE">5956a6d059327de1a83445a10a6d686ae41e376b</property>
+                      typeConverter="NOTBROWSABLE">e5afdf3b0342eb69919f4bf18982cf1b5ce42529</property>
                     <property
                       dataType="System.String"
                       name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -25450,7 +25460,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;11"
                   description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
                   name="Script RowCount"
-                  version="9">
+                  version="10">
                   <properties>
                     <property
                       dataType="System.String"
@@ -25461,88 +25471,38 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       <arrayElements
                         arrayElementCount="30">
                         <arrayElement
-                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
                         <arrayElement
                           dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                         <arrayElement
-                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
-*  Microsoft SQL Server Integration Services component wrapper
-*  This module defines the base class for your component
-*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
 
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_aa1b631db43b4442b4558f0b8a1235cb")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_aa1b631db43b4442b4558f0b8a1235cb")]
+[assembly: AssemblyCopyright("Copyright @  2019")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-public class UserComponent: ScriptComponent
-{
-    public Connections Connections;
-    public Variables Variables;
-    public UserComponent()
-    {
-        Connections = new Connections(this);
-        Variables = new Variables(this);
-    }
-
-    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
-    {
-
-        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
-        {
-            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
-        }
-
-    }
-
-    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
-    {
-        while (Buffer.NextRow())
-        {
-            Input0_ProcessInputRow(Buffer);
-        }
-    }
-
-    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
-    {
-    }
-
-}
-
-public class Connections
-{
-    ScriptComponent ParentComponent;
-
-    public Connections(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-}
-
-public class Variables
-{
-    ScriptComponent ParentComponent;
-
-    public Variables(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-    public Int32 RowCount
-    {
-        get
-        {
-            return (Int32)(ParentComponent.ReadWriteVariables["RowCount"].GetValueWithContext(ScriptComponent.EvaluatorContext));
-        }
-        set
-        {
-            ParentComponent.ReadWriteVariables["RowCount"].Value = value;
-        }
-    }
-
-}
+[assembly: AssemblyVersion("1.0.0.0")]
 ]]></arrayElement>
                         <arrayElement
                           dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
@@ -25882,36 +25842,87 @@ public class Input0Buffer: ScriptBuffer
 }
 ]]></arrayElement>
                         <arrayElement
-                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
                         <arrayElement
                           dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                         <arrayElement
-                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_aa1b631db43b4442b4558f0b8a1235cb.Properties.Settings.get_Default():SC_aa1b631db43b4442b4558f0b8a1235cb.Properties.Sett" +
-    "ings")]
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
 
-namespace SC_aa1b631db43b4442b4558f0b8a1235cb.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
         }
     }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+    public Int32 RowCount
+    {
+        get
+        {
+            return (Int32)(ParentComponent.ReadWriteVariables["RowCount"].GetValueWithContext(ScriptComponent.EvaluatorContext));
+        }
+        set
+        {
+            ParentComponent.ReadWriteVariables["RowCount"].Value = value;
+        }
+    }
+
 }
 ]]></arrayElement>
                         <arrayElement
@@ -25993,57 +26004,56 @@ namespace SC_aa1b631db43b4442b4558f0b8a1235cb.Properties {
                         <arrayElement
                           dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>SC_aa1b631db43b4442b4558f0b8a1235cb</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>SC_aa1b631db43b4442b4558f0b8a1235cb</msb:DisplayName>
-    <msb:ProjectId>{286E4DDB-7BFA-440C-B4ED-D553662C9FB3}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="SC_aa1b631db43b4442b4558f0b8a1235cb.csproj" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="main.cs" />
-    <msb:File Include="BufferWrapper.cs" />
-    <msb:File Include="ComponentWrapper.cs" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-  </msb:ItemGroup>
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_aa1b631db43b4442b4558f0b8a1235cb</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_aa1b631db43b4442b4558f0b8a1235cb</msb:DisplayName>
+		<msb:ProjectId>{286E4DDB-7BFA-440C-B4ED-D553662C9FB3}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_aa1b631db43b4442b4558f0b8a1235cb.csproj"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+	</msb:ItemGroup>
 </c:Project>]]></arrayElement>
                         <arrayElement
-                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
                         <arrayElement
                           dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                         <arrayElement
-                          dataType="System.String"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("SC_aa1b631db43b4442b4558f0b8a1235cb")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SC_aa1b631db43b4442b4558f0b8a1235cb")]
-[assembly: AssemblyCopyright("Copyright @  2019")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_aa1b631db43b4442b4558f0b8a1235cb.Properties.Settings.get_Default():SC_aa1b631db43b4442b4558f0b8a1235cb.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.0.0")]
+namespace SC_aa1b631db43b4442b4558f0b8a1235cb.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
 ]]></arrayElement>
                         <arrayElement
                           dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
@@ -26104,10 +26114,10 @@ using System.Runtime.CompilerServices;
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
     <Compile Include="main.cs" />
     <Compile Include="BufferWrapper.cs" />
     <Compile Include="ComponentWrapper.cs" />
@@ -26143,7 +26153,7 @@ using System.Runtime.CompilerServices;
         <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
         <Host Name="ScriptComponent" GeneratedNamespace="SC_aa1b631db43b4442b4558f0b8a1235cb" IconIndex="0"></Host>
         <ProjectClient>
-          <HostIdentifier>SSIS_SC140</HostIdentifier>
+          <HostIdentifier>SSIS_SC130</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
@@ -26164,7 +26174,7 @@ using System.Runtime.CompilerServices;
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDABO6sFwAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAtjMA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDADXp71wAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAtjMA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAGQzAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -26206,8 +26216,8 @@ EQFAB2IAoQDSBGgAwQDSBAYALgALAPAALgATAPkALgAbABgBLgAjACEBLgArAEoBLgAzAEoBLgA7
 AEoBLgBDACEBLgBLAFABLgBTAEoBLgBbAGcBQwBjALEByQBzABgB4wBrALEB6QBzABgBAQF7ALEB
 AwABAAYABQAHAAYACAAIAAAAggbVAAAAdwPZAAAAHwbdAAAAXwPZAAAAdQbVAAAAmgThAAAAAgHm
 AAAAEwbrAAEABgADAAEABwAFAAEACAAHAAEACQAJAAIAEgALAAEAEwALAAIAFQANAAIAFgAPAAEA
-FwAPAAIAGAARAASAAAABAAAAAAAAAAAAAAAAAFEAAAAEAAAAAAAAAAAAAABwAHUAAAAAAA4AAAAA
-AAAAAAAAAHkAiwYAAAAADgAAAAAAAAAAAAAAeQCoBgAAAAAEAAAAAAAAAAAAAABwAKEDAAAAAA4A
+FwAPAAIAGAARAASAAAABAAAAAAAAAAAAAAAAAFEAAAAEAAAAAAAAAAAAAABwAHUAAAAAAA0AAAAA
+AAAAAAAAAHkAiwYAAAAADQAAAAAAAAAAAAAAeQCoBgAAAAAEAAAAAAAAAAAAAABwAKEDAAAAAA0A
 AAAAAAAAAAAAAHkASgQAAAAAAAAAAAEAAAAjBQAAAAAAAABJRFRTVmFyaWFibGUxMDAASURUU1Zh
 cmlhYmxlczEwMABJRFRTRXZhbHVhdG9yQ29udGV4dDEwMABJbnQzMgA8TW9kdWxlPgBJbnB1dElE
 AFNDX2FhMWI2MzFkYjQzYjQ0NDJiNDU1OGYwYjhhMTIzNWNiAG1zY29ybGliAGRlZmF1bHRJbnN0
@@ -26246,8 +26256,8 @@ ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMA
 aQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBz
 AHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAABFSAG8AdwBDAG8AdQBuAHQAAHFTAEMAXwBhAGEA
 MQBiADYAMwAxAGQAYgA0ADMAYgA0ADQANAAyAGIANAA1ADUAOABmADAAYgA4AGEAMQAyADMANQBj
-AGIALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAAeBKRs4/9m0ur
-cfdk37bwfwAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERWQkgAwESPR0IEkEFIAIBCBwDIAACBiAC
+AGIALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAArRZjZ2OKUEaW
+EdPjAMe0cgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERWQkgAwESPR0IEkEFIAIBCBwDIAACBiAC
 Ag4RdQUgAR0ICAQgABJ5BSABEn0cBQAAEoCBBiABHBKAhQQgAQEcCAABEoCJEYCNBSAAEoCRByAC
 AQ4SgJEIt3pcVhk04IkIiYRdzYCAzJECBggDBhIUAwYSGAMGEkUDBhJRAwYSVQMGEiAFIAEBEgwE
 IAEBAgkgBAEIDhI9EkEFIAEBEkUDIAAIBAAAElEEAAASVQUAAQESVQQAABIgAwAAAQMoAAgDKAAC
@@ -26336,6 +26346,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     <property
                       dataType="System.String"
                       name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataShaChecksum"
+                      typeConverter="NOTBROWSABLE">98262fb5c011cce2b378128e3bebf5e236fb7cf4</property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
+                      typeConverter="NOTBROWSABLE">f607001974e8f0d45492f8a88a056385</property>
                   </properties>
                   <inputs>
                     <input
@@ -35177,19 +35197,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
+                  endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Inputs[Derived Column Input]"
+                  name="Lookup Error Output"
+                  startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP.Outputs[Lookup Error Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Sub-Grupo.Inputs[Derived Column Input]"
                   name="Lookup Error Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\GRUPO.Inputs[Derived Column Input]"
                   name="Lookup Error Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO.Outputs[Lookup Error Output]" />
-                <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
-                  endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Inputs[Derived Column Input]"
-                  name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1.Inputs[Union All Input 2]"
@@ -38736,7 +38756,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -38770,8 +38790,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Flow Load CSV\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -39806,7 +39826,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT INTO TB_Agroview_Parametros_Cliente (Chave, Codigo, Nome, Data_Inclusao) values (?,'NI','CLIENTE NAO IDENTIFICADO',getdate())</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">INSERT INTO TB_Agroview_Parametros_Cliente (Chave, Codigo, Nome, Data_Inclusao) values (?,'NI','CLIENTE NAO IDENTIFICADO',getdate())</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -39815,8 +39835,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica CLIENTE\INSERT CLIENT NI.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -39936,7 +39956,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct cc.Cliente from tb_carga_consumo as cc
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct cc.Cliente from tb_carga_consumo as cc
 where NOT EXISTS (select pc.Chave from TB_Agroview_Parametros_Cliente as pc
   where pc.Chave = cc.Cliente)</property>
                     <property
@@ -39964,8 +39984,8 @@ where NOT EXISTS (select pc.Chave from TB_Agroview_Parametros_Cliente as pc
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica CLIENTE\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -40097,7 +40117,7 @@ where NOT EXISTS (select pc.Chave from TB_Agroview_Parametros_Cliente as pc
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">insert into TB_Agroview_Parametros_DistribuidorSyngenta(CodigoOrigem,NomeAgrupado,Data_Inclusao) values(?,'DISTRIBUIDOR SYNGENTA NAO IDENTIFICADO',getdate())
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into TB_Agroview_Parametros_DistribuidorSyngenta(CodigoOrigem,NomeAgrupado,Data_Inclusao) values(?,'DISTRIBUIDOR SYNGENTA NAO IDENTIFICADO',getdate())
 </property>
                     <property
                       dataType="System.Int32"
@@ -40107,8 +40127,8 @@ where NOT EXISTS (select pc.Chave from TB_Agroview_Parametros_Cliente as pc
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica DistribuidorSyngenta\OLE DB Command.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -40204,7 +40224,7 @@ where NOT EXISTS (select pc.Chave from TB_Agroview_Parametros_Cliente as pc
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct cc.Codigo_Agrupado from TB_CARGA_CONSUMO as cc
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct cc.Codigo_Agrupado from TB_CARGA_CONSUMO as cc
 where not exists(select ds.CodigoOrigem from TB_Agroview_Parametros_DistribuidorSyngenta as ds
  where ds.CodigoOrigem = cc.Codigo_Agrupado)</property>
                     <property
@@ -40232,8 +40252,8 @@ where not exists(select ds.CodigoOrigem from TB_Agroview_Parametros_Distribuidor
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica DistribuidorSyngenta\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -40365,7 +40385,7 @@ where not exists(select ds.CodigoOrigem from TB_Agroview_Parametros_Distribuidor
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">insert into TB_Agroview_Parametros_Filial(cod_Filial,desc_Filial,Data_Inclusao) 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into TB_Agroview_Parametros_Filial(cod_Filial,desc_Filial,Data_Inclusao) 
 values(?,'FILIAL NAO IDENTIFICADO',getdate())
 </property>
                     <property
@@ -40376,8 +40396,8 @@ values(?,'FILIAL NAO IDENTIFICADO',getdate())
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica FILIAL\OLE DB Command.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -40473,7 +40493,7 @@ values(?,'FILIAL NAO IDENTIFICADO',getdate())
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct cc.Filial from TB_CARGA_CONSUMO as cc
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct cc.Filial from TB_CARGA_CONSUMO as cc
 where not exists(select ds.cod_Filial from TB_Agroview_Parametros_Filial as ds
  where ds.cod_Filial = cc.Filial)</property>
                     <property
@@ -40501,8 +40521,8 @@ where not exists(select ds.cod_Filial from TB_Agroview_Parametros_Filial as ds
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica FILIAL\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -40634,7 +40654,7 @@ where not exists(select ds.cod_Filial from TB_Agroview_Parametros_Filial as ds
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">insert into TB_Agroview_Parametros_Filial_Distribuidor(Chave,Distribuidor_Descricao,Data_Inclusao) 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into TB_Agroview_Parametros_Filial_Distribuidor(Chave,Distribuidor_Descricao,Data_Inclusao) 
 values(?,'FILIAL DISTRIBUIDOR NAO IDENTIFICADO',getdate())
 </property>
                     <property
@@ -40645,8 +40665,8 @@ values(?,'FILIAL DISTRIBUIDOR NAO IDENTIFICADO',getdate())
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica FILIALDISTRIBUIDOR\OLE DB Command.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -40742,7 +40762,7 @@ values(?,'FILIAL DISTRIBUIDOR NAO IDENTIFICADO',getdate())
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct cc.Filial_Distribuidor from TB_CARGA_CONSUMO as cc
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct cc.Filial_Distribuidor from TB_CARGA_CONSUMO as cc
 where not exists(select ds.Chave from TB_Agroview_Parametros_Filial_Distribuidor as ds
  where ds.Chave = cc.Filial_Distribuidor)</property>
                     <property
@@ -40770,8 +40790,8 @@ where not exists(select ds.Chave from TB_Agroview_Parametros_Filial_Distribuidor
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica FILIALDISTRIBUIDOR\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -40903,7 +40923,7 @@ where not exists(select ds.Chave from TB_Agroview_Parametros_Filial_Distribuidor
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">DELETE from TB_Agroview_Transacional_Consumo where Ano = ? and mes = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DELETE from TB_Agroview_Transacional_Consumo where Ano = ? and mes = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -40912,8 +40932,8 @@ where not exists(select ds.Chave from TB_Agroview_Parametros_Filial_Distribuidor
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\VERIFICA PERIODO DELECAO\OLE DB Command.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -41028,7 +41048,7 @@ where not exists(select ds.Chave from TB_Agroview_Parametros_Filial_Distribuidor
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct cc.Ano, cc.Mes from tb_carga_consumo as cc</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct cc.Ano, cc.Mes from tb_carga_consumo as cc</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -41054,8 +41074,8 @@ where not exists(select ds.Chave from TB_Agroview_Parametros_Filial_Distribuidor
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\VERIFICA PERIODO DELECAO\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -41211,7 +41231,7 @@ where not exists(select ds.Chave from TB_Agroview_Parametros_Filial_Distribuidor
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">insert into TB_Agroview_Parametros_Produto(Codigo,Linha,Descricao,Data_Inclusao) values(?,'NI','PRODUTO NAO IDENTIFICADO',getdate())
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into TB_Agroview_Parametros_Produto(Codigo,Linha,Descricao,Data_Inclusao) values(?,'NI','PRODUTO NAO IDENTIFICADO',getdate())
 </property>
                     <property
                       dataType="System.Int32"
@@ -41221,8 +41241,8 @@ where not exists(select ds.Chave from TB_Agroview_Parametros_Filial_Distribuidor
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica PRODUTO\OLE DB Command.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -41318,7 +41338,7 @@ where not exists(select ds.Chave from TB_Agroview_Parametros_Filial_Distribuidor
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct cc.Produto from tb_carga_consumo as cc
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct cc.Produto from tb_carga_consumo as cc
 where NOT EXISTS (select pp.Codigo from TB_Agroview_Parametros_Produto as pp
   where pp.Codigo = cc.Produto)</property>
                     <property
@@ -41346,8 +41366,8 @@ where NOT EXISTS (select pp.Codigo from TB_Agroview_Parametros_Produto as pp
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica PRODUTO\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -41479,7 +41499,7 @@ where NOT EXISTS (select pp.Codigo from TB_Agroview_Parametros_Produto as pp
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">insert into TB_Agroview_Parametros_Unidade(cod_Unidade,desc_Unidade,Data_Inclusao) 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into TB_Agroview_Parametros_Unidade(cod_Unidade,desc_Unidade,Data_Inclusao) 
 values(?,'UNIDADE NAO IDENTIFICADO',getdate())
 </property>
                     <property
@@ -41490,8 +41510,8 @@ values(?,'UNIDADE NAO IDENTIFICADO',getdate())
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica UNIDADE\OLE DB Command.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -41587,7 +41607,7 @@ values(?,'UNIDADE NAO IDENTIFICADO',getdate())
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct cc.Unidade from TB_CARGA_CONSUMO as cc
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct cc.Unidade from TB_CARGA_CONSUMO as cc
 where not exists(select ds.cod_Unidade from TB_Agroview_Parametros_Unidade as ds
  where ds.cod_Unidade = cc.Unidade)</property>
                     <property
@@ -41615,8 +41635,8 @@ where not exists(select ds.cod_Unidade from TB_Agroview_Parametros_Unidade as ds
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica UNIDADE\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -41724,7 +41744,7 @@ where not exists(select ds.cod_Unidade from TB_Agroview_Parametros_Unidade as ds
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">insert into TB_Agroview_Parametros_Vendedor(Chave,Descricao,Data_Inclusao) values(?,'VENDEDOR NAO IDENTIFICADO',getdate())</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into TB_Agroview_Parametros_Vendedor(Chave,Descricao,Data_Inclusao) values(?,'VENDEDOR NAO IDENTIFICADO',getdate())</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -41733,8 +41753,8 @@ where not exists(select ds.cod_Unidade from TB_Agroview_Parametros_Unidade as ds
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica VENDEDOR\INSERT VENDEDOR NI.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -41854,7 +41874,7 @@ where not exists(select ds.cod_Unidade from TB_Agroview_Parametros_Unidade as ds
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct cc.Vendedor from tb_carga_consumo as cc
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct cc.Vendedor from tb_carga_consumo as cc
 where NOT EXISTS (select pv.Chave from TB_Agroview_Parametros_Vendedor as pv
   where pv.Chave = cc.Vendedor)</property>
                     <property
@@ -41882,8 +41902,8 @@ where NOT EXISTS (select pv.Chave from TB_Agroview_Parametros_Vendedor as pv
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Verifica VENDEDOR\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                      connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -42100,7 +42120,7 @@ where NOT EXISTS (select pv.Chave from TB_Agroview_Parametros_Vendedor as pv
       <DTS:ObjectData>
         <ScriptProject
           Name="ST_d3bdf86fbf5f49d4a8ef094ebff0878c"
-          VSTAMajorVersion="3"
+          VSTAMajorVersion="14"
           VSTAMinorVersion="0"
           Language="VisualBasic"
           ReadOnlyVariables="$Project::FSMapDir,$Project::FSMapDrive,$Project::FSMapUser,$Project::FSMapPass">
@@ -42306,8 +42326,8 @@ End Class]]></ProjectItem>
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -42354,7 +42374,7 @@ End Class]]></ProjectItem>
         <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" />
         <Host Name="ScriptTask" />
         <ProjectClient>
-          <HostIdentifier>SSIS_ST140</HostIdentifier>
+          <HostIdentifier>SSIS_ST130</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
@@ -42404,21 +42424,21 @@ End Class]]></ProjectItem>
             Name="Project"
             Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_d3bdf86fbf5f49d4a8ef094ebff0878c</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_d3bdf86fbf5f49d4a8ef094ebff0878c</msb:DisplayName>
-    <msb:ProjectId>{DCE1230F-DEDE-418C-84A2-FF6753FE11CD}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_d3bdf86fbf5f49d4a8ef094ebff0878c.vbproj" />
-    <msb:File Include="My Project\Settings.settings" />
-    <msb:File Include="My Project\AssemblyInfo.vb" />
-    <msb:File Include="ScriptMain.vb" />
-    <msb:File Include="My Project\Resources.resx" />
-    <msb:File Include="My Project\Resources.Designer.vb" />
-    <msb:File Include="My Project\Settings.Designer.vb" />
-  </msb:ItemGroup>
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_d3bdf86fbf5f49d4a8ef094ebff0878c</msb:CodeName>
+		<msb:DisplayName>ST_d3bdf86fbf5f49d4a8ef094ebff0878c</msb:DisplayName>
+		<msb:ProjectId>{DCE1230F-DEDE-418C-84A2-FF6753FE11CD}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_d3bdf86fbf5f49d4a8ef094ebff0878c.vbproj"/>
+		<msb:File Include="My Project\Settings.settings"/>
+		<msb:File Include="My Project\AssemblyInfo.vb"/>
+		<msb:File Include="My Project\Resources.resx"/>
+		<msb:File Include="ScriptMain.vb"/>
+		<msb:File Include="My Project\Resources.Designer.vb"/>
+		<msb:File Include="My Project\Settings.Designer.vb"/>
+	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
             Name="My Project\Resources.resx"
@@ -42643,7 +42663,7 @@ End Namespace]]></ProjectItem>
           <BinaryItem
             Name="ST_d3bdf86fbf5f49d4a8ef094ebff0878c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJQ4zFwAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAfj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDADjp71wAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAfj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAACw+AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -42710,8 +42730,8 @@ AosASwHgAoMA8gIAA4sASwEgA4sASwEgA4MA8gIBAAUAAAAMAG8A7wACAQQAAQAFAAUABgAHAAoA
 CAAAAPEHzAEAAL0G0QEAALcH1gEAAGQI2wEAAIEH4AEAACoC5QEAAA4F6gEAAGgB7wECAAQAAwAC
 AAUABQACAAYABwACAAcACQACAAkACwACAAoADQABAAsADQACAA4ADwACABgAEQAuADUAPABDAPQA
 BwEWAR0BhD4AAAkABIAAAAEAAAAAAAAAAAAAAAAAGwEAAAQAAAAAAAAAAAAAACsBEgEAAAAABAAA
-AAAAAAAAAAAAKwFvBgAAAAAKAAAAAAAAAAAAAAA0AT8BAAAAAA4AAAAAAAAAAAAAAD0BXAUAAAAA
-DgAAAAAAAAAAAAAAPQHCAAAAAAAAAAAAAQAAAE4JAAAJAAQACgAEAAsABwAMAAgAAAAQABQA4QAA
+AAAAAAAAAAAAKwFvBgAAAAAKAAAAAAAAAAAAAAA0AT8BAAAAAA0AAAAAAAAAAAAAAD0BXAUAAAAA
+DQAAAAAAAAAAAAAAPQHCAAAAAAAAAAAAAQAAAE4JAAAJAAQACgAEAAsABwAMAAgAAAAQABQA4QAA
 ABAAKwDhAAAAAAAtAOEAfQD9AH0AIAEAAABTVF9lNTVhNGNmYjYzODA0NmIwYTkxZDUxZmIxNjhl
 YmVhMAA3MjhGRjY2M0U2MzFDOEY2MjZFOUNGOUY0MEY3RkNENDI3OUFDMDMxAENvbnRleHRWYWx1
 ZWAxAFRocmVhZFNhZmVPYmplY3RQcm92aWRlcmAxAEludDMyAF9fU3RhdGljQXJyYXlJbml0VHlw
@@ -42765,7 +42785,7 @@ TQBhAHAARAByAGkAdgBlAAATRgBTAE0AYQBwAFUAcwBlAHIAABNGAFMATQBhAHAAUABhAHMAcwAA
 EUYAUwBNAGEAcABEAGkAcgAAH1cAUwBjAHIAaQBwAHQALgBOAGUAdAB3AG8AcgBrAAABACNFAG4A
 dQBtAE4AZQB0AHcAbwByAGsARAByAGkAdgBlAHMAAAtDAG8AdQBuAHQAAAlJAHQAZQBtAAAlUgBl
 AG0AbwB2AGUATgBlAHQAdwBvAHIAawBEAHIAaQB2AGUAAB9NAGEAcABOAGUAdAB3AG8AcgBrAEQA
-cgBpAHYAZQAAAAAA/nE3CJU8V0CYKZBRSWOGVAAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSAC
+cgBpAHYAZQAAAAAAvsrKbT/VxUOOlwT0jKhuXQAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSAC
 AQ4OBSABARFFByAEAQ4ODg4GFRIoARIMBhUSKAESCAYVEigBEmUGFRIoARIkBCAAEwAHAAESbRGA
 oQUgABKApQcgAgEOEoClBAABHBwEAAEBHA8HCw4ODg4cHAgCCB0cHQIFIAASgLEFIAASgLUGIAES
 gLkcAyAAHAMgAA4FAAIcDg4QAAccHBJtDh0cHQ4dEm0dAgYAAwIcHAIFAAIcHBwEAAEIHAYAAhwc
@@ -43573,7 +43593,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Carga to Final (com log) 1\Lookup CFOP"
           TopLeft="79,262" />
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
           TopLeft="212,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44233,7 +44253,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
           TopLeft="240,389">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44269,7 +44289,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
           TopLeft="221,283">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44341,7 +44361,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
           TopLeft="914.333333333333,111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44867,7 +44887,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
           TopLeft="213,454.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44903,7 +44923,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
           TopLeft="219,358">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44939,7 +44959,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
           TopLeft="467,174.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -45170,7 +45190,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\INSERT CONSUMO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -45202,32 +45248,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\LOG Errors">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
