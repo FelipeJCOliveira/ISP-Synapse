@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="1/21/2019 3:43:08 PM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{8A9E65BA-DCC8-4B8C-A567-B7DDA8DAD441}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LastModifiedProductVersion="13.0.4495.10"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_DistribuidorAgroview"
   DTS:PackageType="5"
-  DTS:VersionBuild="147"
-  DTS:VersionGUID="{E893A122-2944-45F2-A2D5-0D5FF4BB456B}">
+  DTS:VersionBuild="150"
+  DTS:VersionGUID="{01A85299-0523-4C07-9881-55FD39197C16}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -702,13 +702,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_DistribuidorAgroview]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_DistribuidorAgroview]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_DistribuidorAgroview]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_DistribuidorAgroview]) [refTable]
 where [refTable].[DistCodigo] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -758,8 +758,8 @@ where [refTable].[DistCodigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -863,7 +863,7 @@ where [refTable].[DistCodigo] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update TB_Agroview_Parametros_DistribuidorAgroview
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update TB_Agroview_Parametros_DistribuidorAgroview
 set 
 DistNome = ?,
 DistNomeExibicao = ?,
@@ -892,8 +892,8 @@ where DistCodigo = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -919,14 +919,6 @@ where DistCodigo = ?</property>
                       cachedName="DistPath"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistPath]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[DistSecurityCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="DistSecurityCode"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistSecurityCode]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[DistPossuiCFOPsTratadas]"
                       cachedCodepage="1252"
@@ -1039,6 +1031,12 @@ where DistCodigo = ?</property>
                       cachedName="drv_LastUpdate"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
                       lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_LastUpdate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[drv_DistSecurityCode]"
+                      cachedDataType="i4"
+                      cachedName="drv_DistSecurityCode"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_DistSecurityCode]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1323,7 +1321,7 @@ where DistCodigo = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1357,8 +1355,8 @@ where DistCodigo = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1669,7 +1667,7 @@ where DistCodigo = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1695,8 +1693,8 @@ where DistCodigo = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3551,7 +3549,7 @@ where DistCodigo = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3585,8 +3583,8 @@ where DistCodigo = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4040,7 +4038,7 @@ where DistCodigo = ?</property>
       <DTS:ObjectData>
         <ScriptProject
           Name="ST_b28cbf03040e48ac9ba5e2fddd0b4981"
-          VSTAMajorVersion="3"
+          VSTAMajorVersion="14"
           VSTAMinorVersion="0"
           Language="VisualBasic"
           ReadOnlyVariables="$Project::FSMapDir,$Project::FSMapDrive,$Project::FSMapUser,$Project::FSMapPass">
@@ -4281,21 +4279,21 @@ End Class]]></ProjectItem>
             Name="Project"
             Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_b28cbf03040e48ac9ba5e2fddd0b4981</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_b28cbf03040e48ac9ba5e2fddd0b4981</msb:DisplayName>
-    <msb:ProjectId>{DC29627F-B167-4507-8457-DE09D5A97171}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_b28cbf03040e48ac9ba5e2fddd0b4981.vbproj" />
-    <msb:File Include="My Project\Resources.Designer.vb" />
-    <msb:File Include="My Project\AssemblyInfo.vb" />
-    <msb:File Include="ScriptMain.vb" />
-    <msb:File Include="My Project\Resources.resx" />
-    <msb:File Include="My Project\Settings.settings" />
-    <msb:File Include="My Project\Settings.Designer.vb" />
-  </msb:ItemGroup>
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_b28cbf03040e48ac9ba5e2fddd0b4981</msb:CodeName>
+		<msb:DisplayName>ST_b28cbf03040e48ac9ba5e2fddd0b4981</msb:DisplayName>
+		<msb:ProjectId>{DC29627F-B167-4507-8457-DE09D5A97171}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_b28cbf03040e48ac9ba5e2fddd0b4981.vbproj"/>
+		<msb:File Include="My Project\Resources.Designer.vb"/>
+		<msb:File Include="My Project\AssemblyInfo.vb"/>
+		<msb:File Include="My Project\Resources.resx"/>
+		<msb:File Include="ScriptMain.vb"/>
+		<msb:File Include="My Project\Settings.settings"/>
+		<msb:File Include="My Project\Settings.Designer.vb"/>
+	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
             Name="My Project\Resources.resx"
@@ -4462,8 +4460,8 @@ End Class]]></ProjectItem>
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -4510,7 +4508,7 @@ End Class]]></ProjectItem>
         <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
         <Host Name="ScriptTask" IconIndex=""></Host>
         <ProjectClient>
-          <HostIdentifier>SSIS_ST140</HostIdentifier>
+          <HostIdentifier>SSIS_ST130</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
@@ -4582,7 +4580,7 @@ End Namespace]]></ProjectItem>
           <BinaryItem
             Name="ST_b28cbf03040e48ac9ba5e2fddd0b4981.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAKAxzFwAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAfj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMzo71wAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAfj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAACw+AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4649,8 +4647,8 @@ AosASwHgAoMA8gIAA4sASwEgA4sASwEgA4MA8gIBAAUAAAAMAG8A7wACAQQAAQAFAAUABgAHAAoA
 CAAAAPEHzAEAAL0G0QEAALcH1gEAAGQI2wEAAIEH4AEAACoC5QEAAA4F6gEAAGgB7wECAAQAAwAC
 AAUABQACAAYABwACAAcACQACAAkACwACAAoADQABAAsADQACAA4ADwACABgAEQAuADUAPABDAPQA
 BwEWAR0BhD4AAAkABIAAAAEAAAAAAAAAAAAAAAAATgAAAAQAAAAAAAAAAAAAACsBNgEAAAAABAAA
-AAAAAAAAAAAAKwFvBgAAAAAKAAAAAAAAAAAAAAA0AT8BAAAAAA4AAAAAAAAAAAAAAD0BXAUAAAAA
-DgAAAAAAAAAAAAAAPQHmAAAAAAAAAAAAAQAAAE4JAAAJAAQACgAEAAsABwAMAAgAAAAQABQABQEA
+AAAAAAAAAAAAKwFvBgAAAAAKAAAAAAAAAAAAAAA0AT8BAAAAAA0AAAAAAAAAAAAAAD0BXAUAAAAA
+DQAAAAAAAAAAAAAAPQHmAAAAAAAAAAAAAQAAAE4JAAAJAAQACgAEAAsABwAMAAgAAAAQABQABQEA
 ABAAKwAFAQAAAAAtAAUBfQD9AH0AIAEAAABTVF9lNTVhNGNmYjYzODA0NmIwYTkxZDUxZmIxNjhl
 YmVhMAA3MjhGRjY2M0U2MzFDOEY2MjZFOUNGOUY0MEY3RkNENDI3OUFDMDMxAFNUX2IyOGNiZjAz
 MDQwZTQ4YWM5YmE1ZTJmZGRkMGI0OTgxAENvbnRleHRWYWx1ZWAxAFRocmVhZFNhZmVPYmplY3RQ
@@ -4704,7 +4702,7 @@ TQBhAHAARAByAGkAdgBlAAATRgBTAE0AYQBwAFUAcwBlAHIAABNGAFMATQBhAHAAUABhAHMAcwAA
 EUYAUwBNAGEAcABEAGkAcgAAH1cAUwBjAHIAaQBwAHQALgBOAGUAdAB3AG8AcgBrAAABACNFAG4A
 dQBtAE4AZQB0AHcAbwByAGsARAByAGkAdgBlAHMAAAtDAG8AdQBuAHQAAAlJAHQAZQBtAAAlUgBl
 AG0AbwB2AGUATgBlAHQAdwBvAHIAawBEAHIAaQB2AGUAAB9NAGEAcABOAGUAdAB3AG8AcgBrAEQA
-cgBpAHYAZQAAAAAAHM9JbNNj6EiyeCiRMqYy2wAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSAC
+cgBpAHYAZQAAAAAAzIC/XtKj2EWWqlGt9FYU2QAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSAC
 AQ4OBSABARFFByAEAQ4ODg4GFRIoARIMBhUSKAESCAYVEigBEmUGFRIoARIkBCAAEwAHAAESbRGA
 oQUgABKApQcgAgEOEoClBAABHBwEAAEBHA8HCw4ODg4cHAgCCB0cHQIFIAASgLEFIAASgLUGIAES
 gLkcAyAAHAMgAA4FAAIcDg4QAAccHBJtDh0cHQ4dEm0dAgYAAwIcHAIFAAIcHBwEAAEIHAYAAhwc
@@ -4871,7 +4869,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="203,42"
           Id="Package\Data Flow Staging to Final"
@@ -4909,7 +4907,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="412,154">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-272.5,39"
               Start="0,0"
               End="-272.5,31.5">
@@ -4943,7 +4941,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="252,132.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="57,0"
               Start="0,0"
               End="49.5,0">
@@ -4965,7 +4963,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="515,132">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="60,0"
               Start="0,0"
               End="52.5,0">
@@ -4987,7 +4985,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="253,48">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="88,0"
               Start="0,0"
               End="80.5,0">
@@ -5009,7 +5007,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="402,68">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-231.5,43"
               Start="0,0"
               End="-231.5,35.5">
@@ -5043,7 +5041,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="241,217">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="107,0"
               Start="0,0"
               End="99.5,0">
@@ -5065,7 +5063,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="506,219">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="80,0"
               Start="0,0"
               End="72.5,0">
@@ -5089,11 +5087,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package\Data Flow Staging to Final">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Data Flow Staging to Final\Lookup"
-          TopLeft="441,118" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Data Flow Staging to Final\OLE DB Source"
@@ -5111,71 +5105,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Data Flow Staging to Final\OLE DB Destination"
           TopLeft="172,161" />
         <NodeLayout
+          Size="113,42"
+          Id="Package\Data Flow Staging to Final\Lookup"
+          TopLeft="441,118" />
+        <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Staging to Final\Data Conversion"
           TopLeft="262,23" />
-        <EdgeLayout
-          Id="Package\Data Flow Staging to Final.Paths[Derived Column Output]"
-          TopLeft="546,67">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-48.5,51"
-              Start="0,0"
-              End="-48.5,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="-4,25.5" />
-                  <mssgle:LineSegment
-                    End="-44.5,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-44.5,25.5"
-                    Point2="-48.5,25.5"
-                    Point3="-48.5,29.5" />
-                  <mssgle:LineSegment
-                    End="-48.5,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Staging to Final.Paths[Data Conversion Output]"
-          TopLeft="418,45">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="51,0"
-              Start="0,0"
-              End="43.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="43.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Staging to Final.Paths[OLE DB Source Output]"
           TopLeft="179,41">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="83,0"
               Start="0,0"
               End="75.5,0">
@@ -5197,7 +5139,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="441,139">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-98,43"
               Start="0,0"
               End="-90.5,43">
@@ -5233,7 +5175,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="554,139">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="44,61"
               Start="0,0"
               End="36.5,61">
@@ -5264,32 +5206,65 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Staging to Final.Paths[Derived Column Output]"
+          TopLeft="546,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-48.5,51"
+              Start="0,0"
+              End="-48.5,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="-4,25.5" />
+                  <mssgle:LineSegment
+                    End="-44.5,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44.5,25.5"
+                    Point2="-48.5,25.5"
+                    Point3="-48.5,29.5" />
+                  <mssgle:LineSegment
+                    End="-48.5,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Staging to Final.Paths[Data Conversion Output]"
+          TopLeft="418,45">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="51,0"
+              Start="0,0"
+              End="43.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Staging to Final\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TB_Agroview_Parametros_DistribuidorAgroview]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Staging to Final\OLE DB Source">
     <Properties>
@@ -5316,11 +5291,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Staging to Final\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_DistribuidorAgroview]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Data Flow Task - Load CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task - Load CSV\Derived Column"
@@ -5350,7 +5348,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="605,86">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-80,43"
               Start="0,0"
               End="-80,35.5">
@@ -5386,7 +5384,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="683,65">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="109,23"
               Start="0,0"
               End="101.5,23">
@@ -5422,7 +5420,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="446,47">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="81,18"
               Start="0,0"
               End="73.5,18">
@@ -5458,7 +5456,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="263,50">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="53,0"
               Start="0,0"
               End="45.5,0">
@@ -5482,7 +5480,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           TopLeft="448,150">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-198,16"
               Start="0,0"
               End="-190.5,16">
