@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="1/21/2019 3:43:08 PM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{8A9E65BA-DCC8-4B8C-A567-B7DDA8DAD441}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LastModifiedProductVersion="13.0.4495.10"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_DistribuidorAgroview"
   DTS:PackageType="5"
-  DTS:VersionBuild="142"
-  DTS:VersionGUID="{B8675023-DC83-4475-9D6E-417312DE0EA8}">
+  DTS:VersionBuild="145"
+  DTS:VersionGUID="{7DA44957-6B10-4116-8E2B-60313B1684AC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="S:\Data&amp;Insights\DistribuidorAgroview.csv">
+          DTS:ConnectionString="S:\Data&amp;Insights\TESTES\DistribuidorAgroview.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -238,7 +238,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FTPFile">
       <DTS:VariableValue
-        DTS:DataType="8">/Qlikview/Synapse/Entrada/Csv/DistribuidorAgroview.csv</DTS:VariableValue>
+        DTS:DataType="8">/Qlikview/Synapse/Entrada/Csv/TESTES/DistribuidorAgroview.csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -249,7 +249,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="InboxFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">S:\Data&amp;Insights\DistribuidorAgroview.csv</DTS:VariableValue>
+        DTS:DataType="8">S:\Data&amp;Insights\TESTES\DistribuidorAgroview.csv</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -413,6 +413,13 @@
                       cachedLength="20"
                       cachedName="DistLastUpdate"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistLastUpdate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Inputs[Derived Column Input].Columns[DistSecurityCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DistSecurityCode"
+                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistSecurityCode]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -631,6 +638,28 @@
                           name="FriendlyExpression">(LEN(DistLastUpdate) &lt; 1 ? NULL(DT_DBTIMESTAMP) : (DT_DBTIMESTAMP)DistLastUpdate)</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_DistSecurityCode]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_DistSecurityCode]"
+                      name="drv_DistSecurityCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([LEN](#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistSecurityCode]}) &lt; 1) ? NULL(DT_I4) : (DT_I4)#{Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistSecurityCode]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(LEN(DistSecurityCode) &lt; 1) ? NULL(DT_I4) : (DT_I4)DistSecurityCode</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -673,13 +702,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[TB_Agroview_Parametros_DistribuidorAgroview]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_DistribuidorAgroview]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[TB_Agroview_Parametros_DistribuidorAgroview]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_DistribuidorAgroview]) [refTable]
 where [refTable].[DistCodigo] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -729,8 +758,8 @@ where [refTable].[DistCodigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -834,7 +863,7 @@ where [refTable].[DistCodigo] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update TB_Agroview_Parametros_DistribuidorAgroview
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update TB_Agroview_Parametros_DistribuidorAgroview
 set 
 DistNome = ?,
 DistNomeExibicao = ?,
@@ -863,8 +892,8 @@ where DistCodigo = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1294,7 +1323,7 @@ where DistCodigo = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1328,8 +1357,8 @@ where DistCodigo = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1357,14 +1386,6 @@ where DistCodigo = ?</property>
                       cachedName="DistPath"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistPath]"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistPath]" />
-                    <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DistSecurityCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="DistSecurityCode"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistSecurityCode]"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistSecurityCode]" />
                     <inputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
                       cachedDataType="dbTimeStamp"
@@ -1483,6 +1504,12 @@ where DistCodigo = ?</property>
                       cachedName="drv_LastUpdate"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistLastUpdate]"
                       lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_LastUpdate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DistSecurityCode]"
+                      cachedDataType="i4"
+                      cachedName="drv_DistSecurityCode"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DistSecurityCode]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_DistSecurityCode]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1642,7 +1669,7 @@ where DistCodigo = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1668,8 +1695,8 @@ where DistCodigo = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Staging to Final\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3524,7 +3551,7 @@ where DistCodigo = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3558,8 +3585,8 @@ where DistCodigo = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
-                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4013,7 +4040,7 @@ where DistCodigo = ?</property>
       <DTS:ObjectData>
         <ScriptProject
           Name="ST_b28cbf03040e48ac9ba5e2fddd0b4981"
-          VSTAMajorVersion="3"
+          VSTAMajorVersion="14"
           VSTAMinorVersion="0"
           Language="VisualBasic"
           ReadOnlyVariables="$Project::FSMapDir,$Project::FSMapDrive,$Project::FSMapUser,$Project::FSMapPass">
@@ -4254,21 +4281,21 @@ End Class]]></ProjectItem>
             Name="Project"
             Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_b28cbf03040e48ac9ba5e2fddd0b4981</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_b28cbf03040e48ac9ba5e2fddd0b4981</msb:DisplayName>
-    <msb:ProjectId>{DC29627F-B167-4507-8457-DE09D5A97171}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_b28cbf03040e48ac9ba5e2fddd0b4981.vbproj" />
-    <msb:File Include="My Project\Resources.Designer.vb" />
-    <msb:File Include="My Project\AssemblyInfo.vb" />
-    <msb:File Include="ScriptMain.vb" />
-    <msb:File Include="My Project\Resources.resx" />
-    <msb:File Include="My Project\Settings.settings" />
-    <msb:File Include="My Project\Settings.Designer.vb" />
-  </msb:ItemGroup>
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_b28cbf03040e48ac9ba5e2fddd0b4981</msb:CodeName>
+		<msb:DisplayName>ST_b28cbf03040e48ac9ba5e2fddd0b4981</msb:DisplayName>
+		<msb:ProjectId>{DC29627F-B167-4507-8457-DE09D5A97171}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_b28cbf03040e48ac9ba5e2fddd0b4981.vbproj"/>
+		<msb:File Include="My Project\Resources.Designer.vb"/>
+		<msb:File Include="My Project\AssemblyInfo.vb"/>
+		<msb:File Include="My Project\Resources.resx"/>
+		<msb:File Include="ScriptMain.vb"/>
+		<msb:File Include="My Project\Settings.settings"/>
+		<msb:File Include="My Project\Settings.Designer.vb"/>
+	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
             Name="My Project\Resources.resx"
@@ -4435,8 +4462,8 @@ End Class]]></ProjectItem>
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -4483,7 +4510,7 @@ End Class]]></ProjectItem>
         <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
         <Host Name="ScriptTask" IconIndex=""></Host>
         <ProjectClient>
-          <HostIdentifier>SSIS_ST140</HostIdentifier>
+          <HostIdentifier>SSIS_ST130</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
@@ -4555,7 +4582,7 @@ End Namespace]]></ProjectItem>
           <BinaryItem
             Name="ST_b28cbf03040e48ac9ba5e2fddd0b4981.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAKAxzFwAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAfj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAPve71wAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAAfj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAACw+AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4622,8 +4649,8 @@ AosASwHgAoMA8gIAA4sASwEgA4sASwEgA4MA8gIBAAUAAAAMAG8A7wACAQQAAQAFAAUABgAHAAoA
 CAAAAPEHzAEAAL0G0QEAALcH1gEAAGQI2wEAAIEH4AEAACoC5QEAAA4F6gEAAGgB7wECAAQAAwAC
 AAUABQACAAYABwACAAcACQACAAkACwACAAoADQABAAsADQACAA4ADwACABgAEQAuADUAPABDAPQA
 BwEWAR0BhD4AAAkABIAAAAEAAAAAAAAAAAAAAAAATgAAAAQAAAAAAAAAAAAAACsBNgEAAAAABAAA
-AAAAAAAAAAAAKwFvBgAAAAAKAAAAAAAAAAAAAAA0AT8BAAAAAA4AAAAAAAAAAAAAAD0BXAUAAAAA
-DgAAAAAAAAAAAAAAPQHmAAAAAAAAAAAAAQAAAE4JAAAJAAQACgAEAAsABwAMAAgAAAAQABQABQEA
+AAAAAAAAAAAAKwFvBgAAAAAKAAAAAAAAAAAAAAA0AT8BAAAAAA0AAAAAAAAAAAAAAD0BXAUAAAAA
+DQAAAAAAAAAAAAAAPQHmAAAAAAAAAAAAAQAAAE4JAAAJAAQACgAEAAsABwAMAAgAAAAQABQABQEA
 ABAAKwAFAQAAAAAtAAUBfQD9AH0AIAEAAABTVF9lNTVhNGNmYjYzODA0NmIwYTkxZDUxZmIxNjhl
 YmVhMAA3MjhGRjY2M0U2MzFDOEY2MjZFOUNGOUY0MEY3RkNENDI3OUFDMDMxAFNUX2IyOGNiZjAz
 MDQwZTQ4YWM5YmE1ZTJmZGRkMGI0OTgxAENvbnRleHRWYWx1ZWAxAFRocmVhZFNhZmVPYmplY3RQ
@@ -4677,7 +4704,7 @@ TQBhAHAARAByAGkAdgBlAAATRgBTAE0AYQBwAFUAcwBlAHIAABNGAFMATQBhAHAAUABhAHMAcwAA
 EUYAUwBNAGEAcABEAGkAcgAAH1cAUwBjAHIAaQBwAHQALgBOAGUAdAB3AG8AcgBrAAABACNFAG4A
 dQBtAE4AZQB0AHcAbwByAGsARAByAGkAdgBlAHMAAAtDAG8AdQBuAHQAAAlJAHQAZQBtAAAlUgBl
 AG0AbwB2AGUATgBlAHQAdwBvAHIAawBEAHIAaQB2AGUAAB9NAGEAcABOAGUAdAB3AG8AcgBrAEQA
-cgBpAHYAZQAAAAAAHM9JbNNj6EiyeCiRMqYy2wAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSAC
+cgBpAHYAZQAAAAAAIDJnFalJlU6vN2s5P42JNQAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSAC
 AQ4OBSABARFFByAEAQ4ODg4GFRIoARIMBhUSKAESCAYVEigBEmUGFRIoARIkBCAAEwAHAAESbRGA
 oQUgABKApQcgAgEOEoClBAABHBwEAAEBHA8HCw4ODg4cHAgCCB0cHQIFIAASgLEFIAASgLUGIAES
 gLkcAyAAHAMgAA4FAAIcDg4QAAccHBJtDh0cHQ4dEm0dAgYAAwIcHAIFAAIcHBwEAAEIHAYAAhwc
