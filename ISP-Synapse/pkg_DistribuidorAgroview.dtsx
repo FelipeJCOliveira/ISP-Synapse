@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{8A9E65BA-DCC8-4B8C-A567-B7DDA8DAD441}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_DistribuidorAgroview"
   DTS:PackageType="5"
-  DTS:VersionBuild="147"
-  DTS:VersionGUID="{BBDFB6AB-0E8A-42CC-B37D-BAA2C1F7F273}">
+  DTS:VersionBuild="148"
+  DTS:VersionGUID="{D91DA014-BE7E-402C-AA73-E5A51C15C932}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -920,14 +920,6 @@ where DistCodigo = ?</property>
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistPath]" />
                     <inputColumn
-                      refId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[DistSecurityCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="DistSecurityCode"
-                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Data Flow Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DistSecurityCode]" />
-                    <inputColumn
                       refId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[DistPossuiCFOPsTratadas]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1039,6 +1031,12 @@ where DistCodigo = ?</property>
                       cachedName="drv_LastUpdate"
                       externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
                       lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_LastUpdate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[drv_DistSecurityCode]"
+                      cachedDataType="i4"
+                      cachedName="drv_DistSecurityCode"
+                      externalMetadataColumnId="Package\Data Flow Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Data Flow Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_DistSecurityCode]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5091,10 +5089,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="113,42"
-          Id="Package\Data Flow Staging to Final\Lookup"
-          TopLeft="441,118" />
-        <NodeLayout
           Size="150,42"
           Id="Package\Data Flow Staging to Final\OLE DB Source"
           TopLeft="29,17" />
@@ -5111,65 +5105,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Data Flow Staging to Final\OLE DB Destination"
           TopLeft="172,161" />
         <NodeLayout
+          Size="113,42"
+          Id="Package\Data Flow Staging to Final\Lookup"
+          TopLeft="441,118" />
+        <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Staging to Final\Data Conversion"
           TopLeft="262,23" />
-        <EdgeLayout
-          Id="Package\Data Flow Staging to Final.Paths[Derived Column Output]"
-          TopLeft="546,67">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-48.5,51"
-              Start="0,0"
-              End="-48.5,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="-4,25.5" />
-                  <mssgle:LineSegment
-                    End="-44.5,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-44.5,25.5"
-                    Point2="-48.5,25.5"
-                    Point3="-48.5,29.5" />
-                  <mssgle:LineSegment
-                    End="-48.5,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Staging to Final.Paths[Data Conversion Output]"
-          TopLeft="418,45">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="51,0"
-              Start="0,0"
-              End="43.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="43.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Staging to Final.Paths[OLE DB Source Output]"
           TopLeft="179,41">
@@ -5264,32 +5206,65 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Staging to Final.Paths[Derived Column Output]"
+          TopLeft="546,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-48.5,51"
+              Start="0,0"
+              End="-48.5,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="-4,25.5" />
+                  <mssgle:LineSegment
+                    End="-44.5,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44.5,25.5"
+                    Point2="-48.5,25.5"
+                    Point3="-48.5,29.5" />
+                  <mssgle:LineSegment
+                    End="-48.5,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Staging to Final.Paths[Data Conversion Output]"
+          TopLeft="418,45">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51,0"
+              Start="0,0"
+              End="43.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Staging to Final\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TB_Agroview_Parametros_DistribuidorAgroview]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Staging to Final\OLE DB Source">
     <Properties>
@@ -5313,6 +5288,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Staging to Final\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_DistribuidorAgroview]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
