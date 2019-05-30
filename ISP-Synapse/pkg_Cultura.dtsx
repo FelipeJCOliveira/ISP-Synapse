@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="1/14/2019 11:14:06 AM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="WINDEV1810EVAL\user"
   DTS:DTSID="{6A89B983-3A26-4A7D-9F9B-203756CE5FAD}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Cultura"
   DTS:PackageType="5"
   DTS:VersionBuild="80"
-  DTS:VersionGUID="{5A365554-CB29-484B-BDDD-ACDBF9B6513E}">
+  DTS:VersionGUID="{BC1468C1-9540-4207-A15A-9513F80CCC8A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -366,8 +366,8 @@ where [refTable].[Codigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -471,8 +471,8 @@ where Codigo = ?
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -623,8 +623,8 @@ where Codigo = ?
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -760,8 +760,8 @@ where Codigo = ?
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1219,8 +1219,8 @@ where Codigo = ?
               <connections>
                 <connection
                   refId="Package\Data Flow Task - CSV\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1392,7 +1392,7 @@ where Codigo = ?
       DTS:ExecutableType="Microsoft.FileSystemTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="File System Task"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <FileSystemData
@@ -1412,7 +1412,7 @@ where Codigo = ?
       DTS:ExecutableType="Microsoft.FtpTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="FTP DEL"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <FtpData
@@ -1474,7 +1474,7 @@ where Codigo = ?
       <DTS:ObjectData>
         <ScriptProject
           Name="ST_8b08fd3736f847ff954ed7362ad94043"
-          VSTAMajorVersion="15"
+          VSTAMajorVersion="3"
           VSTAMinorVersion="0"
           Language="VisualBasic"
           ReadOnlyVariables="$Project::FSMapDir,$Project::FSMapDrive,$Project::FSMapUser,$Project::FSMapPass">

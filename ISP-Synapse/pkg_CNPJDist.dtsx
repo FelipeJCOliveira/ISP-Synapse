@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="1/17/2019 11:32:54 AM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="pkg_CNPJDist"
   DTS:PackageType="5"
   DTS:VersionBuild="44"
-  DTS:VersionGUID="{5EE9D5C2-3263-4391-86D2-9D967F6B74E6}">
+  DTS:VersionGUID="{A601FB31-3798-4ED8-91F1-FDD3B897255E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -389,8 +389,8 @@ where [refTable].[CPF_CNPJ] = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -513,8 +513,8 @@ where CPF_CNPJ = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -705,8 +705,8 @@ where CPF_CNPJ = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -868,8 +868,8 @@ where CPF_CNPJ = ?</property>
               <connections>
                 <connection
                   refId="Package\Carga to Final\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1257,8 +1257,8 @@ where CPF_CNPJ = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task - Load CSV\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                  connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
+                  connectionManagerRefId="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1500,7 +1500,7 @@ where CPF_CNPJ = ?</property>
       <DTS:ObjectData>
         <ScriptProject
           Name="ST_09eb710d5bb843d9b96078fd824f772c"
-          VSTAMajorVersion="15"
+          VSTAMajorVersion="3"
           VSTAMinorVersion="0"
           Language="VisualBasic"
           ReadOnlyVariables="$Project::FSMapDir,$Project::FSMapDrive,$Project::FSMapUser,$Project::FSMapPass">
@@ -1545,75 +1545,6 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyVersion("1.0.0.0")> 
 <Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
-          <ProjectItem
-            Name="My Project\Settings.Designer.vb"
-            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
-' <autogenerated>
-'     This code was generated by a tool.
-'
-'     Changes to this file may cause incorrect behavior and will be lost if
-'     the code is regenerated.
-' </autogenerated>
-'------------------------------------------------------------------------------
-
-Option Strict Off
-Option Explicit On
-
-
-
-Partial Friend NotInheritable Class MySettings
-    Inherits System.Configuration.ApplicationSettingsBase
-
-    Private Shared m_Value As MySettings
-
-    Private Shared m_SyncObject As Object = New Object
-
-    <System.Diagnostics.DebuggerNonUserCode()> _
-    Public Shared ReadOnly Property Value() As MySettings
-        Get
-            If (MySettings.m_Value Is Nothing) Then
-                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
-                If (MySettings.m_Value Is Nothing) Then
-                    Try
-                        MySettings.m_Value = New MySettings
-                    Finally
-                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
-                    End Try
-                End If
-            End If
-            Return MySettings.m_Value
-        End Get
-    End Property
-End Class]]></ProjectItem>
-          <ProjectItem
-            Name="Project"
-            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_8b08fd3736f847ff954ed7362ad94043</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_8b08fd3736f847ff954ed7362ad94043</msb:DisplayName>
-    <msb:ProjectId>{DDD383C3-E481-4757-AA77-ACE8C202BED8}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_09eb710d5bb843d9b96078fd824f772c.vbproj" />
-    <msb:File Include="My Project\AssemblyInfo.vb" />
-    <msb:File Include="ScriptMain.vb" />
-    <msb:File Include="My Project\Resources.resx" />
-    <msb:File Include="My Project\Resources.Designer.vb" />
-    <msb:File Include="My Project\Settings.settings" />
-    <msb:File Include="My Project\Settings.Designer.vb" />
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
           <ProjectItem
             Name="ScriptMain.vb"
             Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
@@ -1760,6 +1691,75 @@ Partial Public Class ScriptMain
 #End Region
 
 End Class]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_8b08fd3736f847ff954ed7362ad94043</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_8b08fd3736f847ff954ed7362ad94043</msb:DisplayName>
+    <msb:ProjectId>{DDD383C3-E481-4757-AA77-ACE8C202BED8}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_09eb710d5bb843d9b96078fd824f772c.vbproj" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
           <ProjectItem
             Name="My Project\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
