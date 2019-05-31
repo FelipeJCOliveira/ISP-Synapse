@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_ClienteFTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="148"
-  DTS:VersionGUID="{08FB51FF-35ED-40FE-86C2-A2D78F87927E}">
+  DTS:VersionBuild="150"
+  DTS:VersionGUID="{E9AFE623-B179-41BC-8200-C7F9D6C03B8B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6109,13 +6109,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
-      <DTS:PropertyExpression
-        DTS:Name="WorkingDirectory">@[$Project::FS_InboxPath]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="cmd.exe"
-          Arguments="/c ftp -s:BAT\\ftp_cliente.config"
-          WorkingDirectory="S:\Data&amp;Insights\TESTES\" />
+          Arguments="/c \\BRSPFPC01VFIL1\Custom\Data&amp;Insights\TESTES\ftp -s:BAT\\ftp_cliente.config" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
