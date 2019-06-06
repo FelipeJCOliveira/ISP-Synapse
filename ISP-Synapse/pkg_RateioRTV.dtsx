@@ -1,0 +1,2217 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/20/2019 9:50:22 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WINDEV1810EVAL"
+  DTS:CreatorName="WINDEV1810EVAL\user"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{D0FDB91E-88D6-4312-8A16-1D3AE11650E8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.4495.10"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="pkg_RateioRTV"
+  DTS:VersionBuild="158"
+  DTS:VersionGUID="{014B43A0-6AEE-438B-8FBD-A997EA1D6E3C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF DP GrupoProduto]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{035952DF-966C-4903-B2A7-9A9CEF4412C2}"
+      DTS:ObjectName="FF DP GrupoProduto">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+  @[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="G:\SYNAPSE\RateioRTV.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Subgrupo"
+              DTS:DTSID="{324ED0DC-DC49-4B40-8A71-197086D2E322}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GrupoCorrespondente"
+              DTS:DTSID="{CD27023C-ABD1-49D8-A26A-9217B6AA0639}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF RateioRTV (65001 - string)]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5C946E24-2893-4192-B090-D1F350B4157F}"
+      DTS:ObjectName="FF RateioRTV (65001 - string)">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+  @[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="G:\SYNAPSE\RateioRTV.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RateioRTVDistribuidor"
+              DTS:DTSID="{1AA22F80-F4E8-4D71-889C-769DECC0A162}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RateioRTVCodigoGD"
+              DTS:DTSID="{0F1F442B-9B42-4091-9CB4-1482AA3A6E5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RateioRTVDescricaoGD"
+              DTS:DTSID="{2BFBDA17-0E35-4A7D-A272-EE5D358A8613}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RateioRTVChave"
+              DTS:DTSID="{DB66EF5C-5A2E-4FD1-877E-29D11B55D89E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{30D3007D-6A88-4053-B6B8-6A388DF639B4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CSVRowCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AFC0C3FA-62D4-46DB-A809-B5613D3E2622}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">RateioRTV.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BD98F2E9-01CF-4861-B42E-47F02439FE41}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::RemotePath]+ &quot;/&quot;+ @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FTPFile">
+      <DTS:VariableValue
+        DTS:DataType="8">/Qlikview/Synapse/Entrada/Csv/RateioRTV.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4F698E33-5355-4409-8C66-A712313C520C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::FS_InboxPath]+  @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="InboxFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">G:\SYNAPSE\RateioRTV.csv</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FTP Task"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="FTP Task"
+      DTS:DTSID="{CEF499D4-1AAC-44D8-A977-289541BD3DFD}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FTP Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FtpData
+          ConnectionName="{70CEFD86-8588-40CE-AE4E-4CA5BA592000}"
+          TaskOperationType="Receive"
+          TaskIsLocalPathVar="True"
+          TaskLocalPath="$Project::FS_InboxPath"
+          TaskIsRemotePathVar="True"
+          TaskRemotePath="User::FTPFile" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load CSV"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{43D6FD2C-C281-4501-A577-B95435B1590D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load CSV">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load CSV\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B888EC64-AAEB-4E31-87ED-A6A7CD4BE729}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
+              SQLTask:SqlStatementSource="delete from TB_Carga_RateioRTV;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load CSV\Load CSV - Filial"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2EC9699E-21C0-4784-8649-CF1520F35425}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load CSV - Filial"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load CSV\Load CSV - Filial\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load CSV\Load CSV - Filial\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Inputs[Derived Column Input].Columns[RateioRTVDistribuidor]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RateioRTVDistribuidor"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVDistribuidor]" />
+                        <inputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Inputs[Derived Column Input].Columns[RateioRTVCodigoGD]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RateioRTVCodigoGD"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVCodigoGD]" />
+                        <inputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Inputs[Derived Column Input].Columns[RateioRTVDescricaoGD]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RateioRTVDescricaoGD"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVDescricaoGD]" />
+                        <inputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Inputs[Derived Column Input].Columns[RateioRTVChave]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RateioRTVChave"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVChave]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load CSV\Load CSV - Filial\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]"
+                          name="drv_Dt_Import"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Distribuidor]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Distribuidor]"
+                          name="drv_Distribuidor"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,10,1252)#{Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVDistribuidor]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,10,1252)RateioRTVDistribuidor</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_CodigoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="RedirectRow"
+                          length="9"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_CodigoGD]"
+                          name="drv_CodigoGD"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,9,1252)[LEFT](#{Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVCodigoGD]},9)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,9,1252)LEFT(RateioRTVCodigoGD,9)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_DescricaoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_DescricaoGD]"
+                          name="drv_DescricaoGD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,100,1252)#{Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVDescricaoGD]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,100,1252)RateioRTVDescricaoGD</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Chave]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="RedirectRow"
+                          length="25"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Chave]"
+                          name="drv_Chave"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,25,1252)[LEFT](#{Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVChave]},25)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,25,1252)LEFT(RateioRTVChave,25)</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load CSV\Load CSV - Filial\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load CSV\Load CSV - Filial\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF RateioRTV (65001 - string)]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF RateioRTV (65001 - string)]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVDistribuidor]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RateioRTVDistribuidor]"
+                          length="50"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVDistribuidor]"
+                          name="RateioRTVDistribuidor"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVCodigoGD]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RateioRTVCodigoGD]"
+                          length="50"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVCodigoGD]"
+                          name="RateioRTVCodigoGD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVDescricaoGD]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RateioRTVDescricaoGD]"
+                          length="50"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVDescricaoGD]"
+                          name="RateioRTVDescricaoGD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVChave]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RateioRTVChave]"
+                          length="50"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].Columns[RateioRTVChave]"
+                          name="RateioRTVChave"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RateioRTVDistribuidor]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="RateioRTVDistribuidor" />
+                        <externalMetadataColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RateioRTVCodigoGD]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="RateioRTVCodigoGD" />
+                        <externalMetadataColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RateioRTVDescricaoGD]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="RateioRTVDescricaoGD" />
+                        <externalMetadataColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RateioRTVChave]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="RateioRTVChave" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load CSV\Load CSV - Filial\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Load CSV\Load CSV - Filial\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load CSV\Load CSV - Filial\Multicast.Outputs[Multicast Output 1]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Load CSV\Load CSV - Filial\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  validateExternalMetadata="False"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[TB_Carga_RateioRTV]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="IgnoreFailure"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Dt_Import]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="drv_Dt_Import"
+                          externalMetadataColumnId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Dt_Import]" />
+                        <inputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Chave]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="25"
+                          cachedName="drv_Chave"
+                          externalMetadataColumnId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Chave]" />
+                        <inputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Distribuidor]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="drv_Distribuidor"
+                          externalMetadataColumnId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor]"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_Distribuidor]" />
+                        <inputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_CodigoGD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="drv_CodigoGD"
+                          externalMetadataColumnId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoGD]"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_CodigoGD]" />
+                        <inputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_DescricaoGD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="drv_DescricaoGD"
+                          externalMetadataColumnId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescricaoGD]"
+                          lineageId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output].Columns[drv_DescricaoGD]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                          dataType="dbTimeStamp"
+                          name="Data_Inclusao" />
+                        <externalMetadataColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="Chave" />
+                        <externalMetadataColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Distribuidor" />
+                        <externalMetadataColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="9"
+                          name="CodigoGD" />
+                        <externalMetadataColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescricaoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DescricaoGD" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load CSV\Load CSV - Filial\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::CSVRowCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Load CSV\Load CSV - Filial\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load CSV\Load CSV - Filial\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Load CSV\Load CSV - Filial\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load CSV\Load CSV - Filial.Paths[Derived Column Error Output]"
+                  endId="Package\Load CSV\Load CSV - Filial\Multicast.Inputs[Multicast Input 1]"
+                  name="Derived Column Error Output"
+                  startId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Error Output]" />
+                <path
+                  refId="Package\Load CSV\Load CSV - Filial.Paths[Derived Column Output]"
+                  endId="Package\Load CSV\Load CSV - Filial\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load CSV\Load CSV - Filial\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load CSV\Load CSV - Filial.Paths[Flat File Source Output]"
+                  endId="Package\Load CSV\Load CSV - Filial\Row Count.Inputs[Row Count Input 1]"
+                  name="Flat File Source Output"
+                  startId="Package\Load CSV\Load CSV - Filial\Flat File Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Load CSV\Load CSV - Filial.Paths[Row Count Output 1]"
+                  endId="Package\Load CSV\Load CSV - Filial\Derived Column.Inputs[Derived Column Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Load CSV\Load CSV - Filial\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load CSV\SQL Log CSV"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{C7909303-C57D-4309-8CCC-4C9BAEF53832}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Log CSV"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{E448DA41-DD58-4119-9AA4-61CCF00C039D}"
+              SQLTask:SqlStatementSource="INSERT INTO TB_Carga_LOG_Arquivo(Data_Carga, Nome_Arquivo,Qtd_Registros)&#xA;VALUES(getdate(),?,?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::FileName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::CSVRowCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load CSV.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B3C236D1-57B4-4276-A395-F719BE91DF3C}"
+          DTS:From="Package\Load CSV\Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Load CSV\Load CSV - Filial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load CSV.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{898E4EC2-F366-46A5-B69E-72FB759AEEEE}"
+          DTS:From="Package\Load CSV\Load CSV - Filial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Load CSV\SQL Log CSV" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Stage to Final"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F1610180-06C9-496D-89E4-ED001294F22D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Stage to Final">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Stage to Final\File System Task"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{03C8DB71-5150-4467-9ED3-3F0D13DD0232}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="File System Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::InboxFilePath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="$Project::FS_LoadedPath"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Stage to Final\FTP DEL"
+          DTS:CreationName="Microsoft.FtpTask"
+          DTS:Description="FTP Task"
+          DTS:DTSID="{8FD38376-508C-4BBA-9722-F71DC94914A1}"
+          DTS:ExecutableType="Microsoft.FtpTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FTP DEL"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FtpData
+              ConnectionName="{70CEFD86-8588-40CE-AE4E-4CA5BA592000}"
+              TaskOperationType="DeleteRemote"
+              TaskIsLocalPathVar="True"
+              TaskLocalPath="$Project::FS_InboxPath"
+              TaskIsRemotePathVar="True"
+              TaskRemotePath="User::FTPFile" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Stage to Final\Staging to Final"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{CB16C046-D2DE-4BFB-B9A6-DE60D0BBCC8A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Staging to Final"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Stage to Final\Staging to Final\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Stage to Final\Staging to Final\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Stage to Final\Staging to Final\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Data_Atual]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Data_Atual]"
+                          name="drv_Data_Atual"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Stage to Final\Staging to Final\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Stage to Final\Staging to Final\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_DP_GrupoProduto]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_DP_GrupoProduto]) [refTable]
+where [refTable].[Subgrupo] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Subgrupo" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GrupoCorrespondente" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Stage to Final\Staging to Final\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input].Columns[Subgrupo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Subgrupo"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Subgrupo</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Stage to Final\Staging to Final\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Update tb_agroview_parametros_DP_GrupoProduto
+set   GrupoCorrespondente = ?,
+        Data_Alteracao = getdate()
+where Subgrupo = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Stage to Final\Staging to Final\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[GrupoCorrespondente]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="GrupoCorrespondente"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[GrupoCorrespondente]" />
+                        <inputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[Subgrupo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Subgrupo"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Stage to Final\Staging to Final\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[TB_Agroview_Parametros_DP_GrupoProduto]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[drv_Data_Atual]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="drv_Data_Atual"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                          lineageId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Data_Atual]" />
+                        <inputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Subgrupo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Subgrupo"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Subgrupo]"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]" />
+                        <inputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GrupoCorrespondente]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="GrupoCorrespondente"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GrupoCorrespondente]"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[GrupoCorrespondente]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
+                          dataType="dbTimeStamp"
+                          name="Data_Inclusao" />
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Alteracao]"
+                          dataType="dbTimeStamp"
+                          name="Data_Alteracao" />
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Subgrupo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="Subgrupo" />
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GrupoCorrespondente]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="GrupoCorrespondente" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Stage to Final\Staging to Final\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[TB_Carga_DP_GrupoProduto]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Stage to Final\Staging to Final\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Inclusao]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data_Inclusao]"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data_Inclusao]"
+                          name="Data_Inclusao"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subgrupo]"
+                          length="30"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]"
+                          name="Subgrupo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[GrupoCorrespondente]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GrupoCorrespondente]"
+                          length="30"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[GrupoCorrespondente]"
+                          name="GrupoCorrespondente"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data_Inclusao]"
+                          dataType="dbTimeStamp"
+                          name="Data_Inclusao" />
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subgrupo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="Subgrupo" />
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GrupoCorrespondente]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="GrupoCorrespondente" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subgrupo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subgrupo]"
+                          name="Subgrupo" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GrupoCorrespondente]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GrupoCorrespondente]"
+                          name="GrupoCorrespondente" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Data_Inclusao]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Data_Inclusao]"
+                          name="Data_Inclusao" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Stage to Final\Staging to Final.Paths[Derived Column Output]"
+                  endId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Stage to Final\Staging to Final.Paths[Lookup Match Output]"
+                  endId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Stage to Final\Staging to Final.Paths[Lookup No Match Output]"
+                  endId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Stage to Final\Staging to Final.Paths[OLE DB Source Output]"
+                  endId="Package\Stage to Final\Staging to Final\Derived Column.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Stage to Final.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{078B2F4C-F8F4-4463-86E4-D0FFE3D288FD}"
+          DTS:From="Package\Stage to Final\Staging to Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Stage to Final\File System Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Stage to Final.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{0F5AE315-30D6-47C5-9C2B-AE72E385EEC4}"
+          DTS:From="Package\Stage to Final\File System Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Stage to Final\FTP DEL" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5563FC5B-A858-43D0-994F-AD6B068476C5}"
+      DTS:From="Package\FTP Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load CSV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2D7D63FA-FB68-44DF-9D14-19178B62E922}"
+      DTS:From="Package\Load CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Stage to Final" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="122,42"
+          Id="Package\FTP Task"
+          TopLeft="64,12" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Load CSV\Execute SQL Task"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Load CSV\Load CSV - Filial"
+          TopLeft="254.5,12.5" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Load CSV\SQL Log CSV"
+          TopLeft="506.5,14.5" />
+        <EdgeLayout
+          Id="Package\Load CSV.PrecedenceConstraints[Constraint]"
+          TopLeft="168.5,30">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86,0"
+              Start="0,0"
+              End="78.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CSV.PrecedenceConstraints[Constraint 1]"
+          TopLeft="409.5,34.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="97,0"
+              Start="0,0"
+              End="89.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="89.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="666,79"
+          Size="666,122"
+          Id="Package\Load CSV"
+          TopLeft="33,82" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Stage to Final\File System Task"
+          TopLeft="254.5,7.5" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Stage to Final\FTP DEL"
+          TopLeft="494.5,4.5" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Stage to Final\Staging to Final"
+          TopLeft="5.5,13" />
+        <EdgeLayout
+          Id="Package\Stage to Final.PrecedenceConstraints[Constraint 5]"
+          TopLeft="157.5,31.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="97,0"
+              Start="0,0"
+              End="89.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="89.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to Final.PrecedenceConstraints[Constraint 6]"
+          TopLeft="412.5,27">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82,0"
+              Start="0,0"
+              End="74.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="74.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="664,63"
+          Size="664,106"
+          Id="Package\Stage to Final"
+          TopLeft="30,231" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="125,54">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="241,28"
+              Start="0,0"
+              End="241,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="237,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="237,14"
+                    Point2="241,14"
+                    Point3="241,18" />
+                  <mssgle:LineSegment
+                    End="241,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="364,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load CSV\Load CSV - Filial">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Load CSV\Load CSV - Filial\Flat File Source"
+          TopLeft="91,30" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load CSV\Load CSV - Filial\Row Count"
+          TopLeft="336,25" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load CSV\Load CSV - Filial\Derived Column"
+          TopLeft="355,124" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Load CSV\Load CSV - Filial\OLE DB Destination"
+          TopLeft="91,124" />
+        <EdgeLayout
+          Id="Package\Load CSV\Load CSV - Filial.Paths[Flat File Source Output]"
+          TopLeft="242,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94,0"
+              Start="0,0"
+              End="86.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CSV\Load CSV - Filial.Paths[Derived Column Output]"
+          TopLeft="355,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-93,0"
+              Start="0,0"
+              End="-85.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-85.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Load CSV\Load CSV - Filial\Multicast"
+          TopLeft="635,145" />
+        <EdgeLayout
+          Id="Package\Load CSV\Load CSV - Filial.Paths[Derived Column Error Output]"
+          TopLeft="509,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126,21"
+              Start="0,0"
+              End="118.5,21">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="59,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59,0"
+                    Point2="63,0"
+                    Point3="63,4" />
+                  <mssgle:LineSegment
+                    End="63,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63,17"
+                    Point2="63,21"
+                    Point3="67,21" />
+                  <mssgle:LineSegment
+                    End="118.5,21" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.8300390625,-22,147.660078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CSV\Load CSV - Filial.Paths[Row Count Output 1]"
+          TopLeft="401,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31,57"
+              Start="0,0"
+              End="31,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
+                  <mssgle:LineSegment
+                    End="27,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27,28.5"
+                    Point2="31,28.5"
+                    Point3="31,32.5" />
+                  <mssgle:LineSegment
+                    End="31,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load CSV\Load CSV - Filial\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Stage to Final\Staging to Final">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Stage to Final\Staging to Final\OLE DB Destination"
+          TopLeft="335,159" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Stage to Final\Staging to Final\Lookup"
+          TopLeft="448,51" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Stage to Final\Staging to Final\OLE DB Source"
+          TopLeft="39,51" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Stage to Final\Staging to Final\Derived Column"
+          TopLeft="223,51" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Stage to Final\Staging to Final\OLE DB Command"
+          TopLeft="549,160" />
+        <EdgeLayout
+          Id="Package\Stage to Final\Staging to Final.Paths[OLE DB Source Output]"
+          TopLeft="189,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34,0"
+              Start="0,0"
+              End="26.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to Final\Staging to Final.Paths[Lookup No Match Output]"
+          TopLeft="504.5,93">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-84,66"
+              Start="0,0"
+              End="-84,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="-4,33" />
+                  <mssgle:LineSegment
+                    End="-80,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-80,33"
+                    Point2="-84,33"
+                    Point3="-84,37" />
+                  <mssgle:LineSegment
+                    End="-84,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-97.80638671875,38,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to Final\Staging to Final.Paths[Lookup Match Output]"
+          TopLeft="522,93">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110,67"
+              Start="0,0"
+              End="110,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3612565445026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.3612565445026"
+                    Point2="0,27.3612565445026"
+                    Point3="4,27.3612565445026" />
+                  <mssgle:LineSegment
+                    End="106,27.3612565445026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106,27.3612565445026"
+                    Point2="110,27.3612565445026"
+                    Point3="110,31.3612565445026" />
+                  <mssgle:LineSegment
+                    End="110,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.80861328125,32.3612565445026,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to Final\Staging to Final.Paths[Derived Column Output]"
+          TopLeft="377,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71,0"
+              Start="0,0"
+              End="63.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to Final\Staging to Final\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TB_Agroview_Parametros_DP_GrupoProduto]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to Final\Staging to Final\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to Final\Staging to Final\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
