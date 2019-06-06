@@ -12,51 +12,11 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="pkg_RateioRTV"
-  DTS:VersionBuild="158"
-  DTS:VersionGUID="{014B43A0-6AEE-438B-8FBD-A997EA1D6E3C}">
+  DTS:VersionBuild="160"
+  DTS:VersionGUID="{34C323AA-6FF5-4C1D-AE28-80D7F94B8807}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[FF DP GrupoProduto]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{035952DF-966C-4903-B2A7-9A9CEF4412C2}"
-      DTS:ObjectName="FF DP GrupoProduto">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::FS_InboxPath]+  @[User::FileName]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="G:\SYNAPSE\RateioRTV.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Subgrupo"
-              DTS:DTSID="{324ED0DC-DC49-4B40-8A71-197086D2E322}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="GrupoCorrespondente"
-              DTS:DTSID="{CD27023C-ABD1-49D8-A26A-9217B6AA0639}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FF RateioRTV (65001 - string)]"
       DTS:CreationName="FLATFILE"
@@ -1031,272 +991,6 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Stage to Final\Staging to Final\Lookup"
-                  componentClassID="Microsoft.Lookup"
-                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="Lookup"
-                  usesDispositions="true"
-                  version="6">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the SQL statement that generates the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TB_Agroview_Parametros_DP_GrupoProduto]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TB_Agroview_Parametros_DP_GrupoProduto]) [refTable]
-where [refTable].[Subgrupo] = ?</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the type of connection used to access the reference dataset."
-                      name="ConnectionType"
-                      typeConverter="LookupConnectionType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the cache type of the lookup table."
-                      name="CacheType"
-                      typeConverter="CacheType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                      name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                      name="NoMatchCachePercentage">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                      name="MaxMemoryUsage">25</property>
-                    <property
-                      dataType="System.Int64"
-                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                      name="MaxMemoryUsage64">25</property>
-                    <property
-                      dataType="System.String"
-                      description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Subgrupo" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GrupoCorrespondente" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Data_Inclusao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data_Alteracao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]};</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                      name="TreatDuplicateKeysAsError">false</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Stage to Final\Staging to Final\Lookup.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
-                      description="Connection manager used to access lookup data."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input]"
-                      name="Lookup Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input].Columns[Subgrupo]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="Subgrupo"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">Subgrupo</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Match Output]"
-                      errorOrTruncationOperation="Lookup"
-                      exclusionGroup="1"
-                      name="Lookup Match Output"
-                      synchronousInputId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup No Match Output]"
-                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                      exclusionGroup="1"
-                      name="Lookup No Match Output"
-                      synchronousInputId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Lookup Error Output"
-                      synchronousInputId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Stage to Final\Staging to Final\OLE DB Command"
-                  componentClassID="Microsoft.OLEDBCommand"
-                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                  name="OLE DB Command"
-                  usesDispositions="true"
-                  version="2">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Update tb_agroview_parametros_DP_GrupoProduto
-set   GrupoCorrespondente = ?,
-        Data_Alteracao = getdate()
-where Subgrupo = ?</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Stage to Final\Staging to Final\OLE DB Command.Connections[OleDbConnection]"
-                      connectionManagerID="{E448DA41-DD58-4119-9AA4-61CCF00C039D}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[IEAZIWSQLAGLP001.syngentaazure.org.Db_Synapse.admin_Db_Synapse 1]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]"
-                      errorOrTruncationOperation="Command Execution"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Command Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[GrupoCorrespondente]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="GrupoCorrespondente"
-                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[GrupoCorrespondente]" />
-                        <inputColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].Columns[Subgrupo]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="Subgrupo"
-                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          codePage="1252"
-                          dataType="str"
-                          length="30"
-                          name="Param_0">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          codePage="1252"
-                          dataType="str"
-                          length="30"
-                          name="Param_1">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Output]"
-                      exclusionGroup="1"
-                      name="OLE DB Command Output"
-                      synchronousInputId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Command Error Output"
-                      synchronousInputId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Stage to Final\Staging to Final\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1312,7 +1006,7 @@ where Subgrupo = ?</property>
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[TB_Agroview_Parametros_DP_GrupoProduto]</property>
+                      name="OpenRowset">[dbo].[TB_Agroview_Parametros_RateioRTV]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1334,7 +1028,7 @@ where Subgrupo = ?</property>
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">3</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -1375,21 +1069,37 @@ where Subgrupo = ?</property>
                           externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data_Inclusao]"
                           lineageId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Output].Columns[drv_Data_Atual]" />
                         <inputColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Subgrupo]"
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Chave]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="Subgrupo"
-                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Subgrupo]"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]" />
+                          cachedLength="25"
+                          cachedName="Chave"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]" />
                         <inputColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GrupoCorrespondente]"
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Distribuidor]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="GrupoCorrespondente"
-                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GrupoCorrespondente]"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[GrupoCorrespondente]" />
+                          cachedLength="10"
+                          cachedName="Distribuidor"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor]"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Distribuidor]" />
+                        <inputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CodigoGD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="CodigoGD"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoGD]"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[CodigoGD]" />
+                        <inputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DescricaoGD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="DescricaoGD"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescricaoGD]"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DescricaoGD]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1402,17 +1112,29 @@ where Subgrupo = ?</property>
                           dataType="dbTimeStamp"
                           name="Data_Alteracao" />
                         <externalMetadataColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Subgrupo]"
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Chave]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
-                          name="Subgrupo" />
+                          length="25"
+                          name="Chave" />
                         <externalMetadataColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GrupoCorrespondente]"
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distribuidor]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
-                          name="GrupoCorrespondente" />
+                          length="10"
+                          name="Distribuidor" />
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="9"
+                          name="CodigoGD" />
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescricaoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DescricaoGD" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1466,7 +1188,11 @@ where Subgrupo = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from TB_Carga_RateioRTV as crtv
+where not exists (select prtv.Chave from [TB_Agroview_Parametros_RateioRTV] as prtv
+  where crtv.Chave = prtv.Chave 
+    and crtv.Distribuidor = prtv.Distribuidor
+	and crtv.DescricaoGD = prtv.DescricaoGD)</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -1483,7 +1209,7 @@ where Subgrupo = ?</property>
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">2</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -1512,26 +1238,48 @@ where Subgrupo = ?</property>
                           name="Data_Inclusao"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]"
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subgrupo]"
-                          length="30"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subgrupo]"
-                          name="Subgrupo"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Chave]"
+                          length="25"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Chave]"
+                          name="Chave"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[GrupoCorrespondente]"
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Distribuidor]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GrupoCorrespondente]"
-                          length="30"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[GrupoCorrespondente]"
-                          name="GrupoCorrespondente"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Distribuidor]"
+                          length="10"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[Distribuidor]"
+                          name="Distribuidor"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[CodigoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CodigoGD]"
+                          length="9"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[CodigoGD]"
+                          name="CodigoGD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DescricaoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DescricaoGD]"
+                          length="100"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].Columns[DescricaoGD]"
+                          name="DescricaoGD"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -1541,17 +1289,29 @@ where Subgrupo = ?</property>
                           dataType="dbTimeStamp"
                           name="Data_Inclusao" />
                         <externalMetadataColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subgrupo]"
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Chave]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
-                          name="Subgrupo" />
+                          length="25"
+                          name="Chave" />
                         <externalMetadataColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GrupoCorrespondente]"
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Distribuidor]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
-                          name="GrupoCorrespondente" />
+                          length="10"
+                          name="Distribuidor" />
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CodigoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="9"
+                          name="CodigoGD" />
+                        <externalMetadataColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DescricaoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DescricaoGD" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1560,19 +1320,33 @@ where Subgrupo = ?</property>
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subgrupo]"
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Chave]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subgrupo]"
-                          name="Subgrupo" />
+                          length="25"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Chave]"
+                          name="Chave" />
                         <outputColumn
-                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GrupoCorrespondente]"
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Distribuidor]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
-                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GrupoCorrespondente]"
-                          name="GrupoCorrespondente" />
+                          length="10"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Distribuidor]"
+                          name="Distribuidor" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CodigoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="9"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CodigoGD]"
+                          name="CodigoGD" />
+                        <outputColumn
+                          refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DescricaoGD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DescricaoGD]"
+                          name="DescricaoGD" />
                         <outputColumn
                           refId="Package\Stage to Final\Staging to Final\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Data_Inclusao]"
                           dataType="dbTimeStamp"
@@ -1599,19 +1373,9 @@ where Subgrupo = ?</property>
               <paths>
                 <path
                   refId="Package\Stage to Final\Staging to Final.Paths[Derived Column Output]"
-                  endId="Package\Stage to Final\Staging to Final\Lookup.Inputs[Lookup Input]"
+                  endId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
                   startId="Package\Stage to Final\Staging to Final\Derived Column.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Stage to Final\Staging to Final.Paths[Lookup Match Output]"
-                  endId="Package\Stage to Final\Staging to Final\OLE DB Command.Inputs[OLE DB Command Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Stage to Final\Staging to Final.Paths[Lookup No Match Output]"
-                  endId="Package\Stage to Final\Staging to Final\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\Stage to Final\Staging to Final\Lookup.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Stage to Final\Staging to Final.Paths[OLE DB Source Output]"
                   endId="Package\Stage to Final\Staging to Final\Derived Column.Inputs[Derived Column Input]"
@@ -1867,21 +1631,61 @@ where Subgrupo = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="130,42"
+          Id="Package\Load CSV\Load CSV - Filial\Row Count"
+          TopLeft="336,25" />
+        <NodeLayout
           Size="151,42"
           Id="Package\Load CSV\Load CSV - Filial\Flat File Source"
           TopLeft="91,30" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Load CSV\Load CSV - Filial\Row Count"
-          TopLeft="336,25" />
+          Size="171,42"
+          Id="Package\Load CSV\Load CSV - Filial\OLE DB Destination"
+          TopLeft="91,124" />
         <NodeLayout
           Size="154,42"
           Id="Package\Load CSV\Load CSV - Filial\Derived Column"
           TopLeft="355,124" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Load CSV\Load CSV - Filial\OLE DB Destination"
-          TopLeft="91,124" />
+          Size="120,42"
+          Id="Package\Load CSV\Load CSV - Filial\Multicast"
+          TopLeft="635,145" />
+        <EdgeLayout
+          Id="Package\Load CSV\Load CSV - Filial.Paths[Row Count Output 1]"
+          TopLeft="401,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31,57"
+              Start="0,0"
+              End="31,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
+                  <mssgle:LineSegment
+                    End="27,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27,28.5"
+                    Point2="31,28.5"
+                    Point3="31,32.5" />
+                  <mssgle:LineSegment
+                    End="31,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load CSV\Load CSV - Filial.Paths[Flat File Source Output]"
           TopLeft="242,48.5">
@@ -1901,7 +1705,9 @@ where Subgrupo = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1923,13 +1729,11 @@ where Subgrupo = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Load CSV\Load CSV - Filial\Multicast"
-          TopLeft="635,145" />
         <EdgeLayout
           Id="Package\Load CSV\Load CSV - Filial.Paths[Derived Column Error Output]"
           TopLeft="509,145">
@@ -1966,40 +1770,6 @@ where Subgrupo = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load CSV\Load CSV - Filial.Paths[Row Count Output 1]"
-          TopLeft="401,67">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="31,57"
-              Start="0,0"
-              End="31,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="4,28.5" />
-                  <mssgle:LineSegment
-                    End="27,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27,28.5"
-                    Point2="31,28.5"
-                    Point3="31,32.5" />
-                  <mssgle:LineSegment
-                    End="31,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2020,15 +1790,11 @@ where Subgrupo = ?</property>
     design-time-name="Package\Stage to Final\Staging to Final">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Stage to Final\Staging to Final\OLE DB Destination"
-          TopLeft="335,159" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Stage to Final\Staging to Final\Lookup"
-          TopLeft="448,51" />
+          TopLeft="473,56" />
         <NodeLayout
           Size="150,42"
           Id="Package\Stage to Final\Staging to Final\OLE DB Source"
@@ -2036,157 +1802,54 @@ where Subgrupo = ?</property>
         <NodeLayout
           Size="154,42"
           Id="Package\Stage to Final\Staging to Final\Derived Column"
-          TopLeft="223,51" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Stage to Final\Staging to Final\OLE DB Command"
-          TopLeft="549,160" />
+          TopLeft="247,52" />
         <EdgeLayout
           Id="Package\Stage to Final\Staging to Final.Paths[OLE DB Source Output]"
-          TopLeft="189,72">
+          TopLeft="189,72.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="34,0"
+              EndConnector="58,0"
               Start="0,0"
-              End="26.5,0">
+              End="50.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="26.5,0" />
+                    End="50.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to Final\Staging to Final.Paths[Lookup No Match Output]"
-          TopLeft="504.5,93">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-84,66"
-              Start="0,0"
-              End="-84,58.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29"
-                    Point2="0,33"
-                    Point3="-4,33" />
-                  <mssgle:LineSegment
-                    End="-80,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-80,33"
-                    Point2="-84,33"
-                    Point3="-84,37" />
-                  <mssgle:LineSegment
-                    End="-84,58.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-97.80638671875,38,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to Final\Staging to Final.Paths[Lookup Match Output]"
-          TopLeft="522,93">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="110,67"
-              Start="0,0"
-              End="110,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.3612565445026" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.3612565445026"
-                    Point2="0,27.3612565445026"
-                    Point3="4,27.3612565445026" />
-                  <mssgle:LineSegment
-                    End="106,27.3612565445026" />
-                  <mssgle:CubicBezierSegment
-                    Point1="106,27.3612565445026"
-                    Point2="110,27.3612565445026"
-                    Point3="110,31.3612565445026" />
-                  <mssgle:LineSegment
-                    End="110,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="6.80861328125,32.3612565445026,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage to Final\Staging to Final.Paths[Derived Column Output]"
-          TopLeft="377,72">
+          TopLeft="401,75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="71,0"
+              EndConnector="72,0"
               Start="0,0"
-              End="63.5,0">
+              End="64.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="63.5,0" />
+                    End="64.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Stage to Final\Staging to Final\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TB_Agroview_Parametros_DP_GrupoProduto]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Stage to Final\Staging to Final\OLE DB Destination">
     <Properties>
