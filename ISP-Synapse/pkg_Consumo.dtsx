@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_Consumo"
   DTS:PackageType="5"
-  DTS:VersionBuild="431"
-  DTS:VersionGUID="{2BC1B165-5C67-4902-BE5D-E18D35D54A70}">
+  DTS:VersionBuild="435"
+  DTS:VersionGUID="{2FBB585D-824A-4ED4-8C2D-DAEF52EA9B98}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="S:\Data&amp;Insights\">
+          DTS:ConnectionString="G:\SYNAPSE\">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -613,7 +613,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="S:\Data&amp;Insights\">
+          DTS:ConnectionString="G:\SYNAPSE\">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1248,6 +1248,17 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{6D2608F6-EB7A-42E1-A212-01E1A27D9441}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::RemotePath]+&quot;/&quot;+ @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FTPCurrentFile">
+      <DTS:VariableValue
+        DTS:DataType="8">/Qlikview/Synapse/Entrada/Csv/</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{F391F24F-A2AD-4278-8F31-B605F921959F}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::RemotePath]+&quot;/&quot;+ @[User::FileMask]"
@@ -1266,7 +1277,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="InboxFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">S:\Data&amp;Insights\</DTS:VariableValue>
+        DTS:DataType="8">G:\SYNAPSE\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -17894,14 +17905,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Carga to Final (com log) 1\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
-              endId="Package\Carga to Final (com log) 1\Sub-Grupo.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Vendedor.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Vendedor.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
-              endId="Package\Carga to Final (com log) 1\CFOP.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Cliente.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup CFOP.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Cliente.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output2]"
               endId="Package\Carga to Final (com log) 1\Produto.Inputs[Derived Column Input]"
@@ -17909,14 +17920,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Carga to Final (com log) 1\Lookup Produto.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
-              endId="Package\Carga to Final (com log) 1\Cliente.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\CFOP.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Cliente.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup CFOP.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
-              endId="Package\Carga to Final (com log) 1\Vendedor.Inputs[Derived Column Input]"
+              endId="Package\Carga to Final (com log) 1\Sub-Grupo.Inputs[Derived Column Input]"
               name="Lookup Error Output"
-              startId="Package\Carga to Final (com log) 1\Lookup Vendedor.Outputs[Lookup Error Output]" />
+              startId="Package\Carga to Final (com log) 1\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Carga to Final (com log) 1.Paths[Lookup Match Output]"
               endId="Package\Carga to Final (com log) 1\Lookup Vendedor.Inputs[Lookup Input]"
@@ -18007,7 +18018,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="S:\Data&amp;Insights\" />
+              Folder="G:\SYNAPSE\" />
             <FEFEProperty
               FileSpec="Consumo2*.csv" />
             <FEFEProperty
@@ -35197,19 +35208,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
+                  endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\GRUPO.Inputs[Derived Column Input]"
+                  name="Lookup Error Output"
+                  startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO.Outputs[Lookup Error Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\CFOP.Inputs[Derived Column Input]"
                   name="Lookup Error Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup CFOP.Outputs[Lookup Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
+                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Sub-Grupo.Inputs[Derived Column Input]"
                   name="Lookup Error Output"
                   startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup Sub-Grupo.Outputs[Lookup Error Output]" />
-                <path
-                  refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
-                  endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\GRUPO.Inputs[Derived Column Input]"
-                  name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Lookup GRUPO.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Match Output]"
                   endId="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP\Union All 1.Inputs[Union All Input 2]"
@@ -39746,6 +39757,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\FTP DEL"
+          DTS:CreationName="Microsoft.FtpTask"
+          DTS:Description="FTP Task"
+          DTS:DTSID="{44d93048-ced6-4c03-8658-376bd1eadb44}"
+          DTS:ExecutableType="Microsoft.FtpTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FTP DEL"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FtpData
+              ConnectionName="{70CEFD86-8588-40CE-AE4E-4CA5BA592000}"
+              TaskOperationType="DeleteRemote"
+              TaskIsLocalPathVar="True"
+              TaskLocalPath="$Project::FS_InboxPath"
+              TaskIsRemotePathVar="True"
+              TaskRemotePath="User::FTPCurrentFile" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\SQL - Limpa tabela Carga"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -42014,6 +42045,14 @@ where NOT EXISTS (select pv.Chave from TB_Agroview_Parametros_Vendedor as pv
           DTS:ObjectName="Constraint 11"
           DTS:To="Package\Foreach Loop Container\Verifica UNIDADE" />
         <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 12]"
+          DTS:CreationName=""
+          DTS:DTSID="{754EC21E-2AC5-4B2C-B87A-81AE2843B430}"
+          DTS:From="Package\Foreach Loop Container\File System Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 12"
+          DTS:To="Package\Foreach Loop Container\FTP DEL" />
+        <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
           DTS:DTSID="{BDE96CE4-BAC1-466E-A378-C7B946CA0C54}"
@@ -42111,11 +42150,12 @@ where NOT EXISTS (select pv.Chave from TB_Agroview_Parametros_Vendedor as pv
       DTS:refId="Package\Script Task - MAP DRIVE S"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Script Task"
+      DTS:Disabled="True"
       DTS:DTSID="{a3cd1c6b-e5df-439e-b046-b27728333f18}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Script Task - MAP DRIVE S"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ScriptProject
@@ -42856,14 +42896,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{0AD8398E-446A-4185-83A3-19985AC69401}"
-      DTS:From="Package\Script Task - MAP DRIVE S"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\FTP Task" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{65C5D9AC-2A34-4B60-ACC7-4AF63D2E7694}"
@@ -43010,7 +43042,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="237,42"
           Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP"
-          TopLeft="291.5,335.5" />
+          TopLeft="290.5,310.5" />
         <NodeLayout
           Size="174,42"
           Id="Package\Foreach Loop Container\Data Flow Load CSV"
@@ -43054,7 +43086,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="162,42"
           Id="Package\Foreach Loop Container\Verifica UNIDADE"
-          TopLeft="62,334" />
+          TopLeft="52,334" />
         <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\Verifica VENDEDOR"
@@ -43105,18 +43137,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 10]"
-          TopLeft="224,355.75">
+          TopLeft="214,355">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="67.5,0"
+              EndConnector="76.5,-23.5"
               Start="0,0"
-              End="60,0">
+              End="69,-23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="60,0" />
+                    End="34.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.25,0"
+                    Point2="38.25,0"
+                    Point3="38.25,-4" />
+                  <mssgle:LineSegment
+                    End="38.25,-19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.25,-19.5"
+                    Point2="38.25,-23.5"
+                    Point3="42.25,-23.5" />
+                  <mssgle:LineSegment
+                    End="69,-23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -43127,30 +43171,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 11]"
-          TopLeft="135,279">
+          TopLeft="134,279">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8,55"
+              EndConnector="0,55"
               Start="0,0"
-              End="8,47.5">
+              End="0,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="4,27.5" />
-                  <mssgle:LineSegment
-                    End="4,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4,27.5"
-                    Point2="8,27.5"
-                    Point3="8,31.5" />
-                  <mssgle:LineSegment
-                    End="8,47.5" />
+                    End="0,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -43295,30 +43327,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
-          TopLeft="528.5,356.5">
+          TopLeft="527.5,335">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35,-18"
+              EndConnector="36,0"
               Start="0,0"
-              End="27.5,-18">
+              End="28.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="13.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="13.5,0"
-                    Point2="17.5,0"
-                    Point3="17.5,-4" />
-                  <mssgle:LineSegment
-                    End="17.5,-14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.5,-14"
-                    Point2="17.5,-18"
-                    Point3="21.5,-18" />
-                  <mssgle:LineSegment
-                    End="27.5,-18" />
+                    End="28.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -43383,11 +43403,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Foreach Loop Container\FTP DEL"
+          TopLeft="575,394" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 12]"
+          TopLeft="642.5,359.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8,34.5"
+              Start="0,0"
+              End="-8,27">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.25"
+                    Point2="0,17.25"
+                    Point3="-4,17.25" />
+                  <mssgle:LineSegment
+                    End="-4,17.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4,17.25"
+                    Point2="-8,17.25"
+                    Point3="-8,21.25" />
+                  <mssgle:LineSegment
+                    End="-8,27" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="752,433"
-          Size="752,476"
+          PanelSize="752,486"
+          Size="752,529"
           Id="Package\Foreach Loop Container"
           TopLeft="61,87" />
         <NodeLayout
@@ -43398,28 +43456,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Size="205,42"
           Id="Package\Script Task - MAP DRIVE S"
           TopLeft="62,5" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="267,27.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="81,0"
-              Start="0,0"
-              End="73.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="73.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="409,50">
@@ -43593,7 +43629,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="Package\Carga to Final (com log) 1\Lookup CFOP"
           TopLeft="79,262" />
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
           TopLeft="212,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44253,7 +44289,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output4]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output]"
           TopLeft="240,389">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44289,7 +44325,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
           TopLeft="221,283">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44361,7 +44397,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output1]"
+          Id="Package\Carga to Final (com log) 1.Paths[Lookup Error Output3]"
           TopLeft="914.333333333333,111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44887,7 +44923,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
           TopLeft="213,454.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44923,7 +44959,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output1]"
           TopLeft="219,358">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -44959,7 +44995,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output2]"
+          Id="Package\Foreach Loop Container\Carga to Final (com log) SEM LKP.Paths[Lookup Error Output]"
           TopLeft="467,174.5">
           <EdgeLayout.Curve>
             <mssgle:Curve

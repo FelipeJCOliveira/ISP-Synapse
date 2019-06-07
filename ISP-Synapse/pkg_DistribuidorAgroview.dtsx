@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkg_DistribuidorAgroview"
   DTS:PackageType="5"
-  DTS:VersionBuild="150"
-  DTS:VersionGUID="{01A85299-0523-4C07-9881-55FD39197C16}">
+  DTS:VersionBuild="151"
+  DTS:VersionGUID="{D9A6CCF7-3D92-417E-BFDC-5ABF3570F0CD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="S:\Data&amp;Insights\DistribuidorAgroview.csv">
+          DTS:ConnectionString="G:\SYNAPSE\DistribuidorAgroview.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -249,7 +249,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="InboxFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">S:\Data&amp;Insights\DistribuidorAgroview.csv</DTS:VariableValue>
+        DTS:DataType="8">G:\SYNAPSE\DistribuidorAgroview.csv</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -3973,7 +3973,7 @@ where DistCodigo = ?</property>
       DTS:ExecutableType="Microsoft.FileSystemTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="File System Task"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <FileSystemData
@@ -3993,7 +3993,7 @@ where DistCodigo = ?</property>
       DTS:ExecutableType="Microsoft.FtpTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="FTP DEL"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <FtpData
@@ -4029,11 +4029,12 @@ where DistCodigo = ?</property>
       DTS:refId="Package\Script Task - MAP DRIVE S"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Script Task"
+      DTS:Disabled="True"
       DTS:DTSID="{90b0cf77-4077-4a55-81f9-588e6f167bd2}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Script Task - MAP DRIVE S"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ScriptProject
@@ -4826,14 +4827,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\SQL Log CSV" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
-      DTS:CreationName=""
-      DTS:DTSID="{9DC54E3D-CFA6-4DAA-BB84-FF4627CA31C5}"
-      DTS:From="Package\Script Task - MAP DRIVE S"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3"
-      DTS:To="Package\FTP Task" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
       DTS:DTSID="{90876504-C2ED-44C6-B0F1-A6D3A1237D04}"
@@ -4972,28 +4965,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="52.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="253,48">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="88,0"
-              Start="0,0"
-              End="80.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="80.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
